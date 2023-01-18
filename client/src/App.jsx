@@ -11,7 +11,6 @@ function App() {
     <Provider store={store}>
       <BrowserRouter>
         <div className="App">
-          <NavBar></NavBar>
           <Routes>
             <Route path="/" element={<LandingPage />} />
             <Route path="/home" element={<Home />} />
