@@ -70,6 +70,7 @@ module.exports = (sequelize) => {
         max: 5
       }
     }
-  }, { timestamps: false }
+  },
+    { timestamps: false }
   )
 };
