@@ -22,14 +22,19 @@ router.get ("/", async (req, res)=>{
 });
 
 router.get ("/:id", async (req, res)=>{
-    const {id} = req.params;
-    const allHotels = await getAllHotels();  
-    const hotel = allHotels.filter (el => el.id == id);
-    if (hotel.lenght){
-        res.status(200).json(hotel);
-    } else {
+    const {id} = req.params; // pasar de string a enteroe en controllers
+    //const allHotels = await getAllHotels();  
+    //const hotel = allHotels.filter (el => el.id == id); // hacer en controllers
+    try {
+        if (id){
+            res.status(200).send(`Traigo el hotel con id ${id}`)
+        } else {
+           res.status (200).send(`necesito un id`)
+        }
+    } catch (error) {
         res.status(400).send("Hotel no found in the Data");
     }
+    
 });
 
 module.exports = router;
