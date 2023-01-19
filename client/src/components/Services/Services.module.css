@@ -1,0 +1,33 @@
+.serviceContainer {
+  width: 270px;
+  height: 200px;
+  margin: 20px;
+  background-color: #fff;
+  display: inline-block;
+  box-shadow: 2px 2px 0px 0px #00000026;
+}
+.title {
+  color: #001d32;
+  text-align: start;
+
+  margin-left: 35px;
+  margin-bottom: 30px;
+}
+.paraf {
+  width: 17em;
+  text-align: center;
+}
+.img {
+  margin: 4px;
+}
+.imageContainer {
+  border-radius: 18px 20px 20px 20px;
+  height: 32px;
+  margin: 20px;
+  width: 32px;
+  background-color: #b71c1c;
+}
+.bodyService{
+  display: flex;
+  justify-content: center;
+}
