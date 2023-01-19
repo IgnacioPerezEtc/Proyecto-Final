@@ -1,13 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500&display=swap");
-* {
-  font-family: "Roboto", sans-serif;
-  color: #fff;
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
 h3{
   font-size: 18.7px;
+  color: #fff;
 }
 p{
 font-size: 16px;
@@ -17,6 +10,7 @@ li{
 }
 .flexContainer {
   display: flex;
+  
 }
 .bodyFooter {
   margin-top: 52.3vh;
@@ -24,7 +18,7 @@ li{
 .footer {
   display: flex;
   width: 100%;
-  position: absolute;
+  position: absolute;justify-content: space-around;
 }
 .FirstTitle {
   color: #fff;
@@ -48,7 +42,7 @@ li{
   width: 12em;
   color: #fff;
   margin: 1em;
-  margin-left:0.8em;
+  margin-left: 0.8em;
 }
 .param {
   color: #fff;
@@ -72,27 +66,31 @@ li{
   margin-bottom: -0.4em;
   margin-left: -2.2em;
 }
-.iconContainer{
-    margin-left: -1em;
+.iconContainer {
+  margin-left: -1em;
 }
 .icon {
   text-align: start;
-  margin: 0.4em;
-  padding: 0.4em;
+  margin: 0.9em;
+  padding: 0.8em;
   background-color: #50758e;
   border-radius: 20px;
   margin-bottom: 1.5em;
   margin-top: 1.5em;
-
-
+  font-size: 2px;
+  width: 24px;
+  height: 24px;
 }
 .iconFacebook {
-  margin: 0.4em;
-  padding: 0.5em;
+  margin: 0.9em;
+  padding: 0.9em;
   background-color: #50758e;
   border-radius: 20px;
   margin-bottom: 1.5em;
   margin-top: 1.5em;
+  font-size: 2px;
+  width: 24px;
+  height: 24px;
 
 }
 .flex {
@@ -103,6 +101,6 @@ li{
   object-fit: contain;
   margin-left: 1.3em;
 }
-.titleList{
-    margin-left:0.8em;
+.titleList {
+  margin-left: 0.8em;
 }
