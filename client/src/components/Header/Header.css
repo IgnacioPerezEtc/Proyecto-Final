@@ -1,6 +1,6 @@
 .img-bg {
   height: 800px;
-  width: 1920px;
+  width: 100%;
 }
 
 .container-header{
@@ -9,7 +9,7 @@
 
 .container-title{
   position: absolute;
-  bottom: 190px;
+  bottom: 260px;
   left: 300px;
 }
 
