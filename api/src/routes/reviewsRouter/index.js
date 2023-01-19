@@ -5,11 +5,11 @@ const router = Router();
 
 router.post('/', async (req, res) => {
     try {
-        const { idUser, idHotel, ratingComment } = req.body;
+        const { userId, hotelId, ratingComment } = req.body;
         if(ratingComment) {
             const newCommentary = await Commentary.create(req.body);
-            await newCommentary.addUsers(idUser);
-            await newCommentary.addHotels(idHotel);
+            await newCommentary.addUsers(userId);
+            await newCommentary.addHotels(hotelId);
             res.send(newCommentary)
         }
         else res.status(404).send(error.message)
