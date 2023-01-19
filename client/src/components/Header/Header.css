@@ -1,0 +1,71 @@
+.img-bg {
+  height: 800px;
+  width: 1920px;
+}
+
+.container-header{
+  position: relative;
+}
+
+.container-title{
+  position: absolute;
+  bottom: 190px;
+  left: 300px;
+}
+
+.name-hotel{
+  color: #fff;
+  font-size: 7.9rem;
+  font-weight: bold;
+  line-height: 9.2rem;
+}
+
+.title-off{
+  color: #fff;
+  font-size: 4.8rem;
+  font-weight: 500;
+  line-height: 5.6rem;
+}
+.title-desc{
+  color: #fff;
+  font-size: 3.8rem;
+  font-weight: 500;
+  line-height: 4.4rem;
+}
+
+.div-name{
+  padding-bottom: 38px;
+}
+
+.div-off{
+  padding-bottom: 18px;
+}
+
+.div-desc{
+  padding-top: 6px;
+}
+
+.hr{
+  width: 140px;
+  border-color: var(--color-red);
+  margin-left: 14px;
+  border: 2px solid var(--color-red);
+}
+
+.container-button{
+  margin-top: 50px;
+}
+
+.container-button button{
+  width: 154px;
+  height: 48px;
+  background-color: var(--color-red);
+  border: 1px solid transparent;
+  border-radius: 5px;
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 1.6rem;
+  line-height: 1.9rem;
+  cursor: pointer;
+}
