@@ -1,24 +1,25 @@
-h3{
+h3 {
   font-size: 18.7px;
-  color: #fff;
 }
-p{
-font-size: 16px;
-}
-li{
+p {
   font-size: 16px;
 }
-.flexContainer {
+li {
+  font-size: 16px;
+}
+.firstflexContainer {
   display: flex;
-  
+  flex-direction: column;
+  justify-content: space-between;
 }
 .bodyFooter {
   margin-top: 52.3vh;
 }
 .footer {
   display: flex;
+  justify-content: space-around;
   width: 100%;
-  position: absolute;justify-content: space-around;
+  position: absolute;
 }
 .FirstTitle {
   color: #fff;
@@ -56,6 +57,7 @@ li{
   background-color: #50758e;
   color: #fff;
   border: none;
+  margin-left: -20px;
 }
 ::placeholder {
   color: #fff;
@@ -71,27 +73,20 @@ li{
 }
 .icon {
   text-align: start;
-  margin: 0.9em;
-  padding: 0.8em;
+  margin: 0.4em;
+  padding: 0.4em;
   background-color: #50758e;
   border-radius: 20px;
   margin-bottom: 1.5em;
   margin-top: 1.5em;
-  font-size: 2px;
-  width: 24px;
-  height: 24px;
 }
 .iconFacebook {
-  margin: 0.9em;
-  padding: 0.9em;
+  margin: 0.4em;
+  padding: 0.5em;
   background-color: #50758e;
   border-radius: 20px;
   margin-bottom: 1.5em;
   margin-top: 1.5em;
-  font-size: 2px;
-  width: 24px;
-  height: 24px;
-
 }
 .flex {
   display: flex;
@@ -102,5 +97,6 @@ li{
   margin-left: 1.3em;
 }
 .titleList {
+  color: #fff;
   margin-left: 0.8em;
 }
