@@ -1,0 +1,53 @@
+.container-navbar{
+    position: absolute;
+    width: 100vw;
+    top: 40px;
+}
+
+.navbar{
+    background-color: transparent;
+}
+
+.container-nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.ul-nav{
+    display: flex;
+    list-style-type: none;
+}
+
+.ul-nav li{
+    padding: 0px 40px;
+}
+
+.link-landing{
+    text-decoration: none;
+    color: #C2C7CE;
+    font-size: 1.6rem;
+    line-height: 1.9rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+.ul-nav-redes{
+    display: flex;
+    list-style-type: none;
+}
+
+.ul-nav-redes li{
+    padding: 0px 12px;
+}
+.ul-nav-redes li img{
+    width: 22px;
+    height:22px;
+}
+.ul-nav-redes li button{
+    border-radius: 18px 20px 20px 20px;
+    height: 32px;
+    width: 32px;
+    border: transparent;
+    background-color: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+}
