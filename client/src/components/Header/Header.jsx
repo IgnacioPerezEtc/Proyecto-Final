@@ -1,6 +1,7 @@
 import React from "react";
 import "./Header.css";
 import NavBar from "../NavBar/NavBar";
+import SearchBar from "../SearchBar/SearchBar";
 import bg from "../../assets/img/header2.jpg";
 
 const Header = (props) => {
@@ -31,6 +32,10 @@ const Header = (props) => {
           <button>Booking Now</button>
         </div>
       </div>
+      <div>
+      <SearchBar/>
+      </div>
+
     </div>
   );
 };
