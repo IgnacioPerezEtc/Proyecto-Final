@@ -4,10 +4,10 @@ import icon from "./img/icon.png";
 import message from "./img/message.png";
 import mobile from "./img/mobile.png";
 import location from "./img/location.png";
-import twitter from "./img/twitter.png";
-import facebook from "./img/facebook.png";
-import instagram from "./img/instagram.png";
-import youtube from "./img/youtube.png";
+import facebook from "../../assets/icons/facebook.svg";
+import instagram from "../../assets/icons/instagram.svg";
+import twitter from "../../assets/icons/twitter.svg";
+import youtube from "../../assets/icons/youtube.svg";
 const Footer = () => {
   return (
     <div className={style.bodyFooter}>
@@ -49,6 +49,7 @@ const Footer = () => {
               <li className={style.list}>Rooms</li>
             </ul>
           </div>
+          </div>
           <div>
             <ul>
               <h3 className={style.titleList}>Services</h3>
@@ -80,7 +81,7 @@ const Footer = () => {
               </div>
             </ul>
           </div>
-        </div>
+        
       </footer>
     </div>
   );
