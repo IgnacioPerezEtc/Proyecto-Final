@@ -2,6 +2,7 @@ require("dotenv").config();
 const { Sequelize } = require("sequelize");
 const fs = require("fs");
 const path = require("path");
+const Room = require("./models/Room");
 const { DB_USER, DB_PASSWORD, DB_HOST } = process.env;
 
 const sequelize = new Sequelize(
@@ -30,7 +31,9 @@ let capsEntries = entries.map((entry) => [
 ]);
 sequelize.models = Object.fromEntries(capsEntries);
 
-const { Hotel } = sequelize.models;
+const { Hotel, Room, Reservation } = sequelize.models;
+
+
 
 module.exports = {
   ...sequelize.models,
