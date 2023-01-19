@@ -1,0 +1,100 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500&display=swap");
+* {
+  font-family: "Roboto", sans-serif;
+  color: #fff;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.flexContainer {
+  display: flex;
+}
+.bodyFooter {
+  margin-top: 52.3vh;
+}
+.footer {
+  display: flex;
+  width: 100%;
+  position: absolute;
+}
+.FirstTitle {
+  color: #fff;
+  text-align: start;
+  margin: 1.3em;
+  margin-left: 1em;
+  margin-top: -0.89em;
+  margin-bottom: 2em;
+}
+.titles {
+  color: #fff;
+}
+.footer {
+  background-color: #18445c;
+
+  padding: 80px;
+  padding-left: 10em;
+}
+.list {
+  list-style: none;
+  width: 12em;
+  color: #fff;
+  margin: 1em;
+  margin-left:0.8em;
+}
+.param {
+  color: #fff;
+  width: 15em;
+  margin-top: -2.5em;
+  margin-left: -0.4em;
+}
+.input {
+  padding: 0.8em 2em;
+  border-radius: 0.3em;
+  background-color: #50758e;
+  color: #fff;
+  border: none;
+}
+::placeholder {
+  color: #fff;
+  text-align: center;
+}
+.Firsticon {
+  margin: 0.5em;
+  margin-bottom: -0.4em;
+  margin-left: -2.2em;
+}
+.iconContainer{
+    margin-left: -1em;
+}
+.icon {
+  text-align: start;
+  margin: 0.4em;
+  padding: 0.4em;
+  background-color: #50758e;
+  border-radius: 20px;
+  margin-bottom: 1.5em;
+  margin-top: 1.5em;
+
+
+}
+.iconFacebook {
+  margin: 0.4em;
+  padding: 0.5em;
+  background-color: #50758e;
+  border-radius: 20px;
+  margin-bottom: 1.5em;
+  margin-top: 1.5em;
+
+}
+.flex {
+  display: flex;
+}
+
+.icons {
+  object-fit: contain;
+  margin-left: 1.3em;
+}
+.titleList{
+    margin-left:0.8em;
+}
