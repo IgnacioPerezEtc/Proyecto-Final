@@ -1,5 +1,5 @@
 .container{
-    background-color: lightgray;
+    background-color: #E5E5E5;
 }
 
 .subcontainer{
@@ -39,7 +39,7 @@
 
 .buttonContainer button{
     border: none;
-    background-color: lightgray;
+    background-color: #E5E5E5;
     font-size: 16px;
     margin-right: 30px;
 }
