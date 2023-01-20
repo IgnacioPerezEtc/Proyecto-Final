@@ -79,6 +79,8 @@ li {
   border-radius: 20px;
   margin-bottom: 1.5em;
   margin-top: 1.5em;
+  width: 3.5em;
+  height: 3.5m;
 }
 .iconFacebook {
   margin: 0.4em;
@@ -87,6 +89,8 @@ li {
   border-radius: 20px;
   margin-bottom: 1.5em;
   margin-top: 1.5em;
+  width: 3.5em;
+  height: 3.5m;
 }
 .flex {
   display: flex;
