@@ -6,7 +6,64 @@ import { useState } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 
 const HotelsCards = ({ hotels }) => {
-
+    const hotels = [
+        {
+            img: 'https://www.valleyviewcasino.com/wp-content/uploads/Hero-Deluxe-Room-final.jpg',
+            title: 'Family Room',
+            price: 400,
+            guest: 8,
+            description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti blanditiis est quos consequuntur! Nulla cum amet, quaerat blanditiis quo maiores sit soluta, facere, recusandae doloremque in veniam repellat. Quasi, libero?',
+        },
+        {
+            img: 'https://www.valleyviewcasino.com/wp-content/uploads/Hero-Deluxe-Room-final.jpg',
+            title: 'Family Room',
+            price: 400,
+            guest: 9,
+            description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti blanditiis est quos consequuntur! Nulla cum amet, quaerat blanditiis quo maiores sit soluta, facere, recusandae doloremque in veniam repellat. Quasi, libero?',
+        },
+        {
+            img: 'https://www.valleyviewcasino.com/wp-content/uploads/Hero-Deluxe-Room-final.jpg',
+            title: 'Family Room',
+            price: 400,
+            guest: 10,
+            description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti blanditiis est quos consequuntur! Nulla cum amet, quaerat blanditiis quo maiores sit soluta, facere, recusandae doloremque in veniam repellat. Quasi, libero?',
+        },
+        {
+            img: 'https://www.valleyviewcasino.com/wp-content/uploads/Hero-Deluxe-Room-final.jpg',
+            title: 'Family Room',
+            price: 400,
+            guest: 11,
+            description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti blanditiis est quos consequuntur! Nulla cum amet, quaerat blanditiis quo maiores sit soluta, facere, recusandae doloremque in veniam repellat. Quasi, libero?',
+        },
+        {
+            img: 'https://www.valleyviewcasino.com/wp-content/uploads/Hero-Deluxe-Room-final.jpg',
+            title: 'Family Room',
+            price: 400,
+            guest: 12,
+            description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti blanditiis est quos consequuntur! Nulla cum amet, quaerat blanditiis quo maiores sit soluta, facere, recusandae doloremque in veniam repellat. Quasi, libero?',
+        },
+        {
+            img: 'https://www.valleyviewcasino.com/wp-content/uploads/Hero-Deluxe-Room-final.jpg',
+            title: 'Family Room',
+            price: 400,
+            guest: 13,
+            description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti blanditiis est quos consequuntur! Nulla cum amet, quaerat blanditiis quo maiores sit soluta, facere, recusandae doloremque in veniam repellat. Quasi, libero?',
+        },
+        {
+            img: 'https://www.valleyviewcasino.com/wp-content/uploads/Hero-Deluxe-Room-final.jpg',
+            title: 'Family Room',
+            price: 400,
+            guest: 14,
+            description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti blanditiis est quos consequuntur! Nulla cum amet, quaerat blanditiis quo maiores sit soluta, facere, recusandae doloremque in veniam repellat. Quasi, libero?',
+        },
+        {
+            img: 'https://www.valleyviewcasino.com/wp-content/uploads/Hero-Deluxe-Room-final.jpg',
+            title: 'Family Room',
+            price: 400,
+            guest: 15,
+            description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti blanditiis est quos consequuntur! Nulla cum amet, quaerat blanditiis quo maiores sit soluta, facere, recusandae doloremque in veniam repellat. Quasi, libero?',
+        }
+    ];
 
     return (
         <div className='d-flex w-100 justify-content-center'>
@@ -23,9 +80,6 @@ const HotelsCards = ({ hotels }) => {
                                     description={hotel.description}
                                 />
 
-                                {/* <Carousel.Caption>
-                                    <h5>Hotel item</h5>
-                                </Carousel.Caption> */}
                             </Carousel.Item>
                         )
                     })
@@ -34,21 +88,6 @@ const HotelsCards = ({ hotels }) => {
 
         </div>
 
-        // <div className={`${styles.Cards} m-4 w-100 d-flex flex-wrap gap-4 justify-content-center`}>
-        //     {
-        //         hotels.map( hotel => {
-        //             return(
-        //                 <HotelCard 
-        //                     img={hotel.img}
-        //                     title={hotel.title}
-        //                     price= {hotel.price}
-        //                     guest = {hotel.guest}
-        //                     description = {hotel.description}
-        //                 />
-        //             )
-        //         })
-        //     }
-        // </div>
     )
 }
 
