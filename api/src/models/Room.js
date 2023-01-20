@@ -13,7 +13,25 @@ module.exports = (sequelize) => {
             allowNull: false,
             validate: {
                 min: 1,
-                max: 5
+                max: 10
+            }
+        },
+
+        maxAdult: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            validate: {
+                min: 1,
+                max: 10
+            }
+        },
+
+        maxChild: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            validate: {
+                min: 0,
+                max: 9
             }
         },
 

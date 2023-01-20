@@ -4,8 +4,31 @@ module.exports = (sequelize) => {
     sequelize.define('reservation', {
         people: {
             type: DataTypes.INTEGER,
-            allowNull: false
+            allowNull: false,
+            validate: {
+                min: 1,
+                max: 10
+            }
         },
+
+        adults: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            validate: {
+                min: 1,
+                max: 10
+            }
+        },
+
+        children: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            validate: {
+                min: 0,
+                max: 9
+            }
+        },
+
         startDate: {
             type: DataTypes.DATEONLY,
             allowNull: false
