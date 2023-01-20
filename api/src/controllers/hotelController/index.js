@@ -1,0 +1,1 @@
+const {Hotel} = require("../../db");
