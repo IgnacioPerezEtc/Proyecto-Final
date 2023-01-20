@@ -5,7 +5,7 @@ import { faRightLong, faLeftLong } from '@fortawesome/free-solid-svg-icons'
 import { useState } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 
-const HotelsCards = ({ hotels }) => {
+const HotelsCards = () => {
     const hotels = [
         {
             img: 'https://www.valleyviewcasino.com/wp-content/uploads/Hero-Deluxe-Room-final.jpg',
