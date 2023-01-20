@@ -12,15 +12,20 @@ const Footer = () => {
   return (
     <div className={style.bodyFooter}>
       <footer className={style.footer}>
-        <div className={style.firstflexContainer}>
-          <h3 className={style.FirstTitle}>
-            <img src={icon} className={style.Firsticon} alt="" />
-            Your Destiny
-          </h3>
-          <br />
-          <p className={style.param}>
-            Lorem ipsum dolor sit amet, consectetur{" "}
-          </p>
+      <div className={style.firstflexContainer}>
+          <div>
+            <h3 className={style.FirstTitle}>
+              <img src={icon} className={style.Firsticon} alt="" />
+              Your Destiny
+            </h3>
+            <br />
+          </div>
+          <div>
+            <p className={style.param}>
+              Lorem ipsum dolor sit amet, consectetur{" "}
+            </p>
+          </div>
+
           <div className={style.iconContainer}>
             <div className={style.iconsContainer}>
               <img className={style.icon} src={instagram} alt="" />
@@ -28,6 +33,8 @@ const Footer = () => {
               <img className={style.icon} src={youtube} alt="" />
               <img className={style.icon} src={twitter} alt="" />
             </div>
+          </div>
+          <div>
             <input
               className={style.input}
               type="text"
