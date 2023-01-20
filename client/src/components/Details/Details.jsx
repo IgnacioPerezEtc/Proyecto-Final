@@ -12,6 +12,7 @@ import HotelsCards from '../HotelsCards/HotelsCards';
 // pictureDetail[], rating, languajes[], category int  
 const Details = () => {
 
+
     const hotels = [
         {
             img: 'https://www.valleyviewcasino.com/wp-content/uploads/Hero-Deluxe-Room-final.jpg',
@@ -36,14 +37,14 @@ const Details = () => {
         }
     ]
 
-    
+
     return (
         <div className="container d-flex flex-column align-items-center pt-5 gap-4">
             <p className=" display-4 text-danger fw-bold">NameRoom</p>
 
-            <div className="h1 d-flex justify-content-between w-100 mt-5">
-                <p>Family Room</p>
-                <p>Price: $ 799</p>
+            <div className="h1 d-flex justify-content-between w-100 mt-5 ">
+                <p className='text-dark'>Family Room</p>
+                <p className='text-dark'>Price: $ 799</p>
             </div>
 
             <div className=" w-100 h-100 d-flex justify-content-center">
@@ -129,14 +130,14 @@ const Details = () => {
                 </ListGroup>
 
                 <div>
-                    <p><span className='fw-bold'> Room size: </span>50ft</p>
-                    <p><span className='fw-bold'> Location: </span>5th floor</p>
-                    <p><span className='fw-bold'> Bed: </span>2 double bed</p>
-                    <p><span className='fw-bold'> View: </span>Panama Sea view</p>
-                    <p><span className='fw-bold'> Smoking: </span>Yes</p>
+                    <p className='text-dark'><span className=' text-dark fw-bold'> Room size: </span>50ft</p>
+                    <p className='text-dark'><span className=' text-dark fw-bold'> Location: </span>5th floor</p>
+                    <p className='text-dark'><span className=' text-dark fw-bold'> Bed: </span>2 double bed</p>
+                    <p className='text-dark'><span className=' text-dark fw-bold'> View: </span>Panama Sea view</p>
+                    <p className='text-dark'><span className=' text-dark fw-bold'> Smoking: </span>Yes</p>
                 </div>
 
-                <div className='w-100'>
+                <div className='w-100 text-dark'>
                     Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam quisquam ea commodi temporibus? Perspiciatis impedit fugit illo illum quam provident. Ad accusamus obcaecati, aliquid ipsa doloribus vero. Illo, reprehenderit quibusdam.
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident aliquam perspiciatis quae consectetur dolore porro esse exercitationem quibusdam beatae minus, sapiente praesentium iure est ipsam veniam officia accusamus cum! Hic.
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident quam, facere, mollitia cumque et nobis ea id dolore placeat perspiciatis sunt iure quas exercitationem nulla vel temporibus est unde dolorem!
@@ -144,11 +145,11 @@ const Details = () => {
                 </div>
             </div>
 
-            <div>
-                <p className=' display-3 fw-bold text-danger mt-5'>Our Rooms</p>
-                
-                <HotelsCards hotels={hotels}/>
-            </div>
+            <p className=' display-3 fw-bold text-danger mt-5'>Our Rooms</p>
+
+            <HotelsCards hotels={hotels} />
+
+
 
         </div>
     )
