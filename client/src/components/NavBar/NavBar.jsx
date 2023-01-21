@@ -4,6 +4,7 @@ import facebook from "../../assets/icons/facebook.svg";
 import instagram from "../../assets/icons/instagram.svg";
 import twitter from "../../assets/icons/twitter.svg";
 import youtube from "../../assets/icons/youtube.svg";
+import { NavLink } from "react-router-dom";
 
 const NavBar = (props) => {
   return (
@@ -12,24 +13,24 @@ const NavBar = (props) => {
         <div>
           <ul className="ul-nav">
             <li>
-              <a href="" className="link-landing">
+              <a href="/" className="link-landing">
                 Home
               </a>
             </li>
             <li>
-              <a href="" className="link-landing">
+              <a href="#hotels" className="link-landing">
                 Hotels
               </a>
             </li>
             <li>
-              <a href="" className="link-landing">
+              <a href="#services" className="link-landing">
                 Services
               </a>
             </li>
             <li>
-              <a href="" className="link-landing">
+              <NavLink to={"/about"} className="link-landing">
                 About Us
-              </a>
+              </NavLink>
             </li>
           </ul>
         </div>
@@ -37,7 +38,7 @@ const NavBar = (props) => {
         <div>
           <ul className="ul-nav-redes">
             <li>
-              <a href="https:/www.instagram.com" target={"_blank"}>
+              <a href="https:/www.instagram.com" target={"_blank"} >
                 <button>
                   <img src={instagram} alt="logo instagram" />
                 </button>
