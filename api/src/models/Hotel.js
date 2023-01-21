@@ -15,7 +15,7 @@ module.exports = (sequelize) => {
       }
     },
 
-    room: {
+    rooms: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
@@ -40,6 +40,7 @@ module.exports = (sequelize) => {
 
     pictureHome: {
       type: DataTypes.STRING,
+      allowNull: false,
       validate: { isUrl: true }
     },
 
