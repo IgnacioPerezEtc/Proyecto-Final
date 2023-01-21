@@ -1,4 +1,39 @@
-.serviceContainer {
+.containerService{
+  margin-bottom: 20px;
+}
+
+.subcontainer {
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.titleContainer {
+  justify-content: center;
+  padding-top: 30px;
+  padding-bottom: 10px;
+  display: flex;
+}
+
+.blue {
+  color: var(--color-blue);
+  float: left;
+  font-size: 48px;
+  margin-right: 10px;
+}
+.descGallery {
+  font-weight: lighter;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+}
+.red {
+  color: #d31b1b;
+  float: left;
+  font-size: 48px;
+  margin-right: 10px;
+}
+
+
+.containerCards {
   width: 270px;
   height: 200px;
   margin: 20px;
