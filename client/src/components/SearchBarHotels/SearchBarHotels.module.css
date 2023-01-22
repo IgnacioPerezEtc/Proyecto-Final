@@ -44,7 +44,7 @@ input[type="number"]::-webkit-outer-spin-button {
   border-radius: 5px;
 }
 
-.date[type="date"] {
+.date {
   width: 210px;
   height: 45px;
   background-image: url("../../assets/icons/check.png");
@@ -60,7 +60,7 @@ input[type="number"]::-webkit-outer-spin-button {
 .date{
   margin: 5px;
 }
-.date[type="date"]::-webkit-calendar-picker-indicator {
+.date::-webkit-calendar-picker-indicator {
   opacity: 0;
   cursor: pointer;
   
