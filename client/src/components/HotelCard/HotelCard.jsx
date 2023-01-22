@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 export const HotelCard = ({ name, image, rating, languages, id}) => {
   return (
     <>
-      <NavLink  to={`/home/${id}`}>
+      <NavLink  to={`/hotels/${id}`}>
         <h3 >
           {name}
         </h3>
