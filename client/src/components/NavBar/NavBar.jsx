@@ -18,9 +18,9 @@ const NavBar = (props) => {
               </a>
             </li>
             <li>
-              <a href="#hotels" className="link-landing">
+            <NavLink to={"/hotels"} className="link-landing">
                 Hotels
-              </a>
+              </NavLink>
             </li>
             <li>
               <a href="#services" className="link-landing">
@@ -34,7 +34,6 @@ const NavBar = (props) => {
             </li>
           </ul>
         </div>
-
         <div>
           <ul className="ul-nav-redes">
             <li>
@@ -59,17 +58,19 @@ const NavBar = (props) => {
               </a>
             </li>
             <li>
+        
               <a href="https:/www.twitter.com" target={"_blank"}>
                 <button>
                   <img src={twitter} alt="logo twitter" />
                 </button>
               </a>
             </li>
-
           </ul>
         </div>
       </nav>
     </div>
+
   );
+
 };
 export default NavBar;
