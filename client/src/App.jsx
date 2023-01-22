@@ -11,6 +11,11 @@ import { Provider } from "react-redux";
 
 import store from "./redux/store.js";
 import AboutUs from "./components/AboutUs/AboutUs.jsx";
+
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+
 function App() {
   return (
     <Provider store={store}>
