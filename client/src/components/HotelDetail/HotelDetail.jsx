@@ -1,6 +1,6 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useState } from "react";
-import HotelCard from '../HotelCard/HotelCard';
+import RoomCard from '../RoomCard/RoomCard'
 
 import { Keyboard, Autoplay} from 'swiper'
 import 'swiper/css'
@@ -8,7 +8,6 @@ import 'swiper/css/free-mode';
 
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import Nav from 'react-bootstrap/Nav';
 import { Link } from "react-router-dom";
 
 const HotelDetail = () => {
@@ -193,7 +192,7 @@ const HotelDetail = () => {
                         hotels.map((hotel, i) => {
                             return (
                                 <SwiperSlide key={i}>
-                                    <HotelCard
+                                    <RoomCard
                                         img={hotel.img}
                                         title={hotel.title}
                                         price={hotel.price}

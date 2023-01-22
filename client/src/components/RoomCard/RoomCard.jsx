@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import styles from './HotelCard.module.css';
+import styles from './RoomCard.module.css';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBed, faArrowRightLong } from '@fortawesome/free-solid-svg-icons'

@@ -1,5 +1,4 @@
-import HotelCard from '../HotelCard/HotelCard';
-import styles from './HotelsCards.module.css'
+import HotelCard from '../RoomCard/RoomCard';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Keyboard, Autoplay} from 'swiper'
