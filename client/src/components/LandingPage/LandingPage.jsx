@@ -6,11 +6,13 @@ import Services from "../Services/Services.jsx";
 import Galery from "../Galery/Galery";
 import Home from "../Home/Home";
 import Hotels from "../Hotels/Hotels";
+import RoomsCards from "../RoomsCards/RoomsCards";
 
 const LandingPage = (props) => {
   return (
     <div>
       <Header location={props.location} />
+      <RoomsCards />
       <Services />
       <Galery />
       <Footer />
