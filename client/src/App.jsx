@@ -11,6 +11,7 @@ import { Provider } from "react-redux";
 
 import store from "./redux/store.js";
 import AboutUs from "./components/AboutUs/AboutUs.jsx";
+import Detail from "./components/Detail/Detail.jsx";
 function App() {
   return (
     <Provider store={store}>
@@ -19,6 +20,7 @@ function App() {
           <Routes>
             <Route path="/" element={<LandingPage />} />
             <Route path="/hotels" element={<Hotels />} />
+            <Route path="/hotels/:id" element={<Detail />} />
             <Route path="/home" element={<Home />} />
             <Route path="/aboutUs" element={<AboutUs />} />
             <Route path="/form" element={<Form />} />
