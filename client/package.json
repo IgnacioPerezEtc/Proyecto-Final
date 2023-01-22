@@ -9,14 +9,20 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.2.1",
+    "@fortawesome/free-solid-svg-icons": "^6.2.1",
+    "@fortawesome/react-fontawesome": "^0.2.0",
     "axios": "^1.2.2",
+    "bootstrap": "^5.2.3",
     "react": "^18.2.0",
+    "react-bootstrap": "^2.7.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.5",
     "react-router-dom": "^6.6.2",
     "redux": "^4.2.0",
     "redux-thunk": "^2.4.2",
-    "router-dom": "^2.2.9"
+    "router-dom": "^2.2.9",
+    "swiper": "^8.4.6"
   },
   "devDependencies": {
     "@types/react": "^18.0.26",

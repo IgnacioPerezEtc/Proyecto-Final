@@ -1,0 +1,13 @@
+.Card {
+    width: 320px;
+    height: 497px;
+}
+
+
+.Text{
+    color: #333333;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+}
