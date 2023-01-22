@@ -4,11 +4,31 @@ input[type="number"]::-webkit-outer-spin-button {
   margin: 0;
 }
 
+.flexContainer{
+  display: flex;
+  justify-content: center;
+}
+.searchBar {
+  display: inline-block;
+  padding: 15px;
+  background-color: var(--color-blue);
+  box-shadow: 0px 4px 12px 2px #00000026, 4px 0px 12px 2px #00000026;
+  position: relative;
+  bottom: 40px;
+  border-radius: 5px;
+}
 .containerSearchbar {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border-radius: 5px;
+}
+
+/* .containerSearchbar {
   position: relative;
   bottom: 40px;
   width: 65%;
-  height: 80px;
+  height: 90px;
   margin: 0 auto;
   display: flex;
   justify-content: space-evenly;
@@ -16,7 +36,8 @@ input[type="number"]::-webkit-outer-spin-button {
   background-color: var(--color-blue);
   border-radius: 5px;
   box-shadow: 0px 4px 12px 2px #00000026, 4px 0px 12px 2px #00000026;
-}
+} */
+
 
 .containerInput {
   display: flex;
@@ -26,6 +47,7 @@ input[type="number"]::-webkit-outer-spin-button {
   padding-right: 8px;
   background-color: #fff;
   border-radius: 5px;
+  margin: 5px;
   box-shadow: 0px 4px 4px #00000040;
 }
 
@@ -39,6 +61,7 @@ input[type="number"]::-webkit-outer-spin-button {
   font-family: 'Roboto', sans-serif;
   font-size: 1.4rem;
 }
+
 
 .date[type="date"]{
   width: 210px;
@@ -68,11 +91,13 @@ input:focus {
   text-align: start;
 }
 
-.buttonSearchBar {
+
+.buttonOn {
   width: 154px;
   height: 48px;
   background-color: var(--color-red);
   border: 1px solid transparent;
+  margin-left: 6px;
   border-radius: 5px;
   color: #fff;
   font-family: "Roboto", sans-serif;
@@ -84,6 +109,23 @@ input:focus {
   animation: pulse 1s infinite;
   transition: all 0.3s ease-out;
 }
+
+.buttonOff{
+  width: 154px;
+  height: 48px;
+  background-color: #b71c1c38;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 1.6rem;
+  line-height: 1.9rem;
+  box-shadow: 0px 4px 4px #00000040;
+  margin-left: 6px;
+}
+
+
 .iconAdults {
   margin: auto 0;
   display: inline-block;
@@ -105,6 +147,20 @@ input:focus {
   background-repeat: no-repeat;
   background-size: contain;
 }
+
+.error{
+  font-family: 'Roboto', sans-serif;
+  color: #fff;
+  font-weight: bold;
+  margin-top: 8px;
+}
+
+.containerInpErrors{
+  display: flex;
+  flex-direction: column;
+}
+
+
 
 
 @keyframes pulse {

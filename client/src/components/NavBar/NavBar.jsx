@@ -28,7 +28,7 @@ const NavBar = (props) => {
               </a>
             </li>
             <li>
-              <NavLink to={"/about"} className="link-landing">
+              <NavLink to={"/aboutUs"} className="link-landing">
                 About Us
               </NavLink>
             </li>
