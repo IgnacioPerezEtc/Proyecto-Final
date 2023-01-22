@@ -47,7 +47,6 @@ input[type="number"]::-webkit-outer-spin-button {
 .date {
   width: 210px;
   height: 45px;
-  background-image: url("../../assets/icons/check.png");
   background-size: 20px;
   background-repeat: no-repeat;
   background-position: 98%;
@@ -74,7 +73,10 @@ input:focus {
   color: #747474;
   text-align: start;
 }
-
+.date::placeholder{
+  text-align: start;
+  color: #000;
+}
 .buttonSearchBar {
   width: 154px;
   height: 48px;
