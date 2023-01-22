@@ -14,6 +14,7 @@ import AboutUs from "./components/AboutUs/AboutUs.jsx";
 
 
 import 'bootstrap/dist/css/bootstrap.min.css';
+import RoomDetail from "./components/RoomDetail/RoomDetail.jsx";
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
             <Route path="/home" element={<Home />} />
             <Route path="/aboutUs" element={<AboutUs />} />
             <Route path="/form" element={<Form />} />
+            <Route path="/detail" element={<RoomDetail />} />
           </Routes>
         </div>
       </BrowserRouter>
