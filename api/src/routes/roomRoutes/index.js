@@ -4,6 +4,12 @@ const router = Router();
 
 router.get ("/", async (req, res)=>{
 
+    try {
+        return res.status(200).send("Traigo todos los rooms")
+    } catch (error) {
+        return res.status(404).send({error:error.message});
+    }
+
 });
 
 router.get ("/:id", async (req, res)=>{
