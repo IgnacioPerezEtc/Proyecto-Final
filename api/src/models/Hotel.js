@@ -70,7 +70,12 @@ module.exports = (sequelize) => {
         min: 0,
         max: 5
       }
-    }
+    },
+    phone: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: { len: [8, 16] }
+    },
   },
     { timestamps: false }
   )
