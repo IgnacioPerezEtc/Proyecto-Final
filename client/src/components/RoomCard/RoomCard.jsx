@@ -1,12 +1,18 @@
 import { Link } from "react-router-dom";
-import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import styles from './RoomCard.module.css';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBed, faArrowRightLong } from '@fortawesome/free-solid-svg-icons'
+import { faBed, faArrowRightLong, faStar } from '@fortawesome/free-solid-svg-icons'
 
-const HotelCard = ({ img, title, price, guest, description }) => {
+const RoomCard = ({ img, title, price, guest, description }) => {
+
+    const star = 3;
+    let stars = [];
+    for (let i = 0; i < star; i++) {
+        stars.push(<FontAwesomeIcon className="text-warning me-2" icon={faStar} />)
+    }
+
     return (
         <Card className={`${styles.Card}  p-2 h-75`}>
             <Card.Img className='w-100 h-50' variant="top" src={img} />
@@ -21,7 +27,11 @@ const HotelCard = ({ img, title, price, guest, description }) => {
                         {guest} guest
                     </p>
 
-                    {/* <p>asdass</p> */}
+                    <p>
+                        {
+                            stars
+                        }
+                    </p>
                 </div>
                 <Card.Text className={`${styles.Text} fs-5`}>
                     {description}
@@ -39,4 +49,4 @@ const HotelCard = ({ img, title, price, guest, description }) => {
 
 }
 
-export default HotelCard;
+export default RoomCard;

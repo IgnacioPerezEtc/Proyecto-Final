@@ -5,7 +5,7 @@ import { Keyboard, Autoplay} from 'swiper'
 import 'swiper/css'
 import 'swiper/css/free-mode';
 
-const HotelsCards = () => {
+const RoomsCards = () => {
     const hotels = [
         {
             img: 'https://www.valleyviewcasino.com/wp-content/uploads/Hero-Deluxe-Room-final.jpg',
@@ -132,4 +132,4 @@ const HotelsCards = () => {
     )
 }
 
-export default HotelsCards;
+export default RoomsCards;
