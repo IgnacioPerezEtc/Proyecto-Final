@@ -4,7 +4,6 @@ import Footer from "../Footer/Footer.jsx";
 import Header from "../Header/Header";
 import Services from "../Services/Services.jsx";
 import Galery from "../Galery/Galery";
-import Commentary from "../Commentary/Commentary.jsx";
 import Home from "../Home/Home";
 import Hotels from "../Hotels/Hotels";
 
