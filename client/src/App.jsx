@@ -4,8 +4,10 @@ import LandingPage from "./components/LandingPage/LandingPage.jsx";
 import "./App.css";
 import NavBar from "./components/NavBar/NavBar.jsx";
 import Form from "./components/Form/Form.jsx";
+import Hotels from "./components/Hotels/Hotels.jsx";
 import { Provider } from "react-redux";
-import  store  from "./redux/store.js";
+
+import store from "./redux/store.js";
 function App() {
   return (
     <Provider store={store}>
@@ -13,6 +15,7 @@ function App() {
         <div className="App">
           <Routes>
             <Route path="/" element={<LandingPage />} />
+            <Route path="/hotels" element={<Hotels />} />
             <Route path="/home" element={<Home />} />
             <Route path="/form" element={<Form />} />
           </Routes>
