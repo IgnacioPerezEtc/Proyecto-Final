@@ -69,7 +69,7 @@
 .imgContainer {
   padding-left: 158px;
   padding-right: 158px;
-  padding-bottom: 100px;
+  padding-bottom: 40px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 10px;
