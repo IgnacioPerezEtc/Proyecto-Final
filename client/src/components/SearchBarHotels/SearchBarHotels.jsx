@@ -46,9 +46,10 @@ const SearchBar = (props) => {
             <select type="text" placeholder="Languages" className={style.date} onChange={e => {handleFilterByLanguage(e)}}>
               <option value="All">Select a language</option>
               <option value="spanish">Spanish</option>
-              <option value="rusian">Rusian</option>
+              <option value="russian">Russian</option>
               <option value="english">English</option>
               <option value="french">French</option>
+              <option value="german">German</option>
             </select>
             <span className={style.iconOut}></span>
           </div>
