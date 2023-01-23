@@ -49,9 +49,10 @@
 
 .hr{
   width: 140px;
-  border-color: var(--color-red);
-  margin-left: 14px;
   border: 2px solid var(--color-red);
+  opacity: 1;
+  margin: 0;
+  margin-left: 14px;
 }
 
 .container-button{

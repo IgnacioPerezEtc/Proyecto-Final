@@ -1,4 +1,4 @@
-.containerService{
+.containerService {
   margin-bottom: 20px;
 }
 
@@ -20,13 +20,12 @@
   font-size: 48px;
   margin-right: 10px;
   font-weight: 400;
-  
 }
 .descService {
   font-family: "Roboto", sans-serif;
   font-weight: 200;
   font-size: 1.6rem;
-  line-height: 2.4rem;
+  line-height: 2rem;
   color: #747474;
 }
 .red {
@@ -37,25 +36,32 @@
   font-weight: 700;
 }
 
-
 .containerCards {
   width: 270px;
   height: 200px;
   margin: 20px;
   background-color: #fff;
   display: inline-block;
-  box-shadow: 2px 2px 0px 0px #00000026;
+  box-shadow: 2px 0px 8px rgba(0, 0, 0, 0.15), 0px 2px 8px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+  font-family: "Roboto", sans-serif;
 }
+
 .title {
   color: #001d32;
   text-align: start;
-
-  margin-left: 35px;
-  margin-bottom: 30px;
+  margin-left: 22px;
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 2.2rem;
 }
 .paraf {
   width: 17em;
-  text-align: center;
+  text-align: start;
+  margin-left: 22px;
+  color: #333333;
+  font-weight: 300;
+  font-size: 1.6rem;
 }
 .img {
   margin: 4px;
@@ -67,7 +73,7 @@
   width: 32px;
   background-color: #b71c1c;
 }
-.bodyService{
+.bodyService {
   display: flex;
   justify-content: center;
 }
