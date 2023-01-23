@@ -9,7 +9,12 @@ export const HotelCard = ({ name, image, rating, languages, id }) => {
   let ratingStars = [];
   for (let i = 0; i < rating; i++)
   ratingStars.push(<FontAwesomeIcon className="fs-3 text-warning me-2" icon={faStar} />)
-    
+
+  let nameHotel = (name) => {
+    let nombre = name.split(" ");
+    return nombre.map(p => p[0].toUpperCase() + p.slice(1)).join(" ")
+  };
+
 
   return (
     <NavLink to={`/hotels/${id}`}>
@@ -18,7 +23,7 @@ export const HotelCard = ({ name, image, rating, languages, id }) => {
         
         <Card.Body className="my-3">
           
-          <p className="h3 fw-bold text-dark ">{name}</p>
+          <p className="h3 fw-bold text-dark ">{nameHotel(name)}</p>
 
           <div>
             { ratingStars }
