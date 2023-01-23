@@ -37,13 +37,16 @@ const SearchBar = (props) => {
             <input
               type="text"
               placeholder="Write a name"
-              className={style.date}
+
+              className={style.dateSearchbar}
+
               onChange= {e => handleInputChange(e)}
             />
             <span className={style.iconIn}></span>
           </div>
           <div>
-            <select type="text" placeholder="Languages" className={style.date} onChange={e => {handleFilterByLanguage(e)}}>
+
+            <select type="text" placeholder="Languages" className={style.dateSearchbar} onChange={e => {handleFilterByLanguage(e)}}>
               <option value="All">Select a language</option>
               <option value="spanish">Spanish</option>
               <option value="russian">Russian</option>
@@ -55,10 +58,11 @@ const SearchBar = (props) => {
           </div>
 
           <select
-            className={style.containerInput}
+            className={style.optionStar}
             type="number"
-            placeholder="Adults"
+            
             min="0"
+
             onChange={e => {handleFilterByStars(e)}}
           >
             <option value="All">Number of stars</option>
@@ -67,6 +71,7 @@ const SearchBar = (props) => {
             <option value="3">3</option>
             <option value="4">4</option>
             <option value="5">5</option>
+
           </select>
 
           {/* <div className={style.containerInput}>

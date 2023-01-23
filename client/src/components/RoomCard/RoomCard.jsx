@@ -6,7 +6,7 @@ import styles from './RoomCard.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBed, faArrowRightLong, faStar } from '@fortawesome/free-solid-svg-icons'
 
-const RoomCard = ({ img, title, price, guest, description }) => {
+const RoomCard = ({ img, title, price, guest, description,id }) => {
 
     const star = 3;
     let stars = [];
@@ -39,7 +39,7 @@ const RoomCard = ({ img, title, price, guest, description }) => {
                 </Card.Text>
 
                 <Card.Text className="mb-5">
-                    <Link to='/detail' className={`text-decoration-none fs-5 text-danger fw-bold`}>
+                    <Link to={`/rooms/${id}`} className={`text-decoration-none fs-5 text-danger fw-bold`}>
                         Booking
                         <FontAwesomeIcon className="text-danger ms-2" icon={faArrowRightLong} />
                     </Link>

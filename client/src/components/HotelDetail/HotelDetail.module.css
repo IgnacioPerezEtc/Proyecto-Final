@@ -1,0 +1,76 @@
+.containerDetail {
+  margin-top: 60px;
+  font-family: "Roboto", sans-serif;
+  background-color: #fff;
+  width: 90vw;
+  margin: 0 auto;
+  margin-top: 40px;
+  box-shadow: 2px 0px 8px rgba(0, 0, 0, 0.15), 0px 2px 8px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+}
+
+.containerCard {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  align-items: center;
+}
+
+.nameHotel {
+  text-align: center;
+  font-size: 5.4rem;
+  color: var(--color-blue);
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+
+.containerImg {
+  margin-right: 80px;
+}
+
+.text {
+  display: flex;
+  padding-top: 10px;
+}
+
+.text p {
+  margin-right: 10px;
+}
+
+.nameDescription {
+  color: var(--color-blue);
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.content {
+  font-size: 2rem;
+  font-weight: lighter;
+}
+.languages {
+  display: flex;
+}
+
+.roomsTitle {
+  text-align: center;
+  font-size: 5.4rem;
+  color: var(--color-blue);
+  padding-top: 60px;
+  font-family: "Roboto", sans-serif;
+  padding-bottom: 50px;
+}
+
+.containerImg img {
+  width: 600px;
+  border-radius: 5px;
+}
+
+.textRooms {
+  color: var(--color-red);
+}
+
+
+.containerLoader{
+    display: flex;
+    justify-content: center;
+}

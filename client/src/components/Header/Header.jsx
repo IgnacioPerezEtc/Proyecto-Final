@@ -6,7 +6,7 @@ import SearchBarHotels from "../SearchBarHotels/SearchBarHotels.jsx";
 import bg from "../../assets/img/header2.jpg";
 import { useLocation } from "react-router-dom";
 const Header = () => {
-  const location=useLocation();
+  const location = useLocation();
   return (
     <div className="container-header">
       <div className="container-img">
@@ -30,16 +30,20 @@ const Header = () => {
             <h3 className="title-desc">On Hotel Booking Online</h3>
           </div>
         </div>
-        <div className="container-button">
-          <button>Booking Now</button>
-        </div>
+        {/* {((location.pathname === "/" || location.pathname === "/hotels") && (
+          <div className="container-button">
+            <button>Booking Now</button>
+          </div>
+        )) || (
+          <div className="container-button ">
+            <button>Home</button>
+          </div>
+        )} */}
       </div>
       <div>
-        {
-          location.pathname==="/"?<SearchBar />:<SearchBarHotels />
-        }
+        {location.pathname === "/" && <SearchBar />}
+        {location.pathname === "/hotels" && <SearchBarHotels />}
       </div>
-
     </div>
   );
 };

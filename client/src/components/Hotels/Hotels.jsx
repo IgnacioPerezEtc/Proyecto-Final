@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { HotelCard } from "../HotelCard/HotelCard.jsx";
 import Header from "../Header/Header.jsx";
 import Footer from "../Footer/Footer.jsx";
-
+import style from "./Hotels.module.css"
 
 const Hotels = () => {
   const dispatch = useDispatch();
@@ -19,9 +19,9 @@ const Hotels = () => {
     <div>
       <Header />
 
-      <div className="container-fluid d-flex justify-content-around flex-wrap gap-5">
-        {
-          allHotels.map((hotel) => {
+      {allHotels.length ? (
+        <div className="container-fluid d-flex justify-content-around flex-wrap gap-5">
+          {allHotels.map((hotel) => {
             return (
               <HotelCard
                 key={hotel.id}
@@ -36,7 +36,12 @@ const Hotels = () => {
               />
             );
           })}
-      </div>
+        </div>
+      ) : (
+        <div className={style.containerLoader}>
+          <img src="https://cdn.dribbble.com/users/118337/screenshots/3831581/building_loader.gif" />
+        </div>
+      )}
 
       <Footer />
     </div>

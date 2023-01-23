@@ -10,7 +10,7 @@ import { Provider } from "react-redux";
 
 import store from "./redux/store.js";
 import AboutUs from "./components/AboutUs/AboutUs.jsx";
-import Detail from "./components/Detail/Detail.jsx";
+import HotelDetail from "./components/HotelDetail/HotelDetail.jsx";
 import RoomDetail from "./components/RoomDetail/RoomDetail.jsx";
 // import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
@@ -21,11 +21,10 @@ function App() {
           <Routes>
             <Route path="/" element={<LandingPage />} />
             <Route path="/hotels" element={<Hotels />} />
-            <Route path="/hotels/:id" element={<Detail />} />
-            <Route path="/home" element={<Home />} />
+            <Route path="/hotels/:id" element={<HotelDetail />} />
             <Route path="/aboutUs" element={<AboutUs />} />
             <Route path="/form" element={<Form />} />
-            <Route path="/detail" element={<RoomDetail />} />
+            <Route path="/rooms/:id" element={<RoomDetail />} />
           </Routes>
         </div>
       </BrowserRouter>
