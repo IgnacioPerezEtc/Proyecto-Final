@@ -21,13 +21,13 @@
   float: left;
   font-size: 48px;
   margin-right: 10px;
-  font-weight: 700;
 }
 .desc-gallery {
   font-weight: 200;
   font-size: 1.6rem;
   line-height: 2.4rem;
   color: #747474;
+  line-height: 2rem;
 }
 .red {
   color: #d31b1b;
