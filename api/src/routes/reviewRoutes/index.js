@@ -1,12 +1,11 @@
 const { Router } = require('express');
-const { Commentary } = require('../../db');
-const { getReviews, postReview, putReview, deleteReview } = require('../../controllers/reviewController');
+const { getReview, postReview, putReview, deleteReview } = require('../../controllers/reviewController');
 
 const router = Router();
 
 router.get('/', async (req, res) => {
     try {
-        const reviews = await getReviews();
+        const reviews = await getReview();
         res.send(reviews);
         
     } catch (error) {

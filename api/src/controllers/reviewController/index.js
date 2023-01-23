@@ -1,11 +1,29 @@
-const { Commentary } = require('../../db');
+const { Commentary, User, Hotel } = require('../../db');
 
-async function getReviews() {};
+async function getReview() {
+    try {
+        const data = await Commentary.findAll();
+        return data;
+        
+    } catch (error) {
+        return error.message;
+    }
+};
 
-async function postReview() {};
+async function postReview(newReview) {
+    // try {
+    //     const createReview = await Commentary.create(newReview);
+    //     await createReview.addUsers(newReview.userId);
+    //     await createReview.addHotels(newReview.hotelId);
+    //     return createReview;
+        
+    // } catch (error) {
+    //     return error.message;
+    // }
+};
 
-async function putReview() {};
+async function putReview(id, info) {};
 
-async function deleteReview() {};
+async function deleteReview(id) {};
 
-module.exports = { getReviews, postReview, putReview, deleteReview };
+module.exports = { getReview, postReview, putReview, deleteReview };
