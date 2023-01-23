@@ -4,11 +4,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheck, faStar } from '@fortawesome/free-solid-svg-icons'
 
 
-export const HotelCard = ({ name, image, rating, languages, id }) => {
+export const HotelCard = ({ name, image, category, languages, id }) => {
   
-  let ratingStars = [];
-  for (let i = 0; i < rating; i++)
-  ratingStars.push(<FontAwesomeIcon className="fs-3 text-warning me-2" icon={faStar} />)
+  let categoryStars = [];
+  for (let i = 0; i < category; i++)
+  categoryStars.push(<FontAwesomeIcon className="fs-3 text-warning me-2" icon={faStar} />)
 
   let nameHotel = (name) => {
     let nombre = name.split(" ");
@@ -26,7 +26,7 @@ export const HotelCard = ({ name, image, rating, languages, id }) => {
           <p className="h3 fw-bold text-dark ">{nameHotel(name)}</p>
 
           <div>
-            { ratingStars }
+            { categoryStars }
           </div>
 
           <div className="my-5">
