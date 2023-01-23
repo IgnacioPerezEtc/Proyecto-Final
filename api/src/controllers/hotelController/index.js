@@ -56,7 +56,7 @@ module.exports = {
         const { name, rooms, location, description, parking, pictureHome, pictureDetail, rating, languages, category } = body;
         body.name = name.toLowerCase();
 
-        if (!name || !rooms || !location || !description || !parking || !pictureHome || !rating || !languages || !category) {
+        if (!name || !rooms || !location || !description || !pictureHome || !rating || !languages || !category) {
 
             throw new Error("Incomplete data")
 

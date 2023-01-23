@@ -35,7 +35,7 @@ module.exports = (sequelize) => {
 
     parking: {
       type: DataTypes.BOOLEAN,
-      allowNull: false
+      defaultValue: false,
     },
 
     pictureHome: {

@@ -45,7 +45,7 @@ const HotelDetail = () => {
 
               <div className={style.text}>
                 <p className={style.nameDescription}>Parking:</p>
-                <p className={style.content}>{hotelDetail.parking}</p>
+                <p className={style.content}>{hotelDetail.parking === true && <p>Yes</p> || <p>No</p>}</p>
               </div>
               <div className={style.text}>
                 <p className={style.nameDescription}>Rating:</p>

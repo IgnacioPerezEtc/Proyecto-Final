@@ -6,6 +6,7 @@ import { HotelCard } from "../HotelCard/HotelCard.jsx";
 import Header from "../Header/Header.jsx";
 import Footer from "../Footer/Footer.jsx";
 import style from "./Hotels.module.css"
+import "./Hotels.css"
 
 const Hotels = () => {
   const dispatch = useDispatch();

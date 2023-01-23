@@ -1,0 +1,11 @@
+.language{
+    color: #000;
+}
+
+.color-blue{
+    color: var(--color-blue);
+}
+
+.text-danger{
+    color: var(--color-red) !important;
+}
