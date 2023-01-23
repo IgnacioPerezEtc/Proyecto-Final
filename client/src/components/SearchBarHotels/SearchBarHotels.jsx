@@ -10,12 +10,12 @@ const SearchBar = (props) => {
             <input
               type="text"
               placeholder="Write a name"
-              className={style.date}
+              className={style.dateSearchbar}
             />
             <span className={style.iconIn}></span>
           </div>
           <div>
-            <select type="text" placeholder="Languages" className={style.date}>
+            <select type="text" placeholder="Languages" className={style.dateSearchbar}>
               <option value="">Select a language</option>
               <option value="">Spanish</option>
               <option value="">Rusian</option>
@@ -26,12 +26,13 @@ const SearchBar = (props) => {
           </div>
 
           <select
-            className={style.containerInput}
+            className={style.optionStar}
             type="number"
-            placeholder="Adults"
+            
             min="0"
+            
           >
-            <option value="">Number of stars</option>
+            <option  value="">Number of stars</option>
             <option value="">1</option>
             <option value="">2</option>
             <option value="">3</option>

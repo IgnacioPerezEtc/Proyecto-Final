@@ -5,8 +5,10 @@ import instagram from "../../assets/icons/instagram.svg";
 import twitter from "../../assets/icons/twitter.svg";
 import youtube from "../../assets/icons/youtube.svg";
 import { NavLink } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 const NavBar = (props) => {
+  const location = useLocation();
   return (
     <div className="container-navbar">
       <nav className="container-nav">
@@ -18,15 +20,24 @@ const NavBar = (props) => {
               </a>
             </li>
             <li>
-            <NavLink to={"/hotels"} className="link-landing">
+              <NavLink to={"/hotels"} className="link-landing">
                 Hotels
               </NavLink>
             </li>
-            <li>
-              <a href="#services" className="link-landing">
-                Services
-              </a>
-            </li>
+            {location.pathname === "/" ? (
+              <li>
+                <a href="#services" className="link-landing">
+                  Services
+                </a>
+              </li>
+            ) : (
+              <li>
+                <NavLink to={"/"} className="link-landing">
+                  Services
+                </NavLink>
+              </li>
+            )}
+
             <li>
               <NavLink to={"/aboutUs"} className="link-landing">
                 About Us
@@ -37,7 +48,7 @@ const NavBar = (props) => {
         <div>
           <ul className="ul-nav-redes">
             <li>
-              <a href="https:/www.instagram.com" target={"_blank"} >
+              <a href="https:/www.instagram.com" target={"_blank"}>
                 <button>
                   <img src={instagram} alt="logo instagram" />
                 </button>
@@ -58,7 +69,6 @@ const NavBar = (props) => {
               </a>
             </li>
             <li>
-        
               <a href="https:/www.twitter.com" target={"_blank"}>
                 <button>
                   <img src={twitter} alt="logo twitter" />
@@ -69,8 +79,6 @@ const NavBar = (props) => {
         </div>
       </nav>
     </div>
-
   );
-
 };
 export default NavBar;

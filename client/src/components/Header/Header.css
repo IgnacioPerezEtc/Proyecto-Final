@@ -9,7 +9,7 @@
 
 .container-title{
   position: absolute;
-  bottom: 300px;
+  top: 220px;
   left: 300px;
   animation: aparecerElemento 1s;
   transition: all 0.3s ease-out;
@@ -71,25 +71,8 @@
   font-size: 1.6rem;
   line-height: 1.9rem;
   cursor: pointer;
-  animation: pulse 1s infinite;
-  transition: all 0.3s ease-out;
 }
 
-
-@keyframes pulse {
-  0% {
-    transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(256, 256, 256, 0.1);
-  }
-  70% {
-    transform: scale(1);
-    box-shadow: 0 0 0 25px rgba(256, 256, 256, 0);
-  }
-  100% {
-    transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(256, 256, 256, 0);
-  }
-}
 
 @keyframes aparecerElemento {
   0% {

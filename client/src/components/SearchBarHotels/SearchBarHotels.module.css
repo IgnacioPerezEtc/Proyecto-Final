@@ -35,6 +35,18 @@ input[type="number"]::-webkit-outer-spin-button {
   margin: 5px; border-radius: 5px;
 }
 
+.optionStar{
+  display: flex;
+  justify-content: space-between;
+  width: 215px;
+  height: 45px;
+  padding-right: 8px;
+  background-color: #fff;
+  box-shadow: 0px 4px 4px #00000040;
+  margin: 5px; border-radius: 5px;
+  font-size: 1.4rem;
+}
+
 .containerInput input {
   width: 210px;
   border: none;
@@ -56,6 +68,27 @@ input[type="number"]::-webkit-outer-spin-button {
   cursor: text;
   border-radius: 5px;
 }
+
+.dateSearchbar{
+  width: 210px;
+  height: 45px;
+  background-size: 20px;
+  background-repeat: no-repeat;
+  background-position: 98%;
+  padding: 5px;
+  border: none;
+  outline: none;
+  cursor: text;
+  font-size: 1.4rem;
+  border-radius: 5px;
+  margin: 5px;
+}
+
+.dateSearchbar::placeholder{
+  text-align: start;
+  color: #000;
+}
+
 .date{
   margin: 5px;
 }
@@ -64,6 +97,7 @@ input[type="number"]::-webkit-outer-spin-button {
   cursor: pointer;
   
 }
+
 
 input:focus {
   outline: none;
