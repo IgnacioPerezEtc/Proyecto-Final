@@ -6,14 +6,14 @@ const Services = () => {
     <div className={style.containerService}  id="services">
       <div className={style.subcontainer}>
         <div className={style.titleContainer}>
-          <p className={style.blue}>Our</p>
-          <h1 className={style.red}>Service</h1>
+          <h2 className={style.blue}>Our</h2>
+          <h2 className={style.red}>Service</h2>
         </div>
-        <p className={style.descGallery}>
+        <p className={style.descService}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tempor
           viverra
         </p>
-        <p className={style.descGallery}>parturient diam sagittis nec cras.</p>
+        <p className={style.descService}>parturient diam sagittis nec cras.</p>
       </div>
       <div className={style.bodyService}>
         <div className={style.containerCards}>

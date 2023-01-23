@@ -12,7 +12,7 @@ import store from "./redux/store.js";
 import AboutUs from "./components/AboutUs/AboutUs.jsx";
 import Detail from "./components/Detail/Detail.jsx";
 import RoomDetail from "./components/RoomDetail/RoomDetail.jsx";
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
   return (
     <Provider store={store}>

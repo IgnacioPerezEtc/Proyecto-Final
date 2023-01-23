@@ -1,6 +1,5 @@
 .container {
   background-color: #e5e5e5;
-  width: 80vw;
   margin: 0 auto;
 }
 
@@ -22,17 +21,20 @@
   float: left;
   font-size: 48px;
   margin-right: 10px;
+  font-weight: 700;
 }
 .desc-gallery {
-  font-weight: lighter;
+  font-weight: 200;
   font-size: 1.6rem;
   line-height: 2.4rem;
+  color: #747474;
 }
 .red {
   color: #d31b1b;
   float: left;
   font-size: 48px;
   margin-right: 10px;
+  font-weight: 700;
 }
 
 .buttonContainer {

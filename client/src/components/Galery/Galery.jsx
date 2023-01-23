@@ -20,8 +20,8 @@ const Galery = () => {
     <div className="container">
       <div className="subcontainer">
         <div className="titleContainer">
-          <p className="blue">Our</p>
-          <h1 className="red">Gallery</h1>
+          <h2 className="blue">Our</h2>
+          <h2 className="red">Gallery</h2>
         </div>
         <p className="desc-gallery">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tempor

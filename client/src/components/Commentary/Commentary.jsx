@@ -7,14 +7,14 @@ const Commentary = () => {
     <div className={style.containerCommentary} id="services">
       <div className={style.subcontainer}>
         <div className={style.titleContainer}>
-          <p className={style.blue}>What</p>
-          <h1 className={style.red}> People Say </h1>
+          <h2 className={style.blue}>What</h2>
+          <h2 className={style.red}> People Say </h2>
         </div>
-        <p className={style.descGallery}>
+        <p className={style.descComment}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tempor
           viverra
         </p>
-        <p className={style.descGallery}>parturient diam sagittis nec cras.</p>
+        <p className={style.descComment}>parturient diam sagittis nec cras.</p>
       </div>
       <div className={style.containerComments}>
         <div className={style.flexUserComment}>
