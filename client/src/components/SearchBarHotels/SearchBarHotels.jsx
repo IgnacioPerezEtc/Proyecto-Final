@@ -1,7 +1,34 @@
 import React from "react";
+import { useState } from "react";
 import style from "./SearchBarHotels.module.css";
+import { filterByLanguage, filterByStars, getHotelByName } from "../../redux/actions";
+import { useDispatch } from "react-redux"
 
 const SearchBar = (props) => {
+
+  const dispatch = useDispatch();
+  const [name, setName] = useState("")
+
+  const handleFilterByLanguage = (e) => {
+    e.preventDefault();
+    dispatch(filterByLanguage(e.target.value))
+  };
+
+  const handleFilterByStars = (e) => {
+    e.preventDefault();
+    dispatch(filterByStars(e.target.value))
+  };
+
+  const handleInputChange = (e) => {
+    e.preventDefault();
+    setName(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch(getHotelByName(name));
+}
+
   return (
     <div className={style.flexContainer}>
       <div className={style.searchBar}>
@@ -10,17 +37,22 @@ const SearchBar = (props) => {
             <input
               type="text"
               placeholder="Write a name"
+
               className={style.dateSearchbar}
+
+              onChange= {e => handleInputChange(e)}
             />
             <span className={style.iconIn}></span>
           </div>
           <div>
-            <select type="text" placeholder="Languages" className={style.dateSearchbar}>
-              <option value="">Select a language</option>
-              <option value="">Spanish</option>
-              <option value="">Rusian</option>
-              <option value="">English</option>
-              <option value="">French</option>
+
+            <select type="text" placeholder="Languages" className={style.dateSearchbar} onChange={e => {handleFilterByLanguage(e)}}>
+              <option value="All">Select a language</option>
+              <option value="spanish">Spanish</option>
+              <option value="russian">Russian</option>
+              <option value="english">English</option>
+              <option value="french">French</option>
+              <option value="german">German</option>
             </select>
             <span className={style.iconOut}></span>
           </div>
@@ -30,14 +62,16 @@ const SearchBar = (props) => {
             type="number"
             
             min="0"
-            
+
+            onChange={e => {handleFilterByStars(e)}}
           >
-            <option  value="">Number of stars</option>
-            <option value="">1</option>
-            <option value="">2</option>
-            <option value="">3</option>
-            <option value="">4</option>
-            <option value="">5</option>
+            <option value="All">Number of stars</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+
           </select>
 
           {/* <div className={style.containerInput}>
@@ -51,7 +85,7 @@ const SearchBar = (props) => {
             <span className={style.iconChildren}></span>
           </div> */}
 
-          <button className={style.buttonSearchBar}>Booking Now</button>
+          <button className={style.buttonSearchBar} type="submit" onClick={e => handleSubmit(e)}>Booking Now</button>
         </div>
       </div>
     </div>

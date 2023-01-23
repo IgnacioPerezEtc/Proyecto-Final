@@ -28,7 +28,7 @@ const Hotels = () => {
                 id={hotel.id}
                 name={hotel.name}
                 image={hotel.pictureHome}
-                rating={hotel.rating}
+                category={hotel.category}
                 // languages={hotel.languages.map((language) => {
                 //   return <p>{language}</p>;
                 // })}
