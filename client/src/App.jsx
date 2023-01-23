@@ -18,8 +18,8 @@ function App() {
         <div className="App">
           <Routes>
             <Route path="/" element={<LandingPage />} />
-            <Route path="/hotels" element={<Hotels />} />
-            <Route path="/home" element={<Home />} />
+            <Route path="/hotels" element={<Hotels />} /> 
+            {/* <Route path="/home" element={<Home />} /> */}
             <Route path="/aboutUs" element={<AboutUs />} />
             <Route path="/form" element={<Form />} />
           </Routes>

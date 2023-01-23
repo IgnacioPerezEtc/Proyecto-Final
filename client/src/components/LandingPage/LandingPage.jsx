@@ -4,8 +4,7 @@ import Footer from "../Footer/Footer.jsx";
 import Header from "../Header/Header";
 import Services from "../Services/Services.jsx";
 import Galery from "../Galery/Galery";
-import Home from "../Home/Home";
-import Hotels from "../Hotels/Hotels";
+import Commentary from "../Commentary/Commentary";
 
 const LandingPage = (props) => {
   return (
@@ -13,6 +12,7 @@ const LandingPage = (props) => {
       <Header location={props.location} />
       <Services />
       <Galery />
+      <Commentary />
       <Footer />
     </div>
   );
