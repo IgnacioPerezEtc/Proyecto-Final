@@ -55,6 +55,9 @@ module.exports = {
     newHotel: async function (body) {
         const { name, rooms, location, description, parking, pictureHome, pictureDetail, rating, languages, category } = body;
         body.name = name.toLowerCase();
+        body.rooms = parseInt(rooms);
+        body.rating = parseFloat(rating);
+        body.category = parseInt (category);
 
         if (!name || !rooms || !location || !description || !pictureHome || !rating || !languages || !category) {
 

@@ -1,11 +1,13 @@
 const { Router } = require('express');
+const roomController = require('../../controllers/roomController');
 
 const router = Router();
 
 router.get ("/", async (req, res)=>{
 
     try {
-        return res.status(200).send("Traigo todos los rooms")
+        const result = await roomController.listRoom();
+        return res.status(200).json(result);
     } catch (error) {
         return res.status(404).send({error:error.message});
     }
@@ -17,9 +19,10 @@ const {id}=req.params;
 
 try {
     if (id){
-        res.status(200).send(`Traigo el room con id ${id}`)
+        const result = await roomController.detailRoom(id);
+        res.status(200).json(result);
     } else {
-       res.status (200).send(`necesito un id`)
+       throw new Error("Id is required");
     }
 } catch (error) {
     return res.status(404).send({error:error.message});
@@ -29,7 +32,8 @@ try {
 router.post ("/", async (req, res)=>{
 const newRoom= req.body;
 try {
-    return  res.status(200).send("Room created succesfully!");
+    const create = await roomController.newRoom(newRoom)
+    return  res.send(create);
 } catch (error) {
     return res.status(404).send({error:error.message});
 }
