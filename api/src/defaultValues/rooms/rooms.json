@@ -1,0 +1,15 @@
+[
+    {
+        "numRoom": 101,
+        "numPeople": 8,
+        "maxAdult": 8,
+        "maxChild": 4,
+        "specialties": [
+            "restaurant",
+            "pool"
+        ],
+        "availableDate": "2022-03-13",
+        "value": 5,
+        "hotelId": "PONERRRRRR"
+    }
+]
