@@ -14,10 +14,6 @@ const HotelDetail = () => {
     dispatch(getHotelById(id));
   }, []);
 
-  // const mayusString =()=>{
-
-  // }
-
   return (
     <div>
       <Header />
