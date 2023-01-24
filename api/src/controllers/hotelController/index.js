@@ -11,7 +11,7 @@ module.exports = {
         array = [...responseFromDB];
 
         if (name) {
-            let findHotel = array.filter(hotel => hotel.name === name.toLowerCase());
+            let findHotel = array.filter(hotel => hotel.name.includes(name.toLowerCase()));
 
             if (findHotel.length > 0) {
                 return findHotel;
@@ -38,7 +38,7 @@ module.exports = {
                 }
             })
 
-            responseFromDB.rooms = findRoomsByIdHotel;
+            responseFromDB.dataValues.showRooms = findRoomsByIdHotel;
 
             arrayDetail.push(responseFromDB);
 
