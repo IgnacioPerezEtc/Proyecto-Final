@@ -38,6 +38,10 @@ const HotelDetail = () => {
                 <p className={style.nameDescription}>Description: </p>
                 <p className={style.content}>{hotelDetail.description}</p>
               </div>
+              <div className={style.text}>
+                <p className={style.nameDescription}>Rooms: </p>
+                <p className={style.content}>{hotelDetail.rooms}</p>
+              </div>
 
               <div className={style.text}>
                 <p className={style.nameDescription}>Parking:</p>
@@ -74,7 +78,7 @@ const HotelDetail = () => {
             Rooms
             <p className={style.textRooms}>
               Aqui se veran las rooms de {hotelDetail.name}
-              {hotelDetail.rooms}
+              {hotelDetail.showRooms}
             </p>
           </h2>
         </div>
