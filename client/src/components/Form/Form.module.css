@@ -1,4 +1,28 @@
-.flexContainer{
-    display: flex;
-    flex-direction: column;
+.containerForm {
+  width: 1000px;
+  margin: 0 auto;
+  margin-top: 80px;
+  background-color: var(--color-blue);
+  text-align: center;
+}
+
+.flexContainer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.containerInput{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.containerInput input {
+  width: 200px;
+  height: 20px;
+
+}
+
+.containerInput label{
+    color: #fff;
 }
