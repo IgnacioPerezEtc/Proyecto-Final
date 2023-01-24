@@ -4,7 +4,8 @@ import {
   GET_HOTEL_BY_ID,
   GET_HOTEL_BY_NAME,
   FILTER_BY_LANGUAGE,
-  FILTER_BY_STARS
+  FILTER_BY_STARS,
+  ERROR,
 } from "./actions";
 
 const initialState = {
@@ -15,14 +16,20 @@ const initialState = {
 };
 
 const rootReducer = (state = initialState, action) => {
-  const allHotels = state.allHotels
+  const allHotels = state.allHotels;
 
   switch (action.type) {
     case GET_ALL_HOTELS: {
       return {
         ...state,
         hotels: action.payload,
-        allHotels: action.payload
+        allHotels: action.payload,
+      };
+    }
+    case ERROR: {
+      return {
+        ...state,
+        error: action.payload,
       };
     }
     case GET_HOTEL_BY_ID: {
@@ -39,21 +46,29 @@ const rootReducer = (state = initialState, action) => {
     }
 
     case FILTER_BY_LANGUAGE: {
-      const languageFiltered = action.payload === "All" ? allHotels : allHotels.filter(h => h.languages.find(languages => languages === action.payload));
+      const languageFiltered =
+        action.payload === "All"
+          ? allHotels
+          : allHotels.filter((h) =>
+              h.languages.find((languages) => languages === action.payload)
+            );
 
       return {
         ...state,
-        hotels: languageFiltered
-      }
+        hotels: languageFiltered,
+      };
     }
 
     case FILTER_BY_STARS: {
-      const starsFiltered = action.payload === "All" ? allHotels : allHotels.filter(h => h.category == action.payload);
+      const starsFiltered =
+        action.payload === "All"
+          ? allHotels
+          : allHotels.filter((h) => h.category == action.payload);
 
       return {
         ...state,
-        hotels: starsFiltered
-      }
+        hotels: starsFiltered,
+      };
     }
 
     case CREATE_HOTEL:
