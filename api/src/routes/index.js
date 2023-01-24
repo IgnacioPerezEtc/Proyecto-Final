@@ -9,6 +9,6 @@ const router = Router();
 router.use ('/hotels', routeHotel);
 router.use ('/reviews', routeReviews);
 router.use ('/user', routeUser);
-router.use ('/room', routeRoom);
+router.use ('/rooms', routeRoom);
 
 module.exports = router;
