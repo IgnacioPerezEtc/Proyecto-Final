@@ -2,9 +2,11 @@ import React from "react";
 import "./Header.css";
 import NavBar from "../NavBar/NavBar";
 import SearchBar from "../SearchBar/SearchBar";
+import SearchBarHotels from "../SearchBarHotels/SearchBarHotels.jsx";
 import bg from "../../assets/img/header2.jpg";
-
-const Header = (props) => {
+import { useLocation } from "react-router-dom";
+const Header = () => {
+  const location = useLocation();
   return (
     <div className="container-header">
       <div className="container-img">
@@ -28,14 +30,20 @@ const Header = (props) => {
             <h3 className="title-desc">On Hotel Booking Online</h3>
           </div>
         </div>
-        <div className="container-button">
-          <button>Booking Now</button>
-        </div>
+        {/* {((location.pathname === "/" || location.pathname === "/hotels") && (
+          <div className="container-button">
+            <button>Booking Now</button>
+          </div>
+        )) || (
+          <div className="container-button ">
+            <button>Home</button>
+          </div>
+        )} */}
       </div>
       <div>
-      <SearchBar/>
+        {location.pathname === "/" && <SearchBar />}
+        {location.pathname === "/hotels" && <SearchBarHotels />}
       </div>
-
     </div>
   );
 };

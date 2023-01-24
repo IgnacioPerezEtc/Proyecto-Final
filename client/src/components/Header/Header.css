@@ -9,8 +9,10 @@
 
 .container-title{
   position: absolute;
-  bottom: 260px;
+  top: 220px;
   left: 300px;
+  animation: aparecerElemento 1s;
+  transition: all 0.3s ease-out;
 }
 
 .name-hotel{
@@ -47,9 +49,10 @@
 
 .hr{
   width: 140px;
-  border-color: var(--color-red);
-  margin-left: 14px;
   border: 2px solid var(--color-red);
+  opacity: 1;
+  margin: 0;
+  margin-left: 14px;
 }
 
 .container-button{
@@ -68,4 +71,15 @@
   font-size: 1.6rem;
   line-height: 1.9rem;
   cursor: pointer;
+}
+
+
+@keyframes aparecerElemento {
+  0% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
 }

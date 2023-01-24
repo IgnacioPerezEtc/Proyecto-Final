@@ -1,0 +1,115 @@
+.containerCommentary {
+  min-width: 70vw;
+  max-width: 80vw;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  font-family: "Roboto", sans-serif;
+}
+
+.subcontainer {
+  text-align: center;
+  margin-bottom: 12px;
+  color: #747474;
+}
+
+.titleContainer {
+  justify-content: center;
+  padding-top: 30px;
+  padding-bottom: 10px;
+  display: flex;
+}
+
+.blue {
+  color: var(--color-blue);
+  float: left;
+  font-size: 48px;
+  margin-right: 10px;
+  font-weight: 400;
+}
+.descComment {
+    font-family: "Roboto", sans-serif;
+    font-weight: 200;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    color: #747474;
+    line-height: 2rem;
+}
+.red {
+  color: #d31b1b;
+  float: left;
+  font-size: 48px;
+  margin-right: 10px;
+  font-weight: 700;
+}
+
+.flexUserComment{
+text-align: center;
+}
+
+.flexUserComment img{
+    margin-top: 20px;
+}
+
+.flexUserComment h2{
+    margin-top: 12px;
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: var(--color-blue);
+}
+.flexUserComment h3{
+    margin-top: 12px;
+    color: grey;
+    font-size: 1.6rem;
+    font-weight: lighter;
+}
+
+.containerCards {
+  width: 360px;
+  /* height: 140px; */
+  /* padding: 20px; */
+  background-color: #fff;
+  box-shadow: 2px 2px 0px 0px #00000026;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+}
+.containerCards span {
+  padding-top: 20px;
+  letter-spacing: 8px;
+  font-size: 2rem;
+  color: var(--color-red);
+}
+
+.title {
+  color: #001d32;
+  text-align: start;
+  margin-left: 35px;
+  margin-bottom: 30px;
+}
+.paraf {
+  text-align: center;
+  font-weight: lighter;
+  font-size: 1.6rem;
+  padding-left: 12px;
+  padding-right: 12px;
+  color: #333333;
+}
+
+.containerComments {
+  margin-top: 60px;
+  display: flex;
+  justify-content: center;
+  justify-content: space-evenly;
+}
+
+.arrow {
+  background-image: url("../../../src/assets/icons/arrow-comment.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 100%;
+  position: relative;
+  top: 15px;
+}

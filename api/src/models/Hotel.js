@@ -15,7 +15,7 @@ module.exports = (sequelize) => {
       }
     },
 
-    room: {
+    rooms: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
@@ -35,11 +35,12 @@ module.exports = (sequelize) => {
 
     parking: {
       type: DataTypes.BOOLEAN,
-      allowNull: false
+      defaultValue: false,
     },
 
     pictureHome: {
       type: DataTypes.STRING,
+      allowNull: false,
       validate: { isUrl: true }
     },
 
@@ -69,7 +70,12 @@ module.exports = (sequelize) => {
         min: 0,
         max: 5
       }
-    }
+    },
+    phone: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: { len: [8, 16] }
+    },
   },
     { timestamps: false }
   )

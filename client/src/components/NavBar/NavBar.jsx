@@ -4,36 +4,47 @@ import facebook from "../../assets/icons/facebook.svg";
 import instagram from "../../assets/icons/instagram.svg";
 import twitter from "../../assets/icons/twitter.svg";
 import youtube from "../../assets/icons/youtube.svg";
+import { NavLink } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 const NavBar = (props) => {
+  const location = useLocation();
   return (
     <div className="container-navbar">
       <nav className="container-nav">
         <div>
           <ul className="ul-nav">
             <li>
-              <a href="" className="link-landing">
+              <a href="/" className="link-landing">
                 Home
               </a>
             </li>
             <li>
-              <a href="" className="link-landing">
+              <NavLink to={"/hotels"} className="link-landing">
                 Hotels
-              </a>
+              </NavLink>
             </li>
+            {location.pathname === "/" ? (
+              <li>
+                <a href="#services" className="link-landing">
+                  Services
+                </a>
+              </li>
+            ) : (
+              <li>
+                <NavLink to={"/"} className="link-landing">
+                  Services
+                </NavLink>
+              </li>
+            )}
+
             <li>
-              <a href="" className="link-landing">
-                Services
-              </a>
-            </li>
-            <li>
-              <a href="" className="link-landing">
+              <NavLink to={"/aboutUs"} className="link-landing">
                 About Us
-              </a>
+              </NavLink>
             </li>
           </ul>
         </div>
-
         <div>
           <ul className="ul-nav-redes">
             <li>
@@ -64,7 +75,6 @@ const NavBar = (props) => {
                 </button>
               </a>
             </li>
-
           </ul>
         </div>
       </nav>
