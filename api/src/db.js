@@ -45,7 +45,8 @@ Room.belongsToMany(User, { through: Reservation, timestamps: false });
 User.belongsToMany(Hotel,{ through: Commentary, timestamps:false });
 Hotel.belongsToMany(User, {through: Commentary, timestamps:false });
 
-Hotel.hasMany(Room, {as:"hotelId", foreignKey:"hotelId"});
+Hotel.hasMany(Room, {as:"showRooms", foreignKey:"hotelId"});
+Room.belongsTo(Hotel);
 
 module.exports = {
   ...sequelize.models,

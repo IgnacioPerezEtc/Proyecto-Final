@@ -6,7 +6,9 @@ module.exports = {
     listRoom: async function () {
         let array = [];
 
-        let infoDb = await Room.findAll();
+        let infoDb = await Room.findAll({ include: {
+            model: Hotel
+        }});
         
         array = [...infoDb];
 
@@ -22,13 +24,13 @@ module.exports = {
 
         id = parseInt(id);
 
-        let infoDb = await Room.findByPk(id);
+        let infoDb = await Room.findByPk(id, {
+            include: {
+                model: Hotel
+            }
+        });
         
         if (infoDb.numRoom) {
-            
-            let findHotelById = await Hotel.findByPk(infoDb.hotelId);   
-            
-            infoDb.dataValues.currentHotel = findHotelById;
 
             arrayDetail.push(infoDb);
 
