@@ -41,7 +41,7 @@ const Header = () => {
         )} */}
       </div>
       <div>
-        {location.pathname === "/" && <SearchBar />}
+        {location.pathname === "/home" && <SearchBar />}
         {location.pathname === "/hotels" && <SearchBarHotels />}
       </div>
     </div>
