@@ -79,7 +79,8 @@ const HotelDetail = () => {
           <h2 className={style.roomsTitle}>
             Rooms
             <div className={style.textRooms}>
-              Aqui se veran las rooms de {hotelDetail.name}
+              <p>Aqui se veran las rooms de {hotelDetail.name}</p>
+              
               {hotelDetail.showRooms?.map((showRoom) => {
                 return (
                   <div key={showRoom.id}>
@@ -88,6 +89,7 @@ const HotelDetail = () => {
                     <h3>Number of people</h3>
                     <p>{showRoom.numPeople}</p>
                     <h3>Max adults</h3>
+                    <img src={showRoom.pictureHome} alt="" width={"200px"} height={"150px"}/>
                     <p>{showRoom.maxAdult}</p>
                     <h3>Max child</h3>
                     <p>{showRoom.maxChild}</p>

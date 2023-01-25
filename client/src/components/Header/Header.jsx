@@ -23,9 +23,6 @@ const Header = () => {
           <div className="div-name">
             <hr className="hr" />
           </div>
-          <div className="div-off">
-            <h2 className="title-off">Up to 60% OFF</h2>
-          </div>
           <div className="div-desc">
             <h3 className="title-desc">On Hotel Booking Online</h3>
           </div>

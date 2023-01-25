@@ -6,12 +6,14 @@ import {
   FILTER_BY_LANGUAGE,
   FILTER_BY_STARS,
   ERROR,
+  GET_ROOMS,
 } from "./actions";
 
 const initialState = {
   hotels: [],
   allHotels: [],
   hotelDetail: {},
+  rooms: [],
   error: false,
 };
 
@@ -73,6 +75,12 @@ const rootReducer = (state = initialState, action) => {
 
     case CREATE_HOTEL:
       return { ...state };
+
+    case GET_ROOMS:
+      return {
+        ...state,
+        rooms: action.payload,
+      };
 
     default:
       return { ...state };

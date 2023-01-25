@@ -1,6 +1,10 @@
 .Card {
-    width: 320px;
-    height: 497px;
+    width: 300px;
+}
+
+.img{
+    height: 200px;
+    width: 100%;
 }
 
 

@@ -8,6 +8,8 @@ export const ERROR = "ERROR";
 export const FILTER_BY_LANGUAGE = "FILTER_BY_LANGUAGE";
 export const FILTER_BY_STARS = "FILTER_BY_STARS";
 
+// *********************** SECCION HOTELS ************************
+
 export function getAllHotels() {
   return async function (dispatch) {
     try {
@@ -71,12 +73,7 @@ export function createHotel(data) {
     return json;
   };
 }
-export function createRoom(data) {
-  return async function () {
-    const json = await axios.post("http://localhost:3001/rooms", data);
-    return json;
-  };
-}
+
 export const filterByLanguage = (payload) => {
   return {
     type: FILTER_BY_LANGUAGE,
@@ -88,5 +85,46 @@ export const filterByStars = (payload) => {
   return {
     type: FILTER_BY_STARS,
     payload,
+  };
+};
+
+// *********************** SECCION ROOMS ************************
+export const GET_ROOMS = "GET_ROOMS";
+export const CREATE_ROOM = "CREATE_ROOM";
+
+export function createRoom(data) {
+  return async function () {
+    const json = await axios.post("http://localhost:3001/rooms", data);
+    return json;
+  };
+}
+
+// try {
+//   const json = await axios.get("http://localhost:3001/hotels");
+//   return dispatch({
+//     type: GET_ALL_HOTELS,
+//     payload: json.data,
+//   });
+// } catch (error) {
+//   return dispatch({
+//     type: ERROR,
+//     payload: "hotels couldn't be loaded",
+//   });
+// }
+
+export const getRooms = () => {
+  return async (dispatch) => {
+    try {
+      const response = await axios.get("http://localhost:3001/rooms");
+      return dispatch({
+        type: GET_ROOMS,
+        payload: response.data,
+      });
+    } catch (error) {
+      return dispatch({
+        type: ERROR,
+        payload: "Rooms couldn't be loaded",
+      });
+    }
   };
 };
