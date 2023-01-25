@@ -29,16 +29,14 @@ module.exports = {
 
         id = parseInt(id);
 
-        let responseFromDB = await Hotel.findByPk(id);
+        let responseFromDB = await Hotel.findByPk(id, {
+            include: {
+                model: Room,
+                as: "showRooms"
+            },
+        });
 
         if (responseFromDB.name) {
-            let findRoomsByIdHotel = await Room.findAll({
-                where: {
-                    hotelId: id,
-                }
-            })
-
-            responseFromDB.dataValues.showRooms = findRoomsByIdHotel;
 
             arrayDetail.push(responseFromDB);
 
