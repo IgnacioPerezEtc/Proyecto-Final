@@ -15,7 +15,7 @@ const NavBar = (props) => {
         <div>
           <ul className="ul-nav">
             <li>
-              <a href="/" className="link-landing">
+              <a href="/home" className="link-landing">
                 Home
               </a>
             </li>
@@ -24,7 +24,7 @@ const NavBar = (props) => {
                 Hotels
               </NavLink>
             </li>
-            {location.pathname === "/" ? (
+            {location.pathname === "/home" ? (
               <li>
                 <a href="#services" className="link-landing">
                   Services
@@ -32,7 +32,7 @@ const NavBar = (props) => {
               </li>
             ) : (
               <li>
-                <NavLink to={"/"} className="link-landing">
+                <NavLink to={"/home"} className="link-landing">
                   Services
                 </NavLink>
               </li>
