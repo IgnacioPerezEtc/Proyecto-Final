@@ -45,7 +45,9 @@ const HotelDetail = () => {
 
               <div className={style.text}>
                 <p className={style.nameDescription}>Parking:</p>
-                <p className={style.content}>{hotelDetail.parking === true && <p>Yes</p> || <p>No</p>}</p>
+                <p className={style.content}>
+                  {(hotelDetail.parking === true && <p>Yes</p>) || <p>No</p>}
+                </p>
               </div>
               <div className={style.text}>
                 <p className={style.nameDescription}>Rating:</p>
@@ -76,10 +78,33 @@ const HotelDetail = () => {
           </div>
           <h2 className={style.roomsTitle}>
             Rooms
-            <p className={style.textRooms}>
+            <div className={style.textRooms}>
               Aqui se veran las rooms de {hotelDetail.name}
-              {hotelDetail.showRooms}
-            </p>
+              {hotelDetail.showRooms?.map((showRoom) => {
+                return (
+                  <div key={showRoom.id}>
+                    <h3>Number of rooms</h3>
+                    <p>{showRoom.numRoom}</p>
+                    <h3>Number of people</h3>
+                    <p>{showRoom.numPeople}</p>
+                    <h3>Max adults</h3>
+                    <p>{showRoom.maxAdult}</p>
+                    <h3>Max child</h3>
+                    <p>{showRoom.maxChild}</p>
+                    <h3>Specialties</h3>
+                    <div>
+                      {showRoom.specialties?.map((specialtie) => {
+                        <p>{specialtie}</p>;
+                      })}
+                    </div>
+                    <h3>Available Date</h3>
+                    <p>{showRoom.availableDate}</p>
+                    <h3>Value</h3>
+                    <p>{showRoom.value}</p>
+                  </div>
+                );
+              })}
+            </div>
           </h2>
         </div>
       )) || (

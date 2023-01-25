@@ -71,7 +71,12 @@ export function createHotel(data) {
     return json;
   };
 }
-
+export function createRoom(data) {
+  return async function () {
+    const json = await axios.post("http://localhost:3001/rooms", data);
+    return json;
+  };
+}
 export const filterByLanguage = (payload) => {
   return {
     type: FILTER_BY_LANGUAGE,
