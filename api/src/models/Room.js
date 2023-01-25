@@ -14,6 +14,17 @@ module.exports = (sequelize) => {
             allowNull: false
         },
 
+        pictureHome: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: { isUrl: true }
+        },
+
+        pictureDetail: {
+            type: DataTypes.ARRAY(DataTypes.STRING),
+            validate: { isUrl: true }
+        },
+
         numPeople: {
             type: DataTypes.INTEGER,
             allowNull: false,
