@@ -9,6 +9,7 @@ import AboutUs from "./components/AboutUs/AboutUs.jsx";
 import HotelDetail from "./components/HotelDetail/HotelDetail.jsx";
 import RoomDetail from "./components/RoomDetail/RoomDetail.jsx";
 // import 'bootstrap/dist/css/bootstrap.min.css';
+import FormHotels from "./components/FormHotels/FormHotels.jsx";
 function App() {
   return (
     <Provider store={store}>
@@ -21,6 +22,7 @@ function App() {
             <Route path="/aboutUs" element={<AboutUs />} />
             <Route path="/form" element={<Form />} />
             <Route path="/rooms/:id" element={<RoomDetail />} />
+            <Route path="/formHotels" element={<FormHotels />} />
           </Routes>
         </div>
       </BrowserRouter>
