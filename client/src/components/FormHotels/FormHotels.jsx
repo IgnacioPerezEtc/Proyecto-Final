@@ -69,8 +69,6 @@ const FormHotels = () => {
   };
 
   const onSubmit = (event) => {
-    console.log(event);
-    console.log(input);
     dispatch(createHotel(input));
     alert("The Hotel was created successfully");
     setInput({
@@ -271,12 +269,14 @@ const FormHotels = () => {
               <div className={style.containerSelect}>
                 <label>Languages</label>
                 <select
+                  defaultValue="title"
                   {...register("languages", {
                     onChange: (e) => {
                       handleSelect(e);
                     },
                   })}
                 >
+                  <option value="title" disabled name=""></option>
                   {languages.map((language, index) => {
                     return <option key={index}>{language}</option>;
                   })}
@@ -303,7 +303,7 @@ const FormHotels = () => {
           <div className={style.containerCheckbox}>
             <label>Parking</label>
             <input
-            className={style.checkBox}
+              className={style.checkBox}
               type="checkbox"
               {...register("parking")}
               onClick={(e) => {
@@ -312,7 +312,9 @@ const FormHotels = () => {
             />
           </div>
           <div className={style.containerSend}>
-            <button className={style.buttonCreate} type="submit">Create</button>
+            <button className={style.buttonCreate} type="submit">
+              Create
+            </button>
           </div>
         </form>
       </div>
