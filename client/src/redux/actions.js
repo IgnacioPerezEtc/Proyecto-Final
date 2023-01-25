@@ -19,7 +19,7 @@ export function getAllHotels() {
     } catch (error) {
       return dispatch({
         type: ERROR,
-        payload: "No se han cargado los hotels",
+        payload: "hotels couldn't be loaded",
       });
     }
   };
@@ -42,7 +42,7 @@ export function getHotelById(id) {
     } catch (error) {
       return dispatch({
         type: ERROR,
-        payload: "No se ha encontrado el hotel con ese id",
+        payload: "The hotel with that id hasn't been found",
       });
     }
   };
@@ -59,7 +59,7 @@ export const getHotelByName = (name) => {
     } catch (error) {
       return dispatch({
         type: ERROR,
-        payload: "No existe el hotel con ese nombre",
+        payload: "The hotel with that name hasn't been found",
       });
     }
   };
@@ -70,18 +70,18 @@ export function createHotel(data) {
     const json = await axios.post("http://localhost:3001/hotels", data);
     return json;
   };
-};
+}
 
 export const filterByLanguage = (payload) => {
   return {
     type: FILTER_BY_LANGUAGE,
-    payload
-  }
+    payload,
+  };
 };
 
 export const filterByStars = (payload) => {
   return {
     type: FILTER_BY_STARS,
-    payload
-  }
-}
+    payload,
+  };
+};
