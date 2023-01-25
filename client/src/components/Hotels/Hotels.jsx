@@ -8,6 +8,7 @@ import Footer from "../Footer/Footer.jsx";
 import Error from "../Error/Error.jsx";
 import style from "./Hotels.module.css";
 import "./Hotels.css";
+import { NavLink } from "react-router-dom";
 
 const Hotels = () => {
   const dispatch = useDispatch();
@@ -22,7 +23,11 @@ const Hotels = () => {
       {error ? (
         <Error />
       ) : (
-        <div>
+        <div className={style.containerHotels}>
+          <NavLink to={"/form"}>
+            <button className={style.createHotel}>Create Hotel</button>
+          </NavLink>
+
           {allHotels.length ? (
             <div className="container-fluid d-flex justify-content-around flex-wrap gap-5">
               {allHotels.map((hotel) => {
