@@ -1,7 +1,6 @@
 import { Route, BrowserRouter, Routes } from "react-router-dom";
 import LandingPage from "./components/LandingPage/LandingPage.jsx";
 import "./App.css";
-import Form from "./components/Form/Form.jsx";
 import Hotels from "./components/Hotels/Hotels.jsx";
 import { Provider } from "react-redux";
 import store from "./redux/store.js";
@@ -20,7 +19,7 @@ function App() {
             <Route path="/hotels" element={<Hotels />} />
             <Route path="/hotels/:id" element={<HotelDetail />} />
             <Route path="/aboutUs" element={<AboutUs />} />
-            <Route path="/form" element={<Form />} />
+            <Route path="/form" element={<FormHotels />} />
             <Route path="/rooms/:id" element={<RoomDetail />} />
             <Route path="/formHotels" element={<FormHotels />} />
           </Routes>
