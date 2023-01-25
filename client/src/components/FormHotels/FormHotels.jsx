@@ -274,7 +274,7 @@ const FormHotels = () => {
                     onChange: (e) => {
                       handleSelect(e);
                     },
-                  })}
+                  })} disabled={input.languages.length === 5}
                 >
                   <option value="title" disabled name=""></option>
                   {languages.map((language, index) => {
