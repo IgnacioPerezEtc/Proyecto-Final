@@ -3,7 +3,7 @@ import style from "./Footer.module.css";
 import icon from "./img/icon.png";
 import message from "../../assets/img/message.png";
 import mobile from "../../assets/img/mobile.png";
-import location from "./img/location.png";
+import location from "../../assets/img/location.png";
 import facebook from "../../assets/icons/facebook.svg";
 import instagram from "../../assets/icons/instagram.svg";
 import twitter from "../../assets/icons/twitter.svg";
