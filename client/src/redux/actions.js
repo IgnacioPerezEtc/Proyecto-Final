@@ -13,7 +13,7 @@ export const FILTER_BY_STARS = "FILTER_BY_STARS";
 export function getAllHotels() {
   return async function (dispatch) {
     try {
-      const json = await axios.get("http://localhost:3001/hotels");
+      const json = await axios.get("/hotels");
       return dispatch({
         type: GET_ALL_HOTELS,
         payload: json.data,
@@ -36,7 +36,7 @@ export function setError(payload) {
 export function getHotelById(id) {
   return async function (dispatch) {
     try {
-      const json = await axios.get(`http://localhost:3001/hotels/${id}`);
+      const json = await axios.get(`/hotels/${id}`);
       return dispatch({
         type: GET_HOTEL_BY_ID,
         payload: json.data.pop(),
@@ -53,7 +53,7 @@ export function getHotelById(id) {
 export const getHotelByName = (name) => {
   return async (dispatch) => {
     try {
-      const json = await axios.get(`http://localhost:3001/hotels?name=${name}`);
+      const json = await axios.get(`/hotels?name=${name}`);
       return dispatch({
         type: GET_HOTEL_BY_NAME,
         payload: json.data,
@@ -69,7 +69,7 @@ export const getHotelByName = (name) => {
 
 export function createHotel(data) {
   return async function (dispatch) {
-    const json = await axios.post("http://localhost:3001/hotels", data);
+    const json = await axios.post("/hotels", data);
     return json;
   };
 }
@@ -94,13 +94,13 @@ export const CREATE_ROOM = "CREATE_ROOM";
 
 export function createRoom(data) {
   return async function () {
-    const json = await axios.post("http://localhost:3001/rooms", data);
+    const json = await axios.post("/rooms", data);
     return json;
   };
 }
 
 // try {
-//   const json = await axios.get("http://localhost:3001/hotels");
+//   const json = await axios.get("/hotels");
 //   return dispatch({
 //     type: GET_ALL_HOTELS,
 //     payload: json.data,
@@ -115,7 +115,7 @@ export function createRoom(data) {
 export const getRooms = () => {
   return async (dispatch) => {
     try {
-      const response = await axios.get("http://localhost:3001/rooms");
+      const response = await axios.get("/rooms");
       return dispatch({
         type: GET_ROOMS,
         payload: response.data,

@@ -8,10 +8,12 @@ import AboutUs from "./components/AboutUs/AboutUs.jsx";
 import HotelDetail from "./components/HotelDetail/HotelDetail.jsx";
 import RoomDetail from "./components/RoomDetail/RoomDetail.jsx";
 // import 'bootstrap/dist/css/bootstrap.min.css';
+import axios from "axios";
 import Login from "./components/Login/Login.jsx";
 import FormHotels from "./components/FormHotels/FormHotels.jsx";
 import FormRooms from "./components/FormRooms/FormRooms.jsx";
 import Booking from "./components/Booking/Booking.jsx";
+axios.defaults.baseURL = "http://localhost:3001/";
 function App() {
   return (
     <Provider store={store}>
