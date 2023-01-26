@@ -71,7 +71,7 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 .dateSearchbar {
-  width: 500px;
+  width: 730px;
   height: 50px;
   background-size: 20px;
   background-repeat: no-repeat;
@@ -111,8 +111,8 @@ input:focus {
   color: #000;
 }
 .buttonSearchBar {
-  width: 154px;
-  height: 48px;
+  width: 164px;
+  height: 50px;
   background-color: var(--color-red);
   border: 1px solid transparent;
   border-radius: 5px;
