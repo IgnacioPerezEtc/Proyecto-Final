@@ -53,27 +53,60 @@ const SearchBar = (props) => {
               Booking Now
             </button>
           </div>
+
+
+          
+
+          {/* <div className={style.containerInput}>
+            <input
+              type="number"
+              placeholder="Children"
+              className={style.pl}
+              min="0"
+            />
+
+            <span className={style.iconChildren}></span>
+          </div> */}
+
+          <button
+            className={style.buttonSearchBar}
+            type="submit"
+            onClick={(e) => handleSubmit(e)}
+          >
+            Booking Now
+          </button>
+        </div>
         </div>
       </div>
       <div>
         <span className={style.iconOut}></span>
       </div>
       <div className={style.flexContainer}>
-        <select
-          className={style.optionStar}
-          type="number"
-          min="0"
-          onChange={(e) => {
-            handleFilterByStars(e);
-          }}
-        >
-           <option value="All">Number of stars</option>
-            <option value="1">⭐</option>
-            <option value="2">⭐⭐</option>
-            <option value="3">⭐⭐⭐</option>
-            <option value="4">⭐⭐⭐⭐</option>
-            <option value="5">⭐⭐⭐⭐⭐</option>
-        </select>
+<select
+            className={style.optionStar}
+            type="number"
+            min="0"
+            onChange={(e) => {
+              handleFilterByStars(e);
+            }}
+          >
+            <option value="All">Number of stars</option>
+            <option className={style.starRed} value="1">
+              ★
+            </option>
+            <option className={style.starRed} value="2">
+              ★★
+            </option>
+            <option className={style.starRed} value="3">
+              ★★★
+            </option>
+            <option className={style.starRed} value="4">
+              ★★★★
+            </option>
+            <option className={style.starRed} value="5">
+              ★★★★★
+            </option>
+          </select>
         <select
           type="text"
           placeholder="Languages"

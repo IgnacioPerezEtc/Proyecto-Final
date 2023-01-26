@@ -1,10 +1,13 @@
 .Card {
   width: 320px;
+  border: none;
 }
 
 .img {
   height: 200px;
   width: 100%;
+  padding: 4px;
+  border-radius: 8px;
 }
 
 .Text {
@@ -18,8 +21,28 @@
 
 .childAdultsContainer {
   display: flex;
+  text-align: center;
 }
 
-.titleContent {
-  padding-right: 8px;
+.paddingMax{
+  padding-left: 8px;
+}
+
+.iconAdults {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-image: url("../../assets/icons/adult.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.iconChildren {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-image: url("../../assets/icons/children.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
 }

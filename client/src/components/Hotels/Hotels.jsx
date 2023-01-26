@@ -25,6 +25,11 @@ const Hotels = () => {
       ) : (
         <div className={style.containerHotels}>
 
+          <NavLink to={"/formHotels"}>
+            <button className={style.createHotel}>Create Hotel</button>
+          </NavLink>
+
+
           {allHotels.length ? (
             <div className="container-fluid d-flex justify-content-around flex-wrap gap-5">
               {allHotels.map((hotel) => {
