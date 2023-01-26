@@ -1,30 +1,36 @@
 import { Route, BrowserRouter, Routes } from "react-router-dom";
-import Home from "./components/Home/Home.jsx";
 import LandingPage from "./components/LandingPage/LandingPage.jsx";
 import "./App.css";
-import NavBar from "./components/NavBar/NavBar.jsx";
-import Form from "./components/Form/Form.jsx";
 import Hotels from "./components/Hotels/Hotels.jsx";
 import { Provider } from "react-redux";
-
-
 import store from "./redux/store.js";
 import AboutUs from "./components/AboutUs/AboutUs.jsx";
 import HotelDetail from "./components/HotelDetail/HotelDetail.jsx";
 import RoomDetail from "./components/RoomDetail/RoomDetail.jsx";
 // import 'bootstrap/dist/css/bootstrap.min.css';
+import axios from "axios";
+import Login from "./components/Login/Login.jsx";
+import FormHotels from "./components/FormHotels/FormHotels.jsx";
+import FormRooms from "./components/FormRooms/FormRooms.jsx";
+import Booking from "./components/Booking/Booking.jsx";
+axios.defaults.baseURL = "http://localhost:3001/";
+//
 function App() {
   return (
     <Provider store={store}>
       <BrowserRouter>
         <div className="App">
           <Routes>
-            <Route path="/" element={<LandingPage />} />
+            <Route path={"/"} element={<Login />} />
+            <Route path={"/signUp"} element={<Login />} />
+            <Route path="/home" element={<LandingPage />} />
             <Route path="/hotels" element={<Hotels />} />
             <Route path="/hotels/:id" element={<HotelDetail />} />
             <Route path="/aboutUs" element={<AboutUs />} />
-            <Route path="/form" element={<Form />} />
+            <Route path="/formRoom" element={<FormRooms />} />
             <Route path="/rooms/:id" element={<RoomDetail />} />
+            <Route path="/formHotels" element={<FormHotels />} />
+            <Route path="/Booking" element={<Booking />} />
           </Routes>
         </div>
       </BrowserRouter>

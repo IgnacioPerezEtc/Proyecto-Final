@@ -1,0 +1,142 @@
+[
+    {
+        "name": "la piña",
+        "rooms": 30,
+        "location": "under the sea, Pacific Ocean",
+        "description": "Come sleep in a pineapple under the sea. REQUIREMENT: Hold your breath. OPTIONAL: Being alive",
+        "parking": false,
+        "pictureHome": "https://cdn.upsocl.com/wp-content/uploads/2020/03/0000-131.jpg",
+        "rating": 5,
+        "languages": [
+            "spanish",
+            "english",
+            "french"
+        ],
+        "category": 5,
+        "phone": "+549862659631"
+    },
+    {
+        "name": "carmona hotel",
+        "rooms": 30,
+        "location": "Colombia, Cali",
+        "description": "The best meals and beds in town",
+        "parking": true,
+        "pictureHome": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/329912073.jpg?k=f3bd32b917cdf897fd6013265a4fd8449964353d649e4aa99a7d2ec39ebf15d6&o=&hp=1",
+        "rating": 5,
+        "languages": [
+            "spanish",
+            "english",
+            "french"
+        ],
+        "category": 5,
+        "phone": "+579862659631"
+    },
+    {
+        "name": "perez",
+        "rooms": 30,
+        "location": "Argentina, Villa gesell",
+        "description": "We dance until 10am",
+        "parking": true,
+        "pictureHome": "https://media-cdn.tripadvisor.com/media/photo-s/25/04/93/1e/blossom-hotel-houston.jpg",
+        "rating": 5,
+        "languages": [
+            "spanish",
+            "english",
+            "french"
+        ],
+        "category": 5,
+        "phone": "+549862659631"
+    },
+    {
+        "name": "roman",
+        "rooms": 30,
+        "location": "Buenos Aires, Argentina",
+        "description": "Place to schedule quietly.",
+        "parking": true,
+        "pictureHome": "https://media.staticontent.com/media/pictures/68e2e598-6dec-4fce-bc9e-9b5c79fb97b0/853x380",
+        "rating": 1,
+        "languages": [
+            "spanish",
+            "french"
+        ],
+        "category": 3,
+        "phone": "+549202659641"
+    },
+    {
+        "name": "arias hotel",
+        "rooms": 70,
+        "location": "Medellin, Colombia",
+        "description": "Modern, nice, family friendly, wifi, restaurant",
+        "parking": true,
+        "pictureHome": "https://cloudfront-us-east-1.images.arcpublishing.com/infobae/MQN7YYRIQZBPBHHI6J6TRKFLR4.jpg",
+        "rating": 5,
+        "languages": [
+            "spanish",
+            "russian",
+            "german"
+        ],
+        "category": 5,
+        "phone": "+573145691458"
+    },
+    {
+        "name": "tejada hotel",
+        "rooms": 33,
+        "location": "Las vegas, United States",
+        "description": "Best place to bet your life",
+        "parking": true,
+        "pictureHome": "https://cloudfront-us-east-1.images.arcpublishing.com/elespectador/POPEUU7WIJAW5NRWPQASXBBFSE.jpg",
+        "rating": 5,
+        "languages": [
+            "english",
+            "spanish",
+            "italian"
+        ],
+        "category": 5,
+        "phone": "+15542369875"
+    },
+    {
+        "name": "ruales hotel",
+        "rooms": 54,
+        "location": "laureles, Colombia",
+        "description": "Best beds that you will know",
+        "parking": false,
+        "pictureHome": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/327964031.jpg?k=9b9ea8177b2e7ae35b9a35aa72c396232eeb70548023ca3f53b3a5003bdf2b79&o=&hp=1",
+        "rating": 4,
+        "languages": [
+            "spanish",
+            "english"
+        ],
+        "category": 4,
+        "phone": "+573156985236"
+    },
+    {
+        "name": "valer hotel",
+        "rooms": 67,
+        "location": "lima, Peru",
+        "description": "Near to the bests tourist sites",
+        "parking": false,
+        "pictureHome": "https://media-cdn.tripadvisor.com/media/photo-s/0f/b2/f1/34/hyatt-regency-cartagena.jpg",
+        "rating": 5,
+        "languages": [
+            "spanish",
+            "french"
+        ],
+        "category": 4,
+        "phone": "+512154869324"
+    },
+    {
+        "name": "bustos hotel",
+        "rooms": 15,
+        "location": "pekin, China",
+        "description": "the best exotic foods",
+        "parking": true,
+        "pictureHome": "https://revistahsm.com/wp-content/uploads/2019/10/fachada-hotel-ilunion-atrium.jpg",
+        "rating": 5,
+        "languages": [
+            "english",
+            "chinese"
+        ],
+        "category": 5,
+        "phone": "+861458963254"
+    }
+]

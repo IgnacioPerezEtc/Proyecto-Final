@@ -11,7 +11,7 @@ module.exports = {
         array = [...responseFromDB];
 
         if (name) {
-            let findHotel = array.filter(hotel => hotel.name === name.toLowerCase());
+            let findHotel = array.filter(hotel => hotel.name.includes(name.toLowerCase()));
 
             if (findHotel.length > 0) {
                 return findHotel;
@@ -29,16 +29,14 @@ module.exports = {
 
         id = parseInt(id);
 
-        let responseFromDB = await Hotel.findByPk(id);
+        let responseFromDB = await Hotel.findByPk(id, {
+            include: {
+                model: Room,
+                as: "showRooms"
+            },
+        });
 
         if (responseFromDB.name) {
-            let findRoomsByIdHotel = await Room.findAll({
-                where: {
-                    hotelId: id,
-                }
-            })
-
-            responseFromDB.rooms = findRoomsByIdHotel;
 
             arrayDetail.push(responseFromDB);
 
@@ -55,6 +53,9 @@ module.exports = {
     newHotel: async function (body) {
         const { name, rooms, location, description, parking, pictureHome, pictureDetail, rating, languages, category } = body;
         body.name = name.toLowerCase();
+        body.rooms = parseInt(rooms);
+        body.rating = parseFloat(rating);
+        body.category = parseInt (category);
 
         if (!name || !rooms || !location || !description || !pictureHome || !rating || !languages || !category) {
 

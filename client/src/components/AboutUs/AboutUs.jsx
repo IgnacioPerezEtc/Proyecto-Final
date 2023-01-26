@@ -14,7 +14,7 @@ const AboutUs = (props) => {
           accusamus esse?
         </p>
 
-        <NavLink to={"/"} className={style.buttonAbout}>
+        <NavLink to={"/home"} className={style.buttonAbout}>
           <button>Home</button>
         </NavLink>
       </div>
