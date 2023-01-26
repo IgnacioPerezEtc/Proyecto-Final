@@ -7,7 +7,7 @@ export const CREATE_HOTEL = "CREATE_HOTEL ";
 export const ERROR = "ERROR";
 export const FILTER_BY_LANGUAGE = "FILTER_BY_LANGUAGE";
 export const FILTER_BY_STARS = "FILTER_BY_STARS";
-
+//
 // *********************** SECCION HOTELS ************************
 
 export function getAllHotels() {
