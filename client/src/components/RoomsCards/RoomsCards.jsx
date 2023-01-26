@@ -11,7 +11,7 @@ const RoomsCards = (props) => {
   const location = useLocation();
   return (
     <div>
-      {location.pathname === "/hotels" ? (
+      {location.pathname === "/home" ? (
         <div className="m-5">
           <p className="fw-bold text-center display-1">
             Our <span className="text-danger"> Room</span>
