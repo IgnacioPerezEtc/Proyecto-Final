@@ -33,6 +33,7 @@ const SearchBar = (props) => {
   };
   return (
     <div>
+    <div>
       <div className={style.flexContainer}>
         <div className={style.searchBar}>
           <div className={style.containerSearchbar}>
@@ -68,13 +69,6 @@ const SearchBar = (props) => {
             <span className={style.iconChildren}></span>
           </div> */}
 
-          <button
-            className={style.buttonSearchBar}
-            type="submit"
-            onClick={(e) => handleSubmit(e)}
-          >
-            Booking Now
-          </button>
         </div>
         </div>
       </div>
@@ -122,11 +116,12 @@ const SearchBar = (props) => {
           <option value="french">French</option>
           <option value="german">German</option>
         </select>
-            <NavLink to={"/formHotels"}>
+            {/* <NavLink to={"/formHotels"}>
               <button className={style.createHotel}> Create Hotel</button>
-            </NavLink>
+            </NavLink> */}
       </div>
     </div>
+
   );
 };
 
