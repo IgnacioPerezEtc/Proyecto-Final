@@ -67,8 +67,30 @@
 
 .price{
     margin-top: 5%;
+    float: left;
+    margin-right: 50%;
 }
 
 .text-danger{
     color: var(--color-red) !important;
 }
+
+.createHotel {
+    width: 154px;
+    height: 48px;
+    background-color: var(--color-blue);
+  
+    border: 1px solid transparent;
+    border-radius: 5px;
+    color: #fff;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-size: 1.6rem;
+    line-height: 1.9rem;
+    cursor: pointer;
+    box-shadow: 0px 4px 4px #00000040;
+    animation: pulse 1s infinite;
+    transition: all 0.3s ease-out;
+    margin: 3px;
+    margin-top: 5%;
+  }
