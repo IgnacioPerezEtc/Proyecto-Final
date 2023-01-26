@@ -46,9 +46,13 @@ const Booking = () => {
 
                 <hr/>
 
-                <div className={style.price}>
-                    <h3>Total</h3>
-                    <h1>$400</h1>
+                <div>
+                    <div className={style.price}>
+                        <h3>Total</h3>
+                        <h1>$400</h1>
+                    </div>
+
+                    <button className={style.createHotel}>Buy now</button>
                 </div>
             </div>
         </div>
