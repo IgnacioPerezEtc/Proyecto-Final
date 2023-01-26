@@ -14,6 +14,7 @@ import FormHotels from "./components/FormHotels/FormHotels.jsx";
 import FormRooms from "./components/FormRooms/FormRooms.jsx";
 import Booking from "./components/Booking/Booking.jsx";
 axios.defaults.baseURL = "http://localhost:3001/";
+//
 function App() {
   return (
     <Provider store={store}>
