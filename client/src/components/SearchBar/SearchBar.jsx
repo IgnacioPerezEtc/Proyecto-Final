@@ -1,11 +1,21 @@
 import React from "react";
 import { useState } from "react";
+import { useSelector } from "react-redux";
 import style from "./SearchBar.module.css";
 import Validation from "./Validation/Validation";
-
+import { dataReservation } from "../../redux/actions";
+import { useDispatch } from "react-redux";
+import { cleanReservation } from "../../redux/actions";
+import { useEffect } from "react";
 const SearchBar = (props) => {
+  const dispatch = useDispatch();
   const fecha_actual = new Date().toLocaleDateString();
+  const reservation = useSelector((state) => state.reservation);
   const [buttonActive, setButtonActive] = useState(false);
+
+  useEffect(()=>{
+    dispatch(cleanReservation())
+  },[])
   const [input, setInput] = useState({
     check_in: "",
     check_out: "",
@@ -28,6 +38,7 @@ const SearchBar = (props) => {
 
   const submitChange = (e) => {
     e.preventDefault();
+    dispatch(dataReservation(input))
     alert("Click");
   };
 
@@ -146,11 +157,5 @@ const SearchBar = (props) => {
     </div>
   );
 };
-
-
-
-
-
-
 
 export default SearchBar;
