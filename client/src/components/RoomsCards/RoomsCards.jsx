@@ -60,7 +60,7 @@ const RoomsCards = (props) => {
               },
             }}
           >
-            {props.rooms.map((room) => {
+            {props.showRoom.map((room) => {
               return (
                 <SwiperSlide key={room.id}>
                   <RoomCard

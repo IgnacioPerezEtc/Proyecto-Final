@@ -5,9 +5,12 @@ import { useParams } from "react-router-dom";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import style from "./HotelDetail.module.css";
-import RoomsCards from "../RoomsCards/RoomsCards";
 import RoomCard from "../RoomCard/RoomCard";
 import { getHotelById } from "../../redux/actions";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Keyboard, Autoplay } from "swiper";
+import "swiper/css";
+import "swiper/css/free-mode";
 const HotelDetail = () => {
   const dispatch = useDispatch();
   const { id } = useParams();
@@ -81,10 +84,57 @@ const HotelDetail = () => {
           <h2 className={style.roomsTitle}>
             Rooms
             <div className={style.textRooms}>
-              
+            <Swiper
+            freeMode={true}
+            grabCursor={true}
+            modules={[Autoplay, Keyboard]}
+            autoplay={{
+              delay: 3000,
+            }}
+            keyboard={{
+              enabled: true,
+            }}
+            className="mySwiper m-4 justify-content-center w-100"
+            breakpoints={{
+              0: {
+                slidesPerView: 1,
+                spaceBetween: 30,
+                centeredSlides: true,
+              },
+              480: {
+                slidesPerView: 1,
+                spaceBetween: 15,
+                centeredSlides: true,
+              },
+              768: {
+                slidesPerView: 2,
+                spaceBetween: 10,
+              },
+              1024: {
+                slidesPerView: 3,
+                spaceBetween: 30,
+              },
+              1440: {
+                slidesPerView: 4,
+                spaceBetween: 20,
+              },
+            }}
+          >
               {hotelDetail.showRooms?.map((showRoom) => {
+                console.log(showRoom);
                 return (
-                  <RoomsCards showRoom={showRoom}/>
+                  <SwiperSlide key={showRoom.id}>
+                    <RoomCard
+                      img={showRoom.pictureHome}
+                      numRoom={showRoom.numRoom}
+                      price={showRoom.value}
+                      guest={showRoom.numPeople}
+                      specialties={showRoom.specialties}
+                      maxAdult={showRoom.maxAdult}
+                      maxChild={showRoom.maxChild}
+                    />
+                  </SwiperSlide>
+
                   // <div key={showRoom.id}>
                   //   <h3>Number of rooms</h3>
                   //   <p>{showRoom.numRoom}</p>
@@ -108,6 +158,7 @@ const HotelDetail = () => {
                   // </div>
                 );
               })}
+              </Swiper>
             </div>
           </h2>
         </div>
