@@ -1,0 +1,74 @@
+.titleContainer {
+    font-family: "Raleway";
+    justify-content: center;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    display: flex;
+}
+
+.blue{
+    color: var(--color-blue);
+    float: left;
+    font-size: 48px;
+    margin-right: 10px;
+}
+
+.red{
+    color: #d31b1b;
+    float: left;
+    font-size: 48px;
+    margin-right: 10px;
+    font-weight: 700;
+}
+
+.container{
+    background-color: white;
+    margin-bottom: 2%;
+    margin-left: 30%;
+    margin-right: 30%;
+    padding: 3%;
+    border: solid rgb(201, 201, 201) 1px;
+    border-radius: 8px;
+    font-family: "Roboto", sans-serif;
+}
+
+.container p{
+    margin: 0px;
+}
+
+.title{
+    font-weight: 700;
+    margin-bottom: 3%;
+}
+
+.link{
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 700;
+    position: absolute;
+    margin-left: 63%;
+    margin-top: 3%;
+}
+
+.clearfix{
+    clear:both
+}
+
+.checkinContainer div{
+    float: left;
+    margin-right: 25%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.checkinContainer div h2{
+    margin: 0px;
+}
+
+.price{
+    margin-top: 5%;
+}
+
+.text-danger{
+    color: var(--color-red) !important;
+}
