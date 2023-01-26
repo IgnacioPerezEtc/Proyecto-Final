@@ -10,7 +10,8 @@ import RoomDetail from "./components/RoomDetail/RoomDetail.jsx";
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import Login from "./components/Login/Login.jsx";
 import FormHotels from "./components/FormHotels/FormHotels.jsx";
-import FormRooms from "./components/FormRooms/FormRooms.jsx"
+import FormRooms from "./components/FormRooms/FormRooms.jsx";
+import Booking from "./components/Booking/Booking.jsx";
 function App() {
   return (
     <Provider store={store}>
@@ -25,6 +26,7 @@ function App() {
             <Route path="/formRoom" element={<FormRooms />} />
             <Route path="/rooms/:id" element={<RoomDetail />} />
             <Route path="/formHotels" element={<FormHotels />} />
+            <Route path="/Booking" element={<Booking />} />
           </Routes>
         </div>
       </BrowserRouter>
