@@ -8,7 +8,6 @@ import store from "./redux/store.js";
 import AboutUs from "./components/AboutUs/AboutUs.jsx";
 import HotelDetail from "./components/HotelDetail/HotelDetail.jsx";
 import RoomDetail from "./components/RoomDetail/RoomDetail.jsx";
-import Booking from "./components/Booking/Booking.jsx";
 // import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
   return (
@@ -22,7 +21,6 @@ function App() {
             <Route path="/aboutUs" element={<AboutUs />} />
             <Route path="/form" element={<Form />} />
             <Route path="/rooms/:id" element={<RoomDetail />} />
-            <Route path="/booking" element={<Booking />} />
           </Routes>
         </div>
       </BrowserRouter>
