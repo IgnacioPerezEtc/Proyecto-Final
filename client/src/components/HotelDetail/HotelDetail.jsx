@@ -5,6 +5,8 @@ import { useParams } from "react-router-dom";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import style from "./HotelDetail.module.css";
+import RoomsCards from "../RoomsCards/RoomsCards";
+import RoomCard from "../RoomCard/RoomCard";
 import { getHotelById } from "../../redux/actions";
 const HotelDetail = () => {
   const dispatch = useDispatch();
@@ -79,31 +81,31 @@ const HotelDetail = () => {
           <h2 className={style.roomsTitle}>
             Rooms
             <div className={style.textRooms}>
-              <p>Aqui se veran las rooms de {hotelDetail.name}</p>
               
               {hotelDetail.showRooms?.map((showRoom) => {
                 return (
-                  <div key={showRoom.id}>
-                    <h3>Number of rooms</h3>
-                    <p>{showRoom.numRoom}</p>
-                    <h3>Number of people</h3>
-                    <p>{showRoom.numPeople}</p>
-                    <h3>Max adults</h3>
-                    <img src={showRoom.pictureHome} alt="" width={"200px"} height={"150px"}/>
-                    <p>{showRoom.maxAdult}</p>
-                    <h3>Max child</h3>
-                    <p>{showRoom.maxChild}</p>
-                    <h3>Specialties</h3>
-                    <div>
-                      {showRoom.specialties?.map((specialtie) => {
-                        <p>{specialtie}</p>;
-                      })}
-                    </div>
-                    <h3>Available Date</h3>
-                    <p>{showRoom.availableDate}</p>
-                    <h3>Value</h3>
-                    <p>{showRoom.value}</p>
-                  </div>
+                  <RoomsCards showRoom={showRoom}/>
+                  // <div key={showRoom.id}>
+                  //   <h3>Number of rooms</h3>
+                  //   <p>{showRoom.numRoom}</p>
+                  //   <h3>Number of people</h3>
+                  //   <p>{showRoom.numPeople}</p>
+                  //   <h3>Max adults</h3>
+                  //   <img src={showRoom.pictureHome} alt="" width={"200px"} height={"150px"}/>
+                  //   <p>{showRoom.maxAdult}</p>
+                  //   <h3>Max child</h3>
+                  //   <p>{showRoom.maxChild}</p>
+                  //   <h3>Specialties</h3>
+                  //   <div>
+                  //     {showRoom.specialties?.map((specialtie) => {
+                  //       <p>{specialtie}</p>;
+                  //     })}
+                  //   </div>
+                  //   <h3>Available Date</h3>
+                  //   <p>{showRoom.availableDate}</p>
+                  //   <h3>Value</h3>
+                  //   <p>{showRoom.value}</p>
+                  // </div>
                 );
               })}
             </div>

@@ -1,17 +1,25 @@
 .Card {
-    width: 300px;
+  width: 320px;
 }
 
-.img{
-    height: 200px;
-    width: 100%;
+.img {
+  height: 200px;
+  width: 100%;
 }
 
+.Text {
+  color: #333333;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  display: flex;
+}
 
-.Text{
-    color: #333333;
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;
+.childAdultsContainer {
+  display: flex;
+}
+
+.titleContent {
+  padding-right: 8px;
 }
