@@ -3,7 +3,7 @@ input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-.flexContainer{
+.flexContainer {
   display: flex;
   justify-content: center;
 }
@@ -30,12 +30,13 @@ input[type="number"]::-webkit-outer-spin-button {
   height: 45px;
   padding-right: 8px;
   background-color: #fff;
- 
+
   box-shadow: 0px 4px 4px #00000040;
-  margin: 5px; border-radius: 5px;
+  margin: 5px;
+  border-radius: 5px;
 }
 
-.optionStar{
+.optionStar {
   display: flex;
   justify-content: space-between;
   width: 215px;
@@ -43,8 +44,13 @@ input[type="number"]::-webkit-outer-spin-button {
   padding-right: 8px;
   background-color: #fff;
   box-shadow: 0px 4px 4px #00000040;
-  margin: 5px; border-radius: 5px;
+  margin: 5px;
+  border-radius: 5px;
   font-size: 1.4rem;
+}
+.starRed{
+  color: var(--color-red);
+  font-size: 2rem;
 }
 
 .containerInput input {
@@ -69,7 +75,7 @@ input[type="number"]::-webkit-outer-spin-button {
   border-radius: 5px;
 }
 
-.dateSearchbar{
+.dateSearchbar {
   width: 210px;
   height: 45px;
   background-size: 20px;
@@ -84,20 +90,18 @@ input[type="number"]::-webkit-outer-spin-button {
   margin: 5px;
 }
 
-.dateSearchbar::placeholder{
+.dateSearchbar::placeholder {
   text-align: start;
   color: #000;
 }
 
-.date{
+.date {
   margin: 5px;
 }
 .date::-webkit-calendar-picker-indicator {
   opacity: 0;
   cursor: pointer;
-  
 }
-
 
 input:focus {
   outline: none;
@@ -107,7 +111,7 @@ input:focus {
   color: #747474;
   text-align: start;
 }
-.date::placeholder{
+.date::placeholder {
   text-align: start;
   color: #000;
 }
@@ -125,7 +129,8 @@ input:focus {
   cursor: pointer;
   box-shadow: 0px 4px 4px #00000040;
   animation: pulse 1s infinite;
-  transition: all 0.3s ease-out;margin: 3px;
+  transition: all 0.3s ease-out;
+  margin: 3px;
 }
 .iconAdults {
   margin: auto 0;
@@ -148,14 +153,14 @@ input:focus {
   background-repeat: no-repeat;
   background-size: contain;
 }
-.error{
-  font-family: 'Roboto', sans-serif;
+.error {
+  font-family: "Roboto", sans-serif;
   color: #fff;
   font-weight: bold;
   margin-top: 8px;
 }
 
-.containerInpErrors{
+.containerInpErrors {
   display: flex;
   flex-direction: column;
 }
@@ -176,7 +181,7 @@ input:focus {
   transition: all 0.3s ease-out;
 }
 
-.buttonOff{
+.buttonOff {
   width: 154px;
   height: 48px;
   background-color: #b71c1c38;

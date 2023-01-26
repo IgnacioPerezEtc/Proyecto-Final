@@ -23,8 +23,11 @@ const Header = () => {
           <div className="div-name">
             <hr className="hr" />
           </div>
+          <div className="div-off">
+            <h3 className="title-off">The best website</h3>
+          </div>
           <div className="div-desc">
-            <h3 className="title-desc">On Hotel Booking Online</h3>
+            <h3 className="title-desc">Of Hotel Booking Online</h3>
           </div>
         </div>
         {/* {((location.pathname === "/" || location.pathname === "/hotels") && (

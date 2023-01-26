@@ -24,7 +24,7 @@ const Hotels = () => {
         <Error />
       ) : (
         <div className={style.containerHotels}>
-          <NavLink to={"/form"}>
+          <NavLink to={"/formHotels"}>
             <button className={style.createHotel}>Create Hotel</button>
           </NavLink>
 

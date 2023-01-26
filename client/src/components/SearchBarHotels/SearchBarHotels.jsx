@@ -72,11 +72,21 @@ const SearchBar = (props) => {
             }}
           >
             <option value="All">Number of stars</option>
-            <option value="1">⭐</option>
-            <option value="2">⭐⭐</option>
-            <option value="3">⭐⭐⭐</option>
-            <option value="4">⭐⭐⭐⭐</option>
-            <option value="5">⭐⭐⭐⭐⭐</option>
+            <option className={style.starRed} value="1">
+              ★
+            </option>
+            <option className={style.starRed} value="2">
+              ★★
+            </option>
+            <option className={style.starRed} value="3">
+              ★★★
+            </option>
+            <option className={style.starRed} value="4">
+              ★★★★
+            </option>
+            <option className={style.starRed} value="5">
+              ★★★★★
+            </option>
           </select>
 
           {/* <div className={style.containerInput}>
