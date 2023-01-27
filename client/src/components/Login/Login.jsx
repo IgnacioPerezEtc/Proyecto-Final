@@ -5,6 +5,7 @@ import destiny from "../../assets/img/destiny.png";
 import { useLocation } from "react-router-dom";
 import SignUp from "./SignUp/SignUp";
 import { signInWithGoogle } from "../../fireBase/Firebase";
+import { signedWithFacebook } from "../../fireBase/fireBaseFacebook.js";
 const Login = () => {
   const location = useLocation();
   return (
@@ -50,7 +51,13 @@ const Login = () => {
               </button>
             </div>
           </div>
+          <div>
+              <button onClick={signedWithFacebook}>
+                Sign in with Facebook
+              </button>
+            </div>
         </div>
+        
       ) : (
         <div className={style.formContainer}>
           <SignUp />
