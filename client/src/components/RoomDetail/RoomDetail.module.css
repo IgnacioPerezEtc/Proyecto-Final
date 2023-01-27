@@ -31,3 +31,12 @@
   margin: 3px;
   margin-bottom: 32px;
 }
+
+.img{
+  width: 100%;
+  height: 400px;
+}
+.imgCar{
+  width: 100%;
+  height: 120px;
+}

@@ -23,22 +23,23 @@ const RoomDetail = () => {
   useEffect(() => {
     dispatch(getRoomById(id));
     dispatch(getRooms());
-  }, [rooms]);
+  }, [roomDetail]);
 
-  //   const imgs = [
-  //     "https://swiperjs.com/demos/images/nature-1.jpg",
-  //     "https://swiperjs.com/demos/images/nature-2.jpg",
-  //     "https://swiperjs.com/demos/images/nature-3.jpg",
-  //     "https://swiperjs.com/demos/images/nature-4.jpg",
-  //     "https://swiperjs.com/demos/images/nature-5.jpg",
-  //     "https://swiperjs.com/demos/images/nature-6.jpg",
-  //     "https://swiperjs.com/demos/images/nature-7.jpg",
-  //     "https://swiperjs.com/demos/images/nature-8.jpg",
-  //     "https://swiperjs.com/demos/images/nature-9.jpg",
-  //     "https://swiperjs.com/demos/images/nature-10.jpg",
-  //   ];
+    // const imgs = [
+    //   roomDetail.pictureHome,
+    //   "https://swiperjs.com/demos/images/nature-1.jpg",
+    //   "https://swiperjs.com/demos/images/nature-2.jpg",
+    //   "https://swiperjs.com/demos/images/nature-3.jpg",
+    //   "https://swiperjs.com/demos/images/nature-4.jpg",
+    //   "https://swiperjs.com/demos/images/nature-5.jpg",
+    //   "https://swiperjs.com/demos/images/nature-6.jpg",
+    //   "https://swiperjs.com/demos/images/nature-7.jpg",
+    //   "https://swiperjs.com/demos/images/nature-8.jpg",
+    //   "https://swiperjs.com/demos/images/nature-9.jpg",
+    //   "https://swiperjs.com/demos/images/nature-10.jpg",
+    // ];
 
-  //   const [currentSlide, setCurrentSlide] = useState(imgs[0]);
+    // const [currentSlide, setCurrentSlide] = useState(imgs[0]);
 
   return (
     <div>
@@ -53,11 +54,11 @@ const RoomDetail = () => {
                 <img
                   src={roomDetail.pictureHome}
                   alt=""
-                  className=" mb-3 h-75 w-100 rounded"
+                  className={` ${style.img} mb-3 rounded`}
                 />
                 {/* <Swiper
                 slidesPerView={4}
-                spaceBetween={30}
+                spaceBetween={20}
                 className="w-100 display-4"
               >
                 {imgs?.map((img, index) => {
@@ -67,7 +68,7 @@ const RoomDetail = () => {
                       className=""
                       key={index}
                     >
-                      <img className="w-100 rounded" src={img} alt="imgHotel" />
+                      <img className={` ${style.imgCar} rounded`} src={img} alt="imgHotel" />
                     </SwiperSlide>
                   );
                 })}
