@@ -56,7 +56,7 @@ const BookingCard = (props) => {
                     </div>
                 </div>
 
-                <div class="clearfix"></div>
+                <div className="clearfix"></div>
 
                 <hr/>
 
