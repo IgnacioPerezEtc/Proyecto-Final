@@ -11,6 +11,7 @@ const Booking = () => {
             </div>
             <BookingCard
                 name='Carmona Hotel'
+                rating={5}
                 location='Colombia, Cali'
                 num='2'
                 checkinDate='04 feb. 2023'
