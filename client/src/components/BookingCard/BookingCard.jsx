@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 
 const BookingCard = (props) => {
-    const star = 5;
+    const star = props.rating;
     let stars = [];
     for (let i = 0; i < star; i++) {
         stars.push(<FontAwesomeIcon className="text-warning me-2" icon={faStar} />)
