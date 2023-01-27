@@ -1,6 +1,6 @@
 [
     {
-        "numRoom": 101,
+        "numRoom": "Family Room",
         "numPeople": 8,
         "maxAdult": 8,
         "maxChild": 4,
@@ -8,7 +8,6 @@
             "restaurant",
             "pool"
         ],
-        "availableDate": "2022-03-13",
         "value": 5,
         "hotelId": "PONERRRRRR"
     }

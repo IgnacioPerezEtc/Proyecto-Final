@@ -10,7 +10,7 @@ module.exports = (sequelize) => {
         },
 
         numRoom: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.STRING,
             allowNull: false
         },
 
@@ -55,11 +55,6 @@ module.exports = (sequelize) => {
         specialties: {
             type: DataTypes.ARRAY(DataTypes.STRING),
             allowNull: false,
-        },
-
-        availableDate: {
-            type: DataTypes.DATEONLY,
-            allowNull: false
         },
 
         value: {

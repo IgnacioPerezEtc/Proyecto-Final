@@ -45,7 +45,6 @@ module.exports = {
 
         const { numRoom, numPeople, maxAdult, maxChild, specialties, availableDate, value, hotelId} =body;
 
-        body.numRoom = parseInt(numRoom);
         body.numPeople = parseInt (numPeople);
         body.maxAdult = parseInt(maxAdult);
         body.maxChild = parseInt(maxChild);
