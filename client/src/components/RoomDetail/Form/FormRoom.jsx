@@ -48,7 +48,7 @@ const FormRoom = (props) => {
                   placeholder="Check-in"
                   name="check_in"
                   className={style.date}
-                  value={reservation.check_in ? reservation.check_in : ""}
+                  value={reservation.check_in ? reservation.check_in : input.check_in}
                   onChange={handleInputChange}
                 />
               </div>
@@ -66,7 +66,7 @@ const FormRoom = (props) => {
                   placeholder="Check-out"
                   name="check_out"
                   className={style.date}
-                  value={reservation.check_out ? reservation.check_out : ""}
+                  value={reservation.check_out ? reservation.check_out : input.check_out}
                   onChange={handleInputChange}
                 />
               </div>
@@ -83,7 +83,7 @@ const FormRoom = (props) => {
                   type="number"
                   placeholder="Adults"
                   className={style.pl}
-                  value={reservation.adults ? reservation.adults : ""}
+                  value={reservation.adults ? reservation.adults : input.adults}
                   onChange={handleInputChange}
                   name="adults"
                   min="0"
@@ -101,7 +101,7 @@ const FormRoom = (props) => {
                   type="number"
                   placeholder="Children"
                   className={style.pl}
-                  value={reservation.children ? reservation.children : ""}
+                  value={reservation.children ? reservation.children : input.children}
                   onChange={handleInputChange}
                   name="children"
                   min="0"
