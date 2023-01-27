@@ -83,43 +83,7 @@ const RoomDetail = () => {
               </Swiper> */}
             </div>
             <FormRoom/>
-            {/* <div className=" w-50 ">
-              <Form className="container w-75 bg-primary d-flex flex-column align-content-center gap-5 rounded p-5">
-                <Form.Control
-                  className="my-4 p-3"
-                  input="date"
-                  placeholder="Check In"
-                  value={reservation.check_in ? reservation.check_in : ""}
-                />
-                <Form.Control
-                  className="my-4 p-3"
-                  input="date"
-                  placeholder="Check Out"
-                  value={reservation.check_out ? reservation.check_out : ""}
-                />
-                <Form.Control
-                  className="my-4 p-3"
-                  input="date"
-                  placeholder="Children"
-                  value={reservation.children ? reservation.children : ""}
-                />
-                <Form.Control
-                  className="my-4 p-3"
-                  input="date"
-                  placeholder="Adults"
-                  value={reservation.adults ? reservation.adults : ""}
-                />
 
-                <Button
-                  className="w-100 p-5 mb-5"
-                  type="submit"
-                  value="submit"
-                  onClick={() => addToLocalStorage()}
-                >
-                  Add to My Reservations
-                </Button>
-              </Form>
-            </div> */}
           </div>
           <div className="d-flex justify-content-between my-5">
             <p className="display-3 fw-bold">
