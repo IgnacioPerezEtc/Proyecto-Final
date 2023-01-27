@@ -3,12 +3,32 @@ import { Link } from "react-router-dom";
 import style from "./BookingCard.module.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
+import { getUrlPayment } from "../../utils";
+import { redirect } from "react-router-dom";
 
 const BookingCard = (props) => {
     const star = props.rating;
     let stars = [];
     for (let i = 0; i < star; i++) {
         stars.push(<FontAwesomeIcon className="text-warning me-2" icon={faStar} />)
+    }
+
+    const items = {
+        products: [
+            {
+                id: 1,
+                title: "Carmona Hotel",
+                description: "Accomodation for 2 people",
+                quantity: 1,
+                unit_price: 400
+            }
+        ]
+    }
+    
+    const handlePayment = async (event) => {
+        let url = await getUrlPayment(items);
+        console.log(url);
+        window.location.replace(url.link);
     }
 
     return(
@@ -46,7 +66,7 @@ const BookingCard = (props) => {
                         <h1>{props.price}</h1>
                     </div>
 
-                    <button className={style.createHotel}>Buy now</button>
+                    <button onClick={handlePayment} className={style.createHotel}>Confirm checkout</button>
                 </div>
             </div>
         </div>
