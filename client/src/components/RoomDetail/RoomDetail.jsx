@@ -55,7 +55,7 @@ const RoomDetail = () => {
 
   return (
     <div>
-      {roomDetail.hasOwnProperty("hotel") ? (
+      {roomDetail.hasOwnProperty("hotel") && roomDetail.id === parseInt(id) ? (
         <div className="container text-center my-5 d-flex flex-column gap-5">
           <div className={` ${style.containerImgForm} d-flex w-100`}>
             <div className={` w-50 pe-5`}>
