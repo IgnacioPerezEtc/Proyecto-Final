@@ -51,7 +51,7 @@ module.exports = {
         body.value = parseFloat(value);
         body.hotelId = parseInt(hotelId);
 
-        if (!numRoom || !numPeople || !maxAdult || !maxChild || !specialties || !availableDate || !value || !hotelId) {
+        if (!numRoom || !numPeople || !maxAdult || !maxChild || !specialties || !value || !hotelId) {
             
             throw new Error("Incomplete Data")
 

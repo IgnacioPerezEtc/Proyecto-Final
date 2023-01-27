@@ -1,6 +1,7 @@
 [
     {
         "numRoom": "Family Room",
+        "pictureHome": "",
         "numPeople": 8,
         "maxAdult": 8,
         "maxChild": 4,
@@ -9,6 +10,6 @@
             "pool"
         ],
         "value": 5,
-        "hotelId": "PONERRRRRR"
+        "hotelId": "1"
     }
 ]
