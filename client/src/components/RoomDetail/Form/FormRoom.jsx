@@ -4,8 +4,11 @@ import { useSelector } from "react-redux";
 import style from "./FormRoom.module.css"
 import Validation from "../../SearchBar/Validation/Validation";
 import { useDispatch } from "react-redux";
+import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const FormRoom = (props) => {
+  const { id } = useParams();
   const dispatch = useDispatch();
   const fecha_actual = new Date().toLocaleDateString();
   const reservation = useSelector((state) => state.reservation);
@@ -31,7 +34,8 @@ const FormRoom = (props) => {
   };
 
   const addToLocalStorage = () => {
-    localStorage.setItem("habitacion", id);
+    let data = [id, input];
+    localStorage.setItem("habitacion", JSON.stringify(data));
   };
   return (
     <div className={style.flexContainer}>
@@ -114,36 +118,40 @@ const FormRoom = (props) => {
             </div>
           </div>
 
-          <button
-            type="submit"
-            disabled={
-              errors.adults ||
-              errors.check_in ||
-              errors.check_out ||
-              errors.children ||
-              errors.max_cant ||
-              input.check_in == "" ||
-              input.check_out == "" ||
-              input.adults == "" ||
-              input.children == ""
-                ? !buttonActive
-                : buttonActive
-            }
-            className={
-              errors.adults ||
-              errors.check_in ||
-              errors.check_out ||
-              errors.children ||
-              errors.max_cant ||
-              input.check_in == "" ||
-              input.check_out == "" ||
-              input.adults == ""
-                ? style.buttonOff
-                : style.buttonOn
-            }
-          >
-            Add to My Reservations
-          </button>
+          <Link to={'/booking'}>
+            <button
+              type="submit"
+              disabled={
+                errors.adults ||
+                  errors.check_in ||
+                  errors.check_out ||
+                  errors.children ||
+                  errors.max_cant ||
+                  input.check_in == "" ||
+                  input.check_out == "" ||
+                  input.adults == "" ||
+                  input.children == ""
+                  ? !buttonActive
+                  : buttonActive
+              }
+              className={
+                errors.adults ||
+                  errors.check_in ||
+                  errors.check_out ||
+                  errors.children ||
+                  errors.max_cant ||
+                  input.check_in == "" ||
+                  input.check_out == "" ||
+                  input.adults == ""
+                  ? style.buttonOff
+                  : style.buttonOn
+              }
+
+              onClick={addToLocalStorage}
+            >
+              Add to My Reservations
+            </button>
+          </Link>
         </form>
       </div>
     </div>
