@@ -32,6 +32,11 @@ const Login = () => {
                   <NavLink to={"/home"}>
                     <button className={style.ingresar}>Ingresar</button>
                   </NavLink>
+                  <NavLink to={"/home"}>
+                    <button className={style.ingresarInv}>
+                      Ingresar como invitado
+                    </button>
+                  </NavLink>
                   <p className={style.registrateAqui}>
                     ¿Aún no tienes cuenta?{" "}
                     <NavLink to={"/signUp"} href="">
