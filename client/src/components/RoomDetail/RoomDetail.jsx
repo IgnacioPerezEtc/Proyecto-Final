@@ -13,6 +13,7 @@ import Button from "react-bootstrap/Button";
 import { Link, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
+import FormRoom from "./Form/FormRoom";
 
 const RoomDetail = () => {
   const { id } = useParams();
@@ -56,26 +57,8 @@ const RoomDetail = () => {
     <div>
       {roomDetail.hasOwnProperty("hotel") ? (
         <div className="container text-center my-5 d-flex flex-column gap-5">
-          {" "}
-          <p style={{ color: "#F28E13" }} className="display-3 fw-bold mb-5">
-            {" "}
-            Room{" "}
-          </p>
-          <div className="d-flex justify-content-between my-5">
-            <p className="display-3 fw-bold">
-              {roomDetail.hotel.name} - {roomDetail.numRoom}
-            </p>
-            <p className="display-3 fw-bold">
-              Price
-              <span style={{ color: "#F28E13" }}> : </span>${roomDetail.value}
-              <span className="h1" style={{ color: "#F28E13" }}>
-                {" "}
-                night
-              </span>
-            </p>
-          </div>
-          <div className="d-flex w-100">
-            <div className=" w-50 pe-5">
+          <div className={` ${style.containerImgForm} d-flex w-100`}>
+            <div className={` w-50 pe-5`}>
               <img
                 src={roomDetail.pictureHome}
                 alt=""
@@ -99,32 +82,28 @@ const RoomDetail = () => {
                 })}
               </Swiper> */}
             </div>
-
-            <div className=" w-50 ">
+            <FormRoom/>
+            {/* <div className=" w-50 ">
               <Form className="container w-75 bg-primary d-flex flex-column align-content-center gap-5 rounded p-5">
                 <Form.Control
-                  style={{ fontSize: "16px" }}
                   className="my-4 p-3"
                   input="date"
                   placeholder="Check In"
                   value={reservation.check_in ? reservation.check_in : ""}
                 />
                 <Form.Control
-                  style={{ fontSize: "16px" }}
                   className="my-4 p-3"
                   input="date"
                   placeholder="Check Out"
                   value={reservation.check_out ? reservation.check_out : ""}
                 />
                 <Form.Control
-                  style={{ fontSize: "16px" }}
                   className="my-4 p-3"
                   input="date"
                   placeholder="Children"
                   value={reservation.children ? reservation.children : ""}
                 />
                 <Form.Control
-                  style={{ fontSize: "16px" }}
                   className="my-4 p-3"
                   input="date"
                   placeholder="Adults"
@@ -132,7 +111,6 @@ const RoomDetail = () => {
                 />
 
                 <Button
-                  style={{ backgroundColor: "#F28E13", fontSize: "16px" }}
                   className="w-100 p-5 mb-5"
                   type="submit"
                   value="submit"
@@ -141,7 +119,19 @@ const RoomDetail = () => {
                   Add to My Reservations
                 </Button>
               </Form>
-            </div>
+            </div> */}
+          </div>
+          <div className="d-flex justify-content-between my-5">
+            <p className="display-3 fw-bold">
+              {roomDetail.hotel.name.charAt(0).toUpperCase() +
+                roomDetail.hotel.name.slice(1)}{" "}
+              - {roomDetail.numRoom}
+            </p>
+            <p className="display-3 fw-bold">
+              Price
+              <span> : </span>${roomDetail.value}
+              <span className="h1"> night</span>
+            </p>
           </div>
           {/* <div className="d-flex gap-5">
             <Link className="text-decoration-none h1 text-secondary">
@@ -175,7 +165,7 @@ const RoomDetail = () => {
           </div>
           <div>
             <p className="fw-bold text-center display-1">
-              Our <span style={{ color: "#F28E13" }}>Room</span>
+              Our <span>Room</span>
             </p>
 
             <Swiper
