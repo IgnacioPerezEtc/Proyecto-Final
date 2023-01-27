@@ -1,4 +1,8 @@
 .containerLoader {
-    display: flex;
-    justify-content: center;
-  }
+  display: flex;
+  justify-content: center;
+}
+.containerImgForm{
+  justify-content: space-around;
+  margin-top: 80px;
+}
