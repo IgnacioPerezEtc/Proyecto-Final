@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { useState } from "react";
 import RoomCard from "../RoomCard/RoomCard";
 import style from "./RoomDetail.module.css";
+import Header from "../Header/Header";
 import { Keyboard, Autoplay } from "swiper";
 import "swiper/css";
 import "swiper/css/free-mode";
@@ -43,6 +44,7 @@ const RoomDetail = () => {
 
   return (
     <div>
+      <Header/>
       {roomDetail.hasOwnProperty("hotel") && roomDetail.id === parseInt(id) ? (
         <div className={style.containerRoomDetail}>
           <NavLink to={"/home"}>
