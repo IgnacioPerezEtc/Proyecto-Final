@@ -1,8 +1,28 @@
 import React from "react";
 import style from "./Booking.module.css";
 import BookingCard from "../BookingCard/BookingCard";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getRoomById } from "../../redux/actions";
+import { useState } from "react";
+
 
 const Booking = () => {
+    // const dispatch = useDispatch();
+    // const roomDetail = useSelector(state => state.roomDetail);
+    // const [ info, setInfo ] = useState([]);
+    
+    // useEffect(async ()=>{
+    //     await getDataByLocalStorage();
+    //     dispatch(getRoomById(1));
+    //     return async () => await console.log(info[0])
+    // }, [dispatch])
+    
+    // function getDataByLocalStorage() {
+    //     const data = JSON.parse(localStorage.getItem('habitacion'));
+    //     setInfo(data);
+    // };    
+
     return (
         <div>
             <div className={style.titleContainer}>
