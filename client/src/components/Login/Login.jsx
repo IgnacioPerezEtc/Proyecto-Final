@@ -4,6 +4,7 @@ import style from "./Login.module.css";
 import destiny from "../../assets/img/destiny.png";
 import { useLocation } from "react-router-dom";
 import SignUp from "./SignUp/SignUp";
+import { signInWithGoogle } from "../../fireBase/Firebase";
 const Login = () => {
   const location = useLocation();
   return (
@@ -31,10 +32,13 @@ const Login = () => {
               Ingresar
             </button>
           </NavLink>
+          <button className={style.loginGoogle} onClick={signInWithGoogle}>
+            Sign in with Google
+          </button>
         </div>
       ) : (
         <div className={style.formContainer}>
-        <SignUp />
+          <SignUp />
         </div>
       )}
     </div>
