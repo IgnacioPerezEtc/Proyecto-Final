@@ -9,6 +9,7 @@ import RoomCard from "../RoomCard/RoomCard";
 import { getHotelById } from "../../redux/actions";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Keyboard, Autoplay } from "swiper";
+import { NavLink } from "react-router-dom";
 import "swiper/css";
 import "swiper/css/free-mode";
 const HotelDetail = () => {
@@ -22,6 +23,12 @@ const HotelDetail = () => {
   return (
     <div>
       <Header />
+      <div className={style.containerButton}>
+        <NavLink to={"/home"}>
+          <button className={style.createHotel}>Home</button>
+        </NavLink>
+      </div>
+
       {(((hotelDetail.hasOwnProperty("name") &&
         hotelDetail.id === parseInt(id)) ||
         hotelDetail.id === id) && (
