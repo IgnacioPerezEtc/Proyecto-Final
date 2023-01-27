@@ -135,28 +135,6 @@ const HotelDetail = () => {
                         maxChild={showRoom.maxChild}
                       />
                     </SwiperSlide>
-
-                    // <div key={showRoom.id}>
-                    //   <h3>Number of rooms</h3>
-                    //   <p>{showRoom.numRoom}</p>
-                    //   <h3>Number of people</h3>
-                    //   <p>{showRoom.numPeople}</p>
-                    //   <h3>Max adults</h3>
-                    //   <img src={showRoom.pictureHome} alt="" width={"200px"} height={"150px"}/>
-                    //   <p>{showRoom.maxAdult}</p>
-                    //   <h3>Max child</h3>
-                    //   <p>{showRoom.maxChild}</p>
-                    //   <h3>Specialties</h3>
-                    //   <div>
-                    //     {showRoom.specialties?.map((specialtie) => {
-                    //       <p>{specialtie}</p>;
-                    //     })}
-                    //   </div>
-                    //   <h3>Available Date</h3>
-                    //   <p>{showRoom.availableDate}</p>
-                    //   <h3>Value</h3>
-                    //   <p>{showRoom.value}</p>
-                    // </div>
                   );
                 })}
               </Swiper>
