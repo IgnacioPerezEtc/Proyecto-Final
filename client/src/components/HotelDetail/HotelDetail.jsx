@@ -24,8 +24,8 @@ const HotelDetail = () => {
     <div>
       <Header />
       <div className={style.containerButton}>
-        <NavLink to={"/home"}>
-          <button className={style.createHotel}>Home</button>
+        <NavLink to={"/hotels"}>
+          <button className={style.createHotel}>Back</button>
         </NavLink>
       </div>
 

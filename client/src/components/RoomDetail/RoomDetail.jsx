@@ -23,7 +23,7 @@ const RoomDetail = () => {
   useEffect(() => {
     dispatch(getRoomById(id));
     dispatch(getRooms());
-  }, [roomDetail]);
+  }, [rooms]);
 
     // const imgs = [
     //   roomDetail.pictureHome,
