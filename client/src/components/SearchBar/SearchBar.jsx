@@ -5,17 +5,13 @@ import style from "./SearchBar.module.css";
 import Validation from "./Validation/Validation";
 import { dataReservation } from "../../redux/actions";
 import { useDispatch } from "react-redux";
-import { cleanReservation } from "../../redux/actions";
-import { useEffect } from "react";
+// import { cleanReservation } from "../../redux/actions";
 const SearchBar = (props) => {
   const dispatch = useDispatch();
   const fecha_actual = new Date().toLocaleDateString();
   const reservation = useSelector((state) => state.reservation);
   const [buttonActive, setButtonActive] = useState(false);
 
-  useEffect(()=>{
-    dispatch(cleanReservation())
-  },[])
   const [input, setInput] = useState({
     check_in: "",
     check_out: "",
@@ -56,7 +52,7 @@ const SearchBar = (props) => {
                   placeholder="Check-in"
                   name="check_in"
                   className={style.date}
-                  value={input.check_in}
+                  value={reservation.check_in ? reservation.check_in : input.check_in}
                   onChange={handleInputChange}
                 />
               </div>
@@ -74,7 +70,7 @@ const SearchBar = (props) => {
                   placeholder="Check-out"
                   name="check_out"
                   className={style.date}
-                  value={input.check_out}
+                  value={reservation.check_out ? reservation.check_out : input.check_out}
                   onChange={handleInputChange}
                 />
               </div>
@@ -91,7 +87,7 @@ const SearchBar = (props) => {
                   type="number"
                   placeholder="Adults"
                   className={style.pl}
-                  value={input.adults}
+                  value={reservation.adults ? reservation.adults : input.adults}
                   onChange={handleInputChange}
                   name="adults"
                   min="0"
@@ -109,7 +105,7 @@ const SearchBar = (props) => {
                   type="number"
                   placeholder="Children"
                   className={style.pl}
-                  value={input.children}
+                  value={reservation.children ? reservation.children : input.children}
                   onChange={handleInputChange}
                   name="children"
                   min="0"

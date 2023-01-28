@@ -2,16 +2,13 @@ import React from "react";
 import "./Header.css";
 import NavBar from "../NavBar/NavBar";
 import SearchBar from "../SearchBar/SearchBar";
-import SearchBarHotels from "../SearchBarHotels/SearchBarHotels.jsx";
 import bg from "../../assets/img/header2.jpg";
 // import bg2 from "../../assets/img/banner.png";
 // import bg3 from "../../assets/img/banner2.png";
 // import bg4 from "../../assets/img/banner3.png";
 // import bg5 from "../../assets/img/bannerp.png";
 // import bg6 from "../../assets/img/bannerf.png";
-import { useLocation } from "react-router-dom";
 const Header = () => {
-  const location = useLocation();
   return (
     <div className="container-header">
       <div className="container-img">
@@ -55,8 +52,8 @@ const Header = () => {
         )} */}
       </div>
       <div>
-        {location.pathname === "/home" && <SearchBar />}
-        {location.pathname === "/hotels" && <SearchBarHotels />}
+        <SearchBar />
+        {/* {location.pathname === "/hotels" && <SearchBarHotels />} */}
       </div>
     </div>
   );
