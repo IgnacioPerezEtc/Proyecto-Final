@@ -12,7 +12,7 @@ const Header = () => {
   return (
     <div className="container-header">
       <div className="container-img">
-      <img src={bg} className="img-bg" alt="background hotel" />
+        <img src={bg} className="img-bg" alt="background hotel" />
         {/* {location.pathname === "/home" && (
           <img src={bg5} className="img-bg" alt="background hotel" />
         )}
@@ -52,7 +52,8 @@ const Header = () => {
         )} */}
       </div>
       <div>
-        <SearchBar />
+        {!location.pathname.includes("rooms") && <SearchBar />}
+
         {/* {location.pathname === "/hotels" && <SearchBarHotels />} */}
       </div>
     </div>
