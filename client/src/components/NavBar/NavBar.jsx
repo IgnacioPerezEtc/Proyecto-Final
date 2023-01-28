@@ -20,6 +20,11 @@ const NavBar = (props) => {
               </a>
             </li>
             <li>
+              <a href="/rooms" className="link-landing">
+                Rooms
+              </a>
+            </li>
+            <li>
               <NavLink to={"/hotels"} className="link-landing">
                 Hotels
               </NavLink>

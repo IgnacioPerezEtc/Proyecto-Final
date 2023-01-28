@@ -6,15 +6,19 @@ import RoomCard from "../RoomCard/RoomCard";
 import style from "./RoomDetail.module.css";
 import Header from "../Header/Header";
 import { Keyboard, Autoplay } from "swiper";
+// import { useLocation } from "react-router-dom";
 import "swiper/css";
 import "swiper/css/free-mode";
 import { getRoomById, getRooms } from "../../redux/actions";
 import { NavLink, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
+import { cleanRoom } from "../../redux/actions";
 import FormRoom from "./Form/FormRoom";
 
 const RoomDetail = () => {
+  // const location = useLocation();
+  // console.log(location.pathname);
   const { id } = useParams();
   const dispatch = useDispatch();
   const reservation = useSelector((state) => state.reservation);
@@ -22,9 +26,10 @@ const RoomDetail = () => {
   const roomDetail = useSelector((state) => state.roomDetail);
 
   useEffect(() => {
+    // dispatch(cleanRoom())
     dispatch(getRoomById(id));
     dispatch(getRooms());
-  }, []);
+  }, [dispatch]);
 
   // const imgs = [
   //   roomDetail.pictureHome,
@@ -50,8 +55,8 @@ const RoomDetail = () => {
           <div className=" text-center d-flex flex-column gap-5">
             <div className={style.containerDates}>
               <div className={style.containerButtonB}>
-                <NavLink to={"/home"}>
-                  <button className={style.backHome}>Home</button>
+                <NavLink to={"/rooms"}>
+                  <button className={style.backHome}>Rooms</button>
                 </NavLink>
               </div>
 

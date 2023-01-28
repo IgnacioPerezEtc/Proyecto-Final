@@ -8,6 +8,7 @@ import AboutUs from "./components/AboutUs/AboutUs.jsx";
 import HotelDetail from "./components/HotelDetail/HotelDetail.jsx";
 import RoomDetail from "./components/RoomDetail/RoomDetail.jsx";
 // import 'bootstrap/dist/css/bootstrap.min.css';
+import Rooms from "./components/Rooms/Rooms.jsx";
 import axios from "axios";
 import Login from "./components/Login/Login.jsx";
 import FormHotels from "./components/FormHotels/FormHotels.jsx";
@@ -31,6 +32,7 @@ function App() {
             <Route path="/rooms/:id" element={<RoomDetail />} />
             <Route path="/formHotels" element={<FormHotels />} />
             <Route path="/Booking" element={<Booking />} />
+            <Route path="/rooms" element={<Rooms />} />
           </Routes>
         </div>
       </BrowserRouter>

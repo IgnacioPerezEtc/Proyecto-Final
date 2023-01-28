@@ -1,6 +1,6 @@
 import React from "react";
-import RoomCard from "../RoomCard/RoomCard";
 import style from "./RoomCards.module.css";
+import HotelCard from "../HotelCard/HotelCard";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Keyboard, Autoplay } from "swiper";
 import "swiper/css";
@@ -14,7 +14,7 @@ const RoomsCards = (props) => {
       {location.pathname === "/home" ? (
         <div className="m-5">
           <p className="fw-bold text-center display-1">
-            Our <span className="text-danger"> Room</span>
+            Our <span className="text-danger">Hotels</span>
           </p>
 
           <p className="container-fluid text-center w-50">
@@ -60,19 +60,15 @@ const RoomsCards = (props) => {
               },
             }}
           >
-            {props.rooms.map((room) => {
+            {props.hotels.map((hotel) => {
               return (
-                <SwiperSlide key={room.id}>
-                  <RoomCard
-                    id={room.id}
-                    img={room.pictureHome}
-                    nameHotel={room.hotel.name}
-                    numRoom={room.numRoom}
-                    price={room.value}
-                    guest={room.numPeople}
-                    specialties={room.specialties}
-                    maxAdult={room.maxAdult}
-                    maxChild={room.maxChild}
+                <SwiperSlide key={hotel.id}>
+                  <HotelCard
+                    id={hotel.id}
+                    name={hotel.name}
+                    image={hotel.pictureHome}
+                    category={hotel.category}
+                    languages={hotel.languages}
                   />
                 </SwiperSlide>
               );
@@ -118,15 +114,12 @@ const RoomsCards = (props) => {
             }}
           >
             <SwiperSlide key={props.showRoom.id}>
-              <RoomCard
-                id={props.showRoom.id}
-                img={props.showRoom.pictureHome}
-                numRoom={props.showRoom.numRoom}
-                price={props.showRoom.value}
-                guest={props.showRoom.numPeople}
-                specialties={props.showRoom.specialties}
-                maxAdult={props.showRoom.maxAdult}
-                maxChild={props.showRoom.maxChild}
+              <HotelCard
+                id={hotel.id}
+                name={hotel.name}
+                image={hotel.pictureHome}
+                category={hotel.category}
+                languages={hotel.languages}
               />
             </SwiperSlide>
           </Swiper>

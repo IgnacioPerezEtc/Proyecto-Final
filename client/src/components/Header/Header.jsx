@@ -2,20 +2,20 @@ import React from "react";
 import "./Header.css";
 import NavBar from "../NavBar/NavBar";
 import SearchBar from "../SearchBar/SearchBar";
-import SearchBarHotels from "../SearchBarHotels/SearchBarHotels.jsx";
 import bg from "../../assets/img/header2.jpg";
+import SearchBarHotels from "../SearchBarHotels/SearchBarHotels";
+import { NavLink } from "react-router-dom";
+import bg2 from "../../assets/img/bg-header.png"
 // import bg2 from "../../assets/img/banner.png";
 // import bg3 from "../../assets/img/banner2.png";
 // import bg4 from "../../assets/img/banner3.png";
 // import bg5 from "../../assets/img/bannerp.png";
 // import bg6 from "../../assets/img/bannerf.png";
-import { useLocation } from "react-router-dom";
 const Header = () => {
-  const location = useLocation();
   return (
     <div className="container-header">
       <div className="container-img">
-      <img src={bg} className="img-bg" alt="background hotel" />
+        <img src={bg} className="img-bg" alt="background hotel" />
         {/* {location.pathname === "/home" && (
           <img src={bg5} className="img-bg" alt="background hotel" />
         )}
@@ -44,19 +44,20 @@ const Header = () => {
             <h3 className="title-desc">Of Hotel Booking Online</h3>
           </div>
         </div>
-        {/* {((location.pathname === "/" || location.pathname === "/hotels") && (
+        {(location.pathname === "/home" && (
           <div className="container-button">
-            <button>Booking Now</button>
+            <NavLink to={"/hotels"}>
+              <button>Hotels</button>
+            </NavLink>
           </div>
-        )) || (
-          <div className="container-button ">
-            <button>Home</button>
-          </div>
-        )} */}
+        )) ||
+          ""}
       </div>
       <div>
-        {location.pathname === "/home" && <SearchBar />}
+        {/* {!location.pathname.includes("room") && <SearchBarHotels />} */}
         {location.pathname === "/hotels" && <SearchBarHotels />}
+        {location.pathname === "/rooms" && <SearchBar/>}
+        {/* {location.pathname === "/hotels" && <SearchBarHotels />} */}
       </div>
     </div>
   );
