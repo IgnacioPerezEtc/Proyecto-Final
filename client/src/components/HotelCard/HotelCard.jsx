@@ -3,6 +3,7 @@ import Card from 'react-bootstrap/Card';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheck, faStar } from '@fortawesome/free-solid-svg-icons'
 import "./HotelCard.css"
+import style from "./HotelCard.module.css"
 
 
 export const HotelCard = ({ name, image, category, languages, id }) => {
@@ -18,9 +19,10 @@ export const HotelCard = ({ name, image, category, languages, id }) => {
 
 
   return (
-    <NavLink to={`/hotels/${id}`} className="text-decoration-none">
-      <Card style={{ width: '330px', height: '450px' }}>
-        <Card.Img variant="top" src={image} className="h-50" />
+    
+      <Card className={`${style.Card} h-75`}>
+        <NavLink to={`/hotels/${id}`} className="text-decoration-none">
+        <Card.Img variant="top" src={image} className={`${style.img}`} />
         
         <Card.Body className="my-3">
           
@@ -49,8 +51,9 @@ export const HotelCard = ({ name, image, category, languages, id }) => {
           </div>
 
         </Card.Body>
+        </NavLink>
       </Card>
-    </NavLink>
+    
   );
 };
 export default HotelCard;
