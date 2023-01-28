@@ -55,7 +55,7 @@ const SearchBar = (props) => {
                   name="check_in"
                   className={style.date}
                   value={
-                    reservation.check_in ? reservation.check_in : input.check_in
+                    reservation.check_in ? input.check_in = reservation.check_in : input.check_in
                   }
                   onChange={handleInputChange}
                 />
@@ -76,9 +76,7 @@ const SearchBar = (props) => {
                   className={style.date}
                   min={input.check_in}
                   value={
-                    reservation.check_out
-                      ? reservation.check_out
-                      : input.check_out
+                    reservation.check_out ? input.check_out = reservation.check_out : input.check_out
                   }
                   onChange={handleInputChange}
                 />
@@ -96,7 +94,7 @@ const SearchBar = (props) => {
                   type="number"
                   placeholder="Adults"
                   className={style.pl}
-                  value={reservation.adults ? reservation.adults : input.adults}
+                  value={reservation.adults ? input.adults = reservation.adults : input.adults}
                   onChange={handleInputChange}
                   name="adults"
                   min="0"
@@ -115,7 +113,7 @@ const SearchBar = (props) => {
                   placeholder="Children"
                   className={style.pl}
                   value={
-                    reservation.children ? reservation.children : input.children
+                    reservation.children ? input.children = reservation.children : input.children
                   }
                   onChange={handleInputChange}
                   name="children"
