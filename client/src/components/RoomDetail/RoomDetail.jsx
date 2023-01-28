@@ -24,72 +24,84 @@ const RoomDetail = () => {
   useEffect(() => {
     dispatch(getRoomById(id));
     dispatch(getRooms());
-  }, [rooms]);
+  }, []);
 
-    // const imgs = [
-    //   roomDetail.pictureHome,
-    //   "https://swiperjs.com/demos/images/nature-1.jpg",
-    //   "https://swiperjs.com/demos/images/nature-2.jpg",
-    //   "https://swiperjs.com/demos/images/nature-3.jpg",
-    //   "https://swiperjs.com/demos/images/nature-4.jpg",
-    //   "https://swiperjs.com/demos/images/nature-5.jpg",
-    //   "https://swiperjs.com/demos/images/nature-6.jpg",
-    //   "https://swiperjs.com/demos/images/nature-7.jpg",
-    //   "https://swiperjs.com/demos/images/nature-8.jpg",
-    //   "https://swiperjs.com/demos/images/nature-9.jpg",
-    //   "https://swiperjs.com/demos/images/nature-10.jpg",
-    // ];
+  // const imgs = [
+  //   roomDetail.pictureHome,
+  //   "https://swiperjs.com/demos/images/nature-1.jpg",
+  //   "https://swiperjs.com/demos/images/nature-2.jpg",
+  //   "https://swiperjs.com/demos/images/nature-3.jpg",
+  //   "https://swiperjs.com/demos/images/nature-4.jpg",
+  //   "https://swiperjs.com/demos/images/nature-5.jpg",
+  //   "https://swiperjs.com/demos/images/nature-6.jpg",
+  //   "https://swiperjs.com/demos/images/nature-7.jpg",
+  //   "https://swiperjs.com/demos/images/nature-8.jpg",
+  //   "https://swiperjs.com/demos/images/nature-9.jpg",
+  //   "https://swiperjs.com/demos/images/nature-10.jpg",
+  // ];
 
-    // const [currentSlide, setCurrentSlide] = useState(imgs[0]);
+  // const [currentSlide, setCurrentSlide] = useState(imgs[0]);
 
   return (
     <div>
-      <Header/>
+      <Header />
       {roomDetail.hasOwnProperty("hotel") && roomDetail.id === parseInt(id) ? (
         <div className={style.containerRoomDetail}>
-          <NavLink to={"/home"}>
-            <button className={style.createHotel}>Home</button>
-          </NavLink>
-          <div className="container text-center my-5 d-flex flex-column gap-5">
-            <div className={` ${style.containerImgForm} d-flex w-100`}>
-              <div className={` w-50 pe-5`}>
-                <img
-                  src={roomDetail.pictureHome}
-                  alt=""
-                  className={` ${style.img} mb-3 rounded`}
-                />
-                {/* <Swiper
-                slidesPerView={4}
-                spaceBetween={20}
-                className="w-100 display-4"
-              >
-                {imgs?.map((img, index) => {
-                  return (
-                    <SwiperSlide
-                      onClick={() => setCurrentSlide(img)}
-                      className=""
-                      key={index}
-                    >
-                      <img className={` ${style.imgCar} rounded`} src={img} alt="imgHotel" />
-                    </SwiperSlide>
-                  );
-                })}
-              </Swiper> */}
+          <div className=" text-center d-flex flex-column gap-5">
+            <div className={style.containerDates}>
+              <div className={style.containerButtonB}>
+                <NavLink to={"/home"}>
+                  <button className={style.backHome}>Home</button>
+                </NavLink>
               </div>
-              <FormRoom />
+
+              <div className={` ${style.containerImgForm} d-flex w-100`}>
+                <div className={` w-50 pe-5`}>
+                  <img
+                    src={roomDetail.pictureHome}
+                    alt=""
+                    className={` ${style.img} mb-3 rounded`}
+                  />
+                  {/* <Swiper
+                    slidesPerView={4}
+                    spaceBetween={20}
+                    className="w-100 display-4"
+                  >
+                    {imgs?.map((img, index) => {
+                      return (
+                        <SwiperSlide
+                          onClick={() => setCurrentSlide(img)}
+                          className=""
+                          key={index}
+                        >
+                          <img
+                            className={` ${style.imgCar} rounded`}
+                            src={img}
+                            alt="imgHotel"
+                          />
+                        </SwiperSlide>
+                      );
+                    })}
+                  </Swiper> */}
+                </div>
+                <FormRoom />
+              </div>
+              <div
+                className={` ${style.containerTitle} d-flex justify-content-between my-5`}
+              >
+                <p className={` ${style.title} display-3 `}>
+                  {roomDetail.hotel.name.charAt(0).toUpperCase() +
+                    roomDetail.hotel.name.slice(1)}{" "}
+                  - {roomDetail.numRoom}
+                </p>
+                <p className={` ${style.price} display-3 `}>
+                  Price
+                  <span>: </span>${roomDetail.value}
+                  <span> night</span>
+                </p>
+              </div>
             </div>
-            <div className="d-flex justify-content-between my-5">
-              <p className="display-3 fw-bold">
-                {roomDetail.hotel.name.charAt(0).toUpperCase() +
-                  roomDetail.hotel.name.slice(1)}{" "}
-                - {roomDetail.numRoom}
-              </p>
-              <p className="display-3 fw-bold">
-                Price
-                <span> : </span>${roomDetail.value}
-                <span className="h1"> night</span>
-              </p>
-            </div>
+
             {/* <div className="d-flex gap-5">
             <Link className="text-decoration-none h1 text-secondary">
               Specialties
