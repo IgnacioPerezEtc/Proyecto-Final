@@ -6,6 +6,7 @@ import RoomCard from "../RoomCard/RoomCard";
 import style from "./RoomDetail.module.css";
 import Header from "../Header/Header";
 import { Keyboard, Autoplay } from "swiper";
+// import { useLocation } from "react-router-dom";
 import "swiper/css";
 import "swiper/css/free-mode";
 import { getRoomById, getRooms } from "../../redux/actions";
@@ -15,6 +16,8 @@ import { useEffect } from "react";
 import FormRoom from "./Form/FormRoom";
 
 const RoomDetail = () => {
+  // const location = useLocation();
+  // console.log(location.pathname);
   const { id } = useParams();
   const dispatch = useDispatch();
   const reservation = useSelector((state) => state.reservation);

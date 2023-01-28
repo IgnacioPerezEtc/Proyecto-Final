@@ -53,7 +53,7 @@ const Header = () => {
         )} */}
       </div>
       <div>
-        {!location.pathname.includes("rooms") && <SearchBar />}
+        {!location.pathname.includes("room") && <SearchBar />}
         {location.pathname === "/hotels" && <SearchBarHotels/>}
 
         {/* {location.pathname === "/hotels" && <SearchBarHotels />} */}
