@@ -33,25 +33,27 @@ const SearchBar = (props) => {
   };
   return (
     <div>
-      <div className={style.flexContainer}>
-        <div className={style.searchBar}>
-          <div className={style.containerSearchbar}>
-            <div>
-              <input
-                type="text"
-                placeholder="Write a name"
-                className={style.dateSearchbar}
-                onChange={(e) => handleInputChange(e)}
-              />
-              <span className={style.iconIn}></span>
+      <div>
+        <div className={style.flexContainer}>
+          <div className={style.searchBar}>
+            <div className={style.containerSearchbar}>
+              <div>
+                <input
+                  type="text"
+                  placeholder="Write a name"
+                  className={style.dateSearchbar}
+                  onChange={(e) => handleInputChange(e)}
+                />
+                <span className={style.iconIn}></span>
+              </div>
+              <button
+                className={style.buttonSearchBar}
+                type="submit"
+                onClick={(e) => handleSubmit(e)}
+              >
+                Search Hotel
+              </button>
             </div>
-            <button
-              className={style.buttonSearchBar}
-              type="submit"
-              onClick={(e) => handleSubmit(e)}
-            >
-              Booking Now
-            </button>
           </div>
         </div>
       </div>
@@ -67,12 +69,22 @@ const SearchBar = (props) => {
             handleFilterByStars(e);
           }}
         >
-           <option value="All">Number of stars</option>
-            <option value="1">⭐</option>
-            <option value="2">⭐⭐</option>
-            <option value="3">⭐⭐⭐</option>
-            <option value="4">⭐⭐⭐⭐</option>
-            <option value="5">⭐⭐⭐⭐⭐</option>
+          <option value="All">Number of stars</option>
+          <option className={style.starRed} value="1">
+            ★
+          </option>
+          <option className={style.starRed} value="2">
+            ★★
+          </option>
+          <option className={style.starRed} value="3">
+            ★★★
+          </option>
+          <option className={style.starRed} value="4">
+            ★★★★
+          </option>
+          <option className={style.starRed} value="5">
+            ★★★★★
+          </option>
         </select>
         <select
           type="text"
@@ -89,9 +101,9 @@ const SearchBar = (props) => {
           <option value="french">French</option>
           <option value="german">German</option>
         </select>
-            <NavLink to={"/formHotels"}>
+        {/* <NavLink to={"/formHotels"}>
               <button className={style.createHotel}> Create Hotel</button>
-            </NavLink>
+            </NavLink> */}
       </div>
     </div>
   );

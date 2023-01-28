@@ -7,6 +7,9 @@ import {
   FILTER_BY_STARS,
   ERROR,
   GET_ROOMS,
+  GET_ROOM_BY_ID,
+  DATA_RESERVATION,
+  CLEAN_RESERVATION,
 } from "./actions";
 
 const initialState = {
@@ -14,6 +17,8 @@ const initialState = {
   allHotels: [],
   hotelDetail: {},
   rooms: [],
+  roomDetail: {},
+  reservation: {},
   error: false,
 };
 
@@ -44,6 +49,24 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         hotels: action.payload,
+      };
+    }
+    case GET_ROOM_BY_ID: {
+      return {
+        ...state,
+        roomDetail: action.payload,
+      };
+    }
+    case DATA_RESERVATION: {
+      return {
+        ...state,
+        reservation: action.payload,
+      };
+    }
+    case CLEAN_RESERVATION: {
+      return {
+        ...state,
+        reservation: action.payload,
       };
     }
 

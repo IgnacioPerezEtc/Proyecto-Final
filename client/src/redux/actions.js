@@ -91,6 +91,27 @@ export const filterByStars = (payload) => {
 // *********************** SECCION ROOMS ************************
 export const GET_ROOMS = "GET_ROOMS";
 export const CREATE_ROOM = "CREATE_ROOM";
+export const GET_ROOM_BY_ID = "GET_ROOM_BY_ID";
+export const DATA_RESERVATION = "DATA_RESERVATION";
+export const CLEAN_RESERVATION = "CLEAN_RESERVATION";
+
+export const dataReservation = (data) => {
+  return (dispatch) => {
+    return dispatch({
+      type: DATA_RESERVATION,
+      payload: data,
+    });
+  };
+};
+
+export const cleanReservation = () => {
+  return (dispatch) => {
+    return dispatch({
+      type: CLEAN_RESERVATION,
+      payload: {},
+    });
+  };
+};
 
 export function createRoom(data) {
   return async function () {
@@ -99,18 +120,22 @@ export function createRoom(data) {
   };
 }
 
-// try {
-//   const json = await axios.get("/hotels");
-//   return dispatch({
-//     type: GET_ALL_HOTELS,
-//     payload: json.data,
-//   });
-// } catch (error) {
-//   return dispatch({
-//     type: ERROR,
-//     payload: "hotels couldn't be loaded",
-//   });
-// }
+export function getRoomById(id) {
+  return async function (dispatch) {
+    try {
+      const json = await axios.get(`/rooms/${id}`);
+      return dispatch({
+        type: GET_ROOM_BY_ID,
+        payload: json.data.pop(),
+      });
+    } catch (error) {
+      return dispatch({
+        type: ERROR,
+        payload: "The room with that id hasn't been found",
+      });
+    }
+  };
+}
 
 export const getRooms = () => {
   return async (dispatch) => {

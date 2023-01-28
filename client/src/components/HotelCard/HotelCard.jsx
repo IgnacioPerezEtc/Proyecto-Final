@@ -18,7 +18,7 @@ export const HotelCard = ({ name, image, category, languages, id }) => {
 
 
   return (
-    <NavLink to={`/hotels/${id}`} className="text-decoration-none">
+    <a href={`/hotels/${id}`} className="text-decoration-none">
       <Card style={{ width: '330px', height: '450px' }}>
         <Card.Img variant="top" src={image} className="h-50" />
         
@@ -50,7 +50,7 @@ export const HotelCard = ({ name, image, category, languages, id }) => {
 
         </Card.Body>
       </Card>
-    </NavLink>
+    </a>
   );
 };
 export default HotelCard;

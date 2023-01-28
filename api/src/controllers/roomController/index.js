@@ -45,14 +45,13 @@ module.exports = {
 
         const { numRoom, numPeople, maxAdult, maxChild, specialties, availableDate, value, hotelId} =body;
 
-        body.numRoom = parseInt(numRoom);
         body.numPeople = parseInt (numPeople);
         body.maxAdult = parseInt(maxAdult);
         body.maxChild = parseInt(maxChild);
         body.value = parseFloat(value);
         body.hotelId = parseInt(hotelId);
 
-        if (!numRoom || !numPeople || !maxAdult || !maxChild || !specialties || !availableDate || !value || !hotelId) {
+        if (!numRoom || !numPeople || !maxAdult || !maxChild || !specialties || !value || !hotelId) {
             
             throw new Error("Incomplete Data")
 
