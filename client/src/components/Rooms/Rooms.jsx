@@ -7,7 +7,7 @@ import SearchBar from "../SearchBar/SearchBar";
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
 import RoomCard from "../RoomCard/RoomCard";
-
+import Error from "../Error/Error";
 const Rooms = () => {
   const rooms = useSelector((state) => state.rooms);
   const error = useSelector((state) => state.error);
