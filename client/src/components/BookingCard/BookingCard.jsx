@@ -46,13 +46,11 @@ const BookingCard = (props) => {
                     <div>
                         <p>Check in</p>
                         <h2>{props.checkinDate}</h2>
-                        <p>{props.checkinHour}</p>
                     </div>
 
                     <div>
                         <p>Check out</p>
                         <h2>{props.checkoutDate}</h2>
-                        <p>{props.checkoutHour}</p>
                     </div>
                 </div>
 
@@ -63,7 +61,7 @@ const BookingCard = (props) => {
                 <div>
                     <div className={style.price}>
                         <h3>Total</h3>
-                        <h1>{props.price}</h1>
+                        <h1>${props.price}</h1>
                     </div>
 
                     <button onClick={handlePayment} className={style.createHotel}>Confirm checkout</button>

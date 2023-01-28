@@ -20,3 +20,8 @@
     margin-right: 10px;
     font-weight: 700;
 }
+
+.containerLoader {
+    display: flex;
+    justify-content: center;
+  }

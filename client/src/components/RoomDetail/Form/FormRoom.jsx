@@ -34,7 +34,8 @@ const FormRoom = (props) => {
   };
 
   const addToLocalStorage = () => {
-    let data = [id, input];
+    input.id = id;
+    let data = [input];
     localStorage.setItem("habitacion", JSON.stringify(data));
   };
   return (
