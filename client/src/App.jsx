@@ -13,7 +13,7 @@ import Login from "./components/Login/Login.jsx";
 import FormHotels from "./components/FormHotels/FormHotels.jsx";
 import FormRooms from "./components/FormRooms/FormRooms.jsx";
 import Booking from "./components/Booking/Booking.jsx";
-axios.defaults.baseURL = "http://localhost:3001/";
+axios.defaults.baseURL = "https://proyecto-final-production-e80c.up.railway.app/";
 //
 function App() {
   return (
