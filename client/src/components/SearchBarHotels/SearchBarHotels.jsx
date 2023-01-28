@@ -8,7 +8,11 @@ import {
 } from "../../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
-const SearchBar = (props) => {
+import { useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+const SearchBarHotels = (props) => {
+  const location = useLocation();
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const [name, setName] = useState("");
   const error = useSelector((state) => state.error);
@@ -30,6 +34,7 @@ const SearchBar = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(getHotelByName(name));
+    // navigate("/hotels")
   };
   return (
     <div>
@@ -60,53 +65,57 @@ const SearchBar = (props) => {
       <div>
         <span className={style.iconOut}></span>
       </div>
-      <div className={style.flexContainer}>
-        <select
-          className={style.optionStar}
-          type="number"
-          min="0"
-          onChange={(e) => {
-            handleFilterByStars(e);
-          }}
-        >
-          <option value="All">Number of stars</option>
-          <option className={style.starRed} value="1">
-            ★
-          </option>
-          <option className={style.starRed} value="2">
-            ★★
-          </option>
-          <option className={style.starRed} value="3">
-            ★★★
-          </option>
-          <option className={style.starRed} value="4">
-            ★★★★
-          </option>
-          <option className={style.starRed} value="5">
-            ★★★★★
-          </option>
-        </select>
-        <select
-          type="text"
-          placeholder="Languages"
-          className={style.optionStar}
-          onChange={(e) => {
-            handleFilterByLanguage(e);
-          }}
-        >
-          <option value="All">Select a language</option>
-          <option value="spanish">Spanish</option>
-          <option value="russian">Russian</option>
-          <option value="english">English</option>
-          <option value="french">French</option>
-          <option value="german">German</option>
-        </select>
-        {/* <NavLink to={"/formHotels"}>
+      {location.pathname !== "/home" ? (
+        <div className={style.flexContainer}>
+          <select
+            className={style.optionStar}
+            type="number"
+            min="0"
+            onChange={(e) => {
+              handleFilterByStars(e);
+            }}
+          >
+            <option value="All">Number of stars</option>
+            <option className={style.starRed} value="1">
+              ★
+            </option>
+            <option className={style.starRed} value="2">
+              ★★
+            </option>
+            <option className={style.starRed} value="3">
+              ★★★
+            </option>
+            <option className={style.starRed} value="4">
+              ★★★★
+            </option>
+            <option className={style.starRed} value="5">
+              ★★★★★
+            </option>
+          </select>
+          <select
+            type="text"
+            placeholder="Languages"
+            className={style.optionStar}
+            onChange={(e) => {
+              handleFilterByLanguage(e);
+            }}
+          >
+            <option value="All">Select a language</option>
+            <option value="spanish">Spanish</option>
+            <option value="russian">Russian</option>
+            <option value="english">English</option>
+            <option value="french">French</option>
+            <option value="german">German</option>
+          </select>
+          {/* <NavLink to={"/formHotels"}>
               <button className={style.createHotel}> Create Hotel</button>
             </NavLink> */}
-      </div>
+        </div>
+      ) : (
+        ""
+      )}
     </div>
   );
 };
 
-export default SearchBar;
+export default SearchBarHotels;

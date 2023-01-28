@@ -5,6 +5,7 @@ import Header from "../Header/Header";
 import Services from "../Services/Services.jsx";
 import Galery from "../Galery/Galery";
 import { getRooms } from "../../redux/actions";
+import { getAllHotels } from "../../redux/actions";
 import Commentary from "../Commentary/Commentary";
 import Home from "../Home/Home";
 import Error from "../Error/Error";
@@ -17,14 +18,15 @@ import { useEffect } from "react";
 const LandingPage = (props) => {
   const dispatch = useDispatch();
   const rooms = useSelector((state) => state.rooms);
+  const hotels = useSelector((state) => state.allHotels);
   const error = useSelector((state) => state.error);
   useEffect(() => {
-    dispatch(getRooms());
+    dispatch(getAllHotels());
   }, [dispatch]);
   return (
     <div>
       <Header location={props.location} />
-      {error ? <Error /> : <RoomsCards rooms={rooms}/>}
+      {error ? <Error /> : <RoomsCards hotels={hotels}/>}
       <Services />
       <Galery />
       <Commentary />

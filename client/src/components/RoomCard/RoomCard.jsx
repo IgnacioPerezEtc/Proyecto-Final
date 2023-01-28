@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import Card from "react-bootstrap/Card";
 import style from "./RoomCard.module.css";
 import { useLocation } from "react-router-dom";
-
+import { cleanRoom } from "../../redux/actions";
+import { useDispatch } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBed,
@@ -13,7 +14,6 @@ import {
 
 const RoomCard = ({
   img,
-  title,
   price,
   guest,
   specialties,
@@ -23,6 +23,11 @@ const RoomCard = ({
   numRoom,
   id,
 }) => {
+  const dispatch = useDispatch();
+
+  // const cleanRoomDetail = () => {
+  //   dispatch(cleanRoom());
+  // };
   const location = useLocation();
   return (
     <div>
@@ -31,6 +36,7 @@ const RoomCard = ({
           <Card className={`${style.Card} h-75`}>
             <Link
               to={`/rooms/${id}`}
+              // onClick={() => cleanRoomDetail()}
               className={`text-decoration-none fs-5 text-danger `}
             >
               <Card.Img className={`${style.img}`} variant="top" src={img} />
@@ -109,7 +115,6 @@ const RoomCard = ({
                   <span className={style.iconAdults}></span>
                   <p className={style.paddingMax}>{maxAdult} adults</p>
                 </Card.Text>
-
               </Card.Body>
             </Link>
           </Card>
