@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { useSelector } from "react-redux";
-import style from "./FormRoom.module.css"
+import style from "./FormRoom.module.css";
 import Validation from "../../SearchBar/Validation/Validation";
 import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
@@ -32,7 +32,7 @@ const FormRoom = (props) => {
   const handleInputChange = (e) => {
     setInput({ ...input, [e.target.name]: e.target.value });
     setErrors(Validation({ ...input, [e.target.name]: e.target.value }));
-    dispatch(cleanReservation())
+    dispatch(cleanReservation());
   };
 
   const addToLocalStorage = () => {
@@ -54,7 +54,9 @@ const FormRoom = (props) => {
                   placeholder="Check-in"
                   name="check_in"
                   className={style.date}
-                  value={reservation.check_in ? reservation.check_in : input.check_in}
+                  value={
+                    reservation.check_in ? input.check_in = reservation.check_in : input.check_in
+                  }
                   onChange={handleInputChange}
                 />
               </div>
@@ -72,7 +74,10 @@ const FormRoom = (props) => {
                   placeholder="Check-out"
                   name="check_out"
                   className={style.date}
-                  value={reservation.check_out ? reservation.check_out : input.check_out}
+                  min={input.check_in}
+                  value={
+                    reservation.check_out ? input.check_out = reservation.check_out : input.check_out
+                  }
                   onChange={handleInputChange}
                 />
               </div>
@@ -89,7 +94,7 @@ const FormRoom = (props) => {
                   type="number"
                   placeholder="Adults"
                   className={style.pl}
-                  value={reservation.adults ? reservation.adults : input.adults}
+                  value={reservation.adults ? input.adults = reservation.adults : input.adults}
                   onChange={handleInputChange}
                   name="adults"
                   min="0"
@@ -107,7 +112,7 @@ const FormRoom = (props) => {
                   type="number"
                   placeholder="Children"
                   className={style.pl}
-                  value={reservation.children ? reservation.children : input.children}
+                  value={reservation.children ? input.children = reservation.children : input.children}
                   onChange={handleInputChange}
                   name="children"
                   min="0"
@@ -120,35 +125,34 @@ const FormRoom = (props) => {
             </div>
           </div>
 
-          <Link to={'/booking'}>
+          <Link to={"/booking"}>
             <button
               type="submit"
               disabled={
                 errors.adults ||
-                  errors.check_in ||
-                  errors.check_out ||
-                  errors.children ||
-                  errors.max_cant ||
-                  input.check_in == "" ||
-                  input.check_out == "" ||
-                  input.adults == "" ||
-                  input.children == ""
+                errors.check_in ||
+                errors.check_out ||
+                errors.children ||
+                errors.max_cant ||
+                input.check_in == "" ||
+                input.check_out == "" ||
+                input.adults == "" ||
+                input.children == ""
                   ? !buttonActive
                   : buttonActive
               }
               className={
                 errors.adults ||
-                  errors.check_in ||
-                  errors.check_out ||
-                  errors.children ||
-                  errors.max_cant ||
-                  input.check_in == "" ||
-                  input.check_out == "" ||
-                  input.adults == ""
+                errors.check_in ||
+                errors.check_out ||
+                errors.children ||
+                errors.max_cant ||
+                input.check_in == "" ||
+                input.check_out == "" ||
+                input.adults == ""
                   ? style.buttonOff
                   : style.buttonOn
               }
-
               onClick={addToLocalStorage}
             >
               Add to My Reservations

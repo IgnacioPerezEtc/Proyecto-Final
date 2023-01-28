@@ -10,6 +10,7 @@ import {
   GET_ROOM_BY_ID,
   DATA_RESERVATION,
   CLEAN_RESERVATION,
+  CLEAN_ROOM_DETAIL,
 } from "./actions";
 
 const initialState = {
@@ -52,6 +53,12 @@ const rootReducer = (state = initialState, action) => {
       };
     }
     case GET_ROOM_BY_ID: {
+      return {
+        ...state,
+        roomDetail: action.payload,
+      };
+    }
+    case CLEAN_ROOM_DETAIL: {
       return {
         ...state,
         roomDetail: action.payload,

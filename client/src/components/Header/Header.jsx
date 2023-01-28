@@ -4,6 +4,8 @@ import NavBar from "../NavBar/NavBar";
 import SearchBar from "../SearchBar/SearchBar";
 import bg from "../../assets/img/header2.jpg";
 import SearchBarHotels from "../SearchBarHotels/SearchBarHotels";
+import { NavLink } from "react-router-dom";
+import bg2 from "../../assets/img/bg-header.png"
 // import bg2 from "../../assets/img/banner.png";
 // import bg3 from "../../assets/img/banner2.png";
 // import bg4 from "../../assets/img/banner3.png";
@@ -42,20 +44,19 @@ const Header = () => {
             <h3 className="title-desc">Of Hotel Booking Online</h3>
           </div>
         </div>
-        {/* {((location.pathname === "/" || location.pathname === "/hotels") && (
+        {(location.pathname === "/home" && (
           <div className="container-button">
-            <button>Booking Now</button>
+            <NavLink to={"/hotels"}>
+              <button>Hotels</button>
+            </NavLink>
           </div>
-        )) || (
-          <div className="container-button ">
-            <button>Home</button>
-          </div>
-        )} */}
+        )) ||
+          ""}
       </div>
       <div>
-        {!location.pathname.includes("room") && <SearchBar />}
-        {location.pathname === "/hotels" && <SearchBarHotels/>}
-
+        {/* {!location.pathname.includes("room") && <SearchBarHotels />} */}
+        {location.pathname === "/hotels" && <SearchBarHotels />}
+        {location.pathname === "/rooms" && <SearchBar/>}
         {/* {location.pathname === "/hotels" && <SearchBarHotels />} */}
       </div>
     </div>

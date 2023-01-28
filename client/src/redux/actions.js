@@ -94,6 +94,7 @@ export const CREATE_ROOM = "CREATE_ROOM";
 export const GET_ROOM_BY_ID = "GET_ROOM_BY_ID";
 export const DATA_RESERVATION = "DATA_RESERVATION";
 export const CLEAN_RESERVATION = "CLEAN_RESERVATION";
+export const CLEAN_ROOM_DETAIL = "CLEAN_ROOM_DETAIL"
 
 export const dataReservation = (data) => {
   return (dispatch) => {
@@ -108,6 +109,15 @@ export const cleanReservation = () => {
   return (dispatch) => {
     return dispatch({
       type: CLEAN_RESERVATION,
+      payload: {},
+    });
+  };
+};
+
+export const cleanRoom = () => {
+  return (dispatch) => {
+    return dispatch({
+      type: CLEAN_ROOM_DETAIL,
       payload: {},
     });
   };

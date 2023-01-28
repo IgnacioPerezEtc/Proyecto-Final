@@ -9,7 +9,7 @@
 
 .container-title{
   position: absolute;
-  top: 220px;
+  top: 190px;
   left: 300px;
   animation: aparecerElemento 1s;
   transition: all 0.3s ease-out;
@@ -36,7 +36,7 @@
 }
 
 .div-name{
-  padding-bottom: 38px;
+  padding-bottom: 28px;
 }
 
 .div-off{
@@ -56,7 +56,8 @@
 }
 
 .container-button{
-  margin-top: 50px;
+  margin-top: 30px;
+  /* margin-left: 90px; */
 }
 
 .container-button button{

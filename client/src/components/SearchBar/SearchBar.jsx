@@ -9,7 +9,6 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { cleanReservation } from "../../redux/actions";
 // import { cleanReservation } from "../../redux/actions";
 const SearchBar = (props) => {
-  const navigate = useNavigate();
   const dispatch = useDispatch();
   const fecha_actual = new Date().toLocaleDateString();
   const reservation = useSelector((state) => state.reservation);
@@ -33,13 +32,12 @@ const SearchBar = (props) => {
   const handleInputChange = (e) => {
     setInput({ ...input, [e.target.name]: e.target.value });
     setErrors(Validation({ ...input, [e.target.name]: e.target.value }));
-    dispatch(cleanReservation())
+    dispatch(cleanReservation());
   };
 
   const submitChange = (e) => {
     e.preventDefault();
     dispatch(dataReservation(input));
-    navigate("/hotels");
   };
 
   return (
@@ -76,6 +74,7 @@ const SearchBar = (props) => {
                   placeholder="Check-out"
                   name="check_out"
                   className={style.date}
+                  min={input.check_in}
                   value={
                     reservation.check_out
                       ? reservation.check_out
@@ -157,7 +156,7 @@ const SearchBar = (props) => {
                 : style.buttonOn
             }
           >
-            Booking Now
+            Search
           </button>
         </form>
       </div>
