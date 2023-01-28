@@ -8,7 +8,7 @@ import {
 } from "../../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
-const SearchBar = (props) => {
+const SearchBarHotels = (props) => {
   const dispatch = useDispatch();
   const [name, setName] = useState("");
   const error = useSelector((state) => state.error);
@@ -33,33 +33,6 @@ const SearchBar = (props) => {
   };
   return (
     <div>
-      <div>
-        <div className={style.flexContainer}>
-          <div className={style.searchBar}>
-            <div className={style.containerSearchbar}>
-              <div>
-                <input
-                  type="text"
-                  placeholder="Write a name"
-                  className={style.dateSearchbar}
-                  onChange={(e) => handleInputChange(e)}
-                />
-                <span className={style.iconIn}></span>
-              </div>
-              <button
-                className={style.buttonSearchBar}
-                type="submit"
-                onClick={(e) => handleSubmit(e)}
-              >
-                Search Hotel
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div>
-        <span className={style.iconOut}></span>
-      </div>
       <div className={style.flexContainer}>
         <select
           className={style.optionStar}
@@ -109,4 +82,4 @@ const SearchBar = (props) => {
   );
 };
 
-export default SearchBar;
+export default SearchBarHotels;

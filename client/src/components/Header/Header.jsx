@@ -3,6 +3,7 @@ import "./Header.css";
 import NavBar from "../NavBar/NavBar";
 import SearchBar from "../SearchBar/SearchBar";
 import bg from "../../assets/img/header2.jpg";
+import SearchBarHotels from "../SearchBarHotels/SearchBarHotels";
 // import bg2 from "../../assets/img/banner.png";
 // import bg3 from "../../assets/img/banner2.png";
 // import bg4 from "../../assets/img/banner3.png";
@@ -53,6 +54,7 @@ const Header = () => {
       </div>
       <div>
         {!location.pathname.includes("rooms") && <SearchBar />}
+        {location.pathname === "/hotels" && <SearchBarHotels/>}
 
         {/* {location.pathname === "/hotels" && <SearchBarHotels />} */}
       </div>
