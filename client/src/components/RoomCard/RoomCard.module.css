@@ -2,7 +2,7 @@
   width: 320px;
   border: none;
 }
-
+p{color: #000;}
 .img {
   height: 200px;
   width: 100%;
@@ -18,10 +18,16 @@
   -webkit-line-clamp: 3;
   display: flex;
 }
+.spec{
+  margin-left: 12px;
+  }
 
 .childAdultsContainer {
   display: flex;
   text-align: center;
+}
+.titleRoom{
+  color: var(--letter-blue);
 }
 
 .paddingMax{
@@ -35,6 +41,7 @@
   background-image: url("../../assets/icons/adult.png");
   background-position: center;
   background-repeat: no-repeat;
+  margin-left: 25px;
   background-size: contain;
 }
 .iconChildren {
@@ -45,4 +52,12 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
+  margin-left: 0;
+}
+
+.priceContainer{
+  padding: 3px;
+  background-color: var(--letter-blue);
+  color: #fff;
+  border-radius: 3px;
 }

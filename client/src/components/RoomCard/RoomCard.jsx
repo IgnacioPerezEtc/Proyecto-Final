@@ -36,40 +36,36 @@ const RoomCard = ({
               <Card.Img className={`${style.img}`} variant="top" src={img} />
               <Card.Body className="d-flex flex-column gap-3">
                 <div className="d-flex justify-content-between">
-                  <h2 className="fw-bold text-dark">
-                    {" "}
+                  <h3 className={style.titleRoom}>
                     {nameHotel.charAt(0).toUpperCase() +
                       nameHotel.slice(1) +
                       " - " +
                       numRoom}
-                  </h2>
-                  <p className="bg-primary fs-5 rounded p-2 text-white">
+                  </h3>
+                  <p className={style.priceContainer}>
                     ${price}
                   </p>
                 </div>
                 <div className={`${style.Data} d-flex justify-content-between`}>
-                  <p className="text-dark">
-                    <FontAwesomeIcon className="text-dark me-2" icon={faBed} />
-                    {guest} guest
-                  </p>
+                 <p>Lorem ipsum dolor sit amet consecte Eos voluptas atque aspernatur! Dicta, soluta.</p>
                 </div>
+                <Card.Text className={`${style.childAdultsContainer} fs-5`}>
+                  
+                </Card.Text>
+                <Card.Text className={`${style.childAdultsContainer} fs-5`}><span className={style.iconChildren}></span>
+                  <p className={style.paddingMax}>{maxChild} children</p>
+                  <span className={style.iconAdults}></span>
+                  <p className={style.paddingMax}>{maxAdult} adults</p>
+                </Card.Text>
                 <Card.Text className={`${style.Text} fs-5`}>
-                  <p>Specialties:</p>
+                  {/* <p className={style.titleSpec}>Specialties:</p>
                   {specialties?.map((spec, i) => {
                     return (
                       <span key={i}>
-                        <p>{spec}</p>
+                        <p className={style.spec}>{spec}</p>
                       </span>
                     );
-                  })}
-                </Card.Text>
-                <Card.Text className={`${style.childAdultsContainer} fs-5`}>
-                  <span className={style.iconChildren}></span>
-                  <p className={style.paddingMax}>{maxChild} children</p>
-                </Card.Text>
-                <Card.Text className={`${style.childAdultsContainer} fs-5`}>
-                  <span className={style.iconAdults}></span>
-                  <p className={style.paddingMax}>{maxAdult} adults</p>
+                  })} */}
                 </Card.Text>
               </Card.Body>
             </Link>
