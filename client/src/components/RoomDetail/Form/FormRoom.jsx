@@ -6,6 +6,7 @@ import Validation from "../../SearchBar/Validation/Validation";
 import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { cleanReservation } from "../../../redux/actions";
 
 const FormRoom = (props) => {
   const { id } = useParams();
@@ -31,6 +32,7 @@ const FormRoom = (props) => {
   const handleInputChange = (e) => {
     setInput({ ...input, [e.target.name]: e.target.value });
     setErrors(Validation({ ...input, [e.target.name]: e.target.value }));
+    dispatch(cleanReservation())
   };
 
   const addToLocalStorage = () => {
