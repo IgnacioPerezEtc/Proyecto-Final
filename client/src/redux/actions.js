@@ -1,3 +1,4 @@
+import { async } from "@firebase/util";
 import axios from "axios";
 
 export const GET_ALL_HOTELS = "GET_ALL_HOTELS";
@@ -161,5 +162,22 @@ export const getRooms = () => {
         payload: "Rooms couldn't be loaded",
       });
     }
+  };
+};
+
+
+// *********************** SECCION USER ************************
+
+export const FIND_OR_CREATE = "FIND_OR_CREATE";
+export const LOGOUT = "LOGOUT";
+
+export const findOrCreate = async (data) => {
+    const result = await axios.post("/user", data);
+    localStorage.setItem("user", JSON.stringify(result.data));
+};
+
+export const logOut = () => {
+  return async function () {
+    localStorage.removeItem("user");
   };
 };
