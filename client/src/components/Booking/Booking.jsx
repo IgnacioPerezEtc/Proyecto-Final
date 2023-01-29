@@ -25,6 +25,8 @@ const Booking = () => {
                 <h2 className={style.red}>Detail</h2>
             </div>
             <BookingCard
+                key={roomDetail.id}
+                id={roomDetail.id}
                 name={roomDetail.hotel.name[0].toUpperCase() + roomDetail.hotel.name.slice(1)}
                 rating={roomDetail.hotel.rating}
                 location={roomDetail.hotel.location}

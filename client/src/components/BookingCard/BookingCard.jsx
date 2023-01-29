@@ -4,9 +4,10 @@ import style from "./BookingCard.module.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { getUrlPayment } from "../../utils";
-import { redirect } from "react-router-dom";
+import { signInWithGoogle } from "../../fireBase/Firebase";
 
 const BookingCard = (props) => {
+
     const star = props.rating;
     let stars = [];
     for (let i = 0; i < star; i++) {
@@ -16,24 +17,33 @@ const BookingCard = (props) => {
     const items = {
         products: [
             {
-                id: 1,
-                title: "Carmona Hotel",
-                description: "Accomodation for 2 people",
+                id: props.id,
+                title: props.name,
+                description: `Accomodation for ${props.num} people`,
                 quantity: 1,
-                unit_price: 400
+                unit_price: props.price
             }
         ]
     }
     
     const handlePayment = async (event) => {
-        let url = await getUrlPayment(items);
-        console.log(url);
-        window.location.replace(url.link);
-    }
+        const user = JSON.parse(localStorage.getItem("user"));
+        if(user) {
+            let url = await getUrlPayment(items);
+            window.location.replace(url.link);
+        } 
+        else {
+            signInWithGoogle();
+        }
+    };
+
+    const modify = () => {
+        window.location.replace(`/rooms/${props.id}`)
+    };
 
     return(
         <div>
-            <Link className={style.link}>Modify</Link>
+            <Link className={style.link} onClick={modify}>Modify</Link>
 
             <div className={style.container}>
 
