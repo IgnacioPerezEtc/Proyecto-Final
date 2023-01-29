@@ -3,11 +3,11 @@
   width: 100%;
 }
 
-.container-header{
+.container-header {
   position: relative;
 }
 
-.container-title{
+.container-title {
   position: absolute;
   top: 190px;
   left: 300px;
@@ -15,39 +15,39 @@
   transition: all 0.3s ease-out;
 }
 
-.name-hotel{
+.name-hotel {
   color: #fff;
   font-size: 8.9rem;
   font-weight: bold;
   line-height: 9.2rem;
 }
 
-.title-off{
+.title-off {
   color: #fff;
   font-size: 4.8rem;
   font-weight: 500;
   line-height: 5.6rem;
 }
-.title-desc{
+.title-desc {
   color: #fff;
   font-size: 3.8rem;
   font-weight: 500;
   line-height: 4.4rem;
 }
 
-.div-name{
+.div-name {
   padding-bottom: 28px;
 }
 
-.div-off{
+.div-off {
   padding-bottom: 18px;
 }
 
-.div-desc{
+.div-desc {
   padding-top: 6px;
 }
 
-.hr{
+.hr {
   width: 140px;
   border: 2px solid var(--color-red);
   opacity: 1;
@@ -55,25 +55,17 @@
   margin-left: 14px;
 }
 
-.container-button{
+.container-button {
   margin-top: 30px;
   /* margin-left: 90px; */
 }
 
-.container-button button{
-  width: 154px;
-  height: 48px;
-  background-color: var(--color-red);
-  border: 1px solid transparent;
-  border-radius: 5px;
-  color: #fff;
-  font-family: 'Roboto', sans-serif;
+.container-button button {
   font-weight: 500;
   font-size: 1.6rem;
   line-height: 1.9rem;
   cursor: pointer;
 }
-
 
 @keyframes aparecerElemento {
   0% {
@@ -81,6 +73,16 @@
     opacity: 0;
   }
   100% {
-      opacity: 1;
+    opacity: 1;
   }
+}
+.buttonNavlinkHotels {
+  background-color: var(--color-red);
+  padding: 15px 45px;
+  font-family: "Roboto", sans-serif;
+  border-radius: 5px;  border: 1px solid transparent;
+  color: #fff;
+}
+.buttonNavlinkHotels:hover {
+  background-color: var(--letter-red);
 }

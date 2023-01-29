@@ -47,7 +47,7 @@ const Header = () => {
         {(location.pathname === "/home" && (
           <div className="container-button">
             <NavLink to={"/hotels"}>
-              <button>Hotels</button>
+              <button className="buttonNavlinkHotels">Hotels</button>
             </NavLink>
           </div>
         )) ||
