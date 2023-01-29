@@ -38,7 +38,7 @@ const FormRoom = (props) => {
   const addToLocalStorage = () => {
     input.id = id;
     let data = [input];
-    localStorage.setItem("habitacion", JSON.stringify(data));
+    localStorage.setItem("room", JSON.stringify(data));
   };
   return (
     <div className={style.flexContainer}>
