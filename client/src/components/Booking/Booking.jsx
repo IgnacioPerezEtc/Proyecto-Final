@@ -10,7 +10,7 @@ import { useState } from "react";
 const Booking = () => {
     const dispatch = useDispatch();
     const roomDetail = useSelector(state => state.roomDetail);
-    const [ info, setInfo ] = useState(JSON.parse(localStorage.getItem('habitacion')));
+    const [ info, setInfo ] = useState(JSON.parse(localStorage.getItem("room")));
     
     useEffect(() => {
         dispatch(getRoomById(info[0].id));
