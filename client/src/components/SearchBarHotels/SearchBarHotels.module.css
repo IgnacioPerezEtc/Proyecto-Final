@@ -7,7 +7,7 @@ input[type="number"]::-webkit-outer-spin-button {
   display: flex;
   justify-content: center;
   margin-bottom: -15px;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 .searchBar {
   display: inline-block;
@@ -205,11 +205,39 @@ input:focus {
   margin: 10px;
   background-color: var(--color-blue);
   color: #fff;
-  padding-left: 8px;
+  padding-left: 5px;
   font-weight: 500;
   border-radius: 5px;
   margin-bottom: 80px;
   font-size: 1.6rem;
   box-shadow: 0px 4px 4px #00000040;
   outline: none;
+  cursor: pointer;
+}
+.createHotel {
+  width: 154px;
+  height: 44px;
+  background-color: var(--color-blue);
+  border: 1px solid transparent;
+  border-radius: 5px;
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 1.6rem;
+  line-height: 1.9rem;
+  cursor: pointer;
+  box-shadow: 0px 4px 4px #00000040;
+  margin: 3px;
+  margin-top: 11px;
+  text-align: start;
+  padding-left: 8px;
+  margin-left: 9px;
+}
+.createHotel:hover {
+  transform: scale(0.98);
+  background-color: var(--letter-blue);
+}
+.optionStar:hover {
+  transform: scale(0.98);
+  background-color: var(--letter-blue);
 }

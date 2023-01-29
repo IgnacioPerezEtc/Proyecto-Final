@@ -123,9 +123,9 @@
     width: 160px;
     height: 54px;
     font-size: 2.4rem;
-    font-weight: bold;
+   font-weight: 400;
     border: none;
-    background-color: #0c5c88;
+    background-color: var(--color-blue);
     letter-spacing: 1px;
     color: #fff;
     border-radius: 5px;
@@ -135,4 +135,5 @@
     transform: scale(.98);
     /* transition-timing-function: ease-out;
     transition-duration: 1s; */
+    background-color: var(--letter-blue);
 }

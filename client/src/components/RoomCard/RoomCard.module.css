@@ -2,7 +2,9 @@
   width: 320px;
   border: none;
 }
-p{color: #000;}
+p {
+  color: #000;
+}
 .img {
   height: 200px;
   width: 100%;
@@ -18,19 +20,19 @@ p{color: #000;}
   -webkit-line-clamp: 3;
   display: flex;
 }
-.spec{
+.spec {
   margin-left: 12px;
-  }
+}
 
 .childAdultsContainer {
   display: flex;
   text-align: center;
 }
-.titleRoom{
+.titleRoom {
   color: var(--letter-blue);
 }
 
-.paddingMax{
+.paddingMax {
   padding-left: 8px;
 }
 
@@ -55,7 +57,7 @@ p{color: #000;}
   margin-left: 0;
 }
 
-.priceContainer{
+.priceContainer {
   padding: 3px;
   background-color: var(--letter-blue);
   color: #fff;

@@ -107,9 +107,9 @@ const SearchBarHotels = (props) => {
             <option value="french">French</option>
             <option value="german">German</option>
           </select>
-          {/* <NavLink to={"/formHotels"}>
+          <NavLink to={"/formHotels"}>
               <button className={style.createHotel}> Create Hotel</button>
-            </NavLink> */}
+            </NavLink>
         </div>
       ) : (
         ""

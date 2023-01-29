@@ -48,17 +48,19 @@ const RoomCard = ({
                       " - " +
                       numRoom}
                   </h3>
-                  <p className={style.priceContainer}>
-                    ${price}
-                  </p>
+                  <p className={style.priceContainer}>${price}</p>
                 </div>
                 <div className={`${style.Data} d-flex justify-content-between`}>
-                 <p>Lorem ipsum dolor sit amet consecte Eos voluptas atque aspernatur! Dicta, soluta.</p>
+                  <p>
+                    Lorem ipsum dolor sit amet consecte Eos voluptas atque
+                    aspernatur! Dicta, soluta.
+                  </p>
                 </div>
+                <Card.Text
+                  className={`${style.childAdultsContainer} fs-5`}
+                ></Card.Text>
                 <Card.Text className={`${style.childAdultsContainer} fs-5`}>
-                  
-                </Card.Text>
-                <Card.Text className={`${style.childAdultsContainer} fs-5`}><span className={style.iconChildren}></span>
+                  <span className={style.iconChildren}></span>
                   <p className={style.paddingMax}>{maxChild} children</p>
                   <span className={style.iconAdults}></span>
                   <p className={style.paddingMax}>{maxAdult} adults</p>

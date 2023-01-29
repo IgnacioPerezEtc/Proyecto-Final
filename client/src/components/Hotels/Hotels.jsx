@@ -19,9 +19,7 @@ const Hotels = () => {
   }, [dispatch]);
   return (
     <div>
-      <Header /><NavLink to={"/formHotels"}>
-            <button className={style.createHotel}>Create Hotel</button>
-          </NavLink>
+      <Header />
       {error ? (
         <Error />
       ) : (
