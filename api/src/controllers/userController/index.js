@@ -30,7 +30,7 @@ async function postUser(newUser) {
         const createUser = await User.findOrCreate({
             where: { email: newUser.email, name: newUser.name }
         });
-        return "User in DB";
+        return createUser;
 
     } catch (error) {
         return error.message;
