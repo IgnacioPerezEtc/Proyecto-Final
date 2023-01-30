@@ -106,36 +106,15 @@ const RoomDetail = () => {
                 </p>
               </div>
             </div>
-
-            {/* <div className="d-flex gap-5">
-            <Link className="text-decoration-none h1 text-secondary">
-              Specialties
-            </Link>
-            <Link className="text-decoration-none h1 text-secondary">
-              Aditional Information
-            </Link>
-            <Link className="text-decoration-none h1 text-secondary">
-              Review
-            </Link>
-            <Link className="text-decoration-none h1 text-secondary">
-              Prining Plans
-            </Link>
-          </div> */}
             <div>
-              <ul>
+              <div>
+                <h1 className={style.titleSpec}>
+                  specialities
+                </h1>
                 {roomDetail.specialties.map((spec) => {
-                  return <li key={spec}>{spec}</li>;
+                  return <span className={style.spanSpec} key={spec}>{spec}</span>;
                 })}
-              </ul>
-              {/* <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit non
-              officiis in amet odit molestiae cum aut obcaecati possimus maxime
-              laudantium eaque, ea aspernatur necessitatibus voluptas modi earum
-              id. Sapiente. Lorem, ipsum dolor sit amet consectetur adipisicing
-              elit. Aliquam eveniet, eaque esse incidunt tempore aliquid? Dolor
-              nostrum dicta laudantium nobis officiis deserunt rem vero maiores
-              vel animi, corporis perferendis architecto.
-            </p> */}
+              </div>
             </div>
             <div>
               <p className="fw-bold text-center display-1">

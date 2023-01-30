@@ -11,7 +11,7 @@
 .containerRoomDetail {
   text-align: center;
 }
-.containerButtonB{
+.containerButtonB {
   padding-top: 40px;
 }
 .backHome {
@@ -62,6 +62,16 @@
   color: #444444;
   font-weight: 500;
 }
-.containerDates{
+.containerDates {
   background-color: #fff;
+}
+.spanSpec {
+  font-size: 25px;
+  margin: 5px;
+}
+.titleSpec {
+  margin: 20px;
+  font-size: 50px;
+  color: #000;
+  font-weight: 600;
 }

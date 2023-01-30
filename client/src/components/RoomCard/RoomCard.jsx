@@ -66,14 +66,6 @@ const RoomCard = ({
                   <p className={style.paddingMax}>{maxAdult} adults</p>
                 </Card.Text>
                 <Card.Text className={`${style.Text} fs-5`}>
-                  {/* <p className={style.titleSpec}>Specialties:</p>
-                  {specialties?.map((spec, i) => {
-                    return (
-                      <span key={i}>
-                        <p className={style.spec}>{spec}</p>
-                      </span>
-                    );
-                  })} */}
                 </Card.Text>
               </Card.Body>
             </Link>
@@ -84,38 +76,31 @@ const RoomCard = ({
           <Card className={`${style.Card} h-75`}>
             <Link
               to={`/rooms/${id}`}
-              className={`text-decoration-none fs-5 text-danger`}
+              // onClick={() => cleanRoomDetail()}
+              className={`text-decoration-none fs-5 text-danger `}
             >
               <Card.Img className={`${style.img}`} variant="top" src={img} />
               <Card.Body className="d-flex flex-column gap-3">
                 <div className="d-flex justify-content-between">
-                  <p className="bg-primary fs-5 rounded p-2 text-white">
-                    ${price}
-                  </p>
+                  <h3 className={style.titleRoom}>{numRoom}</h3>
+                  <div className={style.priceContainer}>${price}</div>
                 </div>
                 <div className={`${style.Data} d-flex justify-content-between`}>
-                  <p className="text-dark">
-                    <FontAwesomeIcon className="text-dark me-2" icon={faBed} />
-                    {guest} guest
+                  <p className={style.param}>
+                    Lorem ipsum dolor sit amet consecte Eos voluptas atque
+                    aspernatur! Dicta, soluta.
                   </p>
                 </div>
-                <Card.Text className={`${style.Text} fs-5`}>
-                  <p>Specialties:</p>
-                  {specialties?.map((spec, i) => {
-                    return (
-                      <span key={i}>
-                        <p>{spec}</p>
-                      </span>
-                    );
-                  })}
-                </Card.Text>
+                <Card.Text
+                  className={`${style.childAdultsContainer} fs-5`}
+                ></Card.Text>
                 <Card.Text className={`${style.childAdultsContainer} fs-5`}>
                   <span className={style.iconChildren}></span>
                   <p className={style.paddingMax}>{maxChild} children</p>
-                </Card.Text>
-                <Card.Text className={`${style.childAdultsContainer} fs-5`}>
                   <span className={style.iconAdults}></span>
                   <p className={style.paddingMax}>{maxAdult} adults</p>
+                </Card.Text>
+                <Card.Text className={`${style.Text} fs-5`}>
                 </Card.Text>
               </Card.Body>
             </Link>

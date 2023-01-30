@@ -58,8 +58,11 @@ p {
 }
 
 .priceContainer {
-  padding: 3px;
+  padding: 4px 5px;
   background-color: var(--letter-blue);
   color: #fff;
   border-radius: 3px;
+}
+.param{
+  text-align: start;
 }
