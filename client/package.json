@@ -5,8 +5,8 @@
   "type": "module",
   "homepage": "http://IgnacioPerezEtc.github.io/Proyecto-Final/",
   "scripts": {
-    "predeploy":"npm run build",
-    "deploy":"gh-pages -d dist",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"
@@ -28,7 +28,8 @@
     "redux": "^4.2.0",
     "redux-thunk": "^2.4.2",
     "router-dom": "^2.2.9",
-    "swiper": "^8.4.6"
+    "swiper": "^8.4.6",
+    "use-history": "^1.4.1"
   },
   "devDependencies": {
     "@types/react": "^18.0.26",

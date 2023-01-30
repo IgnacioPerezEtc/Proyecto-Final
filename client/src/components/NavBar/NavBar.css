@@ -17,9 +17,10 @@
 .ul-nav{
     display: flex;
     list-style-type: none;
+    align-items: center;
 }
 
-.ul-nav li{
+.pages{
     margin: 0px 40px;
 }
 
@@ -60,7 +61,7 @@
 
 }
 
-.ul-nav li:hover{
+.pages:hover{
     transform: scale(1.1);
     transition-duration: .5s;
     animation-timing-function: ease;
