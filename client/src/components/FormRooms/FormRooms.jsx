@@ -19,8 +19,8 @@ const FormRooms = () => {
     maxAdult: "",
     maxChild: "",
     specialties: [],
-    availableDate: "",
-    value: ""
+    value: "",
+    hotelId: ""
   });
 
   const specialties = [
@@ -61,7 +61,7 @@ const FormRooms = () => {
   };
 
   const onSubmit = (data) => {
-    console.log(data);
+    console.log(input);
     dispatch(createRoom(input));
     alert("The Room was created successfully");
     setInput({
@@ -72,8 +72,8 @@ const FormRooms = () => {
       maxAdult: "",
       maxChild: "",
       specialties: [],
-      availableDate: "",
-      value: ""
+      value: "",
+      hotelId: ""
     })
   };
 
@@ -83,20 +83,18 @@ const FormRooms = () => {
       <h1>Formulario de Rooms</h1>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div>
-          <label>Number of Rooms </label>
+          <label>Enter name Room </label>
           <input 
-            type="number"
+            type="text"
             {
               ...register("numRoom", {
                 required: true,
-                min: 1,
-                max: 120,
                 onChange: (e) => handleChange(e)
               })
             }
           />
           {
-            errors.numRoom?.type === "required" && <span>Number of Rooms is required </span> || errors.numRoom?.type === "max" && <span>Ingrese un numero de habitaciones menor a 121</span> || errors.numRoom?.type === "min" && <span>Ingrese un numero de habitaciones mayor a 0</span>
+            errors.numRoom?.type === "required" && <span>Number of Rooms is required </span>
           }
         </div>
         <div>
@@ -115,20 +113,21 @@ const FormRooms = () => {
             errors.pictureHome?.type === "required" && <span>Principal picture is required</span> || errors.pictureHome?.type === "validate" && <span>Enter a URL image .png, .jpg, .jpeg, .gif</span>
           }
         </div>
-        {/* <div>
+        <div>
           <label>Some extra pictures </label>
           <input 
             type="text" 
             {
               ...register("pictureDetail", {
-                validate: imageValidator
+                validate: imageValidator,
+                onChange: (e) => handleChange(e)
               })
             }
           />
           {
             errors.pictureDetail?.type === "validate" && <span>Enter a URL image .png, .jpg, .jpeg, .gif</span>
           }
-        </div> */}
+        </div>
         <div>
           <label>Number of Peoples </label>
           <input 
@@ -152,10 +151,16 @@ const FormRooms = () => {
             type="number"
             {
               ...register("maxAdult", {
+                required: true,
+                min: 1,
+                max: 10,
                 onChange: (e) => handleChange(e)
               })
             }
           />
+          {
+            errors.maxAdult?.type === "required" && <span>Number of Max Adults is required</span> || errors.maxAdult?.type === "min" && <span>Ingrese un numero de personas adultas mayor a 0</span> || errors.maxAdult?.type === "max" && <span>Ingrese un numero de personas adultas menor a 11</span>
+          }
         </div>
         <div>
           <label>Max Child </label>
@@ -163,10 +168,16 @@ const FormRooms = () => {
             type="number"
             {
               ...register("maxChild", {
+                required: true,
+                min: 1,
+                max: 10,
                 onChange: (e) => handleChange(e)
               })
             }
           />
+          {
+            errors.maxChild?.type === "required" && <span>Number of Max Child is required</span> || errors.maxChild?.type === "min" && <span>Ingrese un numero de personas menores, mayor a 0</span> || errors.maxChild?.type === "max" && <span>Ingrese un numero de personas menores, menor a 11</span>
+          }
         </div>
         <div>
           <div>
@@ -205,21 +216,6 @@ const FormRooms = () => {
           </div>
         </div>
         <div>
-          <label>Available Date </label>
-          <input 
-            type="date" 
-            {
-              ...register("availableDate", {
-                required: true,
-                onChange: (e) => handleChange(e)
-              })
-            }
-          />
-          {
-            errors.availableDate?.type === "required" && <span>Available Date is required</span>
-          }
-        </div>
-        <div>
           <label>Value </label>
           <input 
             type="number" 
@@ -233,6 +229,21 @@ const FormRooms = () => {
           />
           {
             errors.value?.type === "required" && <span>Value is required</span> || errors.value?.type === "min" && <span>Ingrese un valor mayor a 0</span>
+          }
+        </div>
+        <div>
+          <label>Hotel ID </label>
+          <input 
+            type="number" 
+            {
+              ...register("hotelId", {
+                onChange: (e) => handleChange(e),
+                required: true
+              })
+            }
+          />
+          {
+            errors.hotelId?.type === "required" && <span>Hotel ID is required</span>
           }
         </div>
         <div>

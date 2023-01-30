@@ -12,6 +12,7 @@ import { Keyboard, Autoplay } from "swiper";
 import { NavLink } from "react-router-dom";
 import "swiper/css";
 import "swiper/css/free-mode";
+import FormRooms from "../FormRooms/FormRooms";
 const HotelDetail = () => {
   const dispatch = useDispatch();
   const { id } = useParams();
@@ -153,7 +154,11 @@ const HotelDetail = () => {
           <img src="https://cdn.dribbble.com/users/118337/screenshots/3831581/building_loader.gif" />
         </div>
       )}
-
+      <div className={style.containerButton}>
+        <NavLink to={"/formRoom"}>
+          <button className={style.createHotel}>Add Room</button>
+        </NavLink>
+      </div>
       <Footer />
     </div>
   );
