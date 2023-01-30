@@ -16,6 +16,7 @@ const SearchBarHotels = (props) => {
   const dispatch = useDispatch();
   const [name, setName] = useState("");
   const error = useSelector((state) => state.error);
+  const [info, setInfo] = useState(JSON.parse(localStorage.getItem("user")));
   const handleFilterByLanguage = (e) => {
     e.preventDefault();
     dispatch(filterByLanguage(e.target.value));
@@ -107,9 +108,13 @@ const SearchBarHotels = (props) => {
             <option value="french">French</option>
             <option value="german">German</option>
           </select>
-          <NavLink to={"/formHotels"}>
-              <button className={style.createHotel}> Create Hotel</button>
-            </NavLink>
+          {info
+            ? info.at(0).email === "yourdestinypf2023@gmail.com" && (
+                <NavLink to={"/formHotels"}>
+                  <button className={style.createHotel}> Create Hotel</button>
+                </NavLink>
+              )
+            : ""}
         </div>
       ) : (
         ""
