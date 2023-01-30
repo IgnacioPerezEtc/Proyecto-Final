@@ -1,0 +1,119 @@
+.containerForm {
+    margin: 0 auto;
+    margin-top: 80px;
+    text-align: start;
+    font-family: "Roboto", sans-serif;
+    margin-bottom: 120px;
+  }
+  
+  .flexContainer {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-left: 80px;
+    padding-right: 80px;
+    padding-bottom: 80px;
+  }
+  
+  .titleForm {
+    font-family: "Raleway", sans-serif;
+    font-size: 4.4rem;
+    font-weight: bold;
+    color: var(--color-blue);
+    padding-left: 80px;
+    padding-top: 20px;
+    padding-right: 80px;
+    text-align: center;
+    padding-bottom: 16px;
+  }
+
+  .containerInput {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .flexInputs {
+    display: flex;
+    justify-content: space-around;
+  }
+  .flexInputs div {
+    width: 45%;
+  }
+
+  .containerInput input {
+    width: 100%;
+    height: 42px;
+    margin: 0 auto;
+    background-color: #18445c81;
+    border: 2px solid #0c5c88;
+    border-radius: 5px;
+    color: #000;
+    font-size: 1.6rem;
+    padding-left: 8px;
+    font-weight: lighter;
+    box-shadow: 2px 0px 8px rgba(0, 0, 0, 0.25), 0px 2px 8px rgba(0, 0, 0, 0.25);
+  }
+
+  .containerInput label {
+    color: var(--color-blue);
+    font-size: 2.2rem;
+    font-weight: 500;
+    padding-bottom: 4px;
+  }
+
+  .messageError {
+    color: #4d0404;
+    font-size: 1.8rem;
+    font-weight: normal;
+  }
+
+  .containerSelect {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .containerSelect label {
+    color: var(--color-blue);
+    font-size: 2.2rem;
+    font-weight: 500;
+    padding-bottom: 4px;
+  }
+  .containerSelect select {
+    width: 100%;
+    height: 42px;
+    margin: 0 auto;
+    background-color: #18445c81;
+    border: 2px solid #0c5c88;
+    border-radius: 5px;
+    color: #000;
+    font-size: 1.6rem;
+    padding-left: 8px;
+    font-weight: lighter;
+    box-shadow: 2px 0px 8px rgba(0, 0, 0, 0.25), 0px 2px 8px rgba(0, 0, 0, 0.25);
+  }
+
+  .containerSend{
+    text-align: center;
+    padding-top: 24px;
+}
+
+.buttonCreate{
+    width: 160px;
+    height: 54px;
+    font-size: 2.4rem;
+    font-weight: bold;
+    border: none;
+    background-color: #0c5c88;
+    letter-spacing: 1px;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.buttonCreate:hover{
+    transform: scale(.98);
+    /* transition-timing-function: ease-out;
+    transition-duration: 1s; */
+}
