@@ -25,6 +25,7 @@ const initialState = {
 
 const rootReducer = (state = initialState, action) => {
   const allHotels = state.allHotels;
+  const actualHotels = state.hotels;
 
   switch (action.type) {
     case GET_ALL_HOTELS: {
@@ -81,7 +82,7 @@ const rootReducer = (state = initialState, action) => {
       const languageFiltered =
         action.payload === "All"
           ? allHotels
-          : allHotels.filter((h) =>
+          : actualHotels.filter((h) =>
               h.languages.find((languages) => languages === action.payload)
             );
 
@@ -95,7 +96,7 @@ const rootReducer = (state = initialState, action) => {
       const starsFiltered =
         action.payload === "All"
           ? allHotels
-          : allHotels.filter((h) => h.category == action.payload);
+          : actualHotels.filter((h) => h.category == action.payload);
 
       return {
         ...state,
