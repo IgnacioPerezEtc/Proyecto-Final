@@ -185,7 +185,7 @@ const FormHotels = () => {
                 <label>Images Extras</label>
                 <input
                   type="text"
-                  {...register("pictureHome", {
+                  {...register("pictureDetail", {
                     validate: imageValidator,
                     onChange: (e) => {
                       handleChange(e);
