@@ -124,9 +124,11 @@ export const cleanRoom = () => {
 };
 
 export function createRoom(data) {
-  return async function () {
+  return async function (dispatch) {
     const json = await axios.post("/rooms", data);
-    return json;
+    return dispatch ({
+      type: CREATE_ROOM
+    });
   };
 }
 

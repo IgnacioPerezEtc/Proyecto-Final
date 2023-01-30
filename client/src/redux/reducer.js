@@ -11,6 +11,7 @@ import {
   DATA_RESERVATION,
   CLEAN_RESERVATION,
   CLEAN_ROOM_DETAIL,
+  CREATE_ROOM
 } from "./actions";
 
 const initialState = {
@@ -111,6 +112,11 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         rooms: action.payload,
       };
+
+    case CREATE_ROOM: 
+      return {
+        ...state
+      }
 
     default:
       return { ...state };
