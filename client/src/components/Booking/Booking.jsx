@@ -17,9 +17,9 @@ const Booking = () => {
   if (!infoUser) {
     Swal.fire("Sorry, you must to log-in in first to reserve", "error");
     Swal.fire({
-      title: 'Sorry',
-      text: 'you must to log-in first to reserve',
-    })
+      title: "Sorry",
+      text: "you must to log-in first to reserve",
+    });
     window.setTimeout(() => {
       window.location.href = "/";
     }, 2500);
