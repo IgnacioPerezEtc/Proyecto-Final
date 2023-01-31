@@ -82,7 +82,10 @@ const RoomCard = ({
               <Card.Img className={`${style.img}`} variant="top" src={img} />
               <Card.Body className="d-flex flex-column gap-3">
                 <div className="d-flex justify-content-between">
-                  <h3 className={style.titleRoom}>{numRoom}</h3>
+                  <h3 className={style.titleRoom}>{nameHotel.charAt(0).toUpperCase() +
+                      nameHotel.slice(1) +
+                      " - " +
+                      numRoom}</h3>
                   <div className={style.priceContainer}>${price}</div>
                 </div>
                 <div className={`${style.Data} d-flex justify-content-between`}>
