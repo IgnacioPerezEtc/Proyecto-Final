@@ -31,21 +31,21 @@ const RoomDetail = () => {
     dispatch(getRooms());
   }, [dispatch]);
 
-  // const imgs = [
-  //   roomDetail.pictureHome,
-  //   "https://swiperjs.com/demos/images/nature-1.jpg",
-  //   "https://swiperjs.com/demos/images/nature-2.jpg",
-  //   "https://swiperjs.com/demos/images/nature-3.jpg",
-  //   "https://swiperjs.com/demos/images/nature-4.jpg",
-  //   "https://swiperjs.com/demos/images/nature-5.jpg",
-  //   "https://swiperjs.com/demos/images/nature-6.jpg",
-  //   "https://swiperjs.com/demos/images/nature-7.jpg",
-  //   "https://swiperjs.com/demos/images/nature-8.jpg",
-  //   "https://swiperjs.com/demos/images/nature-9.jpg",
-  //   "https://swiperjs.com/demos/images/nature-10.jpg",
-  // ];
+  const imgs = [
+    "https://swiperjs.com/demos/images/nature-1.jpg",
+    "https://swiperjs.com/demos/images/nature-2.jpg",
+    "https://swiperjs.com/demos/images/nature-3.jpg",
+    "https://swiperjs.com/demos/images/nature-4.jpg",
+    "https://swiperjs.com/demos/images/nature-5.jpg",
+    "https://swiperjs.com/demos/images/nature-6.jpg",
+    "https://swiperjs.com/demos/images/nature-7.jpg",
+    "https://swiperjs.com/demos/images/nature-8.jpg",
+    "https://swiperjs.com/demos/images/nature-9.jpg",
+    "https://swiperjs.com/demos/images/nature-10.jpg",
+    roomDetail.pictureHome,
+  ];
 
-  // const [currentSlide, setCurrentSlide] = useState(imgs[0]);
+  const [currentSlide, setCurrentSlide] = useState(imgs[0]);
 
   return (
     <div>
@@ -61,22 +61,18 @@ const RoomDetail = () => {
               </div>
 
               <div className={` ${style.containerImgForm} d-flex w-100`}>
-                <div className={` w-50 pe-5`}>
+                <div className={` ${style.containerPpal}`}>
                   <img
-                    src={roomDetail.pictureHome}
+                    src={currentSlide}
                     alt=""
                     className={` ${style.img} mb-3 rounded`}
                   />
-                  {/* <Swiper
-                    slidesPerView={4}
-                    spaceBetween={20}
-                    className="w-100 display-4"
-                  >
+                  <Swiper slidesPerView={4} className={style.con}>
                     {imgs?.map((img, index) => {
                       return (
                         <SwiperSlide
                           onClick={() => setCurrentSlide(img)}
-                          className=""
+                          className={style.conImg}
                           key={index}
                         >
                           <img
@@ -87,9 +83,11 @@ const RoomDetail = () => {
                         </SwiperSlide>
                       );
                     })}
-                  </Swiper> */}
+                  </Swiper>
                 </div>
-                <FormRoom />
+                <div className={style.containerForm}>
+                  <FormRoom />
+                </div>
               </div>
               <div
                 className={` ${style.containerTitle} d-flex justify-content-between my-5`}
@@ -108,73 +106,15 @@ const RoomDetail = () => {
             </div>
             <div>
               <div>
-                <h1 className={style.titleSpec}>
-                  specialities
-                </h1>
+                <h1 className={style.titleSpec}>specialities</h1>
                 {roomDetail.specialties.map((spec) => {
-                  return <span className={style.spanSpec} key={spec}>{spec}</span>;
-                })}
-              </div>
-            </div>
-            <div>
-              <p className="fw-bold text-center display-1">
-                Our <span>Room</span>
-              </p>
-
-              <Swiper
-                freeMode={true}
-                grabCursor={true}
-                modules={[Autoplay, Keyboard]}
-                autoplay={{
-                  delay: 3000,
-                }}
-                keyboard={{
-                  enabled: true,
-                }}
-                className="mySwiper m-4 justify-content-center w-100"
-                breakpoints={{
-                  0: {
-                    slidesPerView: 1,
-                    spaceBetween: 30,
-                    centeredSlides: true,
-                  },
-                  480: {
-                    slidesPerView: 1,
-                    spaceBetween: 15,
-                    centeredSlides: true,
-                  },
-                  768: {
-                    slidesPerView: 2,
-                    spaceBetween: 10,
-                  },
-                  1024: {
-                    slidesPerView: 3,
-                    spaceBetween: 30,
-                  },
-                  1440: {
-                    slidesPerView: 4,
-                    spaceBetween: 20,
-                  },
-                }}
-              >
-                {rooms?.map((room) => {
                   return (
-                    <SwiperSlide key={room.id}>
-                      <RoomCard
-                        id={room.id}
-                        img={room.pictureHome}
-                        nameHotel={room.hotel.name}
-                        numRoom={room.numRoom}
-                        price={room.value}
-                        guest={room.numPeople}
-                        specialties={room.specialties}
-                        maxAdult={room.maxAdult}
-                        maxChild={room.maxChild}
-                      />
-                    </SwiperSlide>
+                    <span className={style.spanSpec} key={spec}>
+                      {spec}
+                    </span>
                   );
                 })}
-              </Swiper>
+              </div>
             </div>
           </div>
         </div>
