@@ -22,7 +22,7 @@ const Login = () => {
                 <div>
                   <h1 className={style.title}>Welcome {info[0].name}!</h1>
                   <NavLink to={"/home"}>
-                    <button className={style.ingresarInv}>
+                    <button className={style.letsBooking}>
                       Let's Booking
                     </button>
                   </NavLink>
