@@ -178,5 +178,4 @@ export const findOrCreate = async (data) => {
 
 export const logOut = () => {
     localStorage.removeItem("user");
-    localStorage.removeItem("room");
 };

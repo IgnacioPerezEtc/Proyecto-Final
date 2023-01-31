@@ -3,6 +3,7 @@ const Validation = (props) => {
   const errors = {};
   const adults = parseInt(props.adults);
   const children = parseInt(props.children);
+  const info = (JSON.parse(localStorage.getItem("user")));
   const check_in = props.check_in.split("-");
   const check_out = props.check_out.split("-");
 
@@ -157,7 +158,7 @@ const Validation = (props) => {
   const diferencia = Math.abs(checkOutLimit - checkInLimit);
 
   const dias = diferencia / (1000 * 3600 * 24);
-
+  localStorage.setItem(`${info[0].email}-days`, JSON.stringify(dias));
   if (dias > 14) {
     errors.max_cant = "Limite de dos semanas.";
   }

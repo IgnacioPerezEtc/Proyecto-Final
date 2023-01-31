@@ -12,8 +12,10 @@ import Error from "../Error/Error.jsx";
 const Booking = () => {
   const dispatch = useDispatch();
   const roomDetail = useSelector((state) => state.roomDetail);
-  const error = useSelector(state => state.error)
-  const [info, setInfo] = useState(JSON.parse(localStorage.getItem("room")));
+  const error = useSelector(state => state.error);
+  const infoUser = (JSON.parse(localStorage.getItem("user")));
+  const info = (JSON.parse(localStorage.getItem(infoUser[0].email)));
+  const infoDays = (JSON.parse(localStorage.getItem(`${infoUser[0].email}-days`)));
 
   useEffect(() => {
     if (info) {
@@ -46,6 +48,7 @@ const Booking = () => {
             checkinDate={info[0].check_in}
             checkoutDate={info[0].check_out}
             price={roomDetail.value}
+            days={infoDays}
           />
         </div>
       ) : (

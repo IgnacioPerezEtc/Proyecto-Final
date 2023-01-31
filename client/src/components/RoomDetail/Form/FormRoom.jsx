@@ -13,6 +13,7 @@ const FormRoom = (props) => {
   const dispatch = useDispatch();
   const fecha_actual = new Date().toLocaleDateString();
   const reservation = useSelector((state) => state.reservation);
+  const info = (JSON.parse(localStorage.getItem("user")));
   const [buttonActive, setButtonActive] = useState(false);
   const [input, setInput] = useState({
     check_in: "",
@@ -38,7 +39,7 @@ const FormRoom = (props) => {
   const addToLocalStorage = () => {
     input.id = id;
     let data = [input];
-    localStorage.setItem("room", JSON.stringify(data));
+    localStorage.setItem(info[0].email, JSON.stringify(data));
   };
   return (
     <div className={style.flexContainer}>
