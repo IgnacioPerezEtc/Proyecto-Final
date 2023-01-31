@@ -30,9 +30,6 @@ export const signInWithGoogle = () => {
         name: result.user.displayName,
       };
       findOrCreate(data);
-      window.setTimeout(() => {
-        window.location.href = "/home";
-      },1000);
     })
     .catch((error) => {
       console.log(error);

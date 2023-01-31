@@ -174,8 +174,14 @@ export const LOGOUT = "LOGOUT";
 export const findOrCreate = async (data) => {
     const result = await axios.post("/user", data);
     localStorage.setItem("user", JSON.stringify(result.data));
+    window.setTimeout(() => {
+      window.location.href = "/home";
+    },1);
 };
 
 export const logOut = () => {
     localStorage.removeItem("user");
+    window.setTimeout(() => {
+      window.location.href = "/";
+    },1);
 };

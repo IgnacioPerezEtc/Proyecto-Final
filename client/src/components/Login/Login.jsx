@@ -5,38 +5,51 @@ import destiny from "../../assets/img/destiny.png";
 import { useLocation } from "react-router-dom";
 import SignUp from "./SignUp/SignUp";
 import { signInWithGoogle, signedWithFacebook } from "../../fireBase/Firebase";
+import { logOut } from "../../redux/actions";
 const Login = () => {
   const location = useLocation();
+  const info = (JSON.parse(localStorage.getItem("user")));
   return (
     <div className={style.containerLogin}>
       <div className={style.containerLogo}>
-        <img src={destiny} alt="" />
+        <img src={destiny} alt="logo" />
       </div>
       {location.pathname === "/" ? (
         <div className={style.www}>
           <div className={style.formContainer}>
-            <div>
+            {info ? <div>
               <div>
                 <div>
+                  <h1>Welcome {info[0].name}!</h1>
                   <NavLink to={"/home"}>
                     <button className={style.ingresarInv}>
-                      Ingresar como invitado
+                      Let's Booking
                     </button>
                   </NavLink>
                 </div>
               </div>
-              <button className={style.loginGoogle} onClick={signInWithGoogle}>
-                Sign in with Google
+              <button className={style.ingresarInv} onClick={logOut}>
+                Log-Out
               </button>
-            </div>
+            </div> :
+              <div>
+                <div>
+                  <div>
+                    <NavLink to={"/home"}>
+                      <button className={style.ingresarInv}>
+                        Ingresar como invitado
+                      </button>
+                    </NavLink>
+                  </div>
+                </div>
+                <button className={style.loginGoogle} onClick={signInWithGoogle}>
+                  Sign in with Google
+                </button>
+              </div>
+            }
           </div>
-          <div>
-              {/* <button onClick={signedWithFacebook}>
-                Sign in with Facebook
-              </button> */}
-            </div>
         </div>
-        
+
       ) : (
         <div className={style.formContainer}>
           <SignUp />
