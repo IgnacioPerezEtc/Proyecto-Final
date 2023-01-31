@@ -8,14 +8,26 @@ import { useState } from "react";
 import Header from "../Header/Header.jsx";
 import Footer from "../Footer/Footer.jsx";
 import Error from "../Error/Error.jsx";
-
+import Swal from "sweetalert2/dist/sweetalert2.all.js";
 const Booking = () => {
   const dispatch = useDispatch();
   const roomDetail = useSelector((state) => state.roomDetail);
-  const error = useSelector(state => state.error);
-  const infoUser = (JSON.parse(localStorage.getItem("user")));
-  const info = (JSON.parse(localStorage.getItem(infoUser[0].email)));
-  const infoDays = (JSON.parse(localStorage.getItem(`${infoUser[0].email}-days`)));
+  const error = useSelector((state) => state.error);
+  const infoUser = JSON.parse(localStorage.getItem("user"));
+  if (!infoUser) {
+    Swal.fire("Sorry, you must to log-in in first to reserve", "error");
+    Swal.fire({
+      title: 'Sorry',
+      text: 'you must to log-in first to reserve',
+    })
+    window.setTimeout(() => {
+      window.location.href = "/";
+    }, 2500);
+  }
+  const info = JSON.parse(localStorage.getItem(infoUser[0].email));
+  const infoDays = JSON.parse(
+    localStorage.getItem(`${infoUser[0].email}-days`)
+  );
 
   useEffect(() => {
     if (info) {
@@ -33,7 +45,7 @@ const Booking = () => {
       {error ? <Error /> : false}
 
       {roomDetail.hasOwnProperty("hotel") &&
-        roomDetail.id === parseInt(info[0].id) ? (
+      roomDetail.id === parseInt(info[0].id) ? (
         <div>
           <BookingCard
             key={roomDetail.id}
