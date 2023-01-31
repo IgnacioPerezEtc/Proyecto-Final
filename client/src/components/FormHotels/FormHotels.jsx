@@ -20,6 +20,7 @@ const FormHotels = () => {
   } = useForm();
   const languages = ["spanish", "english", "french", "russian", "german"];
   const dispatch = useDispatch();
+  const [imgExt, setImgExt] = useState("");
 
   const [input, setInput] = useState({
     name: "",
@@ -28,11 +29,16 @@ const FormHotels = () => {
     description: "",
     parking: false,
     pictureHome: "",
+    pictureDetail:[],
     rating: "",
     languages: [],
     category: "",
     phone: "",
   });
+
+  const handleImgExt = (event) => {
+    setImgExt(event.target.value);
+  }
 
   const handleChange = (event) => {
     setInput({
@@ -40,6 +46,26 @@ const FormHotels = () => {
       [event.target.name]: event.target.value,
     });
   };
+
+  const handlePlus = (event) => {
+    event.preventDefault();
+    if(!input.pictureDetail.includes(imgExt)){
+      setInput({
+        ...input,
+        pictureDetail: [...input.pictureDetail, imgExt]
+      })
+      setImgExt("");
+    }
+  }
+
+  const handleDeleteImg = (event) => {
+    event.preventDefault();
+    let newImgs = input.pictureDetail.filter(img => img !== event.target.name)
+    setInput({
+      ...input,
+      pictureDetail: newImgs
+    })
+  }
 
   const handleCheckbox = (event) => {
     setInput({
@@ -185,13 +211,18 @@ const FormHotels = () => {
                 <label>Images Extras</label>
                 <input
                   type="text"
-                  {...register("pictureHome", {
-                    validate: imageValidator,
-                    onChange: (e) => {
-                      handleChange(e);
-                    },
-                  })}
+                  value={imgExt}
+                  onChange={(event) => handleImgExt(event)}
                 />
+                <button onClick={(event) => handlePlus(event)} name="imgExt">+</button>
+                {input.pictureDetail?.map((img, index)=> {
+                  return(
+                    <div key={index}>
+                      <span key={img}>{img}</span>
+                      <button onClick={(event) => handleDeleteImg(event)} name={img}>X</button>
+                    </div>
+                  )
+                })}
                 {errors.pictureHome?.type === "validate" && (
                   <span className={style.messageError}>
                     Enter a URL image .png, .jpg, .jpeg, .gif
