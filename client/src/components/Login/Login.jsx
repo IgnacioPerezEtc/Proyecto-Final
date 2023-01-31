@@ -20,15 +20,15 @@ const Login = () => {
             {info ? <div>
               <div>
                 <div>
-                  <h1>Welcome {info[0].name}!</h1>
+                  <h1 className={style.title}>Welcome {info[0].name}!</h1>
                   <NavLink to={"/home"}>
-                    <button className={style.ingresarInv}>
+                    <button className={style.letsBooking}>
                       Let's Booking
                     </button>
                   </NavLink>
                 </div>
               </div>
-              <button className={style.ingresarInv} onClick={logOut}>
+              <button className={style.logOut} onClick={logOut}>
                 Log-Out
               </button>
             </div> :
@@ -37,7 +37,7 @@ const Login = () => {
                   <div>
                     <NavLink to={"/home"}>
                       <button className={style.ingresarInv}>
-                        Ingresar como invitado
+                        Guest
                       </button>
                     </NavLink>
                   </div>
