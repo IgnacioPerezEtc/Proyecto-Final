@@ -24,11 +24,10 @@ router.post('/', async (req, res) => {
     }
 });
 
-router.put('/edit/:id', async (req, res) => {
+router.put('/edit', async (req, res) => {
     try {
-        const { id } = req.params;
-        const info = req.body;
-        const editedReview = await putReview(id, info);
+        const data = req.body;
+        const editedReview = await putReview(data);
         res.send(editedReview);
         
     } catch (error) {
@@ -48,19 +47,3 @@ router.delete('/delete/:id', async (req, res) => {
 });
 
 module.exports = router;
-
-// router.post('/', async (req, res) => {
-//     try {
-//         const { userId, hotelId, ratingComment } = req.body;
-//         if(ratingComment) {
-//             const newCommentary = await Commentary.create(req.body);
-//             await newCommentary.addUsers(userId);
-//             await newCommentary.addHotels(hotelId);
-//             res.send(newCommentary)
-//         }
-//         else res.status(404).send(error.message)
-        
-//     } catch (error) {
-//         res.status(404).send(error.message)
-//     }
-// })

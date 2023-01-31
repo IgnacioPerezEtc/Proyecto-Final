@@ -11,18 +11,28 @@ async function getReview() {
 };
 
 async function postReview(newReview) {
-    // try {
-    //     const createReview = await Commentary.create(newReview);
-    //     await createReview.addUsers(newReview.userId);
-    //     await createReview.addHotels(newReview.hotelId);
-    //     return createReview;
+    try {
+        await Commentary.create(newReview);
+        return 'Review done';
         
-    // } catch (error) {
-    //     return error.message;
-    // }
+    } catch (error) {
+        return error.message;
+    }
 };
 
-async function putReview(id, info) {};
+async function putReview(data) {
+    try {
+        await Commentary.update(data,
+            {
+                where: { 
+                    userEmail: data.userEmail,
+                    hotelId: data.hotelId }
+            });
+        return 'Update'
+    } catch (error) {
+        return error.message;
+    }
+};
 
 async function deleteReview(id) {};
 
