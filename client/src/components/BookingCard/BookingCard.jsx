@@ -16,24 +16,23 @@ const BookingCard = (props) => {
     const items = {
         products: [
             {
-                id: 1,
-                title: "Carmona Hotel",
-                description: "Accomodation for 2 people",
+                id: props.id,
+                title: props.name,
+                description: `Accomodation for ${props.num} people`,
                 quantity: 1,
-                unit_price: 400
+                unit_price: props.price
             }
         ]
     }
     
     const handlePayment = async (event) => {
         let url = await getUrlPayment(items);
-        console.log(url);
         window.location.replace(url.link);
     }
 
     return(
         <div>
-            <Link className={style.link}>Modify</Link>
+            <Link to={`/rooms/${props.id}`} className={style.link}>Modify</Link>
 
             <div className={style.container}>
 
