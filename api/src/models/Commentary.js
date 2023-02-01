@@ -22,6 +22,11 @@ module.exports = (sequelize) => {
                 min: 0,
                 max: 5
             }
+        },
+
+        hidden: {
+            type: DataTypes.BOOLEAN,
+            defaultValue: false,
         }
     },
         { timestamps: false }

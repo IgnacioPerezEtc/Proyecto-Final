@@ -42,10 +42,13 @@ const { Hotel, Room, Reservation, User, Commentary } = sequelize.models;
 User.belongsToMany(Room, { through: Reservation, timestamps: false });
 Room.belongsToMany(User, { through: Reservation, timestamps: false });
 
-User.belongsToMany(Hotel,{ through: Commentary, timestamps:false });
-Hotel.belongsToMany(User, {through: Commentary, timestamps:false });
+User.belongsToMany(Hotel, { through: Commentary, timestamps: false });
+Hotel.belongsToMany(User, { through: Commentary, timestamps: false });
 
-Hotel.hasMany(Room, {as:"showRooms", foreignKey:"hotelId"});
+User.belongsToMany(Hotel, { through: "Favorites", timestamps: false });
+Hotel.belongsToMany(User, { through: "Favorites", timestamps: false });
+
+Hotel.hasMany(Room, { as: "showRooms", foreignKey: "hotelId" });
 Room.belongsTo(Hotel);
 
 module.exports = {

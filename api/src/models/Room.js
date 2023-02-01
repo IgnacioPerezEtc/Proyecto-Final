@@ -14,6 +14,14 @@ module.exports = (sequelize) => {
             allowNull: false
         },
 
+        description: {
+            type: DataTypes.TEXT,
+            validate: {
+                len: [10, 5000]
+            },
+            allowNull: false
+        },
+
         pictureHome: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -61,6 +69,11 @@ module.exports = (sequelize) => {
             type: DataTypes.FLOAT,
             allowNull: false
         },
+
+        hidden: {
+            type: DataTypes.BOOLEAN,
+            defaultValue: false,
+        }
 
     },
         { timestamps: false }
