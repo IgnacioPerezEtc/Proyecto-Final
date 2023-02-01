@@ -1,4 +1,5 @@
 import { async } from "@firebase/util";
+import emailjs from '@emailjs/browser';
 import axios from "axios";
 
 export const GET_ALL_HOTELS = "GET_ALL_HOTELS";
@@ -172,16 +173,35 @@ export const FIND_OR_CREATE = "FIND_OR_CREATE";
 export const LOGOUT = "LOGOUT";
 
 export const findOrCreate = async (data) => {
-    const result = await axios.post("/user", data);
-    localStorage.setItem("user", JSON.stringify(result.data));
-    window.setTimeout(() => {
-      window.location.href = "/home";
-    },1);
+  const result = await axios.post("/user", data);
+  localStorage.setItem("user", JSON.stringify(result.data));
+  window.setTimeout(() => {
+    window.location.href = "/home";
+  }, 1);
 };
 
 export const logOut = () => {
-    localStorage.removeItem("user");
-    window.setTimeout(() => {
-      window.location.href = "/";
-    },1);
+  localStorage.removeItem("user");
+  window.setTimeout(() => {
+    window.location.href = "/";
+  }, 1);
 };
+
+/////////// SEND EMAIL /////////////////////////
+
+export const sendEmail = (data, form) => {
+  emailjs.init('Ag6f36SVwkOrrFd8y');
+  const serviceID = 'default_service';
+  const templateID = 'template_1olarl4';
+
+  emailjs.sendForm(serviceID, templateID, form)
+    .then(() => {
+      alert('Sent!');
+    }, (err) => {
+      alert(JSON.stringify(err));
+    })
+
+  window.setTimeout(() => {
+    window.location.href = "/";
+  }, 3000);
+}

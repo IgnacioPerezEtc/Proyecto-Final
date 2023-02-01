@@ -43,7 +43,7 @@ module.exports = {
 
     newRoom: async function (body){
 
-        const { numRoom, numPeople, maxAdult, maxChild, specialties, availableDate, value, hotelId} =body;
+        const { numRoom, numPeople, maxAdult, maxChild, specialties, value, hotelId} =body;
 
         body.numPeople = parseInt (numPeople);
         body.maxAdult = parseInt(maxAdult);

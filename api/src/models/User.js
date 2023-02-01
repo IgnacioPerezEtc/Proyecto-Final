@@ -19,6 +19,11 @@ module.exports = (sequelize) => {
             defaultValue: false,
         },
 
+        tokenAdmin: {
+            type: DataTypes.STRING,
+            defaultValue: "No",
+        },
+
         blocked: {
             type: DataTypes.BOOLEAN,
             defaultValue: false,
