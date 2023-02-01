@@ -3,12 +3,15 @@ import { FaStar } from "react-icons/fa"
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import style from "./FormHotels.module.css"
+import axios from "axios";
 
 const FormHotels = () => {
 
+  // -------- Estados locales de Category --------------
   const [category, setCategory ] = useState(null);
   const [hover, setHover] = useState(null);
 
+  // -------- Estado local de lon Inputs ----------------
   const [input, setInput] = useState({
     name: "",
     rooms: "",
@@ -128,11 +131,12 @@ const FormHotels = () => {
           <div>
             <label>Main picture: </label>
             <input 
-              type="text" 
+              type="text"
               name="pictureHome"
               value={input.pictureHome}
-              onChange= { (e) => handleChange(e) }
+              onChange={ (e) => handleChange(e) }
             />
+            <img src={input.pictureHome} alt="" height="150px" width="200px"/>
           </div>
 
           <div>
