@@ -13,6 +13,7 @@ import Login from "./components/Login/Login.jsx";
 import FormHotels from "./components/FormHotels/FormHotels.jsx";
 import FormRooms from "./components/FormRooms/FormRooms.jsx";
 import Booking from "./components/Booking/Booking.jsx";
+import PayApproved from "./components/PayApproved/PayApproved.jsx";
 //
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
             <Route path="/formHotels" element={<FormHotels />} />
             <Route path="/Booking" element={<Booking />} />
             <Route path="/rooms" element={<Rooms />} />
+            <Route path="/payApproved" element={<PayApproved/>}/>
           </Routes>
         </div>
       </BrowserRouter>
