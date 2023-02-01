@@ -67,6 +67,13 @@ module.exports = {
 
             return ("New Hotel registred successfully");
         }
+    },
+
+    bulkCreate: async function (array) {
+
+        await Hotel.bulkCreate(array);
+
+        return ("All Hotels in DB");
     }
 
 }

@@ -42,6 +42,16 @@ router.post("/", async (req, res) => {
     } catch (error) {
         return res.status(400).send({ error: error.message });
     }
+});
+
+router.post("/bulk", async (req, res) => {
+    const array = req.body;
+    try {
+        const createAll = await hotelControllers.bulkCreate(array);
+        return res.send(createAll);
+    } catch (error) {
+        return res.status(400).send({ error: error.message });
+    }
 })
 
 // router.put("/edit/:id", async (req, res) => {
