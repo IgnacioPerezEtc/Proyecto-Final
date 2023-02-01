@@ -1,26 +1,13 @@
-import React, { useState } from "react";
-import { useForm } from "react-hook-form";
-import { useDispatch } from "react-redux";
-import { createHotel } from "../../redux/actions";
-import {
-  descriptionValidator,
-  imageValidator,
-  nameValidator,
-  phoneValidator,
-} from "./validator";
-import style from "./FormHotels.module.css";
+import React, { useState} from "react";
+import { FaStar } from "react-icons/fa"
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
+import style from "./FormHotels.module.css"
 
 const FormHotels = () => {
-  const {
-    register,
-    formState: { errors },
-    handleSubmit,
-  } = useForm();
-  const languages = ["spanish", "english", "french", "russian", "german"];
-  const dispatch = useDispatch();
-  const [imgExt, setImgExt] = useState("");
+
+  const [category, setCategory ] = useState(null);
+  const [hover, setHover] = useState(null);
 
   const [input, setInput] = useState({
     name: "",
@@ -29,43 +16,30 @@ const FormHotels = () => {
     description: "",
     parking: false,
     pictureHome: "",
-    pictureDetail:[],
+    pictureDetail: [],
     rating: "",
     languages: [],
     category: "",
-    phone: "",
+    phone: ""
   });
 
-  const handleImgExt = (event) => {
-    setImgExt(event.target.value);
-  }
+  const languages = ["spanish", "english", "french", "russian", "german"];
 
   const handleChange = (event) => {
+    event.preventDefault()
     setInput({
       ...input,
       [event.target.name]: event.target.value,
     });
   };
 
-  const handlePlus = (event) => {
+  const handleChangeCategory = (event) => {
     event.preventDefault();
-    if(!input.pictureDetail.includes(imgExt)){
-      setInput({
-        ...input,
-        pictureDetail: [...input.pictureDetail, imgExt]
-      })
-      setImgExt("");
-    }
-  }
-
-  const handleDeleteImg = (event) => {
-    event.preventDefault();
-    let newImgs = input.pictureDetail.filter(img => img !== event.target.name)
     setInput({
       ...input,
-      pictureDetail: newImgs
+      category: event.target.value
     })
-  }
+  };
 
   const handleCheckbox = (event) => {
     setInput({
@@ -94,264 +68,156 @@ const FormHotels = () => {
     });
   };
 
-  const onSubmit = (event) => {
-    dispatch(createHotel(input));
-    alert("The Hotel was created successfully");
-    setInput({
-      name: "",
-      rooms: "",
-      location: "",
-      description: "",
-      parking: false,
-      pictureHome: "",
-      rating: "",
-      languages: [],
-      category: "",
-      phone: "",
-    });
-  };
-
   return (
     <div>
       <Header />
+      <h1>Form Hotels</h1>
 
-      <div className={style.containerForm}>
-        <h1 className={style.titleForm}>Create a Hotel</h1>
-        <form className={style.flexContainer} onSubmit={handleSubmit(onSubmit)}>
-          <div className={style.containerInput}>
-            <div className={style.flexInputs}>
-              <div>
-                <label>Name </label>
-                <input
-                  type="text"
-                  {...register("name", {
-                    required: true,
-                    validate: nameValidator,
-                    onChange: (e) => {
-                      handleChange(e);
-                    },
-                  })}
-                />
-                {(errors.name?.type === "required" && (
-                  <span className={style.messageError}>Name is required.</span>
-                )) ||
-                  (errors.name?.type === "validate" && (
-                    <span className={style.messageError}>
-                      Ingrese nombre con 3 o mas letras
-                    </span>
-                  ))}
-              </div>
-              <div>
-                <label>Location</label>
-                <input
-                  type="text"
-                  {...register("location", {
-                    onChange: (e) => {
-                      handleChange(e);
-                    },
-                  })}
-                />
-              </div>
-            </div>
-          </div>
-          <div className={style.containerInput}>
-            <div className={style.flexInputs}>
-              <div>
-                <label>Description</label>
-                <input
-                  type="text"
-                  {...register("description", {
-                    validate: descriptionValidator,
-                    onChange: (e) => {
-                      handleChange(e);
-                    },
-                  })}
-                />
-                {errors.description?.type === "validate" && (
-                  <span className={style.messageError}>
-                    Ingrese descripcion entre 5 o mas caracteres
-                  </span>
-                )}
-              </div>
-              <div>
-                <label>Rooms</label>
-                <input
-                  min="0"
-                  type="number"
-                  {...register("rooms", {
-                    onChange: (e) => {
-                      handleChange(e);
-                    },
-                  })}
-                />
-              </div>
-            </div>
-          </div>
-
-          <div className={style.containerInput}>
-            <div className={style.flexInputs}>
-              <div>
-                <label>Image</label>
-                <input
-                  type="text"
-                  {...register("pictureHome", {
-                    validate: imageValidator,
-                    onChange: (e) => {
-                      handleChange(e);
-                    },
-                  })}
-                />
-                {errors.pictureHome?.type === "validate" && (
-                  <span className={style.messageError}>
-                    Enter a URL image .png, .jpg, .jpeg, .gif
-                  </span>
-                )}
-              </div>
-              <div>
-                <label>Images Extras</label>
-                <input
-                  type="text"
-                  value={imgExt}
-                  onChange={(event) => handleImgExt(event)}
-                />
-                <button onClick={(event) => handlePlus(event)} name="imgExt">+</button>
-                {input.pictureDetail?.map((img, index)=> {
-                  return(
-                    <div key={index}>
-                      <span key={img}>{img}</span>
-                      <button onClick={(event) => handleDeleteImg(event)} name={img}>X</button>
-                    </div>
-                  )
-                })}
-                {errors.pictureHome?.type === "validate" && (
-                  <span className={style.messageError}>
-                    Enter a URL image .png, .jpg, .jpeg, .gif
-                  </span>
-                )}
-              </div>
-            </div>
-          </div>
-
-          <div className={style.containerInput}>
-            <div className={style.flexInputs}>
-              <div>
-                <label>Category</label>
-                <input
-                  type="text"
-                  {...register("category", {
-                    min: 0,
-                    max: 5,
-                    onChange: (e) => {
-                      handleChange(e);
-                    },
-                  })}
-                />
-                {(errors.category?.type === "min" && (
-                  <span>Ingrese categoria mayor o igual a 0</span>
-                )) ||
-                  (errors.category?.type === "max" && (
-                    <span>Ingrese categoria menor o igual a 5</span>
-                  ))}
-              </div>
-              <div>
-                <label>Rating</label>
-                <input
-                  type="text"
-                  {...register("rating", {
-                    min: 0,
-                    max: 5,
-                    onChange: (e) => {
-                      handleChange(e);
-                    },
-                  })}
-                />
-                {(errors.rating?.type === "min" && (
-                  <span className={style.messageError}>
-                    Ingrese rating mayor o igual a 0
-                  </span>
-                )) ||
-                  (errors.rating?.type === "max" && (
-                    <span className={style.messageError}>
-                      Ingrese rating menor o igual a 5
-                    </span>
-                  ))}
-              </div>
-            </div>
-          </div>
-          <div className={style.containerInput}>
-            <div className={style.flexInputs}>
-              <div>
-                <label>Contact</label>
-                <input
-                  type="text"
-                  {...register("phone", {
-                    validate: phoneValidator,
-                    onChange: (e) => {
-                      handleChange(e);
-                    },
-                  })}
-                />
-                {errors.phone?.type === "validate" && (
-                  <span className={style.messageError}>
-                    Ingrese un numero de teléfono valido
-                  </span>
-                )}
-              </div>
-              <div className={style.containerSelect}>
-                <label>Languages</label>
-                <select
-                  defaultValue="title"
-                  {...register("languages", {
-                    onChange: (e) => {
-                      handleSelect(e);
-                    },
-                  })} disabled={input.languages.length === 5}
-                >
-                  <option value="title" disabled name=""></option>
-                  {languages.map((language, index) => {
-                    return <option key={index}>{language}</option>;
-                  })}
-                </select>
-                <div className={style.containerInput}>
-                  {input.languages?.map((languages) => {
-                    return (
-                      <div key={languages}>
-                        <p key={languages}>{languages}</p>
-                        <button
-                          value={languages}
-                          onClick={(event) => handleDelete(event)}
-                        >
-                          x
-                        </button>
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className={style.containerCheckbox}>
-            <label>Parking</label>
-            <input
-              className={style.checkBox}
-              type="checkbox"
-              {...register("parking")}
-              onClick={(e) => {
-                handleCheckbox(e);
-              }}
+      <div>
+        <form>
+          <div>
+            <label>Name: </label>
+            <input 
+              type="text"
+              name="name"
+              value={input.name}
+              onChange={ (e) => handleChange(e) }
             />
           </div>
-          <div className={style.containerSend}>
-            <button className={style.buttonCreate} type="submit">
-              Create
-            </button>
+
+          <div>
+            <label>Rooms: </label>
+            <input 
+              type="number" 
+              name="rooms"
+              value={input.rooms}
+              onChange={ (e) => handleChange(e) }
+            />
+          </div>
+
+          <div>
+            <label>Location: </label>
+            <input 
+              type="text" 
+              name="location"
+              value={input.location}
+              onChange={ (e) => handleChange(e) }
+            />
+          </div>
+
+          <div>
+            <label>Description: </label>
+            <input 
+              type="text" 
+              name="description"
+              value={input.description}
+              onChange={ (e) => handleChange(e) }
+            />
+          </div>
+
+          <div>
+            <label>Parking: </label>
+            <input 
+              type="checkbox" 
+              name="parking"
+              value={input.parking}
+              onClick= { (e) => handleCheckbox(e) }
+            />
+          </div>
+
+          <div>
+            <label>Main picture: </label>
+            <input 
+              type="text" 
+              name="pictureHome"
+              value={input.pictureHome}
+              onChange= { (e) => handleChange(e) }
+            />
+          </div>
+
+          <div>
+            <label>Rating: </label>
+            <input 
+              type="number" 
+              name="rating"
+              value={input.rating}
+              onChange= { (e) => handleChange(e) }
+            />
+          </div>
+
+          <div>
+            <label>Languages: </label>
+            <select name="languages" onChange={ (e) => handleSelect(e) }>
+              {
+                languages.map((languages, index) => {
+                  return (
+                    <option key={index}>{languages}</option>
+                  )
+                })
+              }
+            </select>
+            <div>
+              {
+                input.languages?.map((languages) => {
+                  return (
+                    <div key={languages}>
+                      <p key={languages}>{languages}</p>
+                      <button
+                        value={languages}
+                        onClick={(event) => handleDelete(event)}
+                      >
+                        x
+                      </button>
+                    </div>
+                  );
+                })
+              }
+            </div>
+          </div>
+
+          <div>
+            
+            {
+              [...Array(5)].map((star, index) => {
+                const categoryValue = index + 1
+
+                return (
+                  <label key={index}>
+                      <input 
+                        type="radio" 
+                        name="category" 
+                        value={categoryValue}
+                        onClick= { () => setCategory(categoryValue) }
+                        onChange= { (e) => handleChangeCategory(e)}
+                        className={style.inputRadio}
+                      />
+                      <FaStar 
+                        className={style.star}
+                        onMouseEnter={ () => setHover(categoryValue) }
+                        onMouseLeave={ () => setHover(null) }
+                        color={ categoryValue <= (hover || category) ? "#ffc107" : "white"}
+                      />
+                  </label>
+                )
+              })
+            }
+          </div>
+
+          <div>
+            <label>Phone: </label>
+            <input 
+              type="number" 
+              name="phone"
+              value={input.phone}
+              onChange={ (e) => handleChange(e) }
+            />
           </div>
         </form>
       </div>
+
       <Footer />
     </div>
-  );
+  )
 };
 
-export default FormHotels;
+export default FormHotels
