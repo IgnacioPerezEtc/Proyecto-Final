@@ -2,14 +2,18 @@ import React, { useState} from "react";
 import { FaStar } from "react-icons/fa"
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
-import style from "./FormHotels.module.css"
-import axios from "axios";
+import style from "./FormHotels.module.css";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
 
 const FormHotels = () => {
 
   // -------- Estados locales de Category --------------
   const [category, setCategory ] = useState(null);
   const [hover, setHover] = useState(null);
+
+  // --------------- Imagenes Extras -------------------
+  const [imgExt, setImgExt] = useState("");
 
   // -------- Estado local de lon Inputs ----------------
   const [input, setInput] = useState({
@@ -25,6 +29,9 @@ const FormHotels = () => {
     category: "",
     phone: ""
   });
+
+  // ------------------ Errores ------------------------
+
 
   const languages = ["spanish", "english", "french", "russian", "german"];
 
@@ -71,13 +78,56 @@ const FormHotels = () => {
     });
   };
 
+  const handleImgExt = (event) => {
+    setImgExt(event.target.value);
+  };
+
+  const handlePlus = (event) => {
+    event.preventDefault();
+    if(!input.pictureDetail.includes(imgExt)){
+      setInput({
+        ...input,
+        pictureDetail: [...input.pictureDetail, imgExt]
+      })
+      setImgExt("");
+    }
+  };
+
+  const handleDeleteImg = (event) => {
+    event.preventDefault();
+    let newImgs = input.pictureDetail.filter(img => img !== event.target.name)
+    setInput({
+      ...input,
+      pictureDetail: newImgs
+    })
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log(input);
+    alert("The Hotel was created successfully");
+    setInput({
+      name: "", 
+      rooms: "",
+      location: "",
+      description: "",
+      parking: false,
+      pictureHome: "",
+      pictureDetail: [],
+      rating: "",
+      languages: [],
+      category: "",
+      phone: ""
+    });
+  };
+
   return (
     <div>
       <Header />
       <h1>Form Hotels</h1>
 
       <div>
-        <form>
+        <form onSubmit={(e) => handleSubmit(e)}>
           <div>
             <label>Name: </label>
             <input 
@@ -86,6 +136,7 @@ const FormHotels = () => {
               value={input.name}
               onChange={ (e) => handleChange(e) }
             />
+            <span></span>
           </div>
 
           <div>
@@ -136,7 +187,27 @@ const FormHotels = () => {
               value={input.pictureHome}
               onChange={ (e) => handleChange(e) }
             />
-            <img src={input.pictureHome} alt="" height="150px" width="200px"/>
+            <span></span>
+          </div>
+
+          <div>
+            <label>Extra Pictures: </label>
+            <input 
+              type="text" 
+              value={imgExt}
+              onChange={ (e) => handleImgExt(e) }
+            />
+            <button onClick={ (e) => handlePlus(e) } name="imgExt">+</button>
+            {
+              input.pictureDetail?.map((img, index)=> {
+                  return(
+                    <div key={index}>
+                      <span key={img}>{img}</span>
+                      <button onClick={(event) => handleDeleteImg(event)} name={img}>X</button>
+                    </div>
+                  )
+              })
+            }
           </div>
 
           <div>
@@ -215,6 +286,10 @@ const FormHotels = () => {
               value={input.phone}
               onChange={ (e) => handleChange(e) }
             />
+          </div>
+
+          <div>
+            <button type="submit">Create Hotel</button>
           </div>
         </form>
       </div>
