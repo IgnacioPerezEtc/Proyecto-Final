@@ -131,10 +131,12 @@ const FormHotels = () => {
   return (
     <div>
       <Header />
+      
+      <div className={style.containerH1}>
+        <h1>Form Hotels</h1>
+      </div>
       <div className={style.container}>
-        
           <form className={style.form} onSubmit={(e) => handleSubmit(e)}>
-            <h1>Form Hotels</h1>
 
             <div className={style.containerInputs}>
               <div>
@@ -266,19 +268,28 @@ const FormHotels = () => {
               name="pictureHome"
               value={input.pictureHome}
               onChange={ (e) => handleChange(e) }
+              required
+              pattern={`.*(png|jpg|jpeg|gif)$`}
+              onBlur={(e) => handleFocus(e)}
+              focused={focused.pictureHome?.toString()}
             />
-            <span>Enter a URL image .png, .jpg, .jpeg, .gif</span>
+            <span className={style.span}>Enter a URL image .png, .jpg, .jpeg, .gif</span>
           </div>
 
+          <div className={style.containerImgExt}>
+            <label>Extra Pictures: </label>
+            <input 
+              type="text" 
+              value={imgExt}
+              onChange={(e) => handleImgExt(e)}
+              pattern={`.*(png|jpg|jpeg|gif)$`}
+              onBlur={(e) => handleFocus(e)}
+              focused={focused.imgExt?.toString()}
+            />
+            <span className={style.span}>Enter a URL image .png, .jpg, .jpeg, .gif</span>
+            <button onClick={ (e) => handlePlus(e) } name="imgExt">+</button>
 
-            <div>
-              <label>Extra Pictures: </label>
-              <input 
-                type="text" 
-                value={imgExt}
-                onChange={ (e) => handleImgExt(e) }
-              />
-              <button onClick={ (e) => handlePlus(e) } name="imgExt">+</button>
+            <div className={style.containerPictureDetail}>
               {
                 input.pictureDetail?.map((img, index)=> {
                     return(
@@ -290,6 +301,7 @@ const FormHotels = () => {
                 })
               }
             </div>
+          </div>
 
             <div>
               <label>Rating: </label>
