@@ -7,6 +7,7 @@ import Footer from "../Footer/Footer";
 import style from "./HotelDetail.module.css";
 import RoomCard from "../RoomCard/RoomCard";
 import { getHotelById } from "../../redux/actions";
+import NavBarDetails from "../NavBarDetails/NavBarDetails";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Keyboard, Autoplay } from "swiper";
 import { NavLink } from "react-router-dom";
@@ -33,7 +34,7 @@ const HotelDetail = (props) => {
     <div>
       {location.pathname.includes("hotels") ? (
         <div>
-          <Header />
+          <NavBarDetails />
           <div className={style.containerButton}>
             <NavLink to={"/hotels"}>
               <button className={style.createHotel}>Back</button>

@@ -1,4 +1,4 @@
-.container-navbar{
+.containerNavbar{
     position: absolute;
     width: 98vw;
     top: 40px;
@@ -8,13 +8,13 @@
     background-color: transparent;
 }
 
-.container-nav{
+.containerNav{
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
 
-.ul-nav{
+.ulNav{
     display: flex;
     list-style-type: none;
     align-items: center;
@@ -24,7 +24,7 @@
     margin: 0px 40px;
 }
 
-.link-landing{
+.linkLanding{
     text-decoration: none;
     color: #C2C7CE;
     font-size: 1.6rem;
@@ -32,19 +32,19 @@
     font-family: 'Roboto', sans-serif;
 }
 
-.ul-nav-redes{
+.ulNavRedes{
     display: flex;
     list-style-type: none;
 }
 
-.ul-nav-redes li{
+.ulNavRedes li{
     padding: 0px 12px;
 }
-.ul-nav-redes li img{
+.ulNavRedes li img{
     width: 22px;
     height:22px;
 }
-.ul-nav-redes li button{
+.ulNavRedes li button{
     border-radius: 18px 20px 20px 20px;
     height: 32px;
     width: 32px;
@@ -56,7 +56,7 @@
     justify-content: center;
 }
 
-.link-landing:hover{
+.linkLanding:hover{
     color: #fff;
 
 }

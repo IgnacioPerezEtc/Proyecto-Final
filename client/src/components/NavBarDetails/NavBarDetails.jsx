@@ -1,18 +1,14 @@
 import React from "react";
+import style from "./NavBarDetails.module.css";
+import user from "../../assets/icons/user.png";
+import { NavLink } from "react-router-dom";
+import { useState } from "react";
 import facebook from "../../assets/icons/facebook.svg";
 import instagram from "../../assets/icons/instagram.svg";
 import twitter from "../../assets/icons/twitter.svg";
 import youtube from "../../assets/icons/youtube.svg";
-import user from "../../assets/icons/user.png";
-import { NavLink } from "react-router-dom";
-import { useLocation } from "react-router-dom";
-import { useState } from "react";
 import { useEffect } from "react";
-import { logOut } from "../../redux/actions";
-import style from "./NavBar.module.css"
-
-const NavBar = (props) => {
-  const location = useLocation();
+const NavBarDetails = () => {
   const [login, setLogin] = useState(false);
 
   const [info, setInfo] = useState(localStorage.getItem("user"));
@@ -21,12 +17,11 @@ const NavBar = (props) => {
       setLogin(true);
     }
   });
-
   return (
-    <div className={style.containerNavbar}>
-      <nav className={style.containerNav}>
-        <div>
-          <ul className={style.ulNavRedes}>
+    <div>
+      <nav className={` ${style.navBar} navbar navbar-expand-lg`}>
+        <div className={`${style.containerFluid} container-fluid`}>
+        <ul className={style.ulNavRedes}>
             <li>
               <a href="https:/www.instagram.com" target={"_blank"}>
                 <button>
@@ -56,9 +51,20 @@ const NavBar = (props) => {
               </a>
             </li>
           </ul>
-        </div>
-        <div>
-          <ul className={style.ulNav}>
+
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon"></span>
+          </button>
+          <div className={` ${style.navBarCollapse} collapse navbar-collapse`} id="navbarSupportedContent">
+            <ul className= {` ${style.navBarNav} navbar-nav me-auto mb-2 mb-lg-0`}>
             <li className={style.pages}>
               <a href="/home" className={style.linkLanding}>
                 Home
@@ -80,7 +86,7 @@ const NavBar = (props) => {
                 About Us
               </NavLink>
             </li>
-            <li className="dropdown">
+            <li className="dropdown-center">
               <a
                 className={`${style.linkLanding} dropdown-toggle`}
                 role="button"
@@ -90,30 +96,32 @@ const NavBar = (props) => {
                 <img src={user} alt="" width={"24px"} height="24px" />
               </a>
 
-              <ul className="dropdown-menu dropdown-menu-lg-end">
+              <ul className={`${style.dropDownUl} dropdown-menu dropdown-menu-lg-end`}>
                 <li>
                   {login === false ? (
-                    <a className="dropdown-item" href="/">
+                    <a className={`${style.itemDrop} dropdown-item`} href="/">
                       Log-in
                     </a>
                   ) : (
-                    <a onClick={logOut} className="dropdown-item" href="/">
+                    <a onClick={logOut} className={` ${style.itemDrop} dropdown-item`} href="/">
                       Log-Out
                     </a>
                   )}
                 </li>
                 <hr />
                 <li>
-                  <a className="dropdown-item" href="/Booking">
+                  <a className={`${style.itemDrop} dropdown-item`} href="/Booking">
                     My reservations
                   </a>
                 </li>
               </ul>
             </li>
-          </ul>
+            </ul>
+          </div>
         </div>
       </nav>
     </div>
   );
 };
-export default NavBar;
+
+export default NavBarDetails;

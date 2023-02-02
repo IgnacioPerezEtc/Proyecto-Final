@@ -5,6 +5,7 @@ import { useState } from "react";
 import RoomCard from "../RoomCard/RoomCard";
 import style from "./RoomDetail.module.css";
 import Header from "../Header/Header";
+import NavBarDetails from "../NavBarDetails/NavBarDetails";
 import { Keyboard, Autoplay } from "swiper";
 // import { useLocation } from "react-router-dom";
 import "swiper/css";
@@ -52,7 +53,7 @@ const RoomDetail = () => {
 
   return (
     <div>
-      <Header />
+      <NavBarDetails />
       {roomDetail.hasOwnProperty("hotel") && roomDetail.id === parseInt(id) ? (
         <div className={style.containerRoomDetail}>
           <div>
