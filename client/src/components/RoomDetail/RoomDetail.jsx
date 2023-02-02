@@ -15,6 +15,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { cleanRoom } from "../../redux/actions";
 import FormRoom from "./Form/FormRoom";
+import { getHotelById } from "../../redux/actions";
+import HotelDetail from "../HotelDetail/HotelDetail";
+import Footer from "../Footer/Footer";
 
 const RoomDetail = () => {
   // const location = useLocation();
@@ -22,61 +25,69 @@ const RoomDetail = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
   const reservation = useSelector((state) => state.reservation);
-  const rooms = useSelector((state) => state.rooms);
   const roomDetail = useSelector((state) => state.roomDetail);
+  const hotelDetail = useSelector((state) => state.hotelDetail);
+  // console.log(roomDetail);
 
   useEffect(() => {
     // dispatch(cleanRoom())
     dispatch(getRoomById(id));
-    dispatch(getRooms());
   }, [dispatch]);
 
-  // const imgs = [
-  //   roomDetail.pictureHome,
-  //   "https://swiperjs.com/demos/images/nature-1.jpg",
-  //   "https://swiperjs.com/demos/images/nature-2.jpg",
-  //   "https://swiperjs.com/demos/images/nature-3.jpg",
-  //   "https://swiperjs.com/demos/images/nature-4.jpg",
-  //   "https://swiperjs.com/demos/images/nature-5.jpg",
-  //   "https://swiperjs.com/demos/images/nature-6.jpg",
-  //   "https://swiperjs.com/demos/images/nature-7.jpg",
-  //   "https://swiperjs.com/demos/images/nature-8.jpg",
-  //   "https://swiperjs.com/demos/images/nature-9.jpg",
-  //   "https://swiperjs.com/demos/images/nature-10.jpg",
-  // ];
+  const imgs = [
+    "https://swiperjs.com/demos/images/nature-1.jpg",
+    "https://swiperjs.com/demos/images/nature-2.jpg",
+    "https://swiperjs.com/demos/images/nature-3.jpg",
+    "https://swiperjs.com/demos/images/nature-4.jpg",
+    "https://swiperjs.com/demos/images/nature-5.jpg",
+    "https://swiperjs.com/demos/images/nature-6.jpg",
+    "https://swiperjs.com/demos/images/nature-7.jpg",
+    "https://swiperjs.com/demos/images/nature-8.jpg",
+    "https://swiperjs.com/demos/images/nature-9.jpg",
+    "https://swiperjs.com/demos/images/nature-10.jpg",
+    roomDetail.pictureHome,
+  ];
 
-  // const [currentSlide, setCurrentSlide] = useState(imgs[0]);
+  const [currentSlide, setCurrentSlide] = useState(imgs[0]);
 
   return (
     <div>
       <Header />
       {roomDetail.hasOwnProperty("hotel") && roomDetail.id === parseInt(id) ? (
         <div className={style.containerRoomDetail}>
-          <div className=" text-center d-flex flex-column gap-5">
+          <div>
             <div className={style.containerDates}>
               <div className={style.containerButtonB}>
                 <NavLink to={"/rooms"}>
                   <button className={style.backHome}>Rooms</button>
                 </NavLink>
               </div>
-
-              <div className={` ${style.containerImgForm} d-flex w-100`}>
-                <div className={` w-50 pe-5`}>
+              <div
+                className={` ${style.containerTitle} d-flex justify-content-between`}
+              >
+                <p className={` ${style.title}`}>
+                  {roomDetail.numRoom} by {" "}
+                  {roomDetail.hotel.name.charAt(0).toUpperCase() +
+                    roomDetail.hotel.name.slice(1)}{" "}
+                </p>
+                <p className={`${style.price}`}>
+                  ${roomDetail.value}
+                  <span> per night</span>
+                </p>
+              </div>
+              <div className={` ${style.containerImgForm} d-flex`}>
+                <div className={` ${style.containerPpal}`}>
                   <img
-                    src={roomDetail.pictureHome}
+                    src={currentSlide}
                     alt=""
                     className={` ${style.img} mb-3 rounded`}
                   />
-                  {/* <Swiper
-                    slidesPerView={4}
-                    spaceBetween={20}
-                    className="w-100 display-4"
-                  >
+                  <Swiper slidesPerView={4} className={style.con}>
                     {imgs?.map((img, index) => {
                       return (
                         <SwiperSlide
                           onClick={() => setCurrentSlide(img)}
-                          className=""
+                          className={style.conImg}
                           key={index}
                         >
                           <img
@@ -87,95 +98,84 @@ const RoomDetail = () => {
                         </SwiperSlide>
                       );
                     })}
-                  </Swiper> */}
+                  </Swiper>
                 </div>
-                <FormRoom />
-              </div>
-              <div
-                className={` ${style.containerTitle} d-flex justify-content-between my-5`}
-              >
-                <p className={` ${style.title} display-3 `}>
-                  {roomDetail.hotel.name.charAt(0).toUpperCase() +
-                    roomDetail.hotel.name.slice(1)}{" "}
-                  - {roomDetail.numRoom}
-                </p>
-                <p className={` ${style.price} display-3 `}>
-                  Price
-                  <span>: </span>${roomDetail.value}
-                  <span> night</span>
-                </p>
+                <div className={style.containerForm}>
+                  <FormRoom />
+                </div>
               </div>
             </div>
-            <div>
-              <div>
-                <h1 className={style.titleSpec}>
-                  specialities
-                </h1>
-                {roomDetail.specialties.map((spec) => {
-                  return <span className={style.spanSpec} key={spec}>{spec}</span>;
-                })}
-              </div>
-            </div>
-            <div>
-              <p className="fw-bold text-center display-1">
-                Our <span>Room</span>
-              </p>
 
-              <Swiper
-                freeMode={true}
-                grabCursor={true}
-                modules={[Autoplay, Keyboard]}
-                autoplay={{
-                  delay: 3000,
-                }}
-                keyboard={{
-                  enabled: true,
-                }}
-                className="mySwiper m-4 justify-content-center w-100"
-                breakpoints={{
-                  0: {
-                    slidesPerView: 1,
-                    spaceBetween: 30,
-                    centeredSlides: true,
-                  },
-                  480: {
-                    slidesPerView: 1,
-                    spaceBetween: 15,
-                    centeredSlides: true,
-                  },
-                  768: {
-                    slidesPerView: 2,
-                    spaceBetween: 10,
-                  },
-                  1024: {
-                    slidesPerView: 3,
-                    spaceBetween: 30,
-                  },
-                  1440: {
-                    slidesPerView: 4,
-                    spaceBetween: 20,
-                  },
-                }}
-              >
-                {rooms?.map((room) => {
-                  return (
-                    <SwiperSlide key={room.id}>
-                      <RoomCard
-                        id={room.id}
-                        img={room.pictureHome}
-                        nameHotel={room.hotel.name}
-                        numRoom={room.numRoom}
-                        price={room.value}
-                        guest={room.numPeople}
-                        specialties={room.specialties}
-                        maxAdult={room.maxAdult}
-                        maxChild={room.maxChild}
-                      />
-                    </SwiperSlide>
-                  );
-                })}
-              </Swiper>
+            <div className={style.containerInfo}>
+              <div className={style.containerCondSpec}>
+                <h2>Room conditions</h2>
+                <ul className={style.ulCondiciones}>
+                  {/* <li>{roomDetail.maxChild} Max Childs</li>
+                  <li>{roomDetail.maxAdult} Max Adults</li>
+                  <li>{roomDetail.numPeople} Max People</li> */}
+                  <li>
+                    <span className={style.iconChildren}></span>
+                    <p className={style.paddingMax}>
+                      {roomDetail.maxChild} Max Children
+                    </p>
+                  </li>
+                  <li>
+                    <span className={style.iconAdults}></span>
+                    <p className={style.paddingMax}>
+                      {roomDetail.maxAdult} Max Adults
+                    </p>
+                  </li>
+                  <li>
+                    <span className={style.iconPeople}></span>
+                    <p className={style.paddingMax}>
+                      {roomDetail.numPeople} Max People
+                    </p>
+                  </li>
+                </ul>
+              </div>
+
+              <div className={style.containerSpecialties}>
+                <h2 className={style.titleSpec}>Specialities</h2>
+                <ul className={style.ulSpec}>
+                  {roomDetail.specialties.map((spec) => {
+                    return (
+                      <li className={style.spanSpec} key={spec}>
+                        {spec.charAt(0).toUpperCase() + spec.slice(1)}
+                      </li>
+                    );
+                  })}
+                  <li className={style.spanSpec}>Wi-Fi</li>
+                </ul>
+              </div>
             </div>
+            <div className={style.containerDescription}>
+              <h2 className={style.titleDescription}>Description</h2>
+              <p className={style.description}>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad
+                rerum repellendus esse recusandae voluptatem facilis libero modi
+                eius labore error dolore quia porro ipsam deserunt accusamus,
+                est possimus nostrum! Sed.
+              </p>
+              <p className={style.description}>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad
+                rerum repellendus esse recusandae voluptatem facilis libero modi
+                eius labore error dolore quia porro ipsam deserunt accusamus,
+                est possimus nostrum! Sed. Lorem ipsum dolor sit amet
+                consectetur adipisicing elit. Aspernatur omnis soluta quaerat
+                iste facilis ab dignissimos unde. Tenetur illum autem ea
+                temporibus quis, culpa, qui eum velit doloremque, facere
+                molestias.
+              </p>
+              <p className={style.description}>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad
+                rerum repellendus esse recusandae voluptatem facilis libero modi
+                eius labore error dolore quia porro ipsam deserunt accusamus,
+              </p>
+            </div>
+          </div>
+
+          <div>
+            <HotelDetail id={roomDetail.hotelId} />
           </div>
         </div>
       ) : (
@@ -183,6 +183,7 @@ const RoomDetail = () => {
           <img src="https://cdn.dribbble.com/users/118337/screenshots/3831581/building_loader.gif" />
         </div>
       )}
+      <Footer />
     </div>
   );
 };

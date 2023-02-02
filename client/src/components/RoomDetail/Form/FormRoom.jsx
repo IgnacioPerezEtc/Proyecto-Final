@@ -7,8 +7,10 @@ import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { cleanReservation } from "../../../redux/actions";
+import { useLocation } from "react-router-dom";
 
 const FormRoom = (props) => {
+  const location = useLocation()
   const { id } = useParams();
   const dispatch = useDispatch();
   const fecha_actual = new Date().toLocaleDateString();
@@ -43,7 +45,7 @@ const FormRoom = (props) => {
   };
   return (
     <div className={style.flexContainer}>
-      <div className={style.searchBar}>
+      <div className={location.pathname === "/rooms" ? style.searchBarh : style.form}>
         <h2 className={style.title}>Reservation</h2>
         <form onSubmit={addToLocalStorage} className={style.containerSearchbar}>
           {errors.max_cant && <p className={style.error}>{errors.max_cant}</p>}
