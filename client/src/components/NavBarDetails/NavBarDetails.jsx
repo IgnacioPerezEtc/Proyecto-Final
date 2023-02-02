@@ -99,18 +99,18 @@ const NavBarDetails = () => {
               <ul className={`${style.dropDownUl} dropdown-menu dropdown-menu-lg-end`}>
                 <li>
                   {login === false ? (
-                    <a className="dropdown-item" href="/">
+                    <a className={`${style.itemDrop} dropdown-item`} href="/">
                       Log-in
                     </a>
                   ) : (
-                    <a onClick={logOut} className="dropdown-item" href="/">
+                    <a onClick={logOut} className={` ${style.itemDrop} dropdown-item`} href="/">
                       Log-Out
                     </a>
                   )}
                 </li>
                 <hr />
                 <li>
-                  <a className="dropdown-item" href="/Booking">
+                  <a className={`${style.itemDrop} dropdown-item`} href="/Booking">
                     My reservations
                   </a>
                 </li>

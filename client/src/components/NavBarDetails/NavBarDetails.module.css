@@ -36,9 +36,20 @@
   list-style-type: none;
   align-items: center;
 }
+.dropDownUl {
+  background-color:var(--color-blue);
+}
+.dropDownUl li a{
+  color: #c2c7ce;
+}
 
 .pages {
   margin: 0px 40px;
+}
+
+.itemDrop:hover{
+    background-color: transparent;
+    color: #fff;
 }
 
 .linkLanding {
@@ -84,7 +95,12 @@
 }
 
 @media screen and (max-width: 991px) {
-  .pages{
+  .pages {
     padding-bottom: 20px;
+  }
+
+  .dropDownUl {
+    width: 50%;
+    margin: 0 auto;
   }
 }
