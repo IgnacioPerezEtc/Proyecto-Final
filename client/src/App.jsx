@@ -14,6 +14,7 @@ import FormHotels from "./components/FormHotels/FormHotels.jsx";
 import FormRooms from "./components/FormRooms/FormRooms.jsx";
 import Booking from "./components/Booking/Booking.jsx";
 import PayApproved from "./components/PayApproved/PayApproved.jsx";
+import Maps from "./components/Maps/Maps.jsx";
 //
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
             <Route path="/hotels" element={<Hotels />} />
             <Route path="/hotels/:id" element={<HotelDetail />} />
             <Route path="/aboutUs" element={<AboutUs />} />
+            <Route path="/maps" element={<Maps />} />
             <Route path="/formRoom" element={<FormRooms />} />
             <Route path="/rooms/:id" element={<RoomDetail />} />
             <Route path="/formHotels" element={<FormHotels />} />
