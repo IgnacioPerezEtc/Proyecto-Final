@@ -64,7 +64,7 @@ const NavBarDetails = () => {
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className={` ${style.navBarCollapse} collapse navbar-collapse`} id="navbarSupportedContent">
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+            <ul className= {` ${style.navBarNav} navbar-nav me-auto mb-2 mb-lg-0`}>
             <li className={style.pages}>
               <a href="/home" className={style.linkLanding}>
                 Home
@@ -96,7 +96,7 @@ const NavBarDetails = () => {
                 <img src={user} alt="" width={"24px"} height="24px" />
               </a>
 
-              <ul className="dropdown-menu dropdown-menu-lg-end">
+              <ul className={`${style.dropDownUl} dropdown-menu dropdown-menu-lg-end`}>
                 <li>
                   {login === false ? (
                     <a className="dropdown-item" href="/">
