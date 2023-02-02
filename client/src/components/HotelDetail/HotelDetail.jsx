@@ -10,28 +10,45 @@ import { getHotelById } from "../../redux/actions";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Keyboard, Autoplay } from "swiper";
 import { NavLink } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import "swiper/css";
 import "swiper/css/free-mode";
-const HotelDetail = () => {
+const HotelDetail = (props) => {
+  const location = useLocation();
   const dispatch = useDispatch();
   const { id } = useParams();
   const hotelDetail = useSelector((state) => state.hotelDetail);
-  useEffect(() => {
-    dispatch(getHotelById(id));
-  }, []);
+  console.log(hotelDetail);
+  if (location.pathname.includes("hotels")) {
+    useEffect(() => {
+      dispatch(getHotelById(id));
+    }, []);
+  } else {
+    useEffect(() => {
+      dispatch(getHotelById(props.id));
+    }, []);
+  }
 
   return (
     <div>
-      <Header />
-      <div className={style.containerButton}>
-        <NavLink to={"/hotels"}>
-          <button className={style.createHotel}>Back</button>
-        </NavLink>
-      </div>
+      {location.pathname.includes("hotels") ? (
+        <div>
+          <Header />
+          <div className={style.containerButton}>
+            <NavLink to={"/hotels"}>
+              <button className={style.createHotel}>Back</button>
+            </NavLink>
+          </div>
+        </div>
+      ) : (
+        ""
+      )}
 
       {(((hotelDetail.hasOwnProperty("name") &&
         hotelDetail.id === parseInt(id)) ||
-        hotelDetail.id === id) && (
+        hotelDetail.id === parseInt(props.id) ||
+        hotelDetail.id === id ||
+        hotelDetail.id === props.id) && (
         <div className={style.containerDetail}>
           <h2 className={style.nameHotel}>
             {hotelDetail.name.charAt(0).toUpperCase() +
@@ -88,73 +105,78 @@ const HotelDetail = () => {
               </div>
             </div>
           </div>
-          <h2 className={style.roomsTitle}>
-            Rooms
-            <div className={style.textRooms}>
-              <Swiper
-                freeMode={true}
-                grabCursor={true}
-                modules={[Autoplay, Keyboard]}
-                autoplay={{
-                  delay: 3000,
-                }}
-                keyboard={{
-                  enabled: true,
-                }}
-                className="mySwiper m-4 justify-content-center w-100"
-                breakpoints={{
-                  0: {
-                    slidesPerView: 1,
-                    spaceBetween: 30,
-                    centeredSlides: true,
-                  },
-                  480: {
-                    slidesPerView: 1,
-                    spaceBetween: 15,
-                    centeredSlides: true,
-                  },
-                  768: {
-                    slidesPerView: 2,
-                    spaceBetween: 10,
-                  },
-                  1024: {
-                    slidesPerView: 3,
-                    spaceBetween: 30,
-                  },
-                  1440: {
-                    slidesPerView: 4,
-                    spaceBetween: 20,
-                  },
-                }}
-              >
-                {hotelDetail.showRooms?.map((showRoom) => {
-                  console.log(showRoom);
-                  return (
-                    <SwiperSlide key={showRoom.id}>
-                      <RoomCard
-                        id={showRoom.id}
-                        img={showRoom.pictureHome}
-                        numRoom={showRoom.numRoom}
-                        price={showRoom.value}
-                        guest={showRoom.numPeople}
-                        specialties={showRoom.specialties}
-                        maxAdult={showRoom.maxAdult}
-                        maxChild={showRoom.maxChild}
-                      />
-                    </SwiperSlide>
-                  );
-                })}
-              </Swiper>
+          {location.pathname.includes("hotels") ? (
+            <div>
+              <h2 className={style.roomsTitle}>Rooms</h2>
+              <div className={style.textRooms}>
+                <Swiper
+                  freeMode={true}
+                  grabCursor={true}
+                  modules={[Autoplay, Keyboard]}
+                  autoplay={{
+                    delay: 3000,
+                  }}
+                  keyboard={{
+                    enabled: true,
+                  }}
+                  className="mySwiper m-4 justify-content-center w-100"
+                  breakpoints={{
+                    0: {
+                      slidesPerView: 1,
+                      spaceBetween: 30,
+                      centeredSlides: true,
+                    },
+                    480: {
+                      slidesPerView: 1,
+                      spaceBetween: 15,
+                      centeredSlides: true,
+                    },
+                    768: {
+                      slidesPerView: 2,
+                      spaceBetween: 10,
+                    },
+                    1024: {
+                      slidesPerView: 3,
+                      spaceBetween: 30,
+                    },
+                    1440: {
+                      slidesPerView: 4,
+                      spaceBetween: 20,
+                    },
+                  }}
+                >
+                  {hotelDetail.showRooms?.map((showRoom) => {
+                    console.log(showRoom);
+                    return (
+                      <SwiperSlide key={showRoom.id}>
+                        <RoomCard
+                          id={showRoom.id}
+                          img={showRoom.pictureHome}
+                          numRoom={showRoom.numRoom}
+                          price={showRoom.value}
+                          guest={showRoom.numPeople}
+                          specialties={showRoom.specialties}
+                          maxAdult={showRoom.maxAdult}
+                          maxChild={showRoom.maxChild}
+                        />
+                      </SwiperSlide>
+                    );
+                  })}
+                </Swiper>
+              </div>
             </div>
-          </h2>
+          ) : (
+            <div>
+              <button>View Hotel</button>
+            </div>
+          )}
         </div>
       )) || (
         <div className={style.containerLoader}>
           <img src="https://cdn.dribbble.com/users/118337/screenshots/3831581/building_loader.gif" />
         </div>
       )}
-
-      <Footer />
+      {location.pathname.includes("hotels") ? <Footer /> : ""}
     </div>
   );
 };

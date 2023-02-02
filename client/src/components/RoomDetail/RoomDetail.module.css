@@ -1,12 +1,15 @@
 .containerLoader {
   display: flex;
   justify-content: center;
-
 }
 
 .containerImgForm {
-  justify-content: space-around;
-  margin-top: 40px;
+  justify-content: space-between;
+  width: 70vw;
+  margin: 0 auto;
+  /* margin-top: 40px; */
+  padding-bottom: 40px;
+  margin-bottom: 12px;
 }
 
 .containerRoomDetail {
@@ -39,7 +42,7 @@
   height: 400px;
 }
 
-.con{
+.con {
   width: 600px;
   opacity: 0.8;
 }
@@ -50,35 +53,187 @@
 }
 
 .containerTitle {
-  font-family: "Roboto", sans-serif;
-  color: #444444;
-  width: 88vw;
+  /* font-family: "Roboto", sans-serif; */
+  width: 70vw;
   margin: 0 auto;
+  /* margin-bottom: 16px; */
 }
 
 .title {
   font-size: 4.2rem;
-  letter-spacing: -0.2px;
-  color: #444444;
+  /* letter-spacing: -0.2px; */
+  color: var(--color-blue);
   font-weight: 500;
 }
 
 .price {
-  font-size: 3.2rem;
-  letter-spacing: -0.2px;
-  color: #444444;
+  font-size: 4.2rem;
+  /* letter-spacing: -0.2px; */
+  /* color: #444444; */
+  color: var(--color-blue);
   font-weight: 500;
 }
 .containerDates {
   background-color: #fff;
 }
-.spanSpec {
-  font-size: 25px;
-  margin: 5px;
+
+.containerInfo {
+  width: 70vw;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.containerCondSpec {
+  width: 60%;
+  background-color: #fff;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.containerCondSpec h2 {
+  font-size: 2.8rem;
+  padding-top: 12px;
+  font-weight: 500;
+  line-height: 3.2rem;
+  margin-bottom: 28px;
+  color: var(--color-blue);
+}
+
+.containerSpecialties {
+  width: 38%;
+  background-color: #fff;
+  border-radius: 8px;
 }
 .titleSpec {
-  margin: 20px;
-  font-size: 50px;
-  color: #000;
-  font-weight: 600;
+  font-size: 2.8rem;
+  padding-top: 12px;
+  font-weight: 500;
+  line-height: 3.2rem;
+  margin-bottom: 28px;
+  color: var(--color-blue);
+}
+
+.ulSpec {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: space-around;
+  list-style-type: none;
+}
+
+.spanSpec {
+  font-weight: 500;
+  color: #858585;
+  font-size: 2.2rem;
+}
+.ulCondiciones {
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
+  align-items: center;
+}
+
+.paddingMax {
+  font-weight: 500;
+  color: #858585;
+  font-size: 1.6rem;
+}
+
+.iconAdults {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  background-image: url("../../assets/icons/adult2.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.iconChildren {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  background-image: url("../../assets/icons/children2.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.iconPeople {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  background-image: url("../../assets/icons/people.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.containerDescription {
+  width: 70vw;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 8px;
+  text-align: center;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.titleDescription {
+  font-size: 3.4rem;
+  font-weight: 500;
+  line-height: 3.2rem;
+  margin-bottom: 28px;
+  color: var(--color-blue);
+}
+.description {
+  font-size: 1.6rem;
+  font-weight: normal;
+  line-height: 3.2rem;
+  color: #858585;
+  text-align: start;
+  padding-left: 20px;
+  font-weight: 500;
+}
+@media screen and (max-width: 1600px) {
+  .containerImgForm {
+    width: 80vw;
+  }
+  .containerTitle {
+    width: 80vw;
+  }
+  .containerInfo {
+    width: 80vw;
+  }
+  .containerDescription {
+    width: 80vw;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .containerImgForm {
+    width: 95vw;
+  }
+  .containerTitle {
+    width: 95vw;
+  }
+  .containerInfo {
+    width: 95vw;
+  }
+  .containerDescription {
+    width: 95vw;
+  }
+}
+
+@media screen and (max-width: 1180px) {
+  .containerImgForm {
+    flex-direction: column;
+  }
+
+  .containerForm {
+    margin-top: 40px;
+  }
+  .containerTitle {
+    flex-direction: column;
+  }
 }
