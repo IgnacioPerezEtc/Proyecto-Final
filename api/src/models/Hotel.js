@@ -100,7 +100,11 @@ module.exports = (sequelize) => {
     hidden: {
       type: DataTypes.BOOLEAN,
       defaultValue: false,
-    }
+    },
+    position: {
+      type: DataTypes.ARRAY(DataTypes.STRING),
+      allowNull: false,
+    },
   },
     { timestamps: false }
   )
