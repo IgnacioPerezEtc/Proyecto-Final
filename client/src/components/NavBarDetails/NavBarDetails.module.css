@@ -1,11 +1,11 @@
 .navBar {
   padding: 0;
-  margin-bottom: 80px;
+  margin-bottom: 60px;
 }
 
 .containerFluid {
-  padding-top: 22px;
-  padding-bottom: 22px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   background-color: var(--color-blue);
   justify-content: space-between !important;
   position: fixed;
