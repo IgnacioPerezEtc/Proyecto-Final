@@ -29,10 +29,7 @@ const FormHotels = () => {
     category: "",
     phone: ""
   });
-
-  // ------------------ Errores ------------------------
-
-
+  
   const languages = ["spanish", "english", "french", "russian", "german"];
 
   const handleChange = (event) => {
