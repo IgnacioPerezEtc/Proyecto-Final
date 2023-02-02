@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useSearchParams } from "react-router-dom";
 import Error from "../Error/Error.jsx";
 import { getRoomById, sendEmail } from "../../redux/actions";
+import style from './PayApproved.module.css';
 
 const PayApproved = () => {
     const htmlForm = useRef();
@@ -56,57 +57,58 @@ const PayApproved = () => {
                     roomDetail.id === parseInt(info[0].id) ? (
                     <div>
                         <form ref={htmlForm} onSubmit={(event) => handleSubmit(event)}>
+                            <h1 className={style.title}>Successful Payment</h1>
                             <div >
-                                <label htmlFor="userName">userName</label>
+                                <label htmlFor="userName">Name:</label>
                                 <input type="text" name="userName" id="userName" defaultValue={data.userName}  readOnly/>
                             </div>
                             <div >
-                                <label htmlFor="hotelName">hotelName</label>
+                                <label htmlFor="hotelName">Hotel:</label>
                                 <input type="text" name="hotelName" id="hotelName" defaultValue={data.hotelName}  readOnly/>
                             </div>
                             <div >
-                                <label htmlFor="location">location</label>
+                                <label htmlFor="location">Location:</label>
                                 <input type="text" name="location" id="location" defaultValue={data.location}  readOnly/>
                             </div>
                             <div >
-                                <label htmlFor="people">people</label>
+                                <label htmlFor="people">People:</label>
                                 <input type="text" name="people" id="people" defaultValue={data.people}  readOnly/>
                             </div>
                             <div >
-                                <label htmlFor="adults">adults</label>
+                                <label htmlFor="adults">Adults:</label>
                                 <input type="text" name="adults" id="adults" defaultValue={data.adults}  readOnly/>
                             </div>
                             <div >
-                                <label htmlFor="children">children</label>
+                                <label htmlFor="children">Children:</label>
                                 <input type="text" name="children" id="children" defaultValue={data.children}  readOnly/>
                             </div>
                             <div >
-                                <label htmlFor="days">days</label>
+                                <label htmlFor="days">Days:</label>
                                 <input type="text" name="days" id="days" defaultValue={data.days}  readOnly/>
                             </div>
                             <div >
-                                <label htmlFor="startDate">startDate</label>
+                                <label htmlFor="startDate">Checking:</label>
                                 <input type="text" name="startDate" id="startDate" defaultValue={data.startDate}  readOnly/>
                             </div>
                             <div >
-                                <label htmlFor="endDate">endDate</label>
+                                <label htmlFor="endDate">Checkout:</label>
                                 <input type="text" name="endDate" id="endDate" defaultValue={data.endDate}  readOnly/>
                             </div>
                             <div >
-                                <label htmlFor="total">total</label>
+                                <label htmlFor="total">Total:</label>
                                 <input type="text" name="total" id="total" defaultValue={data.total}  readOnly/>
                             </div>
                             <div >
-                                <label htmlFor="userEmail">userEmail</label>
+                                <label htmlFor="userEmail">Email:</label>
                                 <input type="text" name="userEmail" id="userEmail" defaultValue={data.userEmail}  readOnly/>
                             </div>
 
-                            <input type="submit" id="button" defaultValue="Send Email"/>
+                            <input className={style.createHotel} type="submit" id="button" defaultValue="Send Email"/>
                         </form>
                     </div>
                 ) :
                     <div>
-                        <h1>Loading...</h1>
+                        <h1 className={style.loading}>Loading...</h1>
                     </div>}
             </div>
         )

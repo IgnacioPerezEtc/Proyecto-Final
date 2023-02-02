@@ -42,6 +42,7 @@ const BookingCard = (props) => {
     return(
         <div>
             <Link to={`/rooms/${props.id}`} className={style.link} onClick={handleModify}>Modify</Link>
+            <button onClick={handlePayment} className={style.createHotel}>Confirm checkout</button>
 
             <div className={style.container}>
 
@@ -78,9 +79,10 @@ const BookingCard = (props) => {
                         <h1>${props.price * props.days}</h1>
                     </div>
 
-                    <button onClick={handlePayment} className={style.createHotel}>Confirm checkout</button>
+                    
                 </div>
             </div>
+           
         </div>
     )
 };
