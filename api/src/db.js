@@ -39,8 +39,8 @@ sequelize.models = Object.fromEntries(capsEntries);
 
 const { Hotel, Room, Reservation, User, Commentary } = sequelize.models;
 
-User.belongsToMany(Room, { through: Reservation, timestamps: false });
-Room.belongsToMany(User, { through: Reservation, timestamps: false });
+Reservation.belongsTo(User);
+Reservation.belongsTo(Room);
 
 User.belongsToMany(Hotel, { through: Commentary, timestamps: false });
 Hotel.belongsToMany(User, { through: Commentary, timestamps: false });

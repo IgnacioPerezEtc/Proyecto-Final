@@ -2,6 +2,13 @@ const { DataTypes } = require('sequelize');
 
 module.exports = (sequelize) => {
     sequelize.define('reservation', {
+
+        idReservation: {
+            type: DataTypes.UUID,
+            primaryKey: true,
+            defaultValue: DataTypes.UUIDV4
+        },
+
         people: {
             type: DataTypes.INTEGER,
             allowNull: false,
@@ -33,7 +40,7 @@ module.exports = (sequelize) => {
             type: DataTypes.DATEONLY,
             allowNull: false
         },
-        
+
         endDate: {
             type: DataTypes.DATEONLY,
             allowNull: false
