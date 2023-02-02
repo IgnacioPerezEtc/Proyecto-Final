@@ -7,6 +7,7 @@ import facebook from "../../assets/icons/facebook.svg";
 import instagram from "../../assets/icons/instagram.svg";
 import twitter from "../../assets/icons/twitter.svg";
 import youtube from "../../assets/icons/youtube.svg";
+import { logOut } from "../../redux/actions";
 import { useEffect } from "react";
 const NavBarDetails = () => {
   const [login, setLogin] = useState(false);
@@ -21,7 +22,7 @@ const NavBarDetails = () => {
     <div>
       <nav className={` ${style.navBar} navbar navbar-expand-lg`}>
         <div className={`${style.containerFluid} container-fluid`}>
-        <ul className={style.ulNavRedes}>
+          <ul className={style.ulNavRedes}>
             <li>
               <a href="https:/www.instagram.com" target={"_blank"}>
                 <button>
@@ -63,59 +64,73 @@ const NavBarDetails = () => {
           >
             <span className="navbar-toggler-icon"></span>
           </button>
-          <div className={` ${style.navBarCollapse} collapse navbar-collapse`} id="navbarSupportedContent">
-            <ul className= {` ${style.navBarNav} navbar-nav me-auto mb-2 mb-lg-0`}>
-            <li className={style.pages}>
-              <a href="/home" className={style.linkLanding}>
-                Home
-              </a>
-            </li>
-            <li className={style.pages}>
-              <a href="/rooms" className={style.linkLanding}>
-                Rooms
-              </a>
-            </li>
-            <li className={style.pages}>
-              <NavLink to={"/hotels"} className={style.linkLanding}>
-                Hotels
-              </NavLink>
-            </li>
+          <div
+            className={` ${style.navBarCollapse} collapse navbar-collapse`}
+            id="navbarSupportedContent"
+          >
+            <ul
+              className={` ${style.navBarNav} navbar-nav me-auto mb-2 mb-lg-0`}
+            >
+              <li className={style.pages}>
+                <a href="/home" className={style.linkLanding}>
+                  Home
+                </a>
+              </li>
+              <li className={style.pages}>
+                <a href="/rooms" className={style.linkLanding}>
+                  Rooms
+                </a>
+              </li>
+              <li className={style.pages}>
+                <NavLink to={"/hotels"} className={style.linkLanding}>
+                  Hotels
+                </NavLink>
+              </li>
 
-            <li className={style.pages}>
-              <NavLink to={"/aboutUs"} className={style.linkLanding}>
-                About Us
-              </NavLink>
-            </li>
-            <li className="dropdown-center">
-              <a
-                className={`${style.linkLanding} dropdown-toggle`}
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                <img src={user} alt="" width={"24px"} height="24px" />
-              </a>
+              <li className={style.pages}>
+                <NavLink to={"/aboutUs"} className={style.linkLanding}>
+                  About Us
+                </NavLink>
+              </li>
+              <li className="dropdown-center">
+                <a
+                  className={`${style.linkLanding} dropdown-toggle`}
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <img src={user} alt="" width={"24px"} height="24px" />
+                </a>
 
-              <ul className={`${style.dropDownUl} dropdown-menu dropdown-menu-lg-end`}>
-                <li>
-                  {login === false ? (
-                    <a className={`${style.itemDrop} dropdown-item`} href="/">
-                      Log-in
+                <ul
+                  className={`${style.dropDownUl} dropdown-menu dropdown-menu-lg-end`}
+                >
+                  <li>
+                    {login === false ? (
+                      <a className={`${style.itemDrop} dropdown-item`} href="/">
+                        Log-in
+                      </a>
+                    ) : (
+                      <a
+                        onClick={logOut}
+                        className={` ${style.itemDrop} dropdown-item`}
+                        href="/"
+                      >
+                        Log-Out
+                      </a>
+                    )}
+                  </li>
+                  <hr />
+                  <li>
+                    <a
+                      className={`${style.itemDrop} dropdown-item`}
+                      href="/Booking"
+                    >
+                      My reservations
                     </a>
-                  ) : (
-                    <a onClick={logOut} className={` ${style.itemDrop} dropdown-item`} href="/">
-                      Log-Out
-                    </a>
-                  )}
-                </li>
-                <hr />
-                <li>
-                  <a className={`${style.itemDrop} dropdown-item`} href="/Booking">
-                    My reservations
-                  </a>
-                </li>
-              </ul>
-            </li>
+                  </li>
+                </ul>
+              </li>
             </ul>
           </div>
         </div>

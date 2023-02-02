@@ -52,8 +52,10 @@ const HotelDetail = (props) => {
         hotelDetail.id === props.id) && (
         <div className={style.containerDetail}>
           <h2 className={style.nameHotel}>
-            {hotelDetail.name.charAt(0).toUpperCase() +
-              hotelDetail.name.slice(1)}
+            {hotelDetail.name
+              ? hotelDetail.name.charAt(0).toUpperCase() +
+                hotelDetail.name.slice(1)
+              : ""}
           </h2>
           <div className={style.containerCard}>
             <div className={style.containerImg}>

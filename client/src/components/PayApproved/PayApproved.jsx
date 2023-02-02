@@ -56,7 +56,7 @@ const PayApproved = () => {
                 {roomDetail.hasOwnProperty("hotel") &&
                     roomDetail.id === parseInt(info[0].id) ? (
                     <div>
-                        <form ref={htmlForm} onSubmit={(event) => handleSubmit(event)}>
+                        <form ref={htmlForm} onSubmit={(event) => handleSubmit(event)} className={style.form}>
                             <h1 className={style.title}>Successful Payment</h1>
                             <div >
                                 <label htmlFor="userName">Name:</label>
