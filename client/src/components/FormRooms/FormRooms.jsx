@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Swal from "sweetalert2/dist/sweetalert2.all.js";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import { imageValidator } from "../FormHotels/validator";
@@ -7,7 +8,21 @@ import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 
 const FormRooms = () => {
-
+  const info = JSON.parse(localStorage.getItem("user"));
+  const alert = () => {
+    Swal.fire({
+      title: "Sorry",
+      text: "you dont have the permission to enter",
+    });
+    window.setTimeout(() => {
+      window.location.href = "/";
+    }, 2500);
+  };
+  if (!info) {
+    alert()
+  } else if (info[0].admin === false) {
+    alert()
+  }
   const { register, formState: {errors}, handleSubmit } = useForm();
   const dispatch = useDispatch();
 
