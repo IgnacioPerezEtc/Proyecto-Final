@@ -144,7 +144,6 @@ const RoomDetail = () => {
                       </li>
                     );
                   })}
-                  <li className={style.spanSpec}>Wi-Fi</li>
                 </ul>
               </div>
             </div>
