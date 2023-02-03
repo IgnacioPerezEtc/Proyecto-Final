@@ -6,20 +6,20 @@ import { useSelector } from "react-redux";
 import { useEffect } from "react";
 import { getAllHotels } from "../../redux/actions";
 import { useDispatch } from "react-redux";
-
-const Maps = () => {
+import { useState } from "react";
+import { NavLink } from "react-router-dom";
+const Maps = ({ positionDetail }) => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getAllHotels());
   }, [dispatch]);
+  const [mapCenter, setMapCenter] = useState(
+    positionDetail ? positionDetail : [6.2503414521512335, -75.58782388923332]
+  );
   const hotels = useSelector((state) => state.hotels);
   if (hotels.length) {
     return (
-      <MapContainer
-        className={style.map}
-        center={[3.4368376956417364, -76.52370312288105]}
-        zoom={13}
-      >
+      <MapContainer className={style.map} center={mapCenter} zoom={13}>
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -32,12 +32,18 @@ const Maps = () => {
           return (
             <Marker key={array} position={array}>
               <Popup key={array} position={array}>
-                <h3 className={style.title}>{hotel.name[0].toUpperCase() + hotel.name.slice(1)}</h3>
+                <NavLink to={`../hotels/${hotel.id}`}>
+                  <h3 className={style.title}>
+                  
+                  {hotel.name[0].toUpperCase() + hotel.name.slice(1)}
+                </h3>
                 <img
                   className={style.pictureHome}
                   src={hotel.pictureHome}
                   alt=""
                 />
+                </NavLink>
+                
               </Popup>
             </Marker>
           );
