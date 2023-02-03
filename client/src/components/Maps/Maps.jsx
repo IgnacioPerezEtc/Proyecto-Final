@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 import { useEffect } from "react";
 import { getAllHotels } from "../../redux/actions";
 import { useDispatch } from "react-redux";
-import Hotels from "../Hotels/Hotels";
+
 const Maps = () => {
   const dispatch = useDispatch();
   useEffect(() => {
@@ -32,7 +32,7 @@ const Maps = () => {
           return (
             <Marker key={array} position={array}>
               <Popup key={array} position={array}>
-                <h3>{hotel.name}</h3>
+                <h3 className={style.title}>{hotel.name[0].toUpperCase() + hotel.name.slice(1)}</h3>
                 <img
                   className={style.pictureHome}
                   src={hotel.pictureHome}

@@ -21,7 +21,7 @@
 	 "position":[3.4368376956417364, -76.52370312288105]
     },
     {
-        "name": "perez",
+        "name": "perez hotel",
         "rooms": 30,
         "location": "Argentina, Villa gesell",
         "description": "We dance until 10am",
@@ -38,7 +38,8 @@
             "french"
         ],
         "category": 5,
-        "phone": "+549862659631"
+        "phone": "+549862659631",
+        "position":["-37.2508493817602", "-56.98543471411749"]
     },
     {
         "name": "roman",
@@ -57,7 +58,8 @@
             "french"
         ],
         "category": 3,
-        "phone": "+549202659641"
+        "phone": "+549202659641",
+        "position":["-37.2508493817602", "-56.98543471411749"]
     },
     {
         "name": "arias hotel",
@@ -77,7 +79,8 @@
             "german"
         ],
         "category": 5,
-        "phone": "+573145691458"
+        "phone": "+573145691458",
+        "position":["6.2503414521512335", "-75.58782388923332"]
     },
     {
         "name": "tejada hotel",
@@ -97,7 +100,8 @@
             "italian"
         ],
         "category": 5,
-        "phone": "+15542369875"
+        "phone": "+15542369875",
+        "position":["36.191696942882686", "-115.24056215563334"]
     },
     {
         "name": "ruales hotel",
@@ -116,7 +120,9 @@
             "english"
         ],
         "category": 4,
-        "phone": "+573156985236"
+        "phone": "+573156985236",
+        "position":["6.247434929342837", "-75.5861147499675"]
+        
     },
     {
         "name": "valer hotel",
@@ -135,7 +141,8 @@
             "french"
         ],
         "category": 4,
-        "phone": "+512154869324"
+        "phone": "+512154869324",
+        "position":["-12.043594945679821", "-77.04379702451114"]
     },
     {
         "name": "bustos hotel",
@@ -154,7 +161,8 @@
             "chinese"
         ],
         "category": 5,
-        "phone": "+861458963254"
+        "phone": "+861458963254",
+        "position":["39.990910766716716, 116.29853826015653"]
     },
     {
         "name": "camey hotel",
@@ -173,6 +181,7 @@
             "english"
         ],
         "category": 5,
-        "phone": "+524489656425"
+        "phone": "+524489656425",
+        "position":["19.44516692202632, -99.14805391905757"]
     }
 ]
