@@ -187,7 +187,7 @@ export const logOut = () => {
   }, 1);
 };
 
-/////////// SEND EMAIL /////////////////////////
+// *********************** SEND EMAIL ************************
 
 export const sendEmail = (data, form) => {
   emailjs.init('Ag6f36SVwkOrrFd8y');
@@ -204,4 +204,33 @@ export const sendEmail = (data, form) => {
   window.setTimeout(() => {
     window.location.href = "/";
   }, 3000);
+}
+
+// *********************** RESERVATION ************************
+
+export const GET_ALL_RESERVATIONS = 'GET_ALL_RESERVATIONS';
+export const CREATE_RESERVATION = 'CREATE_RESERVATION';
+
+export const getAllReservations = () => {
+  return async (dispatch) => {
+    try {
+      const response = await axios.get("/reservation");
+      return dispatch({
+        type: GET_ALL_RESERVATIONS,
+        payload: response.data,
+      });
+    } catch (error) {
+      return dispatch({
+        type: ERROR,
+        payload: "Reservations couldn't be loaded",
+      });
+    }
+  };
+};
+
+export function createReservation(data) {
+  return async function () {
+    const json = await axios.post("/reservation", data);
+    return json;
+  };
 }

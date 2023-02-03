@@ -11,6 +11,7 @@ import {
   DATA_RESERVATION,
   CLEAN_RESERVATION,
   CLEAN_ROOM_DETAIL,
+  GET_ALL_RESERVATIONS
 } from "./actions";
 
 const initialState = {
@@ -20,6 +21,7 @@ const initialState = {
   rooms: [],
   roomDetail: {},
   reservation: {},
+  allReservation: [],
   error: false,
 };
 
@@ -112,6 +114,12 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         rooms: action.payload,
       };
+
+    case GET_ALL_RESERVATIONS:
+      return {
+        ...state,
+        allReservation: action.payload
+      }
 
     default:
       return { ...state };
