@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllReservations } from "../../redux/actions";
 import ReservationCard from "../ReservationCard/ReservationCard";
+import style from "./Reservation.module.css";
 
 const Reservation = () => {
     const dispatch = useDispatch();
@@ -15,6 +16,10 @@ const Reservation = () => {
     if (allReservation.length) {
         return (
             <div>
+                <div className={style.titleContainer}>
+                    <h2 className={style.blue}>Reservation</h2>
+                    <h2 className={style.red}>History</h2>
+                </div>
                 {allReservation?.map((reservation, index) => {
                     return (
                         <div>
