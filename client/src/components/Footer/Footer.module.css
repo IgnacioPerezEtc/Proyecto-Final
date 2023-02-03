@@ -1,10 +1,10 @@
-h3 {
+.FirstTitle {
   font-size: 18.7px;
 }
-p {
+.param {
   font-size: 16px;
 }
-li {
+.list {
   font-size: 16px;
 }
 .firstflexContainer {
@@ -20,6 +20,12 @@ li {
   justify-content: space-around;
   width: 100%;
   position: absolute;
+}
+
+@media screen and (max-width:1010px) {
+  .footer{
+    flex-direction: column;
+  }
 }
 .FirstTitle {
   color: #fff;
