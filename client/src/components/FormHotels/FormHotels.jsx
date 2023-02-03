@@ -3,10 +3,11 @@ import { FaStar } from "react-icons/fa"
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import style from "./FormHotels.module.css";
+import { createHotel } from "../../redux/actions";
 import { useDispatch } from "react-redux";
-import { useEffect } from "react";
 
 const FormHotels = () => {
+  const dispatch = useDispatch();
 
   // -------- Estados locales de Category --------------
   const [category, setCategory ] = useState(null);
@@ -112,6 +113,7 @@ const FormHotels = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(input);
+    dispatch(createHotel(input));
     alert("The Hotel was created successfully");
     setInput({
       name: "", 
