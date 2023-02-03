@@ -1,0 +1,162 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+}
+
+.form {
+    background-color: white;
+    padding: 0px 60px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    width: 60%;
+}
+
+.containerInputs {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.containerInput {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+    padding: 5px;
+    margin: 10px;
+    width: 90%;
+}
+
+.containerInput label {
+    font-size: 12px;
+    color: gray;
+}
+
+.containerInput input {
+    padding: 15px;
+    margin: 10px 0px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    font-size: 18px;
+}
+
+.containerDescription {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.containerDescription label {
+    font-size: 12px;
+    color: gray;
+}
+
+.containerDescription textarea {
+    padding: 15px;
+    margin: 10px 0px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    font-size: 18px;
+    width: 90%;
+    height: 150px;
+}
+
+
+.containerPictureHome {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+  
+.containerPictureHome label {
+    font-size: 12px;
+    color: gray;
+}
+
+.containerPictureHome input {
+    padding: 15px;
+    margin: 10px 0px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    font-size: 18px;
+    width: 90%;
+}
+
+.containerService {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.containerService label{
+    font-size: 12px;
+    color: gray;
+}
+
+.containerSpecialties {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+}
+
+.containerSpecialties div{
+    display: flex;
+    flex-direction: column;
+    margin: 15px;
+    padding: 5px;
+}
+
+/* .containerSpecialties div label{
+    font-size: 12px;
+    color: gray;
+    margin-bottom: 15px;
+} */
+
+/* Servicios */
+
+.lbl{
+    display: inline-block;
+    width: 65px;
+    height: 33px;
+    background: #979797;
+    border-radius: 100px;
+    cursor: pointer;
+    position: relative;
+    transition: .2s;
+  }
+  
+  .lbl::after{
+    content: "";
+    display: block;
+    width: 25px;
+    height: 25px;
+    background: #eee;
+    border-radius: 100px;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    transition: .2s;
+  }
+  
+  .switch {
+    display: none;
+  }
+  
+  .switch:checked + .lbl::after {
+    left: 35px;
+  }
+  
+  .switch:checked + .lbl {
+    background: #00c881;
+  }
