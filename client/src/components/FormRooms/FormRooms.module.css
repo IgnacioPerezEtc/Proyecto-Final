@@ -2,8 +2,9 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    margin: 5px;
+    align-items:flex-start;
+    margin: 10px;
+    padding: 20px;
 }
 
 .form {
@@ -19,6 +20,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    margin: 10px;
 }
 
 .containerInput {
@@ -29,7 +31,6 @@
     margin-bottom: 30px;
     padding: 5px;
     margin: 10px;
-    width: 90%;
 }
 
 .containerInput label {
@@ -67,7 +68,6 @@
     width: 90%;
     height: 150px;
 }
-
 
 .containerPictureHome {
     display: flex;
@@ -117,14 +117,6 @@
     padding: 5px;
 }
 
-/* .containerSpecialties div label{
-    font-size: 12px;
-    color: gray;
-    margin-bottom: 15px;
-} */
-
-/* Servicios */
-
 .lbl{
     display: inline-block;
     width: 65px;
@@ -136,7 +128,7 @@
     transition: .2s;
   }
   
-  .lbl::after{
+.lbl::after{
     content: "";
     display: block;
     width: 25px;
@@ -147,16 +139,52 @@
     top: 4px;
     left: 4px;
     transition: .2s;
-  }
+}
   
-  .switch {
+.switch {
     display: none;
-  }
+}
   
-  .switch:checked + .lbl::after {
+.switch:checked + .lbl::after {
     left: 35px;
-  }
+}
   
-  .switch:checked + .lbl {
+.switch:checked + .lbl {
     background: #00c881;
+}
+
+.containerValue {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.containerValue label {
+    font-size: 12px;
+    color: gray;
+}
+
+.containerValue input {
+    padding: 15px;
+    margin: 10px 0px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    font-size: 18px;
+    width: 45%;
+}
+
+.buttonSubmit {
+    width: 100%;
+    height: 50px;
+    padding: 10px;
+    border: none;
+    background-color: rgb(167, 43, 43);
+    color: white;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 18px;
+    cursor: pointer;
+    margin-top: 15px;
+    margin-bottom: 30px;
   }

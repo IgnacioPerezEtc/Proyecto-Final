@@ -42,14 +42,47 @@ const FormRooms = () => {
     specialties: [],
     value: "",
     hidden: false,
-  })
+  });
+
+  const handleChange = (event) => {
+    event.preventDefault()
+    setInput({
+      ...input,
+      [event.target.name]: event.target.value,
+    });
+  };
+
+  const handleChecked = (event) => {
+    console.log(event.target);
+    if(event.target.checked === true){
+      setInput({
+        ...input,
+        specialties: [...input.specialties, event.target.value]
+      })
+    };
+    if(event.target.checked === false) {
+      setInput({
+        ...input,
+        specialties: [...input.specialties.filter(specialties => specialties !== event.target.value)]
+      })
+    }
+  };
+
+  const handleCheckedHidden = (event) => {
+    setInput({
+      ...input,
+      hidden: event.target.checked
+    })
+  }
   
   return (
     <div>
       <Header />
 
       <div className={style.container}>
-        <h1>Create Room</h1>
+        <p className="fw-bold text-center display-1">
+           Create <span className="text-danger">Room</span>
+        </p>
 
         <form className={style.form}>
 
@@ -57,24 +90,44 @@ const FormRooms = () => {
             <div>
               <div className={style.containerInput}>
                 <label>Name Room: </label>
-                <input type="text" />
+                <input 
+                  type="text" 
+                  name="numRoom"
+                  value={input.name}
+                  onChange= {(e) => handleChange(e)}
+                />
               </div>
 
               <div className={style.containerInput}>
                 <label>Max of Adult: </label>
-                <input type="number" />
+                <input 
+                  type="number" 
+                  name="maxAdult"
+                  value={input.maxAdult}
+                  onChange= {(e) => handleChange(e)}
+                />
               </div>
             </div>
 
             <div>
               <div className={style.containerInput}>
-                <label>Max of Peoples: </label>
-                <input type="number" />
+                <label>Number of Peoples: </label>
+                <input 
+                  type="number" 
+                  name="numPeople"
+                  value={input.numPeople}
+                  onChange= {(e) => handleChange(e)}
+                />
               </div>
 
               <div className={style.containerInput}>
                 <label>Max of Child: </label>
-                <input type="number" />
+                <input 
+                  type="number" 
+                  name="maxChild"
+                  value={input.maxChild}
+                  onChange= {(e) => handleChange(e)}
+                />
               </div>
             </div>
 
@@ -84,6 +137,9 @@ const FormRooms = () => {
             <label>Description: </label>
             <textarea 
               type="text"
+              name="description"
+              value={input.description}
+              onChange= {(e) => handleChange(e)}
             />
           </div>
 
@@ -91,6 +147,9 @@ const FormRooms = () => {
               <label>Picture Home: </label>
               <input 
                 type="text" 
+                name="pictureHome"
+                value={input.pictureHome}
+                onChange= {(e) => handleChange(e)}
               />
           </div>
 
@@ -111,8 +170,11 @@ const FormRooms = () => {
                       <label>{specialties}</label>
                       <input 
                         type="checkbox" 
+                        name="specialties"
+                        value={specialties}
                         id={`switch${index}`}
                         className={style.switch}
+                        onChange={(e) => handleChecked(e)}
                       />
                       <label htmlFor={`switch${index}`} className={style.lbl}></label>
                     </div>
@@ -122,19 +184,31 @@ const FormRooms = () => {
             </div>
           </div>
 
-          <div>
+          <div className={style.containerValue}>
             <label>Value: </label>
-            <input 
-              type="number" 
-            />
+            <div>
+              <input 
+                type="number" 
+                name="value"
+                value={input.value}
+                onChange= {(e) => handleChange(e)}
+              />
+            </div>
           </div>
 
           <div>
             <label>Hidden: </label>
             <input 
-              type="radio" 
+              type="checkbox" 
+              name="hidden"
+              value={input.hidden}
+              onChange={(e) => handleCheckedHidden(e)}
             />
           </div>
+
+          <div>
+              <button className={style.buttonSubmit} type="submit">Create Room</button>
+            </div>
         </form>
       </div>
 
