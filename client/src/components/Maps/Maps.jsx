@@ -31,7 +31,14 @@ const Maps = () => {
           });
           return (
             <Marker key={array} position={array}>
-              <Popup>51.505, -0.09</Popup>
+              <Popup key={array} position={array}>
+                <h3>{hotel.name}</h3>
+                <img
+                  className={style.pictureHome}
+                  src={hotel.pictureHome}
+                  alt=""
+                />
+              </Popup>
             </Marker>
           );
         })}
