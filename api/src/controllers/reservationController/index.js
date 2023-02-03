@@ -1,15 +1,23 @@
-const { Reservation } = require("../../db");
+const { Reservation, Room, Hotel } = require("../../db");
 
 module.exports = {
 
     reservationByEmail: async function (email) {
+        console.log(email)
         let array = [];
 
         let responseFromDB = await Reservation.findAll({
+            include: {
+                model: Room,
+                include: {
+                    model: Hotel
+                }
+            },
             where: {
                 userEmail: email
             }
-        });
+        },
+        );
 
         array = [...responseFromDB];
 

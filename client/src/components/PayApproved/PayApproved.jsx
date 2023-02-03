@@ -36,7 +36,6 @@ const PayApproved = () => {
             location: roomDetail.hotel.location,
             total: parseInt(roomDetail.value) * parseInt(infoDays)
         }
-        createReservation(data);
     }
 
     useEffect(() => {
@@ -104,7 +103,7 @@ const PayApproved = () => {
                                 <input type="text" name="userEmail" id="userEmail" defaultValue={data.userEmail}  readOnly/>
                             </div>
 
-                            <input className={style.createHotel} type="submit" id="button" defaultValue="Send Email"/>
+                            <input className={style.createHotel} type="submit" id="button" value="Save Reservation"/>
                         </form>
                     </div>
                 ) :
