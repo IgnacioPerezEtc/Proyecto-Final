@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useSearchParams } from "react-router-dom";
 import Error from "../Error/Error.jsx";
-import { getRoomById, sendEmail } from "../../redux/actions";
+import { createReservation, getRoomById, sendEmail } from "../../redux/actions";
 import style from './PayApproved.module.css';
 
 const PayApproved = () => {
@@ -36,6 +36,7 @@ const PayApproved = () => {
             location: roomDetail.hotel.location,
             total: parseInt(roomDetail.value) * parseInt(infoDays)
         }
+        createReservation(data);
     }
 
     useEffect(() => {
