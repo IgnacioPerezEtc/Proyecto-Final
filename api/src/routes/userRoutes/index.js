@@ -42,7 +42,7 @@ router.put("/edit/:id", async (req, res) => {
     try {
         if(id){
             await putUser(id, data);
-            return res.status(200).send("Updated user");
+            return res.status(200).send("Updated User");
         }
         else {
             return res.status(200).send("Id needed");

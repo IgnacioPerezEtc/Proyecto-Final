@@ -61,5 +61,19 @@ module.exports = {
 
             return ("New Room regristed successfully");
         }
+    },
+
+    putRoom: async function (id, data) {
+        try {
+            await Room.update(data, {
+                where: {
+                    id: id
+                }
+            })
+            return "Updated Room"
+            
+        } catch (error) {
+            return error.message;
+        }
     }
 }
