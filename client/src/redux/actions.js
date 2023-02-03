@@ -189,7 +189,8 @@ export const logOut = () => {
 
 // *********************** SEND EMAIL ************************
 
-export const sendEmail = (data, form) => {
+export const sendEmail = async (data, form) => {
+  await createReservation(data);
   emailjs.init('Ag6f36SVwkOrrFd8y');
   const serviceID = 'default_service';
   const templateID = 'template_1olarl4';
@@ -211,10 +212,10 @@ export const sendEmail = (data, form) => {
 export const GET_ALL_RESERVATIONS = 'GET_ALL_RESERVATIONS';
 export const CREATE_RESERVATION = 'CREATE_RESERVATION';
 
-export const getAllReservations = () => {
+export const getAllReservations = (email) => {
   return async (dispatch) => {
     try {
-      const response = await axios.get("/reservation");
+      const response = await axios.get(`/reservation?email=${email}`);
       return dispatch({
         type: GET_ALL_RESERVATIONS,
         payload: response.data,
@@ -228,9 +229,7 @@ export const getAllReservations = () => {
   };
 };
 
-export function createReservation(data) {
-  return async function () {
+export async function createReservation(data) {
     const json = await axios.post("/reservation", data);
     return json;
-  };
 }
