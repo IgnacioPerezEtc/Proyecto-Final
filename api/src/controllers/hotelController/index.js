@@ -87,4 +87,18 @@ module.exports = {
 
     return "All Hotels in DB";
   },
+
+  putHotel: async function (id, data) {
+    try {
+      await Hotel.update(data, {
+          where: {
+              id: id
+          }
+      })
+      return "Updated Hotel"
+      
+    } catch (error) {
+      return error.message;
+    }
+  }
 };
