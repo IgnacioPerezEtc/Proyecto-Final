@@ -120,6 +120,18 @@ const NavBarDetails = () => {
                       </a>
                     )}
                   </li>
+                  {info && info[0].admin === true ? (
+                    <li>
+                      <a
+                        className={`${style.itemDrop} dropdown-item`}
+                        href="/admin"
+                      >
+                        Dashboard
+                      </a>
+                    </li>
+                  ) : (
+                    ""
+                  )}
                   <hr />
                   <li>
                     <a
