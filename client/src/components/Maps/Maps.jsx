@@ -32,7 +32,7 @@ const Maps = ({ positionDetail }) => {
           return (
             <Marker key={array} position={array}>
               <Popup key={array} position={array}>
-                <NavLink to={`../hotels/${hotel.id}`}>
+                <NavLink className={style.navlink} to={`../hotels/${hotel.id}`}>
                   <h3 className={style.title}>
                   
                   {hotel.name[0].toUpperCase() + hotel.name.slice(1)}
