@@ -1,22 +1,179 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import style from "./AboutUs.module.css";
-
+import img from "./img/fotoAboutUs.jpg";
+import fotoSanti from "./img/fotoSanti.jpg";
+import fotoLili from "./img/fotoLili.jpg";
+import fotoLauti from "./img/fotoLauti.jpeg";
+import fotoRodri from "./img/fotoRodri.jpg";
+import fotoDavid from "./img/fotoDavid.jpg";
+import fotoGabi from "./img/fotoGabi.jpg";
+import gitHub from "./img/github.svg"
+import fotoAnonimous from "./img/fotoAnonimous.png";
+import NavBarDetails from "../NavBarDetails/NavBarDetails.jsx";
 const AboutUs = (props) => {
   return (
-    <div className={style.containerAboutUs}>
-      <div className={style.containerContent}>
-        <h1>En construcción</h1>
-        <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur
-          totam cum atque. Labore, provident voluptate? At, atque. Quae autem
-          culpa accusantium, laudantium, minus possimus odio fuga dolorum saepe
-          accusamus esse?
-        </p>
-
-        <NavLink to={"/home"} className={style.buttonAbout}>
-          <button>Home</button>
-        </NavLink>
+    <div>
+      <NavBarDetails />
+      <div className={style.flexContainer}>
+        <h1 className={style.title}>About us</h1>
+      </div>
+      <div className={style.flexContainer}>
+         <p className={style.paramUs}>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate,
+        obcaecati vero perferendis nostrum vel excepturi autem expedita animi
+        deleniti debitis, accusamus velit nam, id voluptate quae? Impedit
+        assumenda voluptatibus numquam!
+      </p>
+      </div>
+     
+      <div className={style.containerAboutUs}>
+        <div className={style.containerUs}>
+          <div className={style.imgContainer}>
+            <img className={style.imageUs} src={img} alt="" />
+          </div>
+          <div>
+            <h2 className={style.name}>Ignacio Perez Etchegaray</h2>
+          </div>
+          <div className={style.iconContainer}>
+            <img
+              className={style.iconImage}
+              src="http://cdn.onlinewebfonts.com/svg/img_24845.png"
+            />
+            <img
+              className={style.iconGitHub}
+              src={gitHub}
+            />
+          </div>
+        </div>
+        <div className={style.containerUs}>
+          <div className={style.imgContainer}>
+            <img className={style.imageUs} src={fotoSanti} alt="" />
+          </div>
+          <div>
+            <h2 className={style.name}>Santiago Carmona</h2>
+          </div>
+          <div className={style.iconContainer}>
+            <img
+              className={style.iconImage}
+              src="http://cdn.onlinewebfonts.com/svg/img_24845.png"
+            />
+           <img
+              className={style.iconGitHub}
+              src={gitHub}
+            />
+          </div>
+        </div>
+        <div className={style.containerUs}>
+          <div className={style.imgContainer}>
+            <img className={style.imageUs} src={fotoLili} alt="" />
+          </div>
+          <div>
+            <h2 className={style.name}>Liliana Arias</h2>
+          </div>
+          <div className={style.iconContainer}>
+            <img
+              className={style.iconImage}
+              src="http://cdn.onlinewebfonts.com/svg/img_24845.png"
+            />
+            <img
+              className={style.iconGitHub}
+              src={gitHub}
+            />
+          </div>
+        </div>
+        <div className={style.containerUs}>
+          <div className={style.imgContainer}>
+            <img className={style.imageUs} src={fotoLauti} alt="" />
+          </div>
+          <div>
+            <h2 className={style.name}>Lautaro Tejada</h2>
+          </div>
+          <div className={style.iconContainer}>
+            <img
+              className={style.iconImage}
+              src="http://cdn.onlinewebfonts.com/svg/img_24845.png"
+            />
+          <img
+              className={style.iconGitHub}
+              src={gitHub}
+            />
+          </div>
+        </div>
+      </div>
+      <div className={style.containerAboutUs}>
+        <div className={style.containerUs}>
+          <div className={style.imgContainer}>
+            <img className={style.imageUs} src={fotoRodri} alt="" />
+          </div>
+          <div>
+            <h2 className={style.name}>Rodrigo Roman</h2>
+          </div>
+          <div className={style.iconContainer}>
+            <img
+              className={style.iconImage}
+              src="http://cdn.onlinewebfonts.com/svg/img_24845.png"
+            />
+      <img
+              className={style.iconGitHub}
+              src={gitHub}
+            />
+          </div>
+        </div>
+        <div className={style.containerUs}>
+          <div className={style.imgContainer}>
+            <img className={style.imageUs} src={fotoAnonimous} alt="" />
+          </div>
+          <div>
+            <h2 className={style.name}>Carlos Valer</h2>
+          </div>
+          <div className={style.iconContainer}>
+            <img
+              className={style.iconImage}
+              src="http://cdn.onlinewebfonts.com/svg/img_24845.png"
+            />
+      <img
+              className={style.iconGitHub}
+              src={gitHub}
+            />
+          </div>
+        </div>
+        <div className={style.containerUs}>
+          <div className={style.imgContainer}>
+            <img className={style.imageUs} src={fotoDavid} alt="" />
+          </div>
+          <div>
+            <h2 className={style.name}>David Ruales</h2>
+          </div>
+          <div className={style.iconContainer}>
+            <img
+              className={style.iconImage}
+              src="http://cdn.onlinewebfonts.com/svg/img_24845.png"
+            />
+        <img
+              className={style.iconGitHub}
+              src={gitHub}
+            />
+          </div>
+        </div>
+        <div className={style.containerUs}>
+          <div className={style.imgContainer}>
+            <img className={style.imageUs} src={fotoGabi} alt="" />
+          </div>
+          <div>
+            <h2 className={style.name}>Gabriel Bustos</h2>
+          </div>
+          <div className={style.iconContainer}>
+            <img
+              className={style.iconImage}
+              src="http://cdn.onlinewebfonts.com/svg/img_24845.png"
+            />
+      <img
+              className={style.iconGitHub}
+              src={gitHub}
+            />
+          </div>
+        </div>
       </div>
     </div>
   );
