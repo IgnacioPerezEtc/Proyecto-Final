@@ -49,7 +49,8 @@ const FormRooms = () => {
   });
 
   // --------- Estados image Extras ---------
-  const [imgExt, setImgExt] = useState([])
+  const [imgExt, setImgExt] = useState([]);
+  const [imgExtErr, setImgExtErr] = useState("")
 
   // ----------- Errors ------------
   const [inputErrors, setInputErrors] = useState({});
@@ -88,12 +89,18 @@ const FormRooms = () => {
 
   const handlePlus = (event) => {
     event.preventDefault();
-    if(!input.pictureDetail.includes(imgExt)){
-      setInput({
-        ...input,
-        pictureDetail: [...input.pictureDetail, imgExt]
-      })
+    if (!/.*(png|jpg|jpeg|gif)$/.test(imgExt)){
+      setImgExtErr("Enter a URL image .png, .jpg, .jpeg, .gif")
+    }
+    else {
       setImgExt("");
+        if(!input.pictureDetail.includes(imgExt)){
+          setInput({
+            ...input,
+            pictureDetail: [...input.pictureDetail, imgExt]
+          })
+          setImgExt("");
+        }
     }
   };
 
@@ -231,6 +238,9 @@ const FormRooms = () => {
                 onChange={(e) => handleImgExt(e)}
               />
               <button onClick={ (e) => handlePlus(e) } name="imgExt">+</button>
+              <div>
+                <span className={style.span}>{imgExtErr}</span>
+              </div>
             </div>
 
             <div className={style.containerService}>
@@ -287,7 +297,10 @@ const FormRooms = () => {
                   return(
                     <div key={index}>
                       <img src={img} key={index}/>
-                      <button onClick={(event) => handleDeleteImg(event)} name={img}>X</button>
+                      {
+                        input.pictureDetail?.length < 4 ? <button onClick={(event) => handleDeleteImg(event)} name={img}>X</button> : <p></p>
+                      }
+                      
                     </div>
                   )
               })
