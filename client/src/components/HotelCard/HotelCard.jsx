@@ -4,56 +4,64 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheck, faStar } from '@fortawesome/free-solid-svg-icons'
 import "./HotelCard.css"
 import style from "./HotelCard.module.css"
-
+import FavoriteIcon from "../FavoriteIcon/FavoriteIcon";
 
 export const HotelCard = ({ name, image, category, languages, id }) => {
-  
+
+
   let categoryStars = [];
   for (let i = 0; i < category; i++)
-  categoryStars.push(<FontAwesomeIcon className="fs-3 text-danger me-2" icon={faStar} />)
+    categoryStars.push(<FontAwesomeIcon className="fs-3 text-danger me-2" icon={faStar} />)
 
   let nameHotel = (name) => {
     let nombre = name.split(" ");
     return nombre.map(p => p[0].toUpperCase() + p.slice(1)).join(" ")
   };
 
-
   return (
-    
+    <div className="d-flex justify-content-center">
+
       <Card className={`${style.Card} h-75`}>
         <NavLink to={`/hotels/${id}`} className="text-decoration-none">
-        <Card.Img variant="top" src={image} className={`${style.img}`} />
-        
-        <Card.Body className="my-3">
-          
-          <p className="h3 fw-bold text-dark ">{nameHotel(name)}</p>
+          <Card.Img variant="top" src={image} className={`${style.img}`} />
 
-          <div>
-            { categoryStars }
-          </div>
+          <Card.Body className="my-3">
 
-          <div className="my-5">
-            <p className="fw-bold color-blue">Languages:</p>
+            <p className="h3 fw-bold text-dark ">{nameHotel(name)}</p>
 
-            <div className="d-flex gap-3">
-              {
-                languages.map((language, key) => {
-                  return (
-                    <p className="language" key={key}>
-                      <FontAwesomeIcon className="shadow text-danger me-1" icon={faCheck} />
-                      {language}
-                    </p>
-                  )
-                })
-              }
+            <div>
+              {categoryStars}
             </div>
 
-          </div>
+            <div className="my-5">
+              <p className="fw-bold color-blue">Languages:</p>
 
-        </Card.Body>
+              <div className="d-flex gap-3">
+                {
+                  languages.map((language, key) => {
+                    return (
+                      <p className="language" key={key}>
+                        <FontAwesomeIcon className="shadow text-danger me-1" icon={faCheck} />
+                        {language}
+                      </p>
+                    )
+                  })
+                }
+              </div>
+
+            </div>
+
+          </Card.Body>
         </NavLink>
       </Card>
-    
+
+      {
+        localStorage.getItem("user") ?
+          <FavoriteIcon id={id}/> : ''
+      }
+
+    </div>
+
   );
 };
 export default HotelCard;

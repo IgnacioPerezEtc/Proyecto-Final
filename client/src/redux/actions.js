@@ -3,6 +3,7 @@ import emailjs from '@emailjs/browser';
 import axios from "axios";
 
 export const GET_ALL_HOTELS = "GET_ALL_HOTELS";
+export const GET_FAVORITE_HOTELS = "GET_FAVORITE_HOTELS"
 export const GET_HOTEL_BY_ID = "GET_HOTEL_BY_ID";
 export const GET_HOTEL_BY_NAME = "GET_HOTEL_BY_NAME";
 export const CREATE_HOTEL = "CREATE_HOTEL ";
@@ -27,6 +28,16 @@ export function getAllHotels() {
       });
     }
   };
+}
+
+export function getFavoriteHotels(id){
+  return async function (dispatch) {
+    const { data } = await axios.get(`/favorites/${id}`)
+    return dispatch({
+      type: GET_FAVORITE_HOTELS,
+      payload: data
+    })
+  }
 }
 
 export function setError(payload) {
@@ -182,6 +193,7 @@ export const findOrCreate = async (data) => {
 
 export const logOut = () => {
   localStorage.removeItem("user");
+  localStorage.removeItem("favorites");
   window.setTimeout(() => {
     window.location.href = "/";
   }, 1);

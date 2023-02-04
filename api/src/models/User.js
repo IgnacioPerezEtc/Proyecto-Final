@@ -31,7 +31,6 @@ module.exports = (sequelize) => {
 
         favoriteHotels: {
             type: DataTypes.ARRAY(DataTypes.INTEGER),
-            defaultValue: [],
         }
 
     },
