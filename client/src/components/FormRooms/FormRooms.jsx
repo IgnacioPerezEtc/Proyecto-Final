@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 import Swal from "sweetalert2/dist/sweetalert2.all.js";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import style from "./FormRooms.module.css"
+import { validate } from "./validator";
 
 const FormRooms = () => {
   // const info = JSON.parse(localStorage.getItem("user"));
@@ -21,14 +23,16 @@ const FormRooms = () => {
   //   alert()
   // }
 
+  // const dispatch = useDispatch();
+
   const specialties = [
-    "Restaurant",
-    "Pool",
+    "TV",
+    "Calefaccion",
     "Spa",
     "Free Wifi",
-    "Bar",
-    "Conference",
-    "Game room",
+    "Mini-Bar",
+    "Ducha",
+    "Toilette",
   ];
 
   const [input, setInput] = useState({
@@ -44,6 +48,10 @@ const FormRooms = () => {
     hidden: false,
   });
 
+  // ----------- Errors ------------
+  const [inputErrors, setInputErrors] = useState({});
+  const [isSubmit, setIsSubmit] = useState(false);
+
   const handleChange = (event) => {
     event.preventDefault()
     setInput({
@@ -53,7 +61,7 @@ const FormRooms = () => {
   };
 
   const handleChecked = (event) => {
-    console.log(event.target);
+    // console.log(event.target);
     if(event.target.checked === true){
       setInput({
         ...input,
@@ -73,7 +81,21 @@ const FormRooms = () => {
       ...input,
       hidden: event.target.checked
     })
-  }
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setInputErrors(validate(input));
+    setIsSubmit(true);
+  };
+
+  useEffect(() => {
+    console.log(inputErrors);
+    if(Object.keys(inputErrors).length === 0 && isSubmit) {
+      console.log(input)
+      alert("Room Created succesfully")
+    }
+  }, [inputErrors]);
   
   return (
     <div>
@@ -84,7 +106,7 @@ const FormRooms = () => {
            Create <span className="text-danger">Room</span>
         </p>
 
-        <form className={style.form}>
+        <form onSubmit={(e) => handleSubmit(e)} className={style.form}>
 
           <div className={style.containerInputs}>
             <div>
@@ -93,9 +115,13 @@ const FormRooms = () => {
                 <input 
                   type="text" 
                   name="numRoom"
+                  placeholder="Name Room"
                   value={input.name}
                   onChange= {(e) => handleChange(e)}
                 />
+                <div>
+                  <span className={style.span}>{inputErrors.numRoom}</span> 
+                </div>
               </div>
 
               <div className={style.containerInput}>
@@ -106,6 +132,9 @@ const FormRooms = () => {
                   value={input.maxAdult}
                   onChange= {(e) => handleChange(e)}
                 />
+                <div>
+                  <span className={style.span}>{inputErrors.maxAdult}</span>
+                </div>
               </div>
             </div>
 
@@ -118,6 +147,9 @@ const FormRooms = () => {
                   value={input.numPeople}
                   onChange= {(e) => handleChange(e)}
                 />
+                <div>
+                  <span className={style.span}>{inputErrors.numPeople}</span>
+                </div>
               </div>
 
               <div className={style.containerInput}>
@@ -128,6 +160,9 @@ const FormRooms = () => {
                   value={input.maxChild}
                   onChange= {(e) => handleChange(e)}
                 />
+                <div>
+                  <span className={style.span}>{inputErrors.maxChild}</span>
+                </div>
               </div>
             </div>
 
@@ -141,6 +176,9 @@ const FormRooms = () => {
               value={input.description}
               onChange= {(e) => handleChange(e)}
             />
+            <div>
+              <span className={style.span}>{inputErrors.description}</span>
+            </div>
           </div>
 
           <div className={style.containerPictureHome}>
@@ -151,6 +189,9 @@ const FormRooms = () => {
                 value={input.pictureHome}
                 onChange= {(e) => handleChange(e)}
               />
+              <div>
+                <span className={style.span}>{inputErrors.pictureHome}</span>
+              </div>
           </div>
 
           <div className={style.containerPictureHome}>
@@ -193,6 +234,9 @@ const FormRooms = () => {
                 value={input.value}
                 onChange= {(e) => handleChange(e)}
               />
+              <div>
+                <span className={style.span}>{inputErrors.value}</span>
+              </div>
             </div>
           </div>
 
