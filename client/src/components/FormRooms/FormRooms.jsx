@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import Swal from "sweetalert2/dist/sweetalert2.all.js";
-import Header from "../Header/Header";
+import NavBarDetails from "../NavBarDetails/NavBarDetails";
 import Footer from "../Footer/Footer";
 import style from "./FormRooms.module.css"
 import { validate } from "./validator";
@@ -48,6 +48,9 @@ const FormRooms = () => {
     hidden: false,
   });
 
+  // --------- Estados image Extras ---------
+  const [imgExt, setImgExt] = useState([])
+
   // ----------- Errors ------------
   const [inputErrors, setInputErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
@@ -78,10 +81,28 @@ const FormRooms = () => {
     }
   };
 
-  const handleCheckedHidden = (event) => {
+  // ------- Function extra images ----------
+  const handleImgExt = (event) => {
+    setImgExt(event.target.value);
+  };
+
+  const handlePlus = (event) => {
+    event.preventDefault();
+    if(!input.pictureDetail.includes(imgExt)){
+      setInput({
+        ...input,
+        pictureDetail: [...input.pictureDetail, imgExt]
+      })
+      setImgExt("");
+    }
+  };
+
+  const handleDeleteImg = (event) => {
+    event.preventDefault();
+    let newImgs = input.pictureDetail.filter(img => img !== event.target.name)
     setInput({
       ...input,
-      hidden: event.target.checked
+      pictureDetail: newImgs
     })
   };
 
@@ -106,7 +127,7 @@ const FormRooms = () => {
   // ----------- Comienzo del componente --------------
   return (
     <div>
-      <Header />
+      <NavBarDetails />
       <div className={style.firsContainer}>
 
         <div className={style.container}>
@@ -203,10 +224,13 @@ const FormRooms = () => {
             </div>
 
             <div className={style.containerPictureHome}>
-              <label>Picture Detail: </label>
+              <label>Extra Pictures: </label>
               <input 
                 type="text" 
+                value={imgExt}
+                onChange={(e) => handleImgExt(e)}
               />
+              <button onClick={ (e) => handlePlus(e) } name="imgExt">+</button>
             </div>
 
             <div className={style.containerService}>
@@ -249,16 +273,6 @@ const FormRooms = () => {
             </div>
 
             <div>
-              <label>Hidden: </label>
-              <input 
-                type="checkbox" 
-                name="hidden"
-                value={input.hidden}
-                onChange={(e) => handleCheckedHidden(e)}
-              />
-            </div>
-
-            <div>
                 <button className={style.buttonSubmit} type="submit">Create Room</button>
               </div>
           </form>
@@ -268,7 +282,16 @@ const FormRooms = () => {
           <h2>Picture Home: </h2>
           <img src={input.pictureHome ? input.pictureHome : "https://www.salonlfc.com/wp-content/uploads/2018/01/image-not-found-1-scaled-1150x647.png"}/>
           <div>
-
+            {
+              input.pictureDetail?.map((img, index)=> {
+                  return(
+                    <div key={index}>
+                      <img src={img} key={index}/>
+                      <button onClick={(event) => handleDeleteImg(event)} name={img}>X</button>
+                    </div>
+                  )
+              })
+            }
           </div>
         </div>
       </div>
