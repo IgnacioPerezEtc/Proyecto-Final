@@ -33,7 +33,7 @@ const Users = (props) => {
           <tbody>
             {users?.map((user) => {
               return (
-                <tr className={style.trBody}>
+                <tr className={style.trBody} key={user.email}>
                   <th>{user.name}</th>
                   <th>{user.email}</th>
                   <th>{user.admin === true ? "Admin" : "User"}</th>

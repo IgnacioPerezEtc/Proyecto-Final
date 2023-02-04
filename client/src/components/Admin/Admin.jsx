@@ -6,12 +6,9 @@ import dash from "../../assets/icons/dash.png";
 import hotel from "../../assets/icons/hotel.png";
 import home from "../../assets/icons/home.png";
 import Users from "./Users/Users";
-
-import { useLocation } from "react-router-dom";
 import HotelsAdmin from "./Hotels/Hotels";
 
 const Admin = () => {
-
   return (
     <div>
       <div>
@@ -61,16 +58,6 @@ const Admin = () => {
                     </a>
                   </li>
                   <li className={`${style.navItem} nav-item`}>
-                    <img src={user} alt="" className={style.img} />
-                    <a
-                      className={`${style.navLink} nav-link active`}
-                      aria-current="page"
-                      href="#users"
-                    >
-                      Users
-                    </a>
-                  </li>
-                  <li className={`${style.navItem} nav-item`}>
                     <img src={hotel} alt="" className={style.img} />
                     <a
                       className={`${style.navLink} nav-link active`}
@@ -80,6 +67,17 @@ const Admin = () => {
                       Hotels
                     </a>
                   </li>
+                  <li className={`${style.navItem} nav-item`}>
+                    <img src={user} alt="" className={style.img} />
+                    <a
+                      className={`${style.navLink} nav-link active`}
+                      aria-current="page"
+                      href="#users"
+                    >
+                      Users
+                    </a>
+                  </li>
+
                   <li className={`${style.navItem} nav-item`}>
                     <img src={home} alt="" className={style.img} />
                     <NavLink
@@ -100,8 +98,8 @@ const Admin = () => {
         </nav>
       </div>
       <div className={style.containerInfo}>
-        <HotelsAdmin/>
-        <Users/>
+        <HotelsAdmin />
+        <Users />
       </div>
     </div>
   );
