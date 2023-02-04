@@ -5,6 +5,7 @@ import NavBarDetails from "../NavBarDetails/NavBarDetails";
 import Footer from "../Footer/Footer";
 import style from "./FormRooms.module.css"
 import { validate } from "./validator";
+import { createRoom } from "../../redux/actions";
 
 const FormRooms = () => {
   // const info = JSON.parse(localStorage.getItem("user"));
@@ -23,7 +24,7 @@ const FormRooms = () => {
   //   alert()
   // }
 
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
   const specialties = [
     "TV",
@@ -46,6 +47,7 @@ const FormRooms = () => {
     specialties: [],
     value: "",
     hidden: false,
+    hotelId: "2"
   });
 
   // --------- Estados image Extras ---------
@@ -125,8 +127,9 @@ const FormRooms = () => {
 // ------------ UseEffect para crear -------------
   useEffect(() => {
     if(Object.keys(inputErrors).length === 0 && isSubmit) {
-      console.log(input)
-      alert("Room Created succesfully")
+      console.log(input);
+      dispatch(createRoom(input))
+      alert("Room Created succesfully");
     }
   }, [inputErrors]);
   
