@@ -4,6 +4,8 @@ import instagram from "../../assets/icons/instagram.svg";
 import twitter from "../../assets/icons/twitter.svg";
 import youtube from "../../assets/icons/youtube.svg";
 import user from "../../assets/icons/user.png";
+import sun from "../../assets/icons/sun.png";
+import moon from "../../assets/icons/moon.png";
 import { NavLink } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { useState } from "react";
@@ -21,6 +23,32 @@ const NavBar = (props) => {
       setLogin(true);
     }
   });
+  function darkMode() {
+    var element = document.body;
+    var content = document.getElementById("DarkModetext");
+    element.className = "dark-mode";
+    content.innerText = "Dark Mode is ON";
+  }
+  function lightMode() {
+    var element = document.body;
+    var content = document.getElementById("DarkModetext");
+    element.className = "light-mode";
+    content.innerText = "Dark Mode is OFF";
+  }
+  
+  // const preferedColorScheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  // const slider = document.getElementById('slider');
+  //  console.log(preferedColorScheme)
+  // const setTheme = (theme)=>{
+  //   document.documentElement.setAttribute('data-theme',theme);
+  //   localStorage.setItem('theme',theme);
+  // }
+  // slider.addEventListener('click', ()  => {
+  //   let switchToTheme = localStorage.getItem('theme') === 'dark' ? 'light' : 'dark';
+  //   setTheme(switchToTheme);
+  // });
+  // console.log(setTheme)
+  // setTheme(localStorage.getItem('theme') || preferedColorScheme);
 
   return (
     <div className={style.containerNavbar}>
@@ -80,6 +108,19 @@ const NavBar = (props) => {
                 About Us
               </NavLink>
             </li>
+
+            {/*MODO OSCURO */}
+            {/* <li>
+              <label class="switch">
+                <input type="checkbox" />
+                <span className={style.slider}></span>
+              </label>
+            </li> */}
+            <li>
+              <button onClick={darkMode}>DarkMode</button>
+              <button onClick={lightMode}>LightMode</button>
+            </li>     
+
             <li className="dropdown">
               <a
                 className={`${style.linkLanding} dropdown-toggle`}
