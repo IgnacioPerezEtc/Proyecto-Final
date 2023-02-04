@@ -8,21 +8,21 @@ import { validate } from "./validator";
 import { createRoom } from "../../redux/actions";
 
 const FormRooms = () => {
-  // const info = JSON.parse(localStorage.getItem("user"));
-  // const alert = () => {
-  //   Swal.fire({
-  //     title: "Sorry",
-  //     text: "you dont have the permission to enter",
-  //   });
-  //   window.setTimeout(() => {
-  //     window.location.href = "/";
-  //   }, 2500);
-  // };
-  // if (!info) {
-  //   alert()
-  // } else if (info[0].admin === false) {
-  //   alert()
-  // }
+  const info = JSON.parse(localStorage.getItem("user"));
+  const alert = () => {
+    Swal.fire({
+      title: "Sorry",
+      text: "you dont have the permission to enter",
+    });
+    window.setTimeout(() => {
+      window.location.href = "/";
+    }, 2500);
+  };
+  if (!info) {
+    alert()
+  } else if (info[0].admin === false) {
+    alert()
+  }
 
   const dispatch = useDispatch();
 
