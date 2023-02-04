@@ -31,15 +31,24 @@ export const validate = (input) => {
     if(!input.maxAdult) {
         err.maxAdult = "Max of Adults is required"
     };
-    if(input.maxAdult < 0 || input.maxAdult > input.numPeople) {
+    if(input.maxAdult < 0) {
         err.maxAdult = "Enter number of adults within the range"
+    };
+    // if(input.maxAdult > input.numPeople) {
+    //     err.maxAdult = "Enter number of adults within the range"
+    // };
+    if(input.maxChild > 0 && !input.maxAdult) {
+        err.maxChild = "Enter first number of Adults"
+    };
+    if(input.maxChild > input.maxAdult || input.maxChild < 0){
+        err.maxChild = "Enter number of childs within the range"
     };
     if(!input.value) {
         err.value = "Value is required"
-    }
+    };
     if(input.value < 0) {
         err.value = "Value must be more than $0"
-    }
+    };
 
     return err;
 }

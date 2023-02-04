@@ -52,6 +52,8 @@ const FormRooms = () => {
   const [inputErrors, setInputErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
 
+
+// ----------- Funciones on Change -------------
   const handleChange = (event) => {
     event.preventDefault()
     setInput({
@@ -83,20 +85,25 @@ const FormRooms = () => {
     })
   };
 
+
+  // --------- Funcion Submit ----------------
   const handleSubmit = (event) => {
     event.preventDefault();
     setInputErrors(validate(input));
     setIsSubmit(true);
   };
 
+
+// ------------ UseEffect para crear -------------
   useEffect(() => {
-    console.log(inputErrors);
     if(Object.keys(inputErrors).length === 0 && isSubmit) {
       console.log(input)
       alert("Room Created succesfully")
     }
   }, [inputErrors]);
   
+
+  // ----------- Comienzo del componente --------------
   return (
     <div>
       <Header />
