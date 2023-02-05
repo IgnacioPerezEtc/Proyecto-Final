@@ -4,8 +4,6 @@ import instagram from "../../assets/icons/instagram.svg";
 import twitter from "../../assets/icons/twitter.svg";
 import youtube from "../../assets/icons/youtube.svg";
 import user from "../../assets/icons/user.png";
-import sun from "../../assets/icons/sun.png";
-import moon from "../../assets/icons/moon.png";
 import { NavLink } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { useState } from "react";

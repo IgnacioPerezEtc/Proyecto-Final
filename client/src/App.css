@@ -12,6 +12,10 @@ body {
      background-color: #071923;
     
 }
+
+.dark-mode .color-blue{
+    color: white; 
+}
 .titleContainer{
     color: #eee;
 }
