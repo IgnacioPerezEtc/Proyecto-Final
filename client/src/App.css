@@ -1,3 +1,26 @@
 body{
     background-color: #eee;
 }
+body {
+    padding: 25px;
+    background-color: white;
+    color: black;
+    font-size: 25px;
+}
+.dark-mode {
+    color: white;  
+     background-color: #071923;
+    
+}
+
+.dark-mode .color-blue{
+    color: white; 
+}
+.titleContainer{
+    color: #eee;
+}
+
+
+  .light-mode {
+    background-color: white;
+    color: black;}
