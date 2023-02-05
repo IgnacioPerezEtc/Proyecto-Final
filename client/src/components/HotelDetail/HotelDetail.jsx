@@ -290,6 +290,7 @@ const HotelDetail = (props) => {
                     })}
 
                   </Swiper>
+                  <ul className={style.ulOff}>
                     <li className={style.off}>Public Pool</li>
                     <li className={style.off}>Bar</li>
                     <li className={style.off}>Restaurant</li>
