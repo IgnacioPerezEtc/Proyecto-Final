@@ -1,14 +1,15 @@
 import React from "react";
-import style from "./Hotels.module.css";
+import style from "./HotelsAdmin.module.css";
 import { useState } from "react";
 import statusDisabled from "../../../assets/icons/statusDisabled.png";
 import statusEnable from "../../../assets/icons/statusEnabled.png";
-import hotelOcult from "../../../assets/icons/hotelOcult.png";
-import hotelEnable from "../../../assets/icons/hotelEnable.png";
-import { getHotelByName } from "../../../redux/actions";
+import edit from "../../../assets/icons/edit.png";
+import {getHotelByName } from "../../../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
-import { getAllHotels} from "../../../redux/actions";
+import { getAllHotels } from "../../../redux/actions";
+import { putHotelHidden } from "../../../redux/actions";
 import { useEffect } from "react";
+import { NavLink,} from "react-router-dom";
 const HotelsAdmin = (props) => {
   const [name, setName] = useState("");
   const dispatch = useDispatch();
@@ -16,7 +17,7 @@ const HotelsAdmin = (props) => {
 
   useEffect(() => {
     dispatch(getAllHotels());
-  }, [dispatch]);
+  }, []);
 
   const onChangeName = (e) => {
     e.preventDefault();
@@ -43,8 +44,7 @@ const HotelsAdmin = (props) => {
               <th>Phone</th>
               <th>Category</th>
               <th>Status</th>
-              <th>Enable</th>
-              <th>Disable</th>
+              <th>Edit</th>
             </tr>
           </thead>
           <tbody>
@@ -72,23 +72,11 @@ const HotelsAdmin = (props) => {
                     )}
                   </th>
                   <th>
-                    <button className={style.buttonEnab}>
-                      <img
-                        src={hotelEnable}
-                        alt=""
-                        className={style.imgEnaDis}
-                      />
-                    </button>
-                  </th>
-                  <th>
-                    {" "}
-                    <button className={style.buttonEnab}>
-                      <img
-                        src={hotelOcult}
-                        alt=""
-                        className={style.imgEnaDis}
-                      />
-                    </button>{" "}
+                    <NavLink to={`/editHotel/${hotel.id}`}>
+                      <button className={style.buttonEnab}>
+                        <img src={edit} alt="" className={style.imgEnaDis} />
+                      </button>
+                    </NavLink>
                   </th>
                 </tr>
               );

@@ -1,42 +1,37 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
-import { useState } from "react";
 import { useParams } from "react-router-dom";
-import Header from "../Header/Header";
-import Footer from "../Footer/Footer";
-import style from "./HotelDetail.module.css";
-import RoomCard from "../RoomCard/RoomCard";
-import { getHotelById } from "../../redux/actions";
-import NavBarDetails from "../NavBarDetails/NavBarDetails";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Keyboard, Autoplay } from "swiper";
-import { NavLink } from "react-router-dom";
-import { useLocation } from "react-router-dom";
+import { getHotelById, clearHotelDetail } from "../../../redux/actions";
+import HotelDetail from "../../HotelDetail/HotelDetail";
+import style from "./EditHotel.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Maps from "../../Maps/Maps.jsx";
 import { faCheck, faStar } from "@fortawesome/free-solid-svg-icons";
-import "swiper/css";
-import "swiper/css/free-mode";
-import Maps from "../Maps/Maps.jsx";
-import { MapContainer } from "react-leaflet";
-const HotelDetail = (props) => {
-  const location = useLocation();
-  const dispatch = useDispatch();
+const EditHotel = () => {
   const { id } = useParams();
+  const dispatch = useDispatch();
+  const hotel = useSelector((state) => state.hotelDetail);
+  useEffect(() => {
+    dispatch(getHotelById(id));
+  }, []);
+  const [inputs, setInputs] = useState({
+    name: "",
+    location: "",
+    phone: "",
+    hidden: "",
+  });
+  const handleChange = (e) => {
+    e.preventDefault();
+    setInputs({
+      ...inputs,
+      [e.target.name]: e.target.value,
+    });
+  };
   const hotelDetail = useSelector((state) => state.hotelDetail);
   const star = hotelDetail.category;
   let stars = [];
   for (let i = 0; i < star; i++) {
     stars.push(<FontAwesomeIcon className={`${style.stars}`} icon={faStar} />);
-  }
-  if (location.pathname.includes("hotels")) {
-    useEffect(() => {
-      dispatch(getHotelById(id));
-    }, []);
-  } else {
-    useEffect(() => {
-      dispatch(getHotelById(props.id));
-    }, []);
   }
   const imgs = [
     "https://swiperjs.com/demos/images/nature-1.jpg",
@@ -84,26 +79,14 @@ const HotelDetail = (props) => {
   let array = [];
   return (
     <div>
-      {location.pathname.includes("hotels") ? (
-        <div>
-          <NavBarDetails />
-        </div>
-      ) : (
-        ""
-      )}
-
-      {(((hotelDetail.hasOwnProperty("name") &&
-        hotelDetail.id === parseInt(id)) ||
-        hotelDetail.id === parseInt(props.id) ||
-        hotelDetail.id === id ||
-        hotelDetail.id === props.id) && (
+      {hotel.id === parseInt(id) ? (
         <div className={style.containerDetail}>
           <div className={style.containerCard}>
             <div className={style.containerImgTitle}>
               <div className={style.galleryContainer}>
                 <div className={style.containerImg}>
                   <img
-                    src={hotelDetail.pictureHome}
+                    src={hotel.pictureHome}
                     alt=""
                     className={style.imgGallery}
                   />
@@ -118,13 +101,18 @@ const HotelDetail = (props) => {
               </div>
               <div className={style.containerNameLocation}>
                 <div>
-                  <h2 className={style.nameHotel}>
-                    {hotelDetail.name
-                      ? hotelDetail.name.charAt(0).toUpperCase() +
-                        hotelDetail.name.slice(1)
-                      : ""}
-                    <span className={style.spacingStars}>{stars}</span>
-                  </h2>
+                  <input
+                    className={style.nameHotel}
+                    defaultValue={
+                      hotel.name
+                        ? hotel.name.charAt(0).toUpperCase() +
+                          hotel.name.slice(1)
+                        : ""
+                    }
+                  >
+                    
+                  </input>
+                  <span className={style.spacingStars}>{stars}</span>
                 </div>
                 <div className={style.nameHotel}>
                   {/* <p className={style.nameDescription}>Location:</p> */}
@@ -177,7 +165,7 @@ const HotelDetail = (props) => {
                 <div className={style.containerMap}>
                   <p>MAPA</p>
                   <div>
-                    {hotelDetail.position?.map((hotelPosition) => {
+                    {hotel.position?.map((hotelPosition) => {
                       array.push(parseFloat(hotelPosition));
                     })}
                     {/* { console.log(array)} */}
@@ -220,19 +208,18 @@ const HotelDetail = (props) => {
               <div className={style.containerDescription}>
                 <h2 className={style.titleDescription}>
                   More about{" "}
-                  {hotelDetail.name
-                    ? hotelDetail.name.charAt(0).toUpperCase() +
-                      hotelDetail.name.slice(1)
+                  {hotel.name
+                    ? hotel.name.charAt(0).toUpperCase() + hotel.name.slice(1)
                     : ""}
                 </h2>
                 <div className={style.containerContact}>
                   <h2>Contact:</h2>
-                  <p className={style.contact}>{hotelDetail.phone}</p>
+                  <p className={style.contact}>{hotel.phone}</p>
                 </div>
                 <div className={style.containerContact}>
                   <h2>Languages:</h2>
                   <ul className={style.ulLanguages}>
-                    {hotelDetail.languages?.map((ofre) => {
+                    {hotel.languages?.map((ofre) => {
                       return (
                         <li className={style.liLanguages} key={ofre}>
                           ✔{ofre}
@@ -244,79 +231,63 @@ const HotelDetail = (props) => {
               </div>
             </div>
           </div>
-          {location.pathname.includes("hotels") ? (
-            <div>
-              <h2 className={style.roomsTitle}>Rooms</h2>
-              <div className={style.textRooms}>
-                <Swiper
-                  freeMode={true}
-                  grabCursor={true}
-                  modules={[Autoplay, Keyboard]}
-                  autoplay={{
-                    delay: 3000,
-                  }}
-                  keyboard={{
-                    enabled: true,
-                  }}
-                  className="mySwiper m-4 justify-content-center w-100"
-                  breakpoints={{
-                    0: {
-                      slidesPerView: 1,
-                      spaceBetween: 30,
-                      centeredSlides: true,
-                    },
-                    480: {
-                      slidesPerView: 1,
-                      spaceBetween: 15,
-                      centeredSlides: true,
-                    },
-                    768: {
-                      slidesPerView: 2,
-                      spaceBetween: 10,
-                    },
-                    1024: {
-                      slidesPerView: 3,
-                      spaceBetween: 30,
-                    },
-                    1440: {
-                      slidesPerView: 4,
-                      spaceBetween: 20,
-                    },
-                  }}
-                >
-                  {hotelDetail.showRooms?.map((showRoom) => {
-                    console.log(showRoom);
-                    return (
-                      <SwiperSlide key={showRoom.id}>
-                        <RoomCard
-                          id={showRoom.id}
-                          img={showRoom.pictureHome}
-                          numRoom={showRoom.numRoom}
-                          price={showRoom.value}
-                          guest={showRoom.numPeople}
-                          specialties={showRoom.specialties}
-                          maxAdult={showRoom.maxAdult}
-                          maxChild={showRoom.maxChild}
-                        />
-                      </SwiperSlide>
-                    );
-                  })}
-                </Swiper>
-              </div>
-            </div>
-          ) : (
-            <div>
-              <button>View Hotel</button>
-            </div>
-          )}
         </div>
-      )) || (
+      ) : (
         <div className={style.containerLoader}>
           <img src="https://cdn.dribbble.com/users/118337/screenshots/3831581/building_loader.gif" />
         </div>
       )}
-      {location.pathname.includes("hotels") ? <Footer /> : ""}
     </div>
   );
 };
-export default HotelDetail;
+
+export default EditHotel;
+
+{
+  /* {hotel.id === parseInt(id) ? (
+        <div>
+          <p className={style.p}>{hotel.id}</p>
+          <form action="">
+            <div>
+              <label>Name:</label>
+              <input
+                type="text"
+                onChange={handleChange}
+                defaultValue={hotel.name}
+              />
+            </div>
+            <div>
+              <label>Location:</label>
+              <input
+                type="text"
+                onChange={handleChange}
+                defaultValue={hotel.location}
+              />
+            </div>
+            <div>
+              <label>Phone:</label>
+              <input
+                type="text"
+                onChange={handleChange}
+                defaultValue={hotel.phone}
+              />
+            </div>
+            <div>
+              <label>Description:</label>
+              <textarea
+                type="text"
+                name="description"
+                defaultValue={hotel.description}
+                onChange={handleChange}
+              />
+            </div>
+            <div>
+                <label htmlFor="">Picture Home</label>
+                <img src={hotel.pictureHome} alt="" />
+            </div>
+            <div>
+              <button>Save Changes</button>
+            </div>
+          </form>
+        </div> */
+}

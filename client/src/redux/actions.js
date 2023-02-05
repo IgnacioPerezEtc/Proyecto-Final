@@ -9,7 +9,8 @@ export const CREATE_HOTEL = "CREATE_HOTEL ";
 export const ERROR = "ERROR";
 export const FILTER_BY_LANGUAGE = "FILTER_BY_LANGUAGE";
 export const FILTER_BY_STARS = "FILTER_BY_STARS";
-
+export const PUT_HOTEL_HIDDEN = "PUT_HOTEL_HIDDEN";
+export const CLEAR_HOTEL_DETAIL = "CLEAR_HOTEL_DETAIL";
 //
 // *********************** SECCION HOTELS ************************
 
@@ -67,6 +68,31 @@ export const getHotelByName = (name) => {
         payload: "The hotel with that name hasn't been found",
       });
     }
+  };
+};
+
+export const putHotelHidden = (id) => {
+  return async (dispatch) => {
+    try {
+      const json = await axios.put(`/edit/${id}`);
+      return dispatch({
+        type: PUT_HOTEL_HIDDEN,
+        payload: json.data,
+      });
+    } catch (error) {
+      return dispatch({
+        type: ERROR,
+        payload: "User hasn't been found",
+      });
+    }
+  };
+};
+export const clearHotelDetail = () => {
+  return (dispatch) => {
+    return dispatch({
+      type: CLEAR_HOTEL_DETAIL,
+      payload: {},
+    });
   };
 };
 

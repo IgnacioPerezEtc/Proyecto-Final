@@ -6,7 +6,7 @@ import dash from "../../assets/icons/dash.png";
 import hotel from "../../assets/icons/hotel.png";
 import home from "../../assets/icons/home.png";
 import Users from "./Users/Users";
-import HotelsAdmin from "./Hotels/Hotels";
+import HotelsAdmin from "./HotelsAdmin/HotelsAdmin";
 
 const Admin = () => {
   return (
