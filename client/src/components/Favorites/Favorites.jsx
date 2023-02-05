@@ -6,6 +6,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Keyboard } from "swiper";
 import "swiper/css";
 import "swiper/css/free-mode";
+import style from './Favorites.module.css'
 
 
 const Favorites = () => {
@@ -26,6 +27,10 @@ const Favorites = () => {
   return (
 
     <div>
+      <div className={style.titleContainer}>
+        <h2 className={style.blue}>Favorite</h2>
+        <h2 className={style.red}>Hotels</h2>
+      </div>
       <div className="w-100 d-flex gap-5 flex-wrap justify-content-center">
         <Swiper
           freeMode={true}

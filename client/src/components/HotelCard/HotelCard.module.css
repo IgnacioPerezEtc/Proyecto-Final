@@ -26,3 +26,9 @@
   cursor: pointer;
   margin-left:2px;
 }
+
+.favorite{
+  position: absolute;
+  margin-left: 290px;
+  margin-top: 220px;
+}

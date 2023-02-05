@@ -22,6 +22,13 @@ export const HotelCard = ({ name, image, category, languages, id }) => {
     <div className="d-flex justify-content-center">
 
       <Card className={`${style.Card} h-75`}>
+        <div className={style.favorite}>
+          {
+            localStorage.getItem("user") ?
+              <FavoriteIcon id={id}/> : ''
+          }
+        </div>
+
         <NavLink to={`/hotels/${id}`} className="text-decoration-none">
           <Card.Img variant="top" src={image} className={`${style.img}`} />
 
@@ -55,10 +62,6 @@ export const HotelCard = ({ name, image, category, languages, id }) => {
         </NavLink>
       </Card>
 
-      {
-        localStorage.getItem("user") ?
-          <FavoriteIcon id={id}/> : ''
-      }
 
     </div>
 
