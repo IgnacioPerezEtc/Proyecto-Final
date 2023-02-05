@@ -16,6 +16,7 @@ import Booking from "./components/Booking/Booking.jsx";
 import PayApproved from "./components/PayApproved/PayApproved.jsx";
 import Maps from "./components/Maps/Maps.jsx";
 import Reservation from "./components/Reservation/Reservation.jsx";
+import Favorites from "./components/Favorites/Favorites.jsx";
 import Admin from "./components/Admin/Admin.jsx";
 import EditHotel from "./components/Admin/EditHotel/EditHotel.jsx";
 //
@@ -39,6 +40,7 @@ function App() {
             <Route path="/rooms" element={<Rooms />} />
             <Route path="/payApproved" element={<PayApproved/>}/>
             <Route path="/reservationHistory" element={<Reservation/>} />
+            <Route path="/favorites" element={<Favorites/>} />
             <Route path="/admin" element={<Admin/>} />
             <Route path="/editHotel/:id" element={<EditHotel/>} />
           </Routes>

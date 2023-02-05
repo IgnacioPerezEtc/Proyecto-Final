@@ -1,6 +1,7 @@
 import {
   CREATE_HOTEL,
   GET_ALL_HOTELS,
+  GET_FAVORITE_HOTELS,
   GET_HOTEL_BY_ID,
   GET_HOTEL_BY_NAME,
   FILTER_BY_LANGUAGE,
@@ -20,6 +21,7 @@ import {
 const initialState = {
   hotels: [],
   allHotels: [],
+  favoriteHotels: [],
   hotelDetail: {},
   rooms: [],
   roomDetail: {},
@@ -41,6 +43,11 @@ const rootReducer = (state = initialState, action) => {
         allHotels: action.payload,
       };
     }
+    case GET_FAVORITE_HOTELS:
+      return {
+        ...state,
+        favoriteHotels: action.payload,
+      }
     case ERROR: {
       return {
         ...state,

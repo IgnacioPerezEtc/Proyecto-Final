@@ -5,6 +5,7 @@ const routeUser = require('./userRoutes');
 const routeRoom = require('./roomRoutes');
 const routePayment = require('./paymentRoutes');
 const routeReservation = require('./reservationRoutes');
+const routeFavorites = require('./favoriteRoutes');
 const router = Router();
 
 
@@ -14,5 +15,6 @@ router.use ('/user', routeUser);
 router.use ('/rooms', routeRoom);
 router.use ('/payment', routePayment);
 router.use ('/reservation', routeReservation);
+router.use ('/favorites', routeFavorites);
 
 module.exports = router;
