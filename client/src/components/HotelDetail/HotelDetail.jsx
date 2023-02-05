@@ -15,7 +15,8 @@ import { faStar } from "@fortawesome/free-solid-svg-icons";
 import "swiper/css";
 import "swiper/css/free-mode";
 import FavoriteIcon from "../FavoriteIcon/FavoriteIcon";
-
+import Maps from "../Maps/Maps.jsx";
+import { MapContainer } from "react-leaflet";
 const HotelDetail = (props) => {
   const location = useLocation();
   const dispatch = useDispatch();
@@ -48,7 +49,6 @@ const HotelDetail = (props) => {
     "https://swiperjs.com/demos/images/nature-10.jpg",
     hotelDetail.pictureHome,
   ];
-
   let ratingLet = (rating) => {
     let text = "";
     if (rating < 5) {
@@ -78,20 +78,13 @@ const HotelDetail = (props) => {
 
     return ofrecimientos;
   };
-
   const ofrecimientosHotel = ofrece();
-  console.log(ofrecimientosHotel);
-
+  let array = [];
   return (
     <div>
       {location.pathname.includes("hotels") ? (
         <div>
           <NavBarDetails />
-          {/* <div className={style.containerButton}>
-            <NavLink to={"/hotels"}>
-              <button className={style.createHotel}>Back</button>
-            </NavLink>
-          </div> */}
         </div>
       ) : (
         ""
@@ -295,7 +288,38 @@ const HotelDetail = (props) => {
                         </SwiperSlide>
                       );
                     })}
+
                   </Swiper>
+                    <li className={style.off}>Public Pool</li>
+                    <li className={style.off}>Bar</li>
+                    <li className={style.off}>Restaurant</li>
+                    <li className={style.off}>Wi-Fi</li>
+                  </ul>
+                  <hr className={style.hr} />
+                  <h2 className={style.titleOff}>Security & Advantages</h2>
+                  <ul className={style.ulOff}>
+                    <li className={style.off}>Check-in & check-out web</li>
+                    <li className={style.off}>Secure payment methods</li>
+                    <li className={style.off}>Email confirming reservation</li>
+                  </ul>
+                </div>
+                {/* ////////////////////////////////////////////////////////MAPA//////////////////////////////////// */}
+                <div className={style.containerMap}>
+                  <p>MAPA</p>
+                  <div>
+                    {hotelDetail.position?.map((hotelPosition) => {
+                      array.push(parseFloat(hotelPosition));
+                    })}
+                    {/* { console.log(array)} */}
+                    {array.length === 2 ? (
+                      <Maps positionDetail={array} />
+                    ) : (
+                      false
+                    )}
+
+                    {/* { setMapCenter(array)} */}
+                    {/* //////////////////////////////////////////////////////////////////////////////////////////// */}
+                  </div>
                 </div>
               </div>
             ) : (

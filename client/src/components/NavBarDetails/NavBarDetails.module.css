@@ -1,6 +1,6 @@
 .navBar {
   padding: 0;
-  margin-bottom: 60px;
+  /* margin-bottom: 60px; */
 }
 
 .containerFluid {
@@ -8,9 +8,9 @@
   padding-bottom: 12px;
   background-color: var(--color-blue);
   justify-content: space-between !important;
-  position: fixed;
+  /* position: fixed;
   top: 0.1px;
-  z-index: 9;
+  z-index: 9; */
 }
 .navBarCollapse {
   flex-grow: inherit;

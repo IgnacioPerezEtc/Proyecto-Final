@@ -38,5 +38,19 @@ module.exports = {
         const newReservation = await Reservation.create(body);
 
         return ("New Reservation registred successfully");
-    }
+    },
+
+    putReservation: async function (id, data) {
+        try {
+          await Reservation.update(data, {
+              where: {
+                  id: id
+              }
+          })
+          return "Updated Reservation"
+          
+        } catch (error) {
+          return error.message;
+        }
+      }
 }

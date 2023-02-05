@@ -39,10 +39,14 @@ try {
 }
 });
 
-router.put ("edit/:id", async (req,res)=>{
+router.put ("/edit/:id", async (req,res)=>{
 const {id} = req.params;
+const data = req.body;
 try {
-    return res.status(200).send("Room actualizado");
+    if(id) {
+        const roomUpdated = await roomController.putRoom(id, data);
+        return res.status(200).send(roomUpdated);
+    }
 } catch (error) {
     return res.status(404).send({error:error.message});
     

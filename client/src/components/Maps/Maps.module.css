@@ -1,5 +1,5 @@
 .map {
-    height: 90vh;
+    height: 40vh;
     width: 100hw;
   }
   .pictureHome{
@@ -12,3 +12,7 @@
     text-align: center;
     color: var(--letter-blue);
   }
+  .navlink{
+    text-decoration: none;
+  }
+ 

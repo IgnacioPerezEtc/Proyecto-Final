@@ -1,11 +1,11 @@
-import React, { useState } from "react";
-import Swal from "sweetalert2/dist/sweetalert2.all.js";
-import { useForm } from "react-hook-form";
+import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { imageValidator } from "../FormHotels/validator";
-import { createRoom } from "../../redux/actions";
-import Header from "../Header/Header";
+import Swal from "sweetalert2/dist/sweetalert2.all.js";
+import NavBarDetails from "../NavBarDetails/NavBarDetails";
 import Footer from "../Footer/Footer";
+import style from "./FormRooms.module.css"
+import { validate } from "./validator";
+import { createRoom } from "../../redux/actions";
 
 const FormRooms = () => {
   const info = JSON.parse(localStorage.getItem("user"));
@@ -23,237 +23,295 @@ const FormRooms = () => {
   } else if (info[0].admin === false) {
     alert()
   }
-  const { register, formState: {errors}, handleSubmit } = useForm();
+
   const dispatch = useDispatch();
+
+  const specialties = [
+    "TV",
+    "Calefaccion",
+    "Spa",
+    "Free Wifi",
+    "Mini-Bar",
+    "Ducha",
+    "Toilette",
+  ];
 
   const [input, setInput] = useState({
     numRoom: "",
+    description: "",
     pictureHome: "",
     pictureDetail: [],
     numPeople: "",
     maxAdult: "",
     maxChild: "",
     specialties: [],
-    availableDate: "",
-    value: ""
+    value: "",
+    hidden: false,
+    hotelId: "2"
   });
 
-  const specialties = [
-    "Restaurant",
-    "Pool",
-    "Spa",
-    "Free Wifi",
-    "Bar",
-    "Conference room",
-    "Game room",
-  ];
+  // --------- Estados image Extras ---------
+  const [imgExt, setImgExt] = useState([]);
+  const [imgExtErr, setImgExtErr] = useState("")
 
-  const handleChange = (e) => {
+  // ----------- Errors ------------
+  const [inputErrors, setInputErrors] = useState({});
+  const [isSubmit, setIsSubmit] = useState(false);
+
+
+// ----------- Funciones on Change -------------
+  const handleChange = (event) => {
+    event.preventDefault()
     setInput({
       ...input,
-      [e.target.name]: e.target.value,
+      [event.target.name]: event.target.value,
     });
   };
 
-  const handleSelect = (e) => {
-    if (!input.specialties.includes(e.target.value)) {
+  const handleChecked = (event) => {
+    // console.log(event.target);
+    if(event.target.checked === true){
       setInput({
         ...input,
-        specialties: [...input.specialties, e.target.value],
-      });
+        specialties: [...input.specialties, event.target.value]
+      })
+    };
+    if(event.target.checked === false) {
+      setInput({
+        ...input,
+        specialties: [...input.specialties.filter(specialties => specialties !== event.target.value)]
+      })
     }
   };
 
-  const handleDelete = (e) => {
-    e.preventDefault();
-    let filterOfSpecialties = input.specialties.filter(
-      (specialties) => specialties !== e.target.value
-    );
-    setInput({
-      ...input,
-      specialties: filterOfSpecialties,
-    });
+  // ------- Function extra images ----------
+  const handleImgExt = (event) => {
+    setImgExt(event.target.value);
   };
 
-  const onSubmit = (data) => {
-    console.log(data);
-    dispatch(createRoom(input));
-    alert("The Room was created successfully");
+  const handlePlus = (event) => {
+    event.preventDefault();
+    if (!/.*(png|jpg|jpeg|gif)$/.test(imgExt)){
+      setImgExtErr("Enter a URL image .png, .jpg, .jpeg, .gif")
+    }
+    else {
+      setImgExt("");
+        if(!input.pictureDetail.includes(imgExt)){
+          setInput({
+            ...input,
+            pictureDetail: [...input.pictureDetail, imgExt]
+          })
+          setImgExt("");
+        }
+    }
+  };
+
+  const handleDeleteImg = (event) => {
+    event.preventDefault();
+    let newImgs = input.pictureDetail.filter(img => img !== event.target.name)
     setInput({
-      numRoom: "",
-      pictureHome: "",
-      pictureDetail: [],
-      numPeople: "",
-      maxAdult: "",
-      maxChild: "",
-      specialties: [],
-      availableDate: "",
-      value: ""
+      ...input,
+      pictureDetail: newImgs
     })
   };
 
+
+  // --------- Funcion Submit ----------------
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setInputErrors(validate(input));
+    setIsSubmit(true);
+  };
+
+
+// ------------ UseEffect para crear -------------
+  useEffect(() => {
+    if(Object.keys(inputErrors).length === 0 && isSubmit) {
+      console.log(input);
+      dispatch(createRoom(input))
+      alert("Room Created succesfully");
+    }
+  }, [inputErrors]);
+  
+
+  // ----------- Comienzo del componente --------------
   return (
     <div>
-      <Header />
-      <h1>Formulario de Rooms</h1>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <div>
-          <label>Number of Rooms </label>
-          <input 
-            type="number"
-            {
-              ...register("numRoom", {
-                required: true,
-                min: 1,
-                max: 120,
-                onChange: (e) => handleChange(e)
-              })
-            }
-          />
-          {
-            errors.numRoom?.type === "required" && <span>Number of Rooms is required </span> || errors.numRoom?.type === "max" && <span>Ingrese un numero de habitaciones menor a 121</span> || errors.numRoom?.type === "min" && <span>Ingrese un numero de habitaciones mayor a 0</span>
-          }
-        </div>
-        <div>
-          <label>Principal picture Room </label>
-          <input 
-            type="text" 
-            {
-              ...register("pictureHome", {
-                required: true,
-                validate: imageValidator,
-                onChange: (e) => handleChange(e)
-              })
-            }  
-          />
-          {
-            errors.pictureHome?.type === "required" && <span>Principal picture is required</span> || errors.pictureHome?.type === "validate" && <span>Enter a URL image .png, .jpg, .jpeg, .gif</span>
-          }
-        </div>
-        {/* <div>
-          <label>Some extra pictures </label>
-          <input 
-            type="text" 
-            {
-              ...register("pictureDetail", {
-                validate: imageValidator
-              })
-            }
-          />
-          {
-            errors.pictureDetail?.type === "validate" && <span>Enter a URL image .png, .jpg, .jpeg, .gif</span>
-          }
-        </div> */}
-        <div>
-          <label>Number of Peoples </label>
-          <input 
-            type="number"
-            {
-              ...register("numPeople", {
-                required: true,
-                min: 1,
-                max: 10,
-                onChange: (e) => handleChange(e)
-              })
-            }
-          />
-          {
-            errors.numPeople?.type === "required" && <span>Number of peoples is required</span> || errors.numPeople?.type === "min" && <span>Ingrese un numero de personas mayor a 0</span> || errors.numPeople?.type === "max" && <span>Ingrese un numero de personas menor a 11</span>
-          }
-        </div>
-        <div>
-          <label>Max Adults </label>
-          <input 
-            type="number"
-            {
-              ...register("maxAdult", {
-                onChange: (e) => handleChange(e)
-              })
-            }
-          />
-        </div>
-        <div>
-          <label>Max Child </label>
-          <input 
-            type="number"
-            {
-              ...register("maxChild", {
-                onChange: (e) => handleChange(e)
-              })
-            }
-          />
-        </div>
-        <div>
-          <div>
-            <label>Specialties </label>
-            <select
-              {
-                ...register("specialties", {
-                  onChange: (e) => handleSelect(e)
-                })
-              }
-            >
-              <option>...</option>
-              {
-                specialties.map((specialties, index) => (
-                  <option key={index}>{specialties}</option>
-                ))
-              }
-            </select>
-          </div>
-          <div>
-            {
-              input.specialties?.map((specialties) => {
-                return (
-                  <div key={specialties}>
-                    <p key={specialties}>{specialties}</p>
-                    <button 
-                      value={specialties}
-                      onClick= {(e) => handleDelete(e)}
-                    >
-                      X
-                    </button>
+      <NavBarDetails />
+      <div className={style.firsContainer}>
+
+        <div className={style.container}>
+          <p className="fw-bold text-center display-1">
+            Create <span className="text-danger">Room</span>
+          </p>
+
+          <form onSubmit={(e) => handleSubmit(e)} className={style.form}>
+
+            <div className={style.containerInputs}>
+              <div>
+                <div className={style.containerInput}>
+                  <label>Name Room: </label>
+                  <input 
+                    type="text" 
+                    name="numRoom"
+                    placeholder="Name Room"
+                    value={input.name}
+                    onChange= {(e) => handleChange(e)}
+                  />
+                  <div>
+                    <span className={style.span}>{inputErrors.numRoom}</span> 
                   </div>
-                )
+                </div>
+
+                <div className={style.containerInput}>
+                  <label>Max of Adult: </label>
+                  <input 
+                    type="number" 
+                    name="maxAdult"
+                    value={input.maxAdult}
+                    onChange= {(e) => handleChange(e)}
+                  />
+                  <div>
+                    <span className={style.span}>{inputErrors.maxAdult}</span>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <div className={style.containerInput}>
+                  <label>Number of Peoples: </label>
+                  <input 
+                    type="number" 
+                    name="numPeople"
+                    value={input.numPeople}
+                    onChange= {(e) => handleChange(e)}
+                  />
+                  <div>
+                    <span className={style.span}>{inputErrors.numPeople}</span>
+                  </div>
+                </div>
+
+                <div className={style.containerInput}>
+                  <label>Max of Child: </label>
+                  <input 
+                    type="number" 
+                    name="maxChild"
+                    value={input.maxChild}
+                    onChange= {(e) => handleChange(e)}
+                  />
+                  <div>
+                    <span className={style.span}>{inputErrors.maxChild}</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            
+            <div className={style.containerDescription}>
+              <label>Description: </label>
+              <textarea 
+                type="text"
+                name="description"
+                value={input.description}
+                onChange= {(e) => handleChange(e)}
+              />
+              <div>
+                <span className={style.span}>{inputErrors.description}</span>
+              </div>
+            </div>
+
+            <div className={style.containerPictureHome}>
+                <label>Picture Home: </label>
+                <input 
+                  type="text" 
+                  name="pictureHome"
+                  value={input.pictureHome}
+                  onChange= {(e) => handleChange(e)}
+                />
+                <div>
+                  <span className={style.span}>{inputErrors.pictureHome}</span>
+                </div>
+            </div>
+
+            <div className={style.containerPictureHome}>
+              <label>Extra Pictures: </label>
+              <input 
+                type="text" 
+                value={imgExt}
+                onChange={(e) => handleImgExt(e)}
+              />
+              <button onClick={ (e) => handlePlus(e) } name="imgExt">+</button>
+              <div>
+                <span className={style.span}>{imgExtErr}</span>
+              </div>
+            </div>
+
+            <div className={style.containerService}>
+              <label>Specialties: </label>
+              <div className={style.containerSpecialties}>
+                {
+                  specialties.map((specialties, index) => {
+                    return (
+                      <div key={index}>
+                        <label>{specialties}</label>
+                        <input 
+                          type="checkbox" 
+                          name="specialties"
+                          value={specialties}
+                          id={`switch${index}`}
+                          className={style.switch}
+                          onChange={(e) => handleChecked(e)}
+                        />
+                        <label htmlFor={`switch${index}`} className={style.lbl}></label>
+                      </div>
+                    )
+                  })
+                }
+              </div>
+            </div>
+
+            <div className={style.containerValue}>
+              <label>Value: </label>
+              <div>
+                <input 
+                  type="number" 
+                  name="value"
+                  value={input.value}
+                  onChange= {(e) => handleChange(e)}
+                />
+                <div>
+                  <span className={style.span}>{inputErrors.value}</span>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <button className={style.buttonSubmit} type="submit">Create Room</button>
+            </div>
+          </form>
+        </div>
+
+        <div className={style.containerImages}>
+          <h2>Picture Home: </h2>
+          <img src={input.pictureHome ? input.pictureHome : "https://www.salonlfc.com/wp-content/uploads/2018/01/image-not-found-1-scaled-1150x647.png"}/>
+          <div>
+            {
+              input.pictureDetail?.map((img, index)=> {
+                  return(
+                    <div key={index}>
+                      <img src={img} key={index}/>
+                      {
+                        input.pictureDetail?.length < 4 ? <button onClick={(event) => handleDeleteImg(event)} name={img}>X</button> : <p></p>
+                      }
+                      
+                    </div>
+                  )
               })
             }
           </div>
         </div>
-        <div>
-          <label>Available Date </label>
-          <input 
-            type="date" 
-            {
-              ...register("availableDate", {
-                required: true,
-                onChange: (e) => handleChange(e)
-              })
-            }
-          />
-          {
-            errors.availableDate?.type === "required" && <span>Available Date is required</span>
-          }
-        </div>
-        <div>
-          <label>Value </label>
-          <input 
-            type="number" 
-            {
-              ...register("value", {
-                required: true,
-                min: 0,
-                onChange: (e) => handleChange(e)
-              })
-            }
-          />
-          {
-            errors.value?.type === "required" && <span>Value is required</span> || errors.value?.type === "min" && <span>Ingrese un valor mayor a 0</span>
-          }
-        </div>
-        <div>
-          <input type="submit" value="Send"/>
-        </div>
-      </form>
+      </div>
+
       <Footer />
     </div>
   )

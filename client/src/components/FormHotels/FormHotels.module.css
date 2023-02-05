@@ -1,139 +1,220 @@
-.containerForm {
-  margin: 0 auto;
-  margin-top: 80px;
-  text-align: start;
-  font-family: "Roboto", sans-serif;
-  margin-bottom: 120px;
-}
-
-.flexContainer {
+.container {
   display: flex;
-  justify-content: center;
-  flex-direction: column;
-  padding-left: 80px;
-  padding-right: 80px;
-  padding-bottom: 80px;
+  flex-direction: row;
+  align-items: center;
 }
 
-.titleForm {
-  font-family: "Raleway", sans-serif;
-  font-size: 4.4rem;
-  font-weight: bold;
-  color: var(--color-blue);
-  padding-left: 80px;
-  padding-top: 20px;
-  padding-right: 80px;
-  text-align: center;
-  padding-bottom: 16px;
+.containerForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:flex-start;
+  margin: 15px;
+  /* padding: 20px; */
+}
+
+.form {
+  background-color: white;
+  padding: 0px 60px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  width: 93%;
+}
+
+/* Estilo de name, room, phone y location */
+.containerInputs {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
 }
 
 .containerInput {
-  margin-top: 10px;
-  margin-bottom: 10px;
   display: flex;
   flex-direction: column;
-}
-
-.flexInputs {
-  display: flex;
-  justify-content: space-around;
-}
-.flexInputs div {
-  width: 45%;
-}
-
-.containerInput input {
-  width: 100%;
-  height: 42px;
-  margin: 0 auto;
-  background-color: #18445c81;
-  border: 2px solid #0c5c88;
-  border-radius: 5px;
-  color: #000;
-  font-size: 1.6rem;
-  padding-left: 8px;
-  font-weight: lighter;
-  box-shadow: 2px 0px 8px rgba(0, 0, 0, 0.25), 0px 2px 8px rgba(0, 0, 0, 0.25);
+  justify-content: center;
+  margin-bottom: 30px;
+  padding: 5px;
+  margin: 10px;
 }
 
 .containerInput label {
-  color: var(--color-blue);
-  font-size: 2.2rem;
-  font-weight: 500;
-  padding-bottom: 4px;
+  font-size: 12px;
+  color: gray;
 }
 
-.messageError {
-  color: #4d0404;
-  font-size: 1.8rem;
-  font-weight: normal;
+.containerInput input {
+  padding: 15px;
+  margin: 10px 0px;
+  border-radius: 5px;
+  border: 1px solid gray;
+  font-size: 18px;
 }
-.containerSelect {
-  width: 45%;
+
+/* Estilo de la Descripcion */
+.containerDescription {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  margin-bottom: 30px;
 }
 
-.containerSelect label {
-  color: var(--color-blue);
-  font-size: 2.2rem;
-  font-weight: 500;
-  padding-bottom: 4px;
+.containerDescription label {
+  font-size: 12px;
+  color: gray;
 }
-.containerSelect select {
-  width: 100%;
-  height: 42px;
-  margin: 0 auto;
-  background-color: #18445c81;
-  border: 2px solid #0c5c88;
+
+.containerDescription textarea {
+  padding: 15px;
+  margin: 10px 0px;
   border-radius: 5px;
-  color: #000;
-  font-size: 1.6rem;
-  padding-left: 8px;
-  font-weight: lighter;
-  box-shadow: 2px 0px 8px rgba(0, 0, 0, 0.25), 0px 2px 8px rgba(0, 0, 0, 0.25);
+  border: 1px solid gray;
+  font-size: 18px;
+  width: 100%;
+  height: 100px;
 }
 
-.containerCheckbox {
-  margin-left: 42px;
+/* Estilo de las Pictures */
+.containerPictureHome {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.containerPictureHome label {
+  font-size: 12px;
+  color: gray;
+}
+
+.containerPictureHome input {
+  padding: 15px;
+  margin: 10px 0px;
+  border-radius: 5px;
+  border: 1px solid gray;
+  font-size: 18px;
+  width: 100%;
+}
+
+.containerPictureHome button {
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
   align-items: center;
 }
-.containerCheckbox label {
-  color: var(--color-blue);
-  font-size: 2.2rem;
-  font-weight: 500;
-  padding-bottom: 4px;
-  padding-right: 8px;
 
+/* Estilo de los Servicios */
+.containerService {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
 }
 
-.checkBox{
-    cursor: pointer;
-    width: 20px;
-    height: 20px;
+.containerService label{
+  font-size: 12px;
+  color: gray;
 }
 
-.containerSend{
-    text-align: center;
-    padding-top: 24px;
+.containerServicies {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
 }
 
-.buttonCreate{
-    width: 160px;
-    height: 54px;
-    font-size: 2.4rem;
-   font-weight: 400;
-    border: none;
-    background-color: var(--color-blue);
-    letter-spacing: 1px;
-    color: #fff;
-    border-radius: 5px;
+.containerServicies div{
+  display: flex;
+  flex-direction: column;
+  margin: 15px;
+  padding: 5px;
 }
 
-.buttonCreate:hover{
-    transform: scale(.98);
-    /* transition-timing-function: ease-out;
-    transition-duration: 1s; */
-    background-color: var(--letter-blue);
+.lbl{
+  display: inline-block;
+  width: 65px;
+  height: 33px;
+  background: #979797;
+  border-radius: 100px;
+  cursor: pointer;
+  position: relative;
+  transition: .2s;
+}
+
+.lbl::after{
+  content: "";
+  display: block;
+  width: 25px;
+  height: 25px;
+  background: #eee;
+  border-radius: 100px;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  transition: .2s;
+}
+
+.switch {
+  display: none;
+}
+
+.switch:checked + .lbl::after {
+  left: 35px;
+}
+
+.switch:checked + .lbl {
+  background: #00c881;
+}
+
+/* Estilo de las Star de Category */
+.containerCategory {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.containerCategory label {
+  font-size: 12px;
+  color: gray;
+  margin: 2px;
+  margin: 2px;
+}
+
+.inputRadio {
+  display: none;
+}
+
+.star{
+  cursor: pointer;
+  transition: color 200ms;
+  margin: 3px;
+}
+
+/* Estilo para el boton submit */
+.buttonSubmit {
+  width: 100%;
+  height: 50px;
+  padding: 10px;
+  border: none;
+  background-color: rgb(167, 43, 43);
+  color: white;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 18px;
+  cursor: pointer;
+  margin-top: 15px;
+  margin-bottom: 30px;
+}
+
+.containerImages {
+  background-color: #00c881;
+  width: 100px;
+  height: 100px;
 }
