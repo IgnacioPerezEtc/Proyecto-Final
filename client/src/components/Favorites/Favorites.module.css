@@ -43,7 +43,8 @@
     margin-bottom: 40px;
   }
 
-.container{
-    justify-content: center;
-    background-color: aqua;
+.loading{
+  justify-content: center;
+  display: flex;
+  margin-top: 20%;
 }
