@@ -15,6 +15,7 @@ import { NavLink } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck, faStar } from "@fortawesome/free-solid-svg-icons";
+import FavoriteIcon from "../FavoriteIcon/FavoriteIcon";
 import "swiper/css";
 import "swiper/css/free-mode";
 import Maps from "../Maps/Maps.jsx";
@@ -125,6 +126,10 @@ const HotelDetail = (props) => {
                       : ""}
                     <span className={style.spacingStars}>{stars}</span>
                   </h2>
+                  {
+                      localStorage.getItem("user") ?
+                      <FavoriteIcon id={parseInt(id)} /> : ''
+                    }
                 </div>
                 <div className={style.nameHotel}>
                   {/* <p className={style.nameDescription}>Location:</p> */}
