@@ -286,8 +286,8 @@ const FormRooms = () => {
             </div>
 
             <div>
-                <button className={style.buttonSubmit} type="submit">Create Room</button>
-              </div>
+              <button className={style.buttonSubmit} type="submit">Create Room</button>
+            </div>
           </form>
         </div>
 
