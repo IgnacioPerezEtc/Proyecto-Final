@@ -28,8 +28,9 @@ const LandingPage = (props) => {
   
   if(JSON.parse( localStorage.getItem('user') )){
     const info = (JSON.parse(localStorage.getItem("user")));
+
     const favs = useSelector(state => state.favoriteHotels);
-    localStorage.setItem('favorites', JSON.stringify(favs))
+    localStorage.setItem('favorites', favs? JSON.stringify(favs):JSON.stringify([]))
     useEffect(()=> {
       dispatch(getFavoriteHotels(info[0].email))
 
