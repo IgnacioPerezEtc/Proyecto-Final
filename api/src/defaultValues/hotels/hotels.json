@@ -10,6 +10,11 @@
         "bar": false,
         "wifi": true,
         "pictureHome": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/329912073.jpg?k=f3bd32b917cdf897fd6013265a4fd8449964353d649e4aa99a7d2ec39ebf15d6&o=&hp=1",
+        "pictureDetail": [
+            "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/21/82/d6/b3/front-of-hotel.jpg?w=700&h=-1&s=1",
+            "https://upload.wikimedia.org/wikipedia/commons/6/64/Colony_Hotel_Miami_Beach_Izzy.JPG",
+            "https://c8.alamy.com/compes/d75h22/colony-hotel-south-beach-miami-beach-florida-ee-uu-d75h22.jpg"
+        ],
         "rating": 5,
         "languages": [
             "spanish",
@@ -18,7 +23,10 @@
         ],
         "category": 5,
         "phone": "+579862659631",
-	 "position":["3.4368376956417364", "-76.52370312288105"]
+        "position": [
+            "3.4368376956417364",
+            "-76.52370312288105"
+        ]
     },
     {
         "name": "perez hotel",
@@ -31,6 +39,11 @@
         "bar": true,
         "wifi": true,
         "pictureHome": "https://media-cdn.tripadvisor.com/media/photo-s/25/04/93/1e/blossom-hotel-houston.jpg",
+        "pictureDetail": [
+            "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/25/01/02/b0/blossom-hotel-houston.jpg?w=700&h=-1&s=1",
+            "https://image-tc.galaxy.tf/wijpeg-5d31a0ng3xso6t6d5dkyo0qfg/lobby-from-bar_standard.jpg?crop=197%2C0%2C1115%2C836",
+            "https://res.cloudinary.com/sagacity/image/upload/c_crop,h_735,w_980,x_0,y_0/c_limit,dpr_auto,f_auto,fl_lossy,q_80,w_1080/322793_original_jtmg7h.png"
+        ],
         "rating": 5,
         "languages": [
             "spanish",
@@ -39,7 +52,10 @@
         ],
         "category": 5,
         "phone": "+549862659631",
-        "position":["-37.2508493817602", "-56.98543471411749"]
+        "position": [
+            "-37.2508493817602",
+            "-56.98543471411749"
+        ]
     },
     {
         "name": "roman",
@@ -52,6 +68,11 @@
         "bar": true,
         "wifi": true,
         "pictureHome": "https://media.staticontent.com/media/pictures/68e2e598-6dec-4fce-bc9e-9b5c79fb97b0/853x380",
+        "pictureDetail": [
+            "https://ba-central.buenosaireshotelsargentina.com/data/Photos/Big3/11625/1162500/1162500924.JPEG",
+            "https://media-cdn.tripadvisor.com/media/photo-s/09/4b/54/c1/the-hotel--v8949278.jpg",
+            "https://static11.com-hotel.com/uploads/hotel/10246/photo/lg_o2-hotel-buenos-aires_166884987811.jpg"
+        ],
         "rating": 1,
         "languages": [
             "spanish",
@@ -59,7 +80,9 @@
         ],
         "category": 3,
         "phone": "+549202659641",
-        "position":["-34.61856909546684, -58.55415879823039"]
+        "position": [
+            "-34.61856909546684, -58.55415879823039"
+        ]
     },
     {
         "name": "arias hotel",
@@ -72,6 +95,11 @@
         "bar": true,
         "wifi": true,
         "pictureHome": "https://cloudfront-us-east-1.images.arcpublishing.com/infobae/MQN7YYRIQZBPBHHI6J6TRKFLR4.jpg",
+        "pictureDetail": [
+            "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/24/08/b2/3d/barlounge.jpg?w=700&h=-1&s=1",
+            "https://www.ahstatic.com/photos/1871_sw_00_p_1024x768.jpg",
+            "https://cf.bstatic.com/xdata/images/hotel/max1024x768/301874431.jpg?k=a562478d2c403972eed382ac7ec6bba7282242c83873ad39a45f526da313a149&o=&hp=1"
+        ],
         "rating": 5,
         "languages": [
             "spanish",
@@ -80,7 +108,10 @@
         ],
         "category": 5,
         "phone": "+573145691458",
-        "position":["6.2503414521512335", "-75.58782388923332"]
+        "position": [
+            "6.2503414521512335",
+            "-75.58782388923332"
+        ]
     },
     {
         "name": "tejada hotel",
@@ -93,6 +124,11 @@
         "bar": true,
         "wifi": false,
         "pictureHome": "https://cloudfront-us-east-1.images.arcpublishing.com/elespectador/POPEUU7WIJAW5NRWPQASXBBFSE.jpg",
+        "pictureDetail": [
+            "https://www.kayak.com/rimg/himg/d5/b8/2a/leonardo-116680976-1871_roska_00_p_3000x2250_O-622444.jpg?width=1366&height=768&crop=true",
+            "https://media-cdn.tripadvisor.com/media/photo-s/1c/c9/8f/c3/hotel-sofitel-legend.jpg",
+            "https://media.cntraveler.com/photos/59de61dbb921a46d64892012/16:9/w_2560%2Cc_limit/Courtyard-SofitelLegendSantaClaraCartagena-Colombia-CRHotel.jpg"
+        ],
         "rating": 5,
         "languages": [
             "english",
@@ -101,7 +137,10 @@
         ],
         "category": 5,
         "phone": "+15542369875",
-        "position":["36.191696942882686", "-115.24056215563334"]
+        "position": [
+            "36.191696942882686",
+            "-115.24056215563334"
+        ]
     },
     {
         "name": "ruales hotel",
@@ -114,6 +153,11 @@
         "bar": true,
         "wifi": true,
         "pictureHome": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/327964031.jpg?k=9b9ea8177b2e7ae35b9a35aa72c396232eeb70548023ca3f53b3a5003bdf2b79&o=&hp=1",
+        "pictureDetail": [
+            "https://cf.bstatic.com/xdata/images/hotel/max1024x768/67989037.jpg?k=c7dec28dd8db3e6e0afb150c5b627d2a9be6154a3204da32dcf1d0c75df582c9&o=&hp=1",
+            "https://foto.hrsstatic.com/fotos/0/3/1280/1280/80/FFFFFF/http%3A%2F%2Ffoto-origin.hrsstatic.com%2Ffoto%2F4%2F6%2F1%2F3%2F461322%2F461322_u_7897581.jpg/7gzwoMpv6d7x%2BbwR4Afr4A%3D%3D/425%2C254/6/Moderno-Pavia-Info-5-461322.jpg",
+            "https://hotel-moderno-pavia.booked.mx/data/Photos/OriginalPhoto/8323/832351/832351040/Hotel-Moderno-Pavia-Exterior.JPEG"
+        ],
         "rating": 4,
         "languages": [
             "spanish",
@@ -121,8 +165,10 @@
         ],
         "category": 4,
         "phone": "+573156985236",
-        "position":["6.247434929342837", "-75.5861147499675"]
-        
+        "position": [
+            "6.247434929342837",
+            "-75.5861147499675"
+        ]
     },
     {
         "name": "valer hotel",
@@ -135,6 +181,11 @@
         "bar": false,
         "wifi": true,
         "pictureHome": "https://media-cdn.tripadvisor.com/media/photo-s/0f/b2/f1/34/hyatt-regency-cartagena.jpg",
+        "pictureDetail": [
+            "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/b2/f1/3b/hyatt-regency-cartagena.jpg?w=700&h=-1&s=1",
+            "https://assets.hyatt.com/content/dam/hyatt/hyattdam/images/2017/03/16/0736/Hyatt-Regency-Cartagena-P073-Amacagua-Restaurant.jpg/Hyatt-Regency-Cartagena-P073-Amacagua-Restaurant.16x9.jpg?imwidth=1280",
+            "https://media.hrs.com/media/image/1e/96/d3/Hyatt_Regency_Cartagena-Cartagena-Aussenansicht-2-908711_1280x1280.jpg"
+        ],
         "rating": 5,
         "languages": [
             "spanish",
@@ -142,7 +193,10 @@
         ],
         "category": 4,
         "phone": "+512154869324",
-        "position":["-12.043594945679821", "-77.04379702451114"]
+        "position": [
+            "-12.043594945679821",
+            "-77.04379702451114"
+        ]
     },
     {
         "name": "bustos hotel",
@@ -155,6 +209,11 @@
         "bar": true,
         "wifi": false,
         "pictureHome": "https://revistahsm.com/wp-content/uploads/2019/10/fachada-hotel-ilunion-atrium.jpg",
+        "pictureDetail": [
+            "https://www.ilunionatrium.com/cache/03/27/03277a9078c62cd8256dbb2852c3b798.jpg",
+            "https://ik.imgkit.net/3vlqs5axxjf/external/http://www.cfmedia.vfmleonardo.com/imageRepo/7/0/149/351/63/002_Facade_O.jpg?tr=w-1200%2Cfo-auto",
+            "https://www.ilunionatrium.com/cache/46/de/46de9342cf31ba3d51a0129ea3abe1f0.jpg"
+        ],
         "rating": 5,
         "languages": [
             "english",
@@ -162,7 +221,10 @@
         ],
         "category": 5,
         "phone": "+861458963254",
-        "position":["39.990910766716716", "116.29853826015653"]
+        "position": [
+            "39.990910766716716",
+            "116.29853826015653"
+        ]
     },
     {
         "name": "camey hotel",
@@ -175,6 +237,11 @@
         "bar": true,
         "wifi": true,
         "pictureHome": "https://www.lafincaresort.com/sites/default/files/inline-images/timthumb%20%282%29.jpeg",
+        "pictureDetail": [
+            "https://cf.bstatic.com/xdata/images/hotel/max1024x768/306012211.jpg?k=83693852d4882581d8a40676f553c90fb9711317911807177a8183735782aa79&o=&hp=1",
+            "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/05/b4/0b/17/hotel-la-finca-golf-spa.jpg?w=700&h=-1&s=1",
+            "https://media-cdn.tripadvisor.com/media/photo-s/1f/fd/11/ee/664156-exterior.jpg"
+        ],
         "rating": 5,
         "languages": [
             "spanish",
@@ -182,6 +249,9 @@
         ],
         "category": 5,
         "phone": "+524489656425",
-        "position":["19.44516692202632", "-99.14805391905757"]
+        "position": [
+            "19.44516692202632",
+            "-99.14805391905757"
+        ]
     }
 ]
