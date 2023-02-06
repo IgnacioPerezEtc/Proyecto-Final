@@ -197,6 +197,23 @@
   margin: 3px;
 }
 
+/* Estilo para los Langugaes */
+.containerLanguages {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 30px
+}
+
+.containerLanguages div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+}
+
 /* Estilo para el boton submit */
 .buttonSubmit {
   width: 100%;
@@ -217,4 +234,13 @@
   background-color: #00c881;
   width: 100px;
   height: 100px;
+}
+
+/* Error */
+.span{
+  height: 5px;
+  margin-bottom: 5px;
+  font-size: 16px;
+  padding: 3px;
+  color: red;
 }
