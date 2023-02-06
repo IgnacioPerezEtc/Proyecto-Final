@@ -1,16 +1,45 @@
-export const nameValidator = (value) => {
-    if (value.length < 3 || value.length > 150) return false;
-};
+export const validate = (input) => {
+    let err = {};
 
-export const descriptionValidator = (value) => {
-    if(value.length < 10 || value.length > 5000) return false
+    if(!input.name) {
+        err.name = "Name is required"
+    }
+    if(input.name.length < 3 || input.name.length > 150) {
+        err.name = "Enter a valid name"
+    }
+    if(!input.rooms) {
+        err.rooms = "Rooms is required"
+    }
+    if(input.rooms < 0){
+        err.rooms = "Enter a valid number"
+    }
+    if(!input.location) {
+        err.location = "Location is required"
+    }
+    if(!input.description) {
+        err.description = "Description is required"
+    }
+    if(input.description.length < 10) {
+        err.description= "Description must have more 10 characters"
+    }
+    if(input.description.length > 5000) {
+        err.description = "The description must have less than 5000 characters"
+    };
+    if(!input.pictureHome) {
+        err.pictureHome = "Picture Home is required"
+    };
+    if (!/.*(png|jpg|jpeg|gif)$/.test(input.pictureHome)) {
+        err.pictureHome = "Enter a URL image .png, .jpg, .jpeg, .gif";
+    };
+    if(!input.phone) {
+        err.phone = "Phone is required"
+    }
+    if(input.phone.length < 8 || input.phone.length > 16) {
+        err.phone = "Invalid phone number"
+    }
+    if(!/^([0-9])*$/.test(input.phone)) {
+        err.phone = "Invalid phone number"
+    }
+
+    return err
 }
-
-export const imageValidator = (value) => {
-    if (!/(http|https|ftp|ftps)\:\/\/[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(\/\S*)?/.test(value)) return false
-};
-
-export const phoneValidator = (value) => {
-    // if(!/^\(?\d{2}\)?[\s\.-]?\d{4}[\s\.-]?\d{4}$/.test(value)) return false
-    if(value.length < 8 || value.length > 16) return false
-};
