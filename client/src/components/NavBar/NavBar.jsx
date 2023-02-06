@@ -21,15 +21,15 @@ const NavBar = (props) => {
       setLogin(true);
     }
   });
-  function darkMode() {
+ function darkMode() {
     var element = document.body;
     var content = document.getElementById("DarkModetext");
     element.className = "dark-mode";
     content.innerText = "Dark Mode is ON";
   }
   function lightMode() {
-    var element = document.body;
-    var content = document.getElementById("DarkModetext");
+    let element = document.body;
+    let content = document.getElementById("DarkModetext");
     element.className = "light-mode";
     content.innerText = "Dark Mode is OFF";
   }
@@ -115,8 +115,8 @@ const NavBar = (props) => {
               </label>
             </li> */}
             <li>
-              <button onClick={darkMode}>DarkMode</button>
-              <button onClick={lightMode}>LightMode</button>
+              <button className={style.btnMoon} onClick={darkMode}>🌜</button>
+              <button className={style.btnSun} onClick={lightMode}>☀️</button>
             </li>     
 
             <li className="dropdown">

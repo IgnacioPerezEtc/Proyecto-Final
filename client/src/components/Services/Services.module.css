@@ -14,7 +14,7 @@
   display: flex;
 }
 
-.blue {
+.blueOur {
   color: var(--color-blue);
   float: left;
   font-size: 48px;

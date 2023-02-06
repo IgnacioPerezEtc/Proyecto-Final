@@ -156,7 +156,7 @@ const HotelDetail = (props) => {
             <div className={style.contianerInfoHotel}>
               <div className={style.containerSectionUno}>
                 <div className={style.containerAloj}>
-                  <h2 className={style.titleOff}>This hotel offers</h2>
+                  <h2 className={style.titleOffHotel}>This hotel offers</h2>
                   <ul className={style.ulOff}>
                     <li className={style.off}>{hotelDetail.rooms} Rooms</li>
                     {ofrecimientosHotel.map((ofre) => {

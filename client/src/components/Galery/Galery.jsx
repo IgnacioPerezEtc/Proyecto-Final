@@ -20,7 +20,7 @@ const Galery = () => {
     <div className="container">
       <div className="subcontainer">
         <div className="titleContainer">
-          <h2 className="blue">Our</h2>
+          <h2 className="blueG">Our</h2>
           <h2 className="red">Gallery</h2>
         </div>
         <p className="desc-gallery">
@@ -31,7 +31,7 @@ const Galery = () => {
       </div>
 
       <div className="galleryContainer">
-        <div className="buttonContainer">
+        <div className="buttonContainerE">
           <button
             value="All"
             onClick={(e) => handleImage(e)}

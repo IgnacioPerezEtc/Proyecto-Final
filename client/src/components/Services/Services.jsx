@@ -6,7 +6,7 @@ const Services = () => {
     <div className={style.containerService}  id="services">
       <div className={style.subcontainer}>
         <div className={style.titleContainer}>
-          <h2 className={style.blue}>Our</h2>
+          <h2 className={style.blueOur}>Our</h2>
           <h2 className={style.red}>Service</h2>
         </div>
         <p className={style.descService}>

@@ -2,25 +2,63 @@ body{
     background-color: #eee;
 }
 body {
-    padding: 25px;
-    background-color: white;
+    /* padding: 25px; */
     color: black;
-    font-size: 25px;
 }
 .dark-mode {
-    color: white;  
-     background-color: #071923;
-    
+    background-color: #071923;
 }
-
-.dark-mode .color-blue{
+/* RoomCards */
+.dark-mode .display-1  {
     color: white; 
 }
-.titleContainer{
-    color: #eee;
+.dark-mode .w-50{
+    color:white;
+}
+.dark-mode .card{
+    background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.5) 100%)
+}
+.dark-mode .text-dark{
+    color: #001D32;
 }
 
+/* GALERY */
+.dark-mode .blueG{
+    color: white;
+}
+.dark-mode .desc-gallery{
+    color: white;
+}
+.dark-mode .buttonContainerE{
+    color: white;
+}
+.dark-mode .buttonInactive{
+    color: white;
+}
 
-  .light-mode {
-    background-color: white;
-    color: black;}
+.dark-mode .buttonActive{
+    color: white;
+}
+
+/* COMENTARIOS */
+.dark-mode .descComment{
+    color: white;
+}
+.dark-mode .containerCards{ /* no sirve el caremonda */
+    color: gray;
+}
+/* SERVICIOS */
+.dark-mode .blueOur{
+    color: white;
+}
+
+.dark-mode .descServiceUno{
+    color: white;
+}
+
+/* DETALLE */
+
+/* .light-mode {
+ background-color: white;
+ color: black;
+} */

@@ -7,7 +7,7 @@ const Commentary = () => {
     <div className={style.containerCommentary} id="services">
       <div className={style.subcontainer}>
         <div className={style.titleContainer}>
-          <h2 className={style.blue}>What</h2>
+          <h2 className={style.blueComentary}>What</h2>
           <h2 className={style.red}> People Say </h2>
         </div>
         <p className={style.descComment}>
@@ -41,7 +41,7 @@ const Commentary = () => {
             <span className={style.arrow}></span>
           </div>
           <img src={user} alt="" />
-          <h2>Jane Cooper</h2>
+          <h2 className={style.jane}>Jane Cooper</h2>
           <h3>@JaneCopper</h3>
         </div>
         <div className={style.flexUserComment}>
