@@ -42,4 +42,8 @@ export const validate = (input) => {
     }
 
     return err
+};
+
+export function capitalizarPrimeraLetra(str) {
+    return str.charAt(0).toUpperCase() + str.slice(1);
 }
