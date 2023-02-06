@@ -109,9 +109,7 @@ const EditHotel = () => {
                           hotel.name.slice(1)
                         : ""
                     }
-                  >
-                    
-                  </input>
+                  ></input>
                   <span className={style.spacingStars}>{stars}</span>
                 </div>
                 <div className={style.nameHotel}>
@@ -140,18 +138,24 @@ const EditHotel = () => {
                 <div className={style.containerAloj}>
                   <h2 className={style.titleOff}>This hotel offers</h2>
                   <ul className={style.ulOff}>
-                    <li className={style.off}>{hotelDetail.rooms} Rooms</li>
+                    <li className={style.off}>
+                      <input
+                        type="text"
+                        defaultValue={hotelDetail.rooms}
+                        className={style.inputRooms}
+                      />
+                      <label htmlFor="">Rooms</label>
+                    </li>
                     {ofrecimientosHotel.map((ofre) => {
                       return (
-                        <li className={style.off} key={ofre}>
-                          {ofre}
-                        </li>
+                        <div className={style.containerOff}>
+                          <li className={style.off} key={ofre}>
+                            {ofre}
+                          </li>
+                          <button className={style.buttonEliminar}>X</button>
+                        </div>
                       );
                     })}
-                    <li className={style.off}>Public Pool</li>
-                    <li className={style.off}>Bar</li>
-                    <li className={style.off}>Restaurant</li>
-                    <li className={style.off}>Wi-Fi</li>
                   </ul>
                   <hr className={style.hr} />
                   <h2 className={style.titleOff}>Security & Advantages</h2>
@@ -182,28 +186,15 @@ const EditHotel = () => {
               </div>
               <div className={style.containerDescription}>
                 <h2 className={style.titleDescription}>Description</h2>
-                <p className={style.description}>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad
+                <textarea
+                  className={style.description}
+                  defaultValue={hotel.description}
+                >
+                  {/* Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad
                   rerum repellendus esse recusandae voluptatem facilis libero
                   modi eius labore error dolore quia porro ipsam deserunt
-                  accusamus, est possimus nostrum! Sed.
-                </p>
-                <p className={style.description}>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad
-                  rerum repellendus esse recusandae voluptatem facilis libero
-                  modi eius labore error dolore quia porro ipsam deserunt
-                  accusamus, est possimus nostrum! Sed. Lorem ipsum dolor sit
-                  amet consectetur adipisicing elit. Aspernatur omnis soluta
-                  quaerat iste facilis ab dignissimos unde. Tenetur illum autem
-                  ea temporibus quis, culpa, qui eum velit doloremque, facere
-                  molestias.
-                </p>
-                <p className={style.description}>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad
-                  rerum repellendus esse recusandae voluptatem facilis libero
-                  modi eius labore error dolore quia porro ipsam deserunt
-                  accusamus,
-                </p>
+                  accusamus, est possimus nostrum! Sed. */}
+                </textarea>
               </div>
               <div className={style.containerDescription}>
                 <h2 className={style.titleDescription}>
@@ -214,7 +205,10 @@ const EditHotel = () => {
                 </h2>
                 <div className={style.containerContact}>
                   <h2>Contact:</h2>
-                  <p className={style.contact}>{hotel.phone}</p>
+                  <input
+                    className={style.contact}
+                    defaultValue={hotel.phone}
+                  ></input>
                 </div>
                 <div className={style.containerContact}>
                   <h2>Languages:</h2>

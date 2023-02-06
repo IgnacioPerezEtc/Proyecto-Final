@@ -7,6 +7,7 @@ import hotel from "../../assets/icons/hotel.png";
 import home from "../../assets/icons/home.png";
 import Users from "./Users/Users";
 import HotelsAdmin from "./HotelsAdmin/HotelsAdmin";
+import RoomsAdmin from "./RoomsAdmin/RoomsAdmin";
 
 const Admin = () => {
   return (
@@ -99,7 +100,9 @@ const Admin = () => {
       </div>
       <div className={style.containerInfo}>
         <HotelsAdmin />
+        <RoomsAdmin/>
         <Users />
+
       </div>
     </div>
   );

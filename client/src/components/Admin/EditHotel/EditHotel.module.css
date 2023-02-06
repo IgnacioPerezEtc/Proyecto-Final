@@ -192,8 +192,8 @@
     font-weight: 500;
     color: #5e5e5e;
     font-size: 1.6rem;
-    padding-bottom: 18px;
-    padding-top: 8px;
+    /* padding-bottom: 18px; */
+    /* padding-top: 8px; */
     font-family: 'Roboto', sans-serif;
   }
   
@@ -236,6 +236,9 @@
     text-align: start;
     padding-left: 20px;
     font-family: 'Roboto', sans-serif;
+    width: 98%;
+    height: 240px;
+    resize: none;
     /* font-weight: 500; */
   }
   
@@ -302,6 +305,20 @@
   }
   .spacingStars {
     padding-left: 10px;
+  }
+
+  .containerOff{
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+    justify-content: center;
+  }
+  .buttonEliminar{
+    height: 20px;
+    width: 24px;
+  }
+  .inputRooms{
+    width: 40px;
   }
   
   @media screen and (max-width: 1220px) {
