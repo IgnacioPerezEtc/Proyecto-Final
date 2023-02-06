@@ -126,10 +126,11 @@ const HotelDetail = (props) => {
                       : ""}
                     <span className={style.spacingStars}>{stars}</span>
                   </h2>
-                  {
-                      localStorage.getItem("user") ?
-                      <FavoriteIcon id={parseInt(id)} /> : ''
-                    }
+                  {localStorage.getItem("user") ? (
+                    <FavoriteIcon id={parseInt(id)} />
+                  ) : (
+                    ""
+                  )}
                 </div>
                 <div className={style.nameHotel}>
                   {/* <p className={style.nameDescription}>Location:</p> */}
@@ -180,7 +181,6 @@ const HotelDetail = (props) => {
                 </div>
                 {/* ////////////////////////////////////////////////////////MAPA//////////////////////////////////// */}
                 <div className={style.containerMap}>
-                  <p>MAPA</p>
                   <div>
                     {hotelDetail.position?.map((hotelPosition) => {
                       array.push(parseFloat(hotelPosition));
