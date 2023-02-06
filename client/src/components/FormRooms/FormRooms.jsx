@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
+import { useParams } from "react-router-dom";
 import Swal from "sweetalert2/dist/sweetalert2.all.js";
 import NavBarDetails from "../NavBarDetails/NavBarDetails";
 import Footer from "../Footer/Footer";
@@ -8,6 +9,7 @@ import { validate } from "./validator";
 import { createRoom } from "../../redux/actions";
 
 const FormRooms = () => {
+  const { id } = useParams();
   const info = JSON.parse(localStorage.getItem("user"));
   const alert = () => {
     Swal.fire({
@@ -47,7 +49,7 @@ const FormRooms = () => {
     specialties: [],
     value: "",
     hidden: false,
-    hotelId: "2"
+    hotelId: id
   });
 
   // --------- Estados image Extras ---------
