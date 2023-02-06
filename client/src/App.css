@@ -1,3 +1,19 @@
-body{
-    background-color: #eee;
+body {
+  background-color: #eee;
+}
+.dark-mode {
+  color: white;
+  background-color: #071923;
+}
+
+.dark-mode .color-blue {
+  color: white;
+}
+.titleContainer {
+  color: #eee;
+}
+
+.light-mode {
+  background-color: white;
+  color: black;
 }
