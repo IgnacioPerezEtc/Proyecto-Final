@@ -5,7 +5,7 @@ import Footer from "../Footer/Footer";
 import NavBarDetails from "../NavBarDetails/NavBarDetails";
 import style from "./FormHotels.module.css";
 import { FaStar } from "react-icons/fa";
-import { validate } from "./validator";
+import { validate, capitalizarPrimeraLetra } from "./validator";
 import { useDispatch } from "react-redux";
 import { createHotel } from "../../redux/actions";
 
@@ -31,7 +31,7 @@ const FormHotels = () => {
   // -------- Arrays importantes ----------
   const languages = ["English", "Chinese, Mandarin", "Hindi", "Español", "Francés", "Arabic, Standard", "Bengali", "Russian", "Portuguese", "Urdu", "Indonesian", "German", "Japanese", "Marathi", "Telugu", "Turkish", "Tamil", "Chinese, Yue", "Vietnamese", "Tamil", "Chinese, Wu", "Korean", "Persian", "Iranian", "Hausa", "Arabic,Egyptian Spoken", "Swahili", "Javanese", "Italian", "Punjabi, Western", "Kannada", "Gujarati", "Thai", "Ahmaric", "Bhoshpuri", "Panjabí", "Chinese, Min Nan", "Chino jin", "Yoruba", "Chino hakka", "Birmano", "Árabe sudanés", "Polaco", "Árabe argelino", "Lingala"];
 
-  const servicies = ["Parking", "Restaurant", "Pool", "Bar", "Wi-Fi"];
+  const servicies = ["parking", "restaurant", "publicPool", "bar", "wifi"];
 
   // -------- Estados locales de Category --------------
   const [category, setCategory ] = useState(null);
@@ -51,6 +51,11 @@ const FormHotels = () => {
     rooms: "",
     location: "",
     description: "",
+    parking: false,
+    restaurant: false,
+    publicPool: false,
+    bar: false,
+    wifi: false,
     pictureHome: "",
     pictureDetail: [],
     servicies: [],
@@ -72,18 +77,23 @@ const FormHotels = () => {
 
   const handleChecked = (event) => {
     // console.log(event.target);
-    if(event.target.checked === true){
-      setInput({
-        ...input,
-        servicies: [...input.servicies, event.target.value]
-      })
-    };
-    if(event.target.checked === false) {
-      setInput({
-        ...input,
-        servicies: [...input.servicies.filter(servicies => servicies !== event.target.value)]
-      })
-    }
+    // if(event.target.checked === true){
+    //   setInput({
+    //     ...input,
+    //     servicies: [...input.servicies, event.target.value]
+    //   })
+    // };
+    // if(event.target.checked === false) {
+    //   setInput({
+    //     ...input,
+    //     servicies: [...input.servicies.filter(servicies => servicies !== event.target.value)]
+    //   })
+    // }
+
+    setInput({
+      ...input,
+      [event.target.name]: event.target.checked
+    })
   };
 
   const handleChangeCategory = (event) => {
@@ -276,13 +286,14 @@ const FormHotels = () => {
               <div className={style.containerServicies}>
                 {
                   servicies.map((servicies, index) => {
+                    const servicios = capitalizarPrimeraLetra(servicies)
                     return (
                       <div key={index}>
-                        <label>{servicies}</label>
+                        <label>{servicios}</label>
                         <input 
                           type="checkbox" 
-                          name="servicies"
-                          value={servicies}
+                          name={servicies}
+                          value={input.servicies}
                           id={`switch${index}`}
                           className={style.switch}
                           onChange={(e) => handleChecked(e)}
