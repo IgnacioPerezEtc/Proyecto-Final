@@ -5,7 +5,7 @@ import Footer from "../Footer/Footer";
 import NavBarDetails from "../NavBarDetails/NavBarDetails";
 import style from "./FormHotels.module.css";
 import { FaStar } from "react-icons/fa";
-import { validate } from "./validator";
+import { validate, capitalizarPrimeraLetra } from "./validator";
 import { useDispatch } from "react-redux";
 import { createHotel } from "../../redux/actions";
 
@@ -31,11 +31,18 @@ const FormHotels = () => {
   // -------- Arrays importantes ----------
   const languages = ["English", "Chinese, Mandarin", "Hindi", "Español", "Francés", "Arabic, Standard", "Bengali", "Russian", "Portuguese", "Urdu", "Indonesian", "German", "Japanese", "Marathi", "Telugu", "Turkish", "Tamil", "Chinese, Yue", "Vietnamese", "Tamil", "Chinese, Wu", "Korean", "Persian", "Iranian", "Hausa", "Arabic,Egyptian Spoken", "Swahili", "Javanese", "Italian", "Punjabi, Western", "Kannada", "Gujarati", "Thai", "Ahmaric", "Bhoshpuri", "Panjabí", "Chinese, Min Nan", "Chino jin", "Yoruba", "Chino hakka", "Birmano", "Árabe sudanés", "Polaco", "Árabe argelino", "Lingala"];
 
-  const servicies = ["Parking", "Restaurant", "Pool", "Bar", "Wi-Fi"];
+  const servicies = ["parking", "restaurant", "publicPool", "bar", "wifi"];
 
   // -------- Estados locales de Category --------------
   const [category, setCategory ] = useState(null);
   const [hover, setHover] = useState(null);
+
+  // ------ EStados de las position --------
+  const [pos, setPos] = useState({
+    latitud: "",
+    longitud: "",
+  });
+  const [errPosition, setErrPosition] = useState("")
 
   // --------- Estados image Extras ---------
   const [imgExt, setImgExt] = useState([]);
@@ -51,15 +58,19 @@ const FormHotels = () => {
     rooms: "",
     location: "",
     description: "",
+    parking: false,
+    restaurant: false,
+    publicPool: false,
+    bar: false,
+    wifi: false,
     pictureHome: "",
     pictureDetail: [],
-    servicies: [],
     rating: 5,
     languages: [],
     category: "",
     phone: "",
     hidden: false,
-    position: []
+    position: ["", ""]
   });
 
   // ----------- Funciones on Change -------------
@@ -72,18 +83,23 @@ const FormHotels = () => {
 
   const handleChecked = (event) => {
     // console.log(event.target);
-    if(event.target.checked === true){
-      setInput({
-        ...input,
-        servicies: [...input.servicies, event.target.value]
-      })
-    };
-    if(event.target.checked === false) {
-      setInput({
-        ...input,
-        servicies: [...input.servicies.filter(servicies => servicies !== event.target.value)]
-      })
-    }
+    // if(event.target.checked === true){
+    //   setInput({
+    //     ...input,
+    //     servicies: [...input.servicies, event.target.value]
+    //   })
+    // };
+    // if(event.target.checked === false) {
+    //   setInput({
+    //     ...input,
+    //     servicies: [...input.servicies.filter(servicies => servicies !== event.target.value)]
+    //   })
+    // }
+
+    setInput({
+      ...input,
+      [event.target.name]: event.target.checked
+    })
   };
 
   const handleChangeCategory = (event) => {
@@ -112,6 +128,20 @@ const FormHotels = () => {
       ...input,
       languages: filterOfLanguages,
     });
+  };
+
+  const handlePosition = (event) => {
+    setPos({
+      ...pos,
+      [event.target.name]: event.target.value
+    });
+  };
+
+  const handleChangePosition = () => {
+    setInput({
+      ...input,
+      position: [input.position[0]= pos.latitud, input.position[1]=pos.longitud],
+    })
   };
 
   // ------- Function extra images ----------
@@ -168,7 +198,7 @@ const FormHotels = () => {
         <div className={style.containerForm}>
           <h1>Create Hotel</h1>
 
-          <form className={style.form} onSubmit={(e) => handleSubmit(e)}>
+          <div className={style.form}>
             <div className={style.containerInputs}>
               <div>
                 <div className={style.containerInput}>
@@ -276,13 +306,14 @@ const FormHotels = () => {
               <div className={style.containerServicies}>
                 {
                   servicies.map((servicies, index) => {
+                    const servicios = capitalizarPrimeraLetra(servicies)
                     return (
                       <div key={index}>
-                        <label>{servicies}</label>
+                        <label>{servicios}</label>
                         <input 
                           type="checkbox" 
-                          name="servicies"
-                          value={servicies}
+                          name={servicies}
+                          value={input.servicies}
                           id={`switch${index}`}
                           className={style.switch}
                           onChange={(e) => handleChecked(e)}
@@ -357,12 +388,43 @@ const FormHotels = () => {
                   }
                 </div>
               </div>
+
+              <div className={style.containerPosition}>
+                <label>Position:</label>
+                <div>
+                  <div className={style.containerInput}>
+                    <input 
+                      type="text"
+                      name="latitud"
+                      value={pos.latitud}
+                      onChange={(e) => handlePosition(e)}
+                    />
+                    <div>
+                      <span className={style.span}>{errPosition}</span>
+                    </div>
+                  </div>
+                  <div className={style.containerInput}>
+                    <input 
+                      type="text"
+                      name="longitud"
+                      value={pos.longitud}
+                      onChange={(e) => handlePosition(e)}
+                    />
+                    <div>
+                      <span className={style.span}>{errPosition}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+                <div>
+                  <button onClick={handleChangePosition} name="position">Add Position</button>
+                </div>
             </div>
             
             <div>
-              <button className={style.buttonSubmit} type="submit">Add Hotel</button>
+              <button className={style.buttonSubmit} type="submit" onClick={(e) => handleSubmit(e)}>Add Hotel</button>
             </div>
-          </form>
+          </div>
         </div>
 
         <div className={style.containerImages}>
