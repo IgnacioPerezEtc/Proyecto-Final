@@ -37,6 +37,13 @@ const FormHotels = () => {
   const [category, setCategory ] = useState(null);
   const [hover, setHover] = useState(null);
 
+  // ------ EStados de las position --------
+  const [pos, setPos] = useState({
+    latitud: "",
+    longitud: "",
+  });
+  const [errPosition, setErrPosition] = useState("")
+
   // --------- Estados image Extras ---------
   const [imgExt, setImgExt] = useState([]);
   const [imgExtErr, setImgExtErr] = useState("");
@@ -58,13 +65,12 @@ const FormHotels = () => {
     wifi: false,
     pictureHome: "",
     pictureDetail: [],
-    servicies: [],
     rating: 5,
     languages: [],
     category: "",
     phone: "",
     hidden: false,
-    position: []
+    position: ["", ""]
   });
 
   // ----------- Funciones on Change -------------
@@ -124,6 +130,20 @@ const FormHotels = () => {
     });
   };
 
+  const handlePosition = (event) => {
+    setPos({
+      ...pos,
+      [event.target.name]: event.target.value
+    });
+  };
+
+  const handleChangePosition = () => {
+    setInput({
+      ...input,
+      position: [input.position[0]= pos.latitud, input.position[1]=pos.longitud],
+    })
+  };
+
   // ------- Function extra images ----------
   const handleImgExt = (event) => {
     setImgExt(event.target.value);
@@ -178,7 +198,7 @@ const FormHotels = () => {
         <div className={style.containerForm}>
           <h1>Create Hotel</h1>
 
-          <form className={style.form} onSubmit={(e) => handleSubmit(e)}>
+          <div className={style.form}>
             <div className={style.containerInputs}>
               <div>
                 <div className={style.containerInput}>
@@ -368,12 +388,43 @@ const FormHotels = () => {
                   }
                 </div>
               </div>
+
+              <div className={style.containerPosition}>
+                <label>Position:</label>
+                <div>
+                  <div className={style.containerInput}>
+                    <input 
+                      type="text"
+                      name="latitud"
+                      value={pos.latitud}
+                      onChange={(e) => handlePosition(e)}
+                    />
+                    <div>
+                      <span className={style.span}>{errPosition}</span>
+                    </div>
+                  </div>
+                  <div className={style.containerInput}>
+                    <input 
+                      type="text"
+                      name="longitud"
+                      value={pos.longitud}
+                      onChange={(e) => handlePosition(e)}
+                    />
+                    <div>
+                      <span className={style.span}>{errPosition}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+                <div>
+                  <button onClick={handleChangePosition} name="position">Add Position</button>
+                </div>
             </div>
             
             <div>
-              <button className={style.buttonSubmit} type="submit">Add Hotel</button>
+              <button className={style.buttonSubmit} type="submit" onClick={(e) => handleSubmit(e)}>Add Hotel</button>
             </div>
-          </form>
+          </div>
         </div>
 
         <div className={style.containerImages}>
