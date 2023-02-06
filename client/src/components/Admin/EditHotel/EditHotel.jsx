@@ -1,25 +1,48 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { getHotelById, clearHotelDetail } from "../../../redux/actions";
 import HotelDetail from "../../HotelDetail/HotelDetail";
 import style from "./EditHotel.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Maps from "../../Maps/Maps.jsx";
 import { faCheck, faStar } from "@fortawesome/free-solid-svg-icons";
+import { putHotel } from "../../../redux/actions";
+import axios from "axios";
 const EditHotel = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const hotel = useSelector((state) => state.hotelDetail);
-  useEffect(() => {
-    dispatch(getHotelById(id));
-  }, []);
   const [inputs, setInputs] = useState({
     name: "",
+    rooms: "",
     location: "",
+    description: "",
+    pictureHome: "",
+    servicies: [],
+    rating: "",
+    languages: [],
+    category: "",
     phone: "",
-    hidden: "",
   });
+  useEffect(() => {
+    axios.get(`/hotels/${id}`).then((response) => {
+      setInputs({
+        name: response.data[0].name,
+        rooms: response.data[0].rooms,
+        location: response.data[0].location,
+        phone: response.data[0].phone,
+        description: response.data[0].description,
+        pictureHome: response.data[0].pictureHome,
+        rating: response.data[0].rating,
+        languages: response.data[0].languages,
+        category: response.data[0].category,
+      });
+    });
+    dispatch(getHotelById(id));
+  }, []);
+
   const handleChange = (e) => {
     e.preventDefault();
     setInputs({
@@ -27,8 +50,8 @@ const EditHotel = () => {
       [e.target.name]: e.target.value,
     });
   };
-  const hotelDetail = useSelector((state) => state.hotelDetail);
-  const star = hotelDetail.category;
+
+  const star = hotel.category;
   let stars = [];
   for (let i = 0; i < star; i++) {
     stars.push(<FontAwesomeIcon className={`${style.stars}`} icon={faStar} />);
@@ -44,7 +67,7 @@ const EditHotel = () => {
     "https://swiperjs.com/demos/images/nature-8.jpg",
     "https://swiperjs.com/demos/images/nature-9.jpg",
     "https://swiperjs.com/demos/images/nature-10.jpg",
-    hotelDetail.pictureHome,
+    hotel.pictureHome,
   ];
   let ratingLet = (rating) => {
     let text = "";
@@ -63,20 +86,26 @@ const EditHotel = () => {
 
     return text;
   };
-  const textRating = ratingLet(hotelDetail.rating);
+  const textRating = ratingLet(hotel.rating);
 
   const ofrece = () => {
     let ofrecimientos = [];
-    if (hotelDetail.parking === true) ofrecimientos.push("Parking");
-    if (hotelDetail.restaurant === true) ofrecimientos.push("Restaurant");
-    hotelDetail.publicPool === true ? ofrecimientos.push("Public Pool") : "";
-    hotelDetail.bar === true ? ofrecimientos.push("Bar") : "";
-    hotelDetail.wifi === true ? ofrecimientos.push("Wi-Fi") : "";
+    if (hotel.parking === true) ofrecimientos.push("Parking");
+    if (hotel.restaurant === true) ofrecimientos.push("Restaurant");
+    hotel.publicPool === true ? ofrecimientos.push("Public Pool") : "";
+    hotel.bar === true ? ofrecimientos.push("Bar") : "";
+    hotel.wifi === true ? ofrecimientos.push("Wi-Fi") : "";
 
     return ofrecimientos;
   };
   const ofrecimientosHotel = ofrece();
   let array = [];
+
+  const saveChanges = (id) => {
+    dispatch(putHotel(id));
+    alert("Modified");
+  };
+
   return (
     <div>
       {hotel.id === parseInt(id) ? (
@@ -103,24 +132,21 @@ const EditHotel = () => {
                 <div>
                   <input
                     className={style.nameHotel}
-                    defaultValue={
-                      hotel.name
-                        ? hotel.name.charAt(0).toUpperCase() +
-                          hotel.name.slice(1)
-                        : ""
-                    }
+                    value={inputs.name}
+                    name="name"
+                    onChange={handleChange}
                   ></input>
                   <span className={style.spacingStars}>{stars}</span>
                 </div>
                 <div className={style.nameHotel}>
                   {/* <p className={style.nameDescription}>Location:</p> */}
-                  <p className={style.location}>{hotelDetail.location}.</p>
+                  <p className={style.location}>{hotel.location}.</p>
                 </div>
                 <div className={style.containerRatingFlex}>
                   <div
                     className={` ${style.containerRating} ${style.flexRating}`}
                   >
-                    <p className={style.rating}>{hotelDetail.rating}</p>
+                    <p className={style.rating}>{hotel.rating}</p>
                   </div>
                   <div className={style.divTextRating}>
                     <p className={style.textRecomm}>{textRating}</p>
@@ -140,23 +166,30 @@ const EditHotel = () => {
                   <ul className={style.ulOff}>
                     <li className={style.off}>
                       <input
-                        type="text"
-                        defaultValue={hotelDetail.rooms}
+                        value={inputs.rooms}
+                        type="number"
                         className={style.inputRooms}
+                        onChange={handleChange}
+                        name="rooms"
                       />
                       <label htmlFor="">Rooms</label>
                     </li>
-                    {ofrecimientosHotel.map((ofre) => {
+                    {ofrecimientosHotel.map((ofre, i) => {
                       return (
-                        <div className={style.containerOff}>
-                          <li className={style.off} key={ofre}>
-                            {ofre}
-                          </li>
-                          <button className={style.buttonEliminar}>X</button>
-                        </div>
+                        <li className={style.off} key={ofre}>
+                          {ofre}
+                        </li>
                       );
                     })}
+                    <li className={style.off}>Public Pool</li>
+                    <li className={style.off}>Bar</li>
+                    <li className={style.off}>Restaurant</li>
+                    <li className={style.off}>Wi-Fi</li>
                   </ul>
+                  <div>
+                    <button>Edit</button>
+                  </div>
+
                   <hr className={style.hr} />
                   <h2 className={style.titleOff}>Security & Advantages</h2>
                   <ul className={style.ulOff}>
@@ -169,15 +202,15 @@ const EditHotel = () => {
                 <div className={style.containerMap}>
                   <p>MAPA</p>
                   <div>
-                    {hotel.position?.map((hotelPosition) => {
+                    {/* {hotel.position?.map((hotelPosition) => {
                       array.push(parseFloat(hotelPosition));
-                    })}
+                    })} */}
                     {/* { console.log(array)} */}
-                    {array.length === 2 ? (
+                    {/* {array.length === 2 ? (
                       <Maps positionDetail={array} />
                     ) : (
                       false
-                    )}
+                    )} */}
 
                     {/* { setMapCenter(array)} */}
                     {/* //////////////////////////////////////////////////////////////////////////////////////////// */}
@@ -188,7 +221,9 @@ const EditHotel = () => {
                 <h2 className={style.titleDescription}>Description</h2>
                 <textarea
                   className={style.description}
-                  defaultValue={hotel.description}
+                  value={inputs.description}
+                  onChange={handleChange}
+                  name="description"
                 >
                   {/* Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad
                   rerum repellendus esse recusandae voluptatem facilis libero
@@ -207,7 +242,9 @@ const EditHotel = () => {
                   <h2>Contact:</h2>
                   <input
                     className={style.contact}
-                    defaultValue={hotel.phone}
+                    value={inputs.phone}
+                    onChange={handleChange}
+                    name="phone"
                   ></input>
                 </div>
                 <div className={style.containerContact}>
@@ -222,6 +259,9 @@ const EditHotel = () => {
                     })}
                   </ul>
                 </div>
+                <button onClick={() => saveChanges(hotel.id)}>
+                  Save Changes
+                </button>
               </div>
             </div>
           </div>

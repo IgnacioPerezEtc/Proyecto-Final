@@ -10,7 +10,7 @@ export const CREATE_HOTEL = "CREATE_HOTEL ";
 export const ERROR = "ERROR";
 export const FILTER_BY_LANGUAGE = "FILTER_BY_LANGUAGE";
 export const FILTER_BY_STARS = "FILTER_BY_STARS";
-export const PUT_HOTEL_HIDDEN = "PUT_HOTEL_HIDDEN";
+export const PUT_HOTEL = "PUT_HOTEL";
 export const CLEAR_HOTEL_DETAIL = "CLEAR_HOTEL_DETAIL";
 //
 // *********************** SECCION HOTELS ************************
@@ -82,12 +82,12 @@ export const getHotelByName = (name) => {
   };
 };
 
-export const putHotelHidden = (id) => {
+export const putHotel = (id) => {
   return async (dispatch) => {
     try {
       const json = await axios.put(`/edit/${id}`);
       return dispatch({
-        type: PUT_HOTEL_HIDDEN,
+        type: PUT_HOTEL,
         payload: json.data,
       });
     } catch (error) {

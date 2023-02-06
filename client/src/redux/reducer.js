@@ -14,7 +14,7 @@ import {
   CLEAN_ROOM_DETAIL,
   GET_ALL_RESERVATIONS,
   GET_ALL_USERS,
-  PUT_HOTEL_HIDDEN,
+  PUT_HOTEL,
   CLEAR_HOTEL_DETAIL,
 } from "./actions";
 
@@ -66,7 +66,7 @@ const rootReducer = (state = initialState, action) => {
         hotels: action.payload,
       };
     }
-    case PUT_HOTEL_HIDDEN: {
+    case PUT_HOTEL: {
       return {
         ...state,
       };

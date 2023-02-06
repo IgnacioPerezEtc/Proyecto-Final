@@ -7,7 +7,6 @@ import edit from "../../../assets/icons/edit.png";
 import {getHotelByName } from "../../../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllHotels } from "../../../redux/actions";
-import { putHotelHidden } from "../../../redux/actions";
 import { useEffect } from "react";
 import { NavLink,} from "react-router-dom";
 const HotelsAdmin = (props) => {
