@@ -3,6 +3,9 @@ import { useSelector } from "react-redux";
 import style from "./Error.module.css";
 const Error = () => {
   const error = useSelector((state) => state.error);
+  const reload=()=>{
+    window.location.reload()
+  }
   return (
     <div>
       <div  className={style.flexContainer}>
@@ -15,7 +18,11 @@ const Error = () => {
           alt=""
         />
       </div>
-      <div  className={style.flexContainer}><h3>{error}</h3></div>
+     
+      <div  className={style.flexContainer}><h3>{error}</h3></div> 
+      <div className={style.flexContainer}>
+        <button className={style.reload} onClick={reload}>Reload</button>
+      </div>
     </div>
   );
 };
