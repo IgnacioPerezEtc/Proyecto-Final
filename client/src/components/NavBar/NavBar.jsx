@@ -114,10 +114,10 @@ const NavBar = (props) => {
                 <span className={style.slider}></span>
               </label>
             </li> */}
-            <li>
+            {/* <li>
               <button onClick={darkMode}>DarkMode</button>
               <button onClick={lightMode}>LightMode</button>
-            </li>     
+            </li>      */}
 
             <li className="dropdown">
               <a
