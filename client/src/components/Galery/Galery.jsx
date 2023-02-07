@@ -23,11 +23,6 @@ const Galery = () => {
           <h2 className="blue">Our</h2>
           <h2 className="red">Gallery</h2>
         </div>
-        <p className="desc-gallery">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tempor
-          viverra
-        </p>
-        <p className="desc-gallery">parturient diam sagittis nec cras.</p>
       </div>
 
       <div className="galleryContainer">

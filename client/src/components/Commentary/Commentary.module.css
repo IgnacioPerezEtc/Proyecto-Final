@@ -113,3 +113,9 @@ text-align: center;
   position: relative;
   top: 15px;
 }
+
+.img {
+  width: 60px;
+  height: 60px;
+  border-radius: 30px;
+}

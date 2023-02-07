@@ -228,10 +228,7 @@ const EditHotel = () => {
                   onChange={handleChange}
                   name="description"
                 >
-                  {/* Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad
-                  rerum repellendus esse recusandae voluptatem facilis libero
-                  modi eius labore error dolore quia porro ipsam deserunt
-                  accusamus, est possimus nostrum! Sed. */}
+                  
                 </textarea>
               </div>
               <div className={style.containerDescription}>
