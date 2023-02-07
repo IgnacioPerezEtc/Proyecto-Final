@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import style from "./AboutUs.module.css";
-import img from "./img/fotoAboutUs.jpg";
+import fotoIgna from "./img/fotoIgna.jpg";
 import fotoSanti from "./img/fotoSanti.jpg";
 import fotoLili from "./img/fotoLili.jpg";
 import fotoLauti from "./img/fotoLauti.jpeg";
@@ -30,7 +30,7 @@ const AboutUs = (props) => {
       <div className={style.containerAboutUs}>
         <div className={style.containerUs}>
           <div className={style.imgContainer}>
-            <img className={style.imageUs} src={img} alt="" />
+            <img className={style.imageUs} src={fotoIgna} alt="" />
           </div>
           <div>
             <h2 className={style.name}>Ignacio Perez Etchegaray</h2>
