@@ -110,8 +110,11 @@ const EditHotel = () => {
     <div>
       {hotel.id === parseInt(id) ? (
         <div className={style.containerDetail}>
+         
           <div className={style.containerCard}>
+     
             <div className={style.containerImgTitle}>
+            <h1> Edit Mode</h1>
               <div className={style.galleryContainer}>
                 <div className={style.containerImg}>
                   <img
