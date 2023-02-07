@@ -6,16 +6,18 @@ import { Keyboard, Autoplay } from "swiper";
 import "swiper/css";
 import "swiper/css/free-mode";
 import { useLocation } from "react-router-dom";
-
+import style from "./RoomCards.module.css";
 const RoomsCards = (props) => {
   const location = useLocation();
   return (
     <div>
       {location.pathname === "/home" ? (
         <div className="m-5">
-          <p className="fw-bold text-center display-1">
-            Our <span className="text-danger">Hotels</span>
-          </p>
+          <div className={style.flexContainer}>
+              <h2 className="blueOur">Our</h2>
+          <h2 className={style.red}>Hotels</h2>
+          </div>
+        
           <Swiper
             freeMode={true}
             grabCursor={true}
