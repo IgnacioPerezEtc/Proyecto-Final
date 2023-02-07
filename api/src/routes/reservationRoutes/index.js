@@ -27,4 +27,17 @@ router.post("/", async (req, res) => {
     }
 })
 
+router.put("/edit/:id", async (req, res) => {
+    const { id } = req.params;
+    const data = req.body;
+
+    try {
+        const updated = await reservationController.putReservation(id, data);
+        return res.status(200).send(updated);
+
+    } catch (error) {
+        return res.status(404).send({ error: error.message });
+    }
+})
+
 module.exports = router;

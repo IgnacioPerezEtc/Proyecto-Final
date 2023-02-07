@@ -16,8 +16,11 @@ import { NavLink } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck, faStar } from "@fortawesome/free-solid-svg-icons";
+import FavoriteIcon from "../FavoriteIcon/FavoriteIcon";
 import "swiper/css";
 import "swiper/css/free-mode";
+import Maps from "../Maps/Maps.jsx";
+import { MapContainer } from "react-leaflet";
 const HotelDetail = (props) => {
   const location = useLocation();
   const dispatch = useDispatch();
@@ -50,7 +53,6 @@ const HotelDetail = (props) => {
     "https://swiperjs.com/demos/images/nature-10.jpg",
     hotelDetail.pictureHome,
   ];
-
   let ratingLet = (rating) => {
     let text = "";
     if (rating < 5) {
@@ -80,20 +82,13 @@ const HotelDetail = (props) => {
 
     return ofrecimientos;
   };
-
   const ofrecimientosHotel = ofrece();
-  console.log(ofrecimientosHotel);
-
+  let array = [];
   return (
     <div>
       {location.pathname.includes("hotels") ? (
         <div>
           <NavBarDetails />
-          {/* <div className={style.containerButton}>
-            <NavLink to={"/hotels"}>
-              <button className={style.createHotel}>Back</button>
-            </NavLink>
-          </div> */}
         </div>
       ) : (
         ""
@@ -132,6 +127,11 @@ const HotelDetail = (props) => {
                       : ""}
                     <span className={style.spacingStars}>{stars}</span>
                   </h2>
+                  {localStorage.getItem("user") ? (
+                    <FavoriteIcon id={parseInt(id)} />
+                  ) : (
+                    ""
+                  )}
                 </div>
                 <div className={style.nameHotel}>
                   {/* <p className={style.nameDescription}>Location:</p> */}
@@ -180,8 +180,22 @@ const HotelDetail = (props) => {
                     <li className="offEmail">Email confirming reservation</li>
                   </ul>
                 </div>
+                {/* ////////////////////////////////////////////////////////MAPA//////////////////////////////////// */}
                 <div className={style.containerMap}>
-                  <p>MAPA</p>
+                  <div>
+                    {hotelDetail.position?.map((hotelPosition) => {
+                      array.push(parseFloat(hotelPosition));
+                    })}
+                    {/* { console.log(array)} */}
+                    {/* {array.length === 2 ? (
+                      <Maps positionDetail={array} />
+                    ) : (
+                      false
+                    )} */}
+
+                    {/* { setMapCenter(array)} */}
+                    {/* //////////////////////////////////////////////////////////////////////////////////////////// */}
+                  </div>
                 </div>
               </div>
               <div className={style.containerDescription}>

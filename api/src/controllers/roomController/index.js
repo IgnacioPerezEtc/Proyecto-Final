@@ -61,5 +61,25 @@ module.exports = {
 
             return ("New Room regristed successfully");
         }
+    },
+
+    bulkCreate: async function (array) {
+        await Room.bulkCreate(array);
+    
+        return "All Rooms in DB";
+      },
+
+    putRoom: async function (id, data) {
+        try {
+            await Room.update(data, {
+                where: {
+                    id: id
+                }
+            })
+            return "Updated Room"
+            
+        } catch (error) {
+            return error.message;
+        }
     }
 }

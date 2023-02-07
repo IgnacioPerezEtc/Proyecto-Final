@@ -27,6 +27,10 @@ module.exports = (sequelize) => {
         blocked: {
             type: DataTypes.BOOLEAN,
             defaultValue: false,
+        },
+
+        favoriteHotels: {
+            type: DataTypes.ARRAY(DataTypes.INTEGER),
         }
 
     },

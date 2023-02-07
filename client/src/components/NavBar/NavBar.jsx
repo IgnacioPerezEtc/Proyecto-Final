@@ -9,13 +9,13 @@ import { useLocation } from "react-router-dom";
 import { useState } from "react";
 import { useEffect } from "react";
 import { logOut } from "../../redux/actions";
-import style from "./NavBar.module.css"
+import style from "./NavBar.module.css";
 
 const NavBar = (props) => {
   const location = useLocation();
   const [login, setLogin] = useState(false);
 
-  const [info, setInfo] = useState(localStorage.getItem("user"));
+  const [info, setInfo] = useState(JSON.parse(localStorage.getItem("user")));
   useEffect(() => {
     if (info) {
       setLogin(true);
@@ -118,6 +118,10 @@ const NavBar = (props) => {
               <button className={style.btnMoon} onClick={darkMode}>🌜</button>
               <button className={style.btnSun} onClick={lightMode}>☀️</button>
             </li>     
+            {/* <li>
+              <button onClick={darkMode}>DarkMode</button>
+              <button onClick={lightMode}>LightMode</button>
+            </li>      */}
 
             <li className="dropdown">
               <a
@@ -141,6 +145,16 @@ const NavBar = (props) => {
                     </a>
                   )}
                 </li>
+                {info && info[0].admin === true ? (
+                  <li>
+                    <a
+                      className={`${style.itemDrop} dropdown-item`}
+                      href="/admin"
+                    >Dashboard</a>
+                  </li>
+                ) : (
+                  ""
+                )}
                 <hr />
                 <li>
                   <a className="dropdown-item" href="/Booking">
