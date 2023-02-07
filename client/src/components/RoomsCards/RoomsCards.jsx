@@ -16,18 +16,6 @@ const RoomsCards = (props) => {
           <p className="fw-bold text-center display-1">
             Our <span className="text-danger">Hotels</span>
           </p>
-
-<<<<<<< HEAD
-          
-=======
-          <p className="descRoomsCard">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas
-            quasi aut quo cumque veritatis obcaecati consectetur quas corporis
-            tenetur quisquam quos, voluptatem beatae a, ratione illo? Cumque
-            sint corrupti similique.
-          </p>
->>>>>>> bbc48f7dd36fd01419faab7911589e96e5df3520
-
           <Swiper
             freeMode={true}
             grabCursor={true}

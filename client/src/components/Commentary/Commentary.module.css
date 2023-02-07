@@ -119,3 +119,9 @@ text-align: center;
 .h2Commentary{
   color: black;
 }
+
+.img{
+  height: 60px;
+  width: 60px;
+  border-radius: 60px;
+}
