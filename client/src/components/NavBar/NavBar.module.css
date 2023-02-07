@@ -1,3 +1,7 @@
+#img{
+    border-radius: 20px;
+}
+
 .containerNavbar{
     position: absolute;
     width: 98vw;
