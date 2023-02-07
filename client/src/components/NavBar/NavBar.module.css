@@ -116,6 +116,11 @@ switch.active{
     -webkit-transition: .4s;
     transition: .4s;
   }
+
+#img{
+    border-radius: 20px;
+}
+
 /* [data-theme="light"]{
     --primary:#2a83d6;
     background: #fff;

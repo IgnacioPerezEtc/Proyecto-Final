@@ -1,0 +1,105 @@
+.titleContainer {
+    font-family: "Raleway";
+    justify-content: center;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    display: flex;
+  }
+  
+  .blue {
+    color: var(--color-blue);
+    float: left;
+    font-size: 48px;
+    margin-right: 10px;
+  }
+  
+  .red {
+    color: #d31b1b;
+    float: left;
+    font-size: 48px;
+    margin-right: 10px;
+    font-weight: 700;
+  }
+  
+  .containerLoader {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+  }
+  .containerLoader img{
+    width: 800px;
+    height: 600px;
+    margin: 0 auto;
+    border-radius: 18px;
+    box-shadow: 0px 4px 12px 2px #00000026, 4px 0px 12px 2px #00000026;
+  }
+  
+  .blue2 {
+    color: var(--color-blue);
+    float: left;
+    font-size: 30px;
+    margin-right: 10px;
+    margin-bottom: 40px;
+  }
+
+.mainContainer{
+    display: flex;
+    justify-content: center;
+}
+
+.container{
+    background-color: white;
+    margin-bottom: 2%;
+    border: solid rgb(201, 201, 201) 1px;
+    border-radius: 8px;
+    font-family: "Roboto", sans-serif;
+    font-size: 20px;
+    width: 700px;
+}
+
+.subContainer h6{
+    margin-bottom: 0px;
+    font-size: 11px;
+}
+
+#img{
+    margin: 40px;
+    height: 300px;
+    width: 300px;
+    border: solid rgb(201, 201, 201) 2px;
+    object-fit: cover;
+    float: left;
+}
+
+.subContainer{
+    margin-top: 40px;
+    margin-right: 40px;
+    margin-left: 380px;
+    position: absolute;
+}
+
+.createHotel {
+    width: 154px;
+    height: 48px;
+    background-color: var(--color-blue);
+    border: 1px solid transparent;
+    border-radius: 5px;
+    color: #fff;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-size: 1.6rem;
+    line-height: 1.9rem;
+    cursor: pointer;
+    box-shadow: 0px 4px 4px #00000040;
+    animation: pulse 1s infinite;
+    transition: all 0.3s ease-out;
+    margin-top: 15px;
+}
+
+#link{
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
+    text-decoration: none;
+}

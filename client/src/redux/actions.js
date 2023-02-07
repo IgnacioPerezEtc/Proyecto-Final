@@ -208,6 +208,7 @@ export const getRooms = () => {
 
 export const FIND_OR_CREATE = "FIND_OR_CREATE";
 export const LOGOUT = "LOGOUT";
+export const GET_USER_BY_ID = "GET_USER_BY_ID";
 
 export const findOrCreate = async (data) => {
   const result = await axios.post("/user", data);
@@ -224,6 +225,23 @@ export const logOut = () => {
     window.location.href = "/";
   }, 1);
 };
+
+export function getUserById(id) {
+  return async function (dispatch) {
+    try {
+      const json = await axios.get(`/user/${id}`);
+      return dispatch({
+        type: GET_USER_BY_ID,
+        payload: json.data,
+      });
+    } catch (error) {
+      return dispatch({
+        type: ERROR,
+        payload: "The user with that id hasn't been found",
+      });
+    }
+  };
+}
 
 // *********************** SEND EMAIL ************************
 
