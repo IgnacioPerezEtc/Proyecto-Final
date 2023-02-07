@@ -130,10 +130,25 @@ const NavBar = (props) => {
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                <img src={user} alt="" width={"24px"} height="24px" />
+                {login === false ? (
+                  <img src={user} alt="" width={"24px"} height="24px" />
+                ) : (
+                  <img id={style.img} src={(JSON.parse(localStorage.getItem("user")))[0].img || user} alt="" width={"24px"} height="24px" />
+                )}
+                
               </a>
 
               <ul className="dropdown-menu dropdown-menu-lg-end">
+                <li>
+                  {login === false ? (
+                  ""
+                ) : (
+                    <a className="dropdown-item"  href="/userProfile">
+                      User Profile
+                    </a>
+                  )}
+                </li>
+
                 <li>
                   {login === false ? (
                     <a className="dropdown-item" href="/">

@@ -16,6 +16,7 @@ import {
   GET_ALL_USERS,
   PUT_HOTEL,
   CLEAR_HOTEL_DETAIL,
+  GET_USER_BY_ID
 } from "./actions";
 
 const initialState = {
@@ -28,6 +29,7 @@ const initialState = {
   reservation: {},
   allReservation: [],
   users: [],
+  userDetail: {},
   error: false,
 };
 
@@ -148,6 +150,13 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         users: action.payload,
       };
+
+    case GET_USER_BY_ID: {
+      return {
+        ...state,
+        userDetail: action.payload,
+      };
+    }
 
     default:
       return { ...state };

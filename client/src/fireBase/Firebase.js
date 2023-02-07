@@ -28,6 +28,7 @@ export const signInWithGoogle = () => {
       let data = {
         email: result.user.email,
         name: result.user.displayName,
+        img: result.user.photoURL,
       };
       findOrCreate(data);
     })
