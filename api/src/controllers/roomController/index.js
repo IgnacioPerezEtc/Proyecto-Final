@@ -63,6 +63,12 @@ module.exports = {
         }
     },
 
+    bulkCreate: async function (array) {
+        await Room.bulkCreate(array);
+    
+        return "All Rooms in DB";
+      },
+
     putRoom: async function (id, data) {
         try {
             await Room.update(data, {

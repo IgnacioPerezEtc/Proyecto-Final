@@ -1,22 +1,23 @@
 import React from "react";
 import style from "./Services.module.css";
+import "./Services.css"
 import restaurant from "../../assets/icons/restaurant.svg";
 const Services = () => {
   return (
     <div className={style.containerService}  id="services">
       <div className={style.subcontainer}>
         <div className={style.titleContainer}>
-          <h2 className={style.blue}>Our</h2>
+          <h2 className="blueOur">Our</h2>
           <h2 className={style.red}>Service</h2>
         </div>
-        <p className={style.descService}>
+        <p className="descService">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tempor
           viverra
         </p>
-        <p className={style.descService}>parturient diam sagittis nec cras.</p>
+        <p className="descService">parturient diam sagittis nec cras.</p>
       </div>
       <div className={style.bodyService}>
-        <div className={style.containerCards}>
+        <div className="containerCardsServices">
           <div>
             <div className={style.imageContainer}>
               <img className={style.img} src={restaurant} alt="" />
@@ -27,7 +28,7 @@ const Services = () => {
             Lorem ipsum dolor sit amet, consectetur{" "}
           </p>
         </div>
-        <div className={style.containerCards}>
+        <div className="containerCardsServices">
           <div>
             <div className={style.imageContainer}>
               <img className={style.img} src={restaurant} alt="" />
@@ -38,7 +39,7 @@ const Services = () => {
             Lorem ipsum dolor sit amet, consectetur{" "}
           </p>
         </div>
-        <div className={style.containerCards}>
+        <div className="containerCardsServices">
           <div>
             <div className={style.imageContainer}>
               <img className={style.img} src={restaurant} alt="" />
@@ -49,7 +50,7 @@ const Services = () => {
             Lorem ipsum dolor sit amet, consectetur{" "}
           </p>
         </div>
-        <div className={style.containerCards}>
+        <div className="containerCardsServices">
           <div>
             <div className={style.imageContainer}>
               <img className={style.img} src={restaurant} alt="" />
@@ -62,7 +63,7 @@ const Services = () => {
         </div>
       </div>
       <div className={style.bodyService} id="services">
-        <div className={style.containerCards}>
+        <div className="containerCardsServices">
           <div>
             <div className={style.imageContainer}>
               <img className={style.img} src={restaurant} alt="" />
@@ -73,7 +74,7 @@ const Services = () => {
             Lorem ipsum dolor sit amet, consectetur{" "}
           </p>
         </div>
-        <div className={style.containerCards}>
+        <div className="containerCardsServices">
           <div>
             <div className={style.imageContainer}>
               <img className={style.img} src={restaurant} alt="" />
@@ -84,7 +85,7 @@ const Services = () => {
             Lorem ipsum dolor sit amet, consectetur{" "}
           </p>
         </div>
-        <div className={style.containerCards}>
+        <div className="containerCardsServices">
           <div>
             <div className={style.imageContainer}>
               <img className={style.img} src={restaurant} alt="" />
@@ -95,7 +96,7 @@ const Services = () => {
             Lorem ipsum dolor sit amet, consectetur{" "}
           </p>
         </div>
-        <div className={style.containerCards}>
+        <div className="containerCardsServices">
           <div>
             <div className={style.imageContainer}>
               <img className={style.img} src={restaurant} alt="" />

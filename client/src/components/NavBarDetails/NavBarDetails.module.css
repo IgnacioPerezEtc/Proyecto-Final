@@ -6,7 +6,7 @@
 .containerFluid {
   padding-top: 12px;
   padding-bottom: 12px;
-  background-color: var(--color-blue);
+  background-color: #18445c;
   justify-content: space-between !important;
   /* position: fixed;
   top: 0.1px;
@@ -104,3 +104,10 @@
     margin: 0 auto;
   }
 }
+
+.btnMoon .btnSun {
+  background-color: white;
+  height: 2rem;
+  border-radius: 2rem;
+  width: 4rem;
+  }

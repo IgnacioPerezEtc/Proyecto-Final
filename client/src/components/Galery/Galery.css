@@ -15,7 +15,7 @@
   display: flex;
 }
 
-.blue {
+.blueG {
   color: var(--color-blue);
   float: left;
   font-size: 48px;
@@ -25,7 +25,7 @@
   font-weight: 200;
   font-size: 1.6rem;
   line-height: 2.4rem;
-  color: #747474;
+  color: black;
   line-height: 2rem;
 }
 .red {
@@ -36,10 +36,11 @@
   font-weight: 700;
 }
 
-.buttonContainer {
+.buttonContainerE {
   padding: 50px;
   padding-left: 183px;
   font-size: 1.6rem;
+  
 }
 
 .buttonActive {
