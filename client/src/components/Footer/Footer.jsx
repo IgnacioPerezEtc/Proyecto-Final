@@ -8,10 +8,11 @@ import facebook from "../../assets/icons/facebook.svg";
 import instagram from "../../assets/icons/instagram.svg";
 import twitter from "../../assets/icons/twitter.svg";
 import youtube from "../../assets/icons/youtube.svg";
+import "./Footer.css"
 const Footer = () => {
   return (
     <div className={style.bodyFooter}>
-      <footer className={style.footer}>
+      <footer className="footer">
       <div className={style.firstflexContainer}>
           <div>
             <h3 className={style.FirstTitle}>
@@ -28,15 +29,15 @@ const Footer = () => {
 
           <div className={style.iconContainer}>
             <div className={style.iconsContainer}>
-              <img className={style.icon} src={instagram} alt="" />
-              <img className={style.iconFacebook} src={facebook} alt="" />
-              <img className={style.icon} src={youtube} alt="" />
-              <img className={style.icon} src={twitter} alt="" />
+              <img className="iconFooter" src={instagram} alt="" />
+              <img className="iconFooterFacebook" src={facebook} alt="" />
+              <img className="iconFooter" src={youtube} alt="" />
+              <img className="iconFooter" src={twitter} alt="" />
             </div>
           </div>
           <div>
             <input
-              className={style.input}
+              className="inputFooterEmail"
               type="text"
               placeholder="your email adress"
             />
