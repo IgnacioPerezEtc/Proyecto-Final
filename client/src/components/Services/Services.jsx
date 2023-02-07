@@ -2,6 +2,14 @@ import React from "react";
 import style from "./Services.module.css";
 import "./Services.css";
 import restaurant from "../../assets/icons/restaurant.svg";
+import { faHeart, faMapLocationDot } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCreditCard } from "@fortawesome/free-solid-svg-icons";
+import { faPencil } from "@fortawesome/free-solid-svg-icons";
+import { faMoon } from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { faBed } from "@fortawesome/free-solid-svg-icons";
+import { faRobot} from "@fortawesome/free-solid-svg-icons";
 const Services = () => {
   return (
     <div className={style.containerService} id="services">
@@ -15,7 +23,7 @@ const Services = () => {
         <div className="containerCardsServices">
           <div>
             <div className={style.imageContainer}>
-              <img className={style.img} src={restaurant} alt="" />
+            <FontAwesomeIcon className={style.iconService} icon={faMapLocationDot} />
             </div>
           </div>
           <h3 className={style.title}>Maps</h3>
@@ -27,7 +35,7 @@ const Services = () => {
         <div className="containerCardsServices">
           <div>
             <div className={style.imageContainer}>
-              <img className={style.img} src={restaurant} alt="" />
+            <FontAwesomeIcon className={style.iconHeart} icon={faHeart} />
             </div>
           </div>
           <h3 className={style.title}>Favorites</h3>
@@ -38,7 +46,7 @@ const Services = () => {
         <div className="containerCardsServices">
           <div>
             <div className={style.imageContainer}>
-              <img className={style.img} src={restaurant} alt="" />
+            <FontAwesomeIcon className={style.iconCreditCard} icon={faCreditCard} />
             </div>
           </div>
           <h3 className={style.title}>Payment</h3>
@@ -50,7 +58,7 @@ const Services = () => {
         <div className="containerCardsServices">
           <div>
             <div className={style.imageContainer}>
-              <img className={style.img} src={restaurant} alt="" />
+            <FontAwesomeIcon className={style.iconCreditCard} icon={faPencil} />
             </div>
           </div>
           <h3 className={style.title}>History reservation</h3>
@@ -64,7 +72,7 @@ const Services = () => {
         <div className="containerCardsServices">
           <div>
             <div className={style.imageContainer}>
-              <img className={style.img} src={restaurant} alt="" />
+            <FontAwesomeIcon className={style.iconMoon} icon={faMoon} />
             </div>
           </div>
           <h3 className={style.title}>Dark Mode</h3>
@@ -75,7 +83,7 @@ const Services = () => {
         <div className="containerCardsServices">
           <div>
             <div className={style.imageContainer}>
-              <img className={style.img} src={restaurant} alt="" />
+            <FontAwesomeIcon className={style.iconMail} icon={faEnvelope} />
             </div>
           </div>
           <h3 className={style.title}>Email confirmation</h3>
@@ -86,7 +94,7 @@ const Services = () => {
         <div className="containerCardsServices">
           <div>
             <div className={style.imageContainer}>
-              <img className={style.img} src={restaurant} alt="" />
+            <FontAwesomeIcon className={style.iconBed} icon={faBed} />
             </div>
           </div>
           <h3 className={style.title}>View Rooms</h3>
@@ -98,7 +106,7 @@ const Services = () => {
         <div className="containerCardsServices">
           <div>
             <div className={style.imageContainer}>
-              <img className={style.img} src={restaurant} alt="" />
+            <FontAwesomeIcon className={style.iconMessage} icon={faRobot} />
             </div>
           </div>
           <h3 className={style.title}>Chat Bot</h3>
