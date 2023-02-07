@@ -3,7 +3,7 @@ import emailjs from "@emailjs/browser";
 import axios from "axios";
 
 export const GET_ALL_HOTELS = "GET_ALL_HOTELS";
-export const GET_FAVORITE_HOTELS = "GET_FAVORITE_HOTELS"
+export const GET_FAVORITE_HOTELS = "GET_FAVORITE_HOTELS";
 export const GET_HOTEL_BY_ID = "GET_HOTEL_BY_ID";
 export const GET_HOTEL_BY_NAME = "GET_HOTEL_BY_NAME";
 export const CREATE_HOTEL = "CREATE_HOTEL ";
@@ -32,14 +32,14 @@ export function getAllHotels() {
   };
 }
 
-export function getFavoriteHotels(id){
+export function getFavoriteHotels(id) {
   return async function (dispatch) {
-    const { data } = await axios.get(`/favorites/${id}`)
+    const { data } = await axios.get(`/favorites/${id}`);
     return dispatch({
       type: GET_FAVORITE_HOTELS,
-      payload: data
-    })
-  }
+      payload: data,
+    });
+  };
 }
 
 export function setError(payload) {
@@ -82,20 +82,10 @@ export const getHotelByName = (name) => {
   };
 };
 
-export const putHotel = (id) => {
-  return async (dispatch) => {
-    try {
-      const json = await axios.put(`/edit/${id}`);
-      return dispatch({
-        type: PUT_HOTEL,
-        payload: json.data,
-      });
-    } catch (error) {
-      return dispatch({
-        type: ERROR,
-        payload: "User hasn't been found",
-      });
-    }
+export const putHotel = (id, data) => {
+  return async () => {
+    const json = await axios.put(`/hotels/edit/${id}`, data);
+    return json;
   };
 };
 export const clearHotelDetail = () => {
@@ -208,6 +198,7 @@ export const getRooms = () => {
 
 export const FIND_OR_CREATE = "FIND_OR_CREATE";
 export const LOGOUT = "LOGOUT";
+export const GET_USER_BY_ID = "GET_USER_BY_ID";
 
 export const findOrCreate = async (data) => {
   const result = await axios.post("/user", data);
@@ -224,6 +215,23 @@ export const logOut = () => {
     window.location.href = "/";
   }, 1);
 };
+
+export function getUserById(id) {
+  return async function (dispatch) {
+    try {
+      const json = await axios.get(`/user/${id}`);
+      return dispatch({
+        type: GET_USER_BY_ID,
+        payload: json.data,
+      });
+    } catch (error) {
+      return dispatch({
+        type: ERROR,
+        payload: "The user with that id hasn't been found",
+      });
+    }
+  };
+}
 
 // *********************** SEND EMAIL ************************
 

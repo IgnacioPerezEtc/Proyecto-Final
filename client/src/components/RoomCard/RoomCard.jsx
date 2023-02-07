@@ -22,6 +22,7 @@ const RoomCard = ({
   nameHotel,
   numRoom,
   id,
+  description,
 }) => {
   const dispatch = useDispatch();
 
@@ -51,10 +52,7 @@ const RoomCard = ({
                   <p className={style.priceContainer}>${price}</p>
                 </div>
                 <div className={`${style.Data} d-flex justify-content-between`}>
-                  <p>
-                    Lorem ipsum dolor sit amet consecte Eos voluptas atque
-                    aspernatur! Dicta, soluta.
-                  </p>
+                
                 </div>
                 <Card.Text
                   className={`${style.childAdultsContainer} fs-5`}
@@ -86,8 +84,7 @@ const RoomCard = ({
                 </div>
                 <div className={`${style.Data} d-flex justify-content-between`}>
                   <p className={style.param}>
-                    Lorem ipsum dolor sit amet consecte Eos voluptas atque
-                    aspernatur! Dicta, soluta.
+                    {description}
                   </p>
                 </div>
                 <Card.Text

@@ -23,9 +23,9 @@ const Services = () => {
               <img className={style.img} src={restaurant} alt="" />
             </div>
           </div>
-          <h3 className={style.title}>Restaurant</h3>
+          <h3 className={style.title}>Maps</h3>
           <p className={style.paraf}>
-            Lorem ipsum dolor sit amet, consectetur{" "}
+          You can find your hotel more precisely, with the streets that appear on the map. {" "}
           </p>
         </div>
         <div className="containerCardsServices">
@@ -34,9 +34,9 @@ const Services = () => {
               <img className={style.img} src={restaurant} alt="" />
             </div>
           </div>
-          <h3 className={style.title}>Restaurant</h3>
+          <h3 className={style.title}>Favorites</h3>
           <p className={style.paraf}>
-            Lorem ipsum dolor sit amet, consectetur{" "}
+          You can add the hotels that most appeal to you to a favorites list.{" "}
           </p>
         </div>
         <div className="containerCardsServices">
@@ -45,9 +45,9 @@ const Services = () => {
               <img className={style.img} src={restaurant} alt="" />
             </div>
           </div>
-          <h3 className={style.title}>Restaurant</h3>
+          <h3 className={style.title}>Payment</h3>
           <p className={style.paraf}>
-            Lorem ipsum dolor sit amet, consectetur{" "}
+          We have a payment gateway so you can make your payments more securely.{" "}
           </p>
         </div>
         <div className="containerCardsServices">
@@ -56,9 +56,9 @@ const Services = () => {
               <img className={style.img} src={restaurant} alt="" />
             </div>
           </div>
-          <h3 className={style.title}>Restaurant</h3>
+          <h3 className={style.title}>History reservation</h3>
           <p className={style.paraf}>
-            Lorem ipsum dolor sit amet, consectetur{" "}
+          You have a reservation history so you don't forget your check in/out.{" "}
           </p>
         </div>
       </div>
@@ -69,9 +69,9 @@ const Services = () => {
               <img className={style.img} src={restaurant} alt="" />
             </div>
           </div>
-          <h3 className={style.title}>Restaurant</h3>
+          <h3 className={style.title}>Dark Mode</h3>
           <p className={style.paraf}>
-            Lorem ipsum dolor sit amet, consectetur{" "}
+          You can change the screen mode as you like.{" "}
           </p>
         </div>
         <div className="containerCardsServices">
@@ -80,9 +80,9 @@ const Services = () => {
               <img className={style.img} src={restaurant} alt="" />
             </div>
           </div>
-          <h3 className={style.title}>Restaurant</h3>
+          <h3 className={style.title}>Email confirmation</h3>
           <p className={style.paraf}>
-            Lorem ipsum dolor sit amet, consectetur{" "}
+          We have an email notice to notify you that your purchase is made.{" "}
           </p>
         </div>
         <div className="containerCardsServices">
@@ -91,9 +91,9 @@ const Services = () => {
               <img className={style.img} src={restaurant} alt="" />
             </div>
           </div>
-          <h3 className={style.title}>Restaurant</h3>
+          <h3 className={style.title}>View Rooms</h3>
           <p className={style.paraf}>
-            Lorem ipsum dolor sit amet, consectetur{" "}
+          You can view each available room with its specialties without prior reservation.{" "}
           </p>
         </div>
         <div className="containerCardsServices">
@@ -102,9 +102,9 @@ const Services = () => {
               <img className={style.img} src={restaurant} alt="" />
             </div>
           </div>
-          <h3 className={style.title}>Restaurant</h3>
+          <h3 className={style.title}>Chat Bot</h3>
           <p className={style.paraf}>
-            Lorem ipsum dolor sit amet, consectetur{" "}
+          We have a chat bot so you can answer your questions.{" "}
           </p>
         </div>
       </div>

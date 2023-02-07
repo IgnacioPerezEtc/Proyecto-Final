@@ -167,10 +167,6 @@ const HotelDetail = (props) => {
                         </li>
                       );
                     })}
-                    <li className="offPoolDetail">Public Pool</li>
-                    <li className="offBarDetail">Bar</li>
-                    <li className="offResturantDetail">Restaurant</li>
-                    <li className="offWifiDetail">Wi-Fi</li>
                   </ul>
                   <hr className={style.hr} />
                   <h2 className="titleOffHotel">Security & Advantages</h2>
@@ -201,26 +197,7 @@ const HotelDetail = (props) => {
               <div className={style.containerDescription}>
                 <h2 className={style.titleDescription}>Description</h2>
                 <p className={style.description}>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad
-                  rerum repellendus esse recusandae voluptatem facilis libero
-                  modi eius labore error dolore quia porro ipsam deserunt
-                  accusamus, est possimus nostrum! Sed.
-                </p>
-                <p className={style.description}>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad
-                  rerum repellendus esse recusandae voluptatem facilis libero
-                  modi eius labore error dolore quia porro ipsam deserunt
-                  accusamus, est possimus nostrum! Sed. Lorem ipsum dolor sit
-                  amet consectetur adipisicing elit. Aspernatur omnis soluta
-                  quaerat iste facilis ab dignissimos unde. Tenetur illum autem
-                  ea temporibus quis, culpa, qui eum velit doloremque, facere
-                  molestias.
-                </p>
-                <p className={style.description}>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad
-                  rerum repellendus esse recusandae voluptatem facilis libero
-                  modi eius labore error dolore quia porro ipsam deserunt
-                  accusamus,
+                  {hotelDetail.description}
                 </p>
               </div>
               <div className={style.containerDescription}>

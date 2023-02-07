@@ -19,12 +19,6 @@ const AboutUs = (props) => {
         <h1 className={style.title}>About us</h1>
       </div>
       <div className={style.flexContainer}>
-        <p className={style.paramUs}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate,
-          obcaecati vero perferendis nostrum vel excepturi autem expedita animi
-          deleniti debitis, accusamus velit nam, id voluptate quae? Impedit
-          assumenda voluptatibus numquam!
-        </p>
       </div>
 
       <div className={style.containerAboutUs}>

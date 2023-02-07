@@ -42,6 +42,7 @@ const Hotels = () => {
                     //   return <p>{language}</p>;
                     // })}
                     languages={hotel.languages}
+                    description={hotel.description}
                   />
                 );
               })}

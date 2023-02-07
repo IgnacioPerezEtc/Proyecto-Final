@@ -23,7 +23,7 @@ const Footer = () => {
           </div>
           <div>
             <p className={style.param}>
-              Lorem ipsum dolor sit amet, consectetur{" "}
+              The best website to booking online{" "}
             </p>
           </div>
 

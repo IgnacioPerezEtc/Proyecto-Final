@@ -31,6 +31,18 @@ module.exports = (sequelize) => {
 
         favoriteHotels: {
             type: DataTypes.ARRAY(DataTypes.INTEGER),
+        },
+
+        img: {
+            type: DataTypes.STRING,
+        },
+
+        address: {
+            type: DataTypes.STRING,
+        },
+
+        phone: {
+            type: DataTypes.STRING,
         }
 
     },
