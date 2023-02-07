@@ -1,0 +1,11 @@
+.descRoomsCard{
+    text-align: center;
+    color: black;
+    margin-left: auto;
+    margin-right: auto;
+    width: 800px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 200;
+    font-size: 1.4rem;
+    line-height: 2rem;
+}

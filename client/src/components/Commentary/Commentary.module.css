@@ -19,7 +19,7 @@
   display: flex;
 }
 
-.blue {
+.blueComentary {
   color: var(--color-blue);
   float: left;
   font-size: 48px;
@@ -95,6 +95,8 @@ text-align: center;
   padding-left: 12px;
   padding-right: 12px;
   color: #333333;
+  margin-top: 10px;
+  margin-bottom: -15px;
 }
 
 .containerComments {
@@ -114,8 +116,14 @@ text-align: center;
   top: 15px;
 }
 
+<<<<<<< HEAD
 .img {
   width: 60px;
   height: 60px;
   border-radius: 30px;
 }
+=======
+.h2Commentary{
+  color: black;
+}
+>>>>>>> bbc48f7dd36fd01419faab7911589e96e5df3520

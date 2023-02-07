@@ -102,7 +102,7 @@ const EditHotel = () => {
   let array = [];
 
   const saveChanges = (id) => {
-    dispatch(putHotel(id));
+    dispatch(putHotel(id, inputs));
     alert("Modified");
   };
 
@@ -110,11 +110,8 @@ const EditHotel = () => {
     <div>
       {hotel.id === parseInt(id) ? (
         <div className={style.containerDetail}>
-         
           <div className={style.containerCard}>
-     
             <div className={style.containerImgTitle}>
-            <h1> Edit Mode</h1>
               <div className={style.galleryContainer}>
                 <div className={style.containerImg}>
                   <img
@@ -184,10 +181,6 @@ const EditHotel = () => {
                         </li>
                       );
                     })}
-                    <li className={style.off}>Public Pool</li>
-                    <li className={style.off}>Bar</li>
-                    <li className={style.off}>Restaurant</li>
-                    <li className={style.off}>Wi-Fi</li>
                   </ul>
                   <div>
                     <button>Edit</button>
