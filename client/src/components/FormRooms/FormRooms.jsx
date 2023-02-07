@@ -10,21 +10,21 @@ import { createRoom } from "../../redux/actions";
 
 const FormRooms = () => {
   const { id } = useParams();
-  const info = JSON.parse(localStorage.getItem("user"));
-  const alert = () => {
-    Swal.fire({
-      title: "Sorry",
-      text: "you dont have the permission to enter",
-    });
-    window.setTimeout(() => {
-      window.location.href = "/";
-    }, 2500);
-  };
-  if (!info) {
-    alert()
-  } else if (info[0].admin === false) {
-    alert()
-  }
+  // const info = JSON.parse(localStorage.getItem("user"));
+  // const alert = () => {
+  //   Swal.fire({
+  //     title: "Sorry",
+  //     text: "you dont have the permission to enter",
+  //   });
+  //   window.setTimeout(() => {
+  //     window.location.href = "/";
+  //   }, 2500);
+  // };
+  // if (!info) {
+  //   alert()
+  // } else if (info[0].admin === false) {
+  //   alert()
+  // }
 
   const dispatch = useDispatch();
 
@@ -242,9 +242,10 @@ const FormRooms = () => {
                 value={imgExt}
                 onChange={(e) => handleImgExt(e)}
               />
-              <button onClick={ (e) => handlePlus(e) } name="imgExt">+</button>
-              <div>
-                <span className={style.span}>{imgExtErr}</span>
+              <div className={style.button}>
+                {
+                  input.pictureDetail?.length < 4 ? <button onClick={ (e) => handlePlus(e) } name="imgExt">+</button> : <p></p>
+                }
               </div>
             </div>
 
@@ -294,8 +295,11 @@ const FormRooms = () => {
         </div>
 
         <div className={style.containerImages}>
-          <h2>Picture Home: </h2>
+          <p className="fw-bold text-center display-1">
+            Picture <span className="text-danger">Home</span>
+          </p>
           <img src={input.pictureHome ? input.pictureHome : "https://www.salonlfc.com/wp-content/uploads/2018/01/image-not-found-1-scaled-1150x647.png"}/>
+
           <div>
             {
               input.pictureDetail?.map((img, index)=> {
@@ -303,7 +307,7 @@ const FormRooms = () => {
                     <div key={index}>
                       <img src={img} key={index}/>
                       {
-                        input.pictureDetail?.length < 4 ? <button onClick={(event) => handleDeleteImg(event)} name={img}>X</button> : <p></p>
+                        <button onClick={(event) => handleDeleteImg(event)} name={img}>X</button>
                       }
                       
                     </div>
