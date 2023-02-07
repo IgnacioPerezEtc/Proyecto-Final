@@ -1,0 +1,51 @@
+.footer {
+    background-color: #18445c;
+
+    padding: 80px;
+    padding-left: 10em;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    position: absolute;
+}
+
+
+@media screen and (max-width:1010px) {
+    .footer {
+        flex-direction: column;
+    }
+}
+
+.iconFooter {
+    text-align: start;
+    margin: 0.4em;
+    padding: 0.4em;
+    background-color: #50758e;
+    border-radius: 20px;
+    margin-bottom: 1.5em;
+    margin-top: 1.5em;
+    width: 3.5em;
+    height: 3.5m;
+}
+
+.iconFooterFacebook {
+    margin: 0.4em;
+    padding: 0.5em;
+    background-color: #50758e;
+    border-radius: 20px;
+    margin-bottom: 1.5em;
+    margin-top: 1.5em;
+    width: 3.5em;
+    height: 3.5m;
+}
+.inputFooterEmail {
+    padding: 0.8em 2em;
+    border-radius: 0.3em;
+    background-color: #50758e;
+    color: #fff;
+    border: none;
+    margin-left: -20px;
+  }

@@ -25,7 +25,7 @@
   font-weight: 200;
   font-size: 1.6rem;
   line-height: 2.4rem;
-  color: #747474;
+  color: black;
   line-height: 2rem;
 }
 .red {
@@ -53,7 +53,6 @@
 }
 
 .buttonInactive {
-  background-color: #071923 ;
   font-family: "Roboto", sans-serif;
   font-weight: 300;
   border: none;

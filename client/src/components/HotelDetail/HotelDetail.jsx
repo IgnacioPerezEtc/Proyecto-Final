@@ -6,6 +6,7 @@ import { useParams } from "react-router-dom";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import style from "./HotelDetail.module.css";
+import "./HotelDetail.css"
 import RoomCard from "../RoomCard/RoomCard";
 import { getHotelById } from "../../redux/actions";
 import NavBarDetails from "../NavBarDetails/NavBarDetails";
@@ -105,7 +106,7 @@ const HotelDetail = (props) => {
         hotelDetail.id === props.id) && (
         <div className={style.containerDetail}>
           <div className={style.containerCard}>
-            <div className={style.containerImgTitle}>
+            <div className="containerImgTitle">
               <div className={style.galleryContainer}>
                 <div className={style.containerImg}>
                   <img
@@ -124,7 +125,7 @@ const HotelDetail = (props) => {
               </div>
               <div className={style.containerNameLocation}>
                 <div>
-                  <h2 className={style.nameHotel}>
+                  <h2 className="nameHotelDetail">
                     {hotelDetail.name
                       ? hotelDetail.name.charAt(0).toUpperCase() +
                         hotelDetail.name.slice(1)
@@ -134,7 +135,7 @@ const HotelDetail = (props) => {
                 </div>
                 <div className={style.nameHotel}>
                   {/* <p className={style.nameDescription}>Location:</p> */}
-                  <p className={style.location}>{hotelDetail.location}.</p>
+                  <p className="locationHotelDetail">{hotelDetail.location}.</p>
                 </div>
                 <div className={style.containerRatingFlex}>
                   <div
@@ -143,10 +144,10 @@ const HotelDetail = (props) => {
                     <p className={style.rating}>{hotelDetail.rating}</p>
                   </div>
                   <div className={style.divTextRating}>
-                    <p className={style.textRecomm}>{textRating}</p>
+                    <p className="textRecomm">{textRating}</p>
                     {/* <p className={style.puntGral}>Puntuación general.</p> */}
-                    <a href="" className={style.linkCommentarios}>
-                      Ver comentarios.
+                    <a href="" className="linkCommentarios">
+                      Ver comentarios
                     </a>
                   </div>
                 </div>
@@ -155,28 +156,28 @@ const HotelDetail = (props) => {
 
             <div className={style.contianerInfoHotel}>
               <div className={style.containerSectionUno}>
-                <div className={style.containerAloj}>
-                  <h2 className={style.titleOffHotel}>This hotel offers</h2>
-                  <ul className={style.ulOff}>
-                    <li className={style.off}>{hotelDetail.rooms} Rooms</li>
+                <div className="containerAloj">
+                  <h2 className="titleOffHotel">This hotel offers</h2>
+                  <ul className="ulOff">
+                    <li className="offRoomsDetail">{hotelDetail.rooms} Rooms</li>
                     {ofrecimientosHotel.map((ofre) => {
                       return (
-                        <li className={style.off} key={ofre}>
+                        <li className="offParkinDetail" key={ofre}>
                           {ofre}
                         </li>
                       );
                     })}
-                    <li className={style.off}>Public Pool</li>
-                    <li className={style.off}>Bar</li>
-                    <li className={style.off}>Restaurant</li>
-                    <li className={style.off}>Wi-Fi</li>
+                    <li className="offPoolDetail">Public Pool</li>
+                    <li className="offBarDetail">Bar</li>
+                    <li className="offResturantDetail">Restaurant</li>
+                    <li className="offWifiDetail">Wi-Fi</li>
                   </ul>
                   <hr className={style.hr} />
-                  <h2 className={style.titleOff}>Security & Advantages</h2>
+                  <h2 className="titleOffHotel">Security & Advantages</h2>
                   <ul className={style.ulOff}>
-                    <li className={style.off}>Check-in & check-out web</li>
-                    <li className={style.off}>Secure payment methods</li>
-                    <li className={style.off}>Email confirming reservation</li>
+                    <li className="offCheckInDetail">Check-in & check-out web</li>
+                    <li className="offMethods">Secure payment methods</li>
+                    <li className="offEmail">Email confirming reservation</li>
                   </ul>
                 </div>
                 <div className={style.containerMap}>
