@@ -167,10 +167,6 @@ const HotelDetail = (props) => {
                         </li>
                       );
                     })}
-                    <li className="offPoolDetail">Public Pool</li>
-                    <li className="offBarDetail">Bar</li>
-                    <li className="offResturantDetail">Restaurant</li>
-                    <li className="offWifiDetail">Wi-Fi</li>
                   </ul>
                   <hr className={style.hr} />
                   <h2 className="titleOffHotel">Security & Advantages</h2>
