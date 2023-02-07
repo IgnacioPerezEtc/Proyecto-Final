@@ -186,11 +186,11 @@ const HotelDetail = (props) => {
                       array.push(parseFloat(hotelPosition));
                     })}
                     {/* { console.log(array)} */}
-                    {array.length === 2 ? (
+                    {/* {array.length === 2 ? (
                       <Maps positionDetail={array} />
                     ) : (
                       false
-                    )}
+                    )} */}
 
                     {/* { setMapCenter(array)} */}
                     {/* //////////////////////////////////////////////////////////////////////////////////////////// */}
