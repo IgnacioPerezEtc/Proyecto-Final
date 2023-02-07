@@ -39,6 +39,7 @@ const Rooms = () => {
                     maxAdult={room.maxAdult}
                     nameHotel={room.hotel.name}
                     price={room.value}
+                    description={room.description}
                   />
                 );
               })}

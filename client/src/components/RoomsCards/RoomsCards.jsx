@@ -1,5 +1,5 @@
 import React from "react";
-import style from "./RoomCards.module.css";
+import "./RoomCards.css";
 import HotelCard from "../HotelCard/HotelCard";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Keyboard, Autoplay } from "swiper";
@@ -16,14 +16,6 @@ const RoomsCards = (props) => {
           <p className="fw-bold text-center display-1">
             Our <span className="text-danger">Hotels</span>
           </p>
-
-          <p className="container-fluid text-center w-50">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas
-            quasi aut quo cumque veritatis obcaecati consectetur quas corporis
-            tenetur quisquam quos, voluptatem beatae a, ratione illo? Cumque
-            sint corrupti similique.
-          </p>
-
           <Swiper
             freeMode={true}
             grabCursor={true}

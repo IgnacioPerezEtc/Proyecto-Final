@@ -53,6 +53,16 @@ try {
 }
 })
 
+router.post("/bulk", async (req, res) => {
+    const array = req.body;
+    try {
+        const createAll = await roomController.bulkCreate(array);
+        return res.send(createAll);
+    } catch (error) {
+        return res.status(400).send({ error: error.message });
+    }
+})
+
 
 
 module.exports = router;

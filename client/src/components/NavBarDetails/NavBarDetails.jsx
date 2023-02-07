@@ -18,6 +18,18 @@ const NavBarDetails = () => {
       setLogin(true);
     }
   });
+  function darkMode() {
+    var element = document.body;
+    var content = document.getElementById("DarkModetext");
+    element.className = "dark-mode";
+    content.innerText = "Dark Mode is ON";
+  }
+  function lightMode() {
+    let element = document.body;
+    let content = document.getElementById("DarkModetext");
+    element.className = "light-mode";
+    content.innerText = "Dark Mode is OFF";
+  }
   return (
     <div>
       <nav className={` ${style.navBar} navbar navbar-expand-lg`}>
@@ -91,6 +103,10 @@ const NavBarDetails = () => {
                 <NavLink to={"/aboutUs"} className={style.linkLanding}>
                   About Us
                 </NavLink>
+              </li>
+              <li>
+                <button onClick={lightMode}>☀️</button>
+                <button onClick={darkMode}>🌜</button>
               </li>
               <li className="dropdown-center">
                 <a
