@@ -10,14 +10,11 @@ const Services = () => {
           <h2 className="blueOur">Our</h2>
           <h2 className={style.red}>Service</h2>
         </div>
-<<<<<<< HEAD
-=======
         <p className="descService">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tempor
           viverra
         </p>
         <p className="descService">parturient diam sagittis nec cras.</p>
->>>>>>> bbc48f7dd36fd01419faab7911589e96e5df3520
       </div>
       <div className={style.bodyService}>
         <div className="containerCardsServices">
