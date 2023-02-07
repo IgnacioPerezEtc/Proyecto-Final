@@ -28,7 +28,8 @@ async function getUserById(email) {
 async function postUser(newUser) {
     try {
         const createUser = await User.findOrCreate({
-            where: { email: newUser.email, name: newUser.name }
+            where: { email: newUser.email },
+            defaults: newUser
         });
         return createUser;
 
@@ -39,9 +40,7 @@ async function postUser(newUser) {
 
 async function putUser(email, data) {
     try {
-        await User.update({
-            name: data.name,
-        },
+        await User.update(data,
             {
                 where: { email: email }
             });
