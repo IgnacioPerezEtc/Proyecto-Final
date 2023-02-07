@@ -146,16 +146,13 @@ body {
  background-color: white;
  color: black;
 } */
-=======
-  background-color: #eee;
-}
 .dark-mode {
   color: white;
   background-color: #071923;
 }
 
 .dark-mode .color-blue {
-  color: white;
+  color: var(--letter-blue)
 }
 .titleContainer {
   color: #eee;
