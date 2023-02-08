@@ -17,6 +17,7 @@ import {
   PUT_HOTEL,
   CLEAR_HOTEL_DETAIL,
   GET_USER_BY_ID,
+  PUT_ROOM,
 } from "./actions";
 
 const initialState = {
@@ -77,6 +78,11 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         hotelDetail: action.payload,
+      };
+    }
+    case PUT_ROOM: {
+      return {
+        ...state,
       };
     }
     case GET_ROOM_BY_ID: {

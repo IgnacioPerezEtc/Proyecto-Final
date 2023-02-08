@@ -27,7 +27,7 @@ const HotelsAdmin = (props) => {
     dispatch(getHotelByName(name));
   };
   return (
-    <div>
+    <div id="hotelsAdmin" className={style.containerHotels}>
       <h1 className={style.h1}>Hotels</h1>
       <div className={style.container}>
         <table>
