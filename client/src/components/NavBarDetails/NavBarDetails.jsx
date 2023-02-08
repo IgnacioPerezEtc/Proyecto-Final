@@ -121,20 +121,18 @@ const NavBarDetails = () => {
                 </NavLink>
               </li>
               <li className={style.pages}>
-                <input
-                  type="checkbox"
-                  // checked={inputs.specialties.includes(spec) ? true : false}
-                  name="darkMode"
-                  checked={
-                    localStorage.getItem("theme") === "dark" ? true : false
-                  }
-                  value={localStorage.getItem("theme")}
-                  id={`switch`}
-                  className={style.switch}
-                  onClick={(e) => handleChecked(e)}
-                />
-                <label htmlFor={`switch`} className={style.lbl}></label>
-              </li>
+              <input
+                type="checkbox"
+                // checked={inputs.specialties.includes(spec) ? true : false}
+                name="darkMode"
+                checked={localStorage.getItem("theme")==="dark"?true:false}
+                value={localStorage.getItem("theme")}
+                id={`switch`}
+                className={style.switch}
+                onClick={(e) => handleChecked(e)}
+              />
+              <label htmlFor={`switch`} className={style.lbl}></label>
+            </li>
               <li className="dropdown-center">
                 <a
                   className={`${style.linkLanding} dropdown-toggle`}

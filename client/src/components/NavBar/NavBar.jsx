@@ -132,7 +132,7 @@ const NavBar = (props) => {
             <li className={style.pages}>
               <input
                 type="checkbox"
-                checked={localStorage.getItem("theme") === "dark" ? true : false}
+                // checked={localStorage.getItem("theme") === "dark" ? true : false}
                 name="darkMode"
                 value={localStorage.getItem("theme")}
                 id={`switch`}
