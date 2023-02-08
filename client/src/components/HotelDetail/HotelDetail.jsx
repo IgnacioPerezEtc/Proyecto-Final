@@ -26,6 +26,7 @@ const HotelDetail = (props) => {
   const dispatch = useDispatch();
   const { id } = useParams();
   const hotelDetail = useSelector((state) => state.hotelDetail);
+  const [info, setInfo] = useState(JSON.parse(localStorage.getItem("user")));
   const star = hotelDetail.category;
   let imgs = [];
   let stars = [];
@@ -251,11 +252,13 @@ const HotelDetail = (props) => {
                   </div>
                 </div>
               </div>
-              <div className={style.flexContainer}>
-                <NavLink to={"/formHotels"}>
-                  <button className={style.createRoom}>Create Room</button>
-                </NavLink>{" "}
-              </div>
+              {info && info[0].admin === true && (
+                <div className={style.flexContainer}>
+                  <NavLink to={"/formHotels"}>
+                    <button className={style.createRoom}>Create Room</button>
+                  </NavLink>{" "}
+                </div>
+              )}
             </div>
           ) : (
             <div>

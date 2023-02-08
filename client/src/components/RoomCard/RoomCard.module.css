@@ -65,4 +65,11 @@ p {
 }
 .param{
   text-align: start;
+  margin: 0;
+}
+.Data{
+  min-height: 60px;
+  max-height: 60px;
+  margin: 0 0 1em 0;
+  overflow: hidden;
 }
