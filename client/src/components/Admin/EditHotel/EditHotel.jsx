@@ -6,21 +6,32 @@ import HotelDetail from "../../HotelDetail/HotelDetail";
 import style from "./EditHotel.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Maps from "../../Maps/Maps.jsx";
+import { FaStar } from "react-icons/fa";
 import { faCheck, faStar } from "@fortawesome/free-solid-svg-icons";
 import { putHotel } from "../../../redux/actions";
+import AppModal from "../Modal/AppModal";
 import axios from "axios";
 const EditHotel = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const hotel = useSelector((state) => state.hotelDetail);
+  const [category, setCategory] = useState(null);
+  const [hover, setHover] = useState(null);
+
+  const servicies = ["parking", "restaurant", "publicPool", "bar", "wifi"];
   const [inputs, setInputs] = useState({
     name: "",
     rooms: "",
     location: "",
     description: "",
     pictureHome: "",
-    servicies: [],
+    parking: "",
+    restaurant: "",
+    publicPool: "",
+    hidden: "",
+    bar: "",
+    wifi: "",
     rating: "",
     languages: [],
     category: "",
@@ -38,11 +49,31 @@ const EditHotel = () => {
         rating: response.data[0].rating,
         languages: response.data[0].languages,
         category: response.data[0].category,
+        parking: response.data[0].parking,
+        restaurant: response.data[0].restaurant,
+        publicPool: response.data[0].publicPool,
+        bar: response.data[0].bar,
+        wifi: response.data[0].wifi,
+        hidden: response.data[0].hidden,
       });
+      setCategory(response.data[0].category);
     });
     dispatch(getHotelById(id));
   }, []);
-
+  const handleChangeCategory = (event) => {
+    console.log(event.target);
+    event.preventDefault();
+    setInputs({
+      ...inputs,
+      [event.target.name]: event.target.value,
+    });
+  };
+  const handleChecked = (event) => {
+    setInputs({
+      ...inputs,
+      [event.target.name]: event.target.checked,
+    });
+  };
   const handleChange = (e) => {
     e.preventDefault();
     setInputs({
@@ -88,17 +119,6 @@ const EditHotel = () => {
   };
   const textRating = ratingLet(hotel.rating);
 
-  const ofrece = () => {
-    let ofrecimientos = [];
-    if (hotel.parking === true) ofrecimientos.push("Parking");
-    if (hotel.restaurant === true) ofrecimientos.push("Restaurant");
-    hotel.publicPool === true ? ofrecimientos.push("Public Pool") : "";
-    hotel.bar === true ? ofrecimientos.push("Bar") : "";
-    hotel.wifi === true ? ofrecimientos.push("Wi-Fi") : "";
-
-    return ofrecimientos;
-  };
-  const ofrecimientosHotel = ofrece();
   let array = [];
 
   const saveChanges = (id) => {
@@ -112,6 +132,19 @@ const EditHotel = () => {
         <div className={style.containerDetail}>
           <div className={style.containerCard}>
             <div className={style.containerImgTitle}>
+              <div className={style.containerHidden}>
+                <label className={style.hidden}>Hidden</label>
+                <input
+                  type="checkbox"
+                  checked={inputs.hidden === true ? true : false}
+                  name="hidden"
+                  value={inputs.hidden}
+                  id={`switchhidden`}
+                  className={style.switch}
+                  onChange={(e) => handleChecked(e)}
+                />
+                <label htmlFor={`switchhidden`} className={style.lbl2}></label>
+              </div>
               <div className={style.galleryContainer}>
                 <div className={style.containerImg}>
                   <img
@@ -129,14 +162,45 @@ const EditHotel = () => {
                 </div>
               </div>
               <div className={style.containerNameLocation}>
-                <div>
-                  <input
-                    className={style.nameHotel}
-                    value={inputs.name}
-                    name="name"
-                    onChange={handleChange}
-                  ></input>
-                  <span className={style.spacingStars}>{stars}</span>
+                <div className={style.containerNameStar}>
+                  <div>
+                    <input
+                      className={style.nameHotel}
+                      value={inputs.name}
+                      name="name"
+                      onChange={handleChange}
+                    ></input>
+                  </div>
+
+                  <div className={style.containerCategory}>
+                    {[...Array(5)].map((star, index) => {
+                      const categoryValue = index + 1;
+
+                      return (
+                        <label key={index}>
+                          <input
+                            type="radio"
+                            name="category"
+                            value={categoryValue}
+                            onClick={() => setCategory(categoryValue)}
+                            onChange={(e) => handleChangeCategory(e)}
+                            className={style.inputRadio}
+                          />
+                          <FaStar
+                            className={style.star}
+                            size={25}
+                            onMouseEnter={() => setHover(categoryValue)}
+                            onMouseLeave={() => setHover(null)}
+                            color={
+                              categoryValue <= (hover || category)
+                                ? "#ffc107"
+                                : "gray"
+                            }
+                          />
+                        </label>
+                      );
+                    })}
+                  </div>
                 </div>
                 <div className={style.nameHotel}>
                   {/* <p className={style.nameDescription}>Location:</p> */}
@@ -174,17 +238,29 @@ const EditHotel = () => {
                       />
                       <label htmlFor="">Rooms</label>
                     </li>
-                    {ofrecimientosHotel.map((ofre, i) => {
+                    {servicies.map((serv, index) => {
                       return (
-                        <li className={style.off} key={ofre}>
-                          {ofre}
+                        <li className={style.off} key={index}>
+                          <label>
+                            {serv.charAt(0).toUpperCase() + serv.slice(1)}
+                          </label>
+                          <input
+                            type="checkbox"
+                            checked={inputs[serv] === true ? true : false}
+                            name={serv}
+                            value={inputs.serv}
+                            id={`switch${index}`}
+                            className={style.switch}
+                            onChange={(e) => handleChecked(e)}
+                          />
+                          <label
+                            htmlFor={`switch${index}`}
+                            className={style.lbl}
+                          ></label>
                         </li>
                       );
                     })}
                   </ul>
-                  <div>
-                    <button>Edit</button>
-                  </div>
 
                   <hr className={style.hr} />
                   <h2 className={style.titleOff}>Security & Advantages</h2>
@@ -219,9 +295,7 @@ const EditHotel = () => {
                   value={inputs.description}
                   onChange={handleChange}
                   name="description"
-                >
-                  
-                </textarea>
+                ></textarea>
               </div>
               <div className={style.containerDescription}>
                 <h2 className={style.titleDescription}>
