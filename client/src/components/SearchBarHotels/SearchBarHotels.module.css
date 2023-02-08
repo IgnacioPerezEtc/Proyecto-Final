@@ -262,3 +262,7 @@ input:focus {
   transform: scale(0.98);
   background-color: var(--letter-blue);
 }
+.optionItem{
+  border: none;
+  outline: none;
+}

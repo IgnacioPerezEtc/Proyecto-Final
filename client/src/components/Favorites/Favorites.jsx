@@ -16,7 +16,7 @@ const Favorites = () => {
   const user = JSON.parse(localStorage.getItem("user"));
   const allHotels = useSelector((state) => state.allHotels);
   let favs = useSelector((state) => state.favoriteHotels);
-  const hotels = allHotels.filter((hotel) => favs.includes(hotel.id));
+  const hotels = allHotels.filter((hotel) => favs?.includes(hotel.id));
 
   useEffect(() => {
     dispatch(getAllHotels());
@@ -24,7 +24,7 @@ const Favorites = () => {
     console.log(favs.length);
   }, [dispatch, favs.length]);
 
-  if (hotels.length === 0) {
+  if (hotels.length === 0||error||!user[0]) {
     return (
       <div>
         <div>
@@ -48,6 +48,10 @@ const Favorites = () => {
   }
   return (
     <div>
+      <div>
+         <NavBarDetails />
+      </div>
+      
       {hotels.length ? (
         <div>
           <div className={style.titleContainer}>

@@ -8,7 +8,15 @@ import { getAllHotels } from "../../redux/actions";
 import { useDispatch } from "react-redux";
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
+import icon from 'leaflet/dist/images/marker-icon.png';
+import iconShadow from 'leaflet/dist/images/marker-shadow.png';
+import L from 'leaflet';
+
 const Maps = ({ positionDetail }) => {
+const MarkerIcon = L.icon({
+    iconUrl: icon,
+    shadowUrl: iconShadow
+  });
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getAllHotels());
@@ -30,20 +38,18 @@ const Maps = ({ positionDetail }) => {
             array.push(parseFloat(hotelPosition));
           });
           return (
-            <Marker key={array} position={array}>
+            <Marker key={array} position={array} icon={MarkerIcon}>
               <Popup key={array} position={array}>
                 <NavLink className={style.navlink} to={`../hotels/${hotel.id}`}>
                   <h3 className={style.title}>
-                  
-                  {hotel.name[0].toUpperCase() + hotel.name.slice(1)}
-                </h3>
-                <img
-                  className={style.pictureHome}
-                  src={hotel.pictureHome}
-                  alt=""
-                />
+                    {hotel.name[0].toUpperCase() + hotel.name.slice(1)}
+                  </h3>
+                  <img
+                    className={style.pictureHome}
+                    src={hotel.pictureHome}
+                    alt=""
+                  />
                 </NavLink>
-                
               </Popup>
             </Marker>
           );
