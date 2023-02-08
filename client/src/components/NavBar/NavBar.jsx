@@ -14,7 +14,7 @@ import style from "./NavBar.module.css";
 const NavBar = (props) => {
   const location = useLocation();
   const [login, setLogin] = useState(false);
-
+  const [themeState, setThemeState] = useState(localStorage.getItem("theme"));
   const [info, setInfo] = useState(JSON.parse(localStorage.getItem("user")));
   useEffect(() => {
     if (info) {
@@ -38,18 +38,13 @@ const NavBar = (props) => {
   } else {
     darkMode();
   }
-
-  const handleClick = () => {
-    if (localStorage.getItem("theme") == "light") {
-      lightMode();
-    } else {
-      darkMode();
-    }
-  };
   const handleChecked = (event) => {
+
     if (event.target.checked === true) {
+      setThemeState("dark")
       darkMode();
     } else {
+      setThemeState("light")
       lightMode();
     }
   };
@@ -132,9 +127,9 @@ const NavBar = (props) => {
             <li className={style.pages}>
               <input
                 type="checkbox"
-                // checked={localStorage.getItem("theme") === "dark" ? true : false}
+                checked={themeState === "dark" ? true : false}
                 name="darkMode"
-                value={localStorage.getItem("theme")}
+                value={themeState}
                 id={`switch`}
                 className={style.switch}
                 onClick={(e) => handleChecked(e)}

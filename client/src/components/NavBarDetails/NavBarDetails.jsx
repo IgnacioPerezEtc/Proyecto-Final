@@ -11,7 +11,8 @@ import { logOut } from "../../redux/actions";
 import { useEffect } from "react";
 const NavBarDetails = () => {
   const [login, setLogin] = useState(false);
-
+  const [themeState, setThemeState] = useState(localStorage.getItem("theme"));
+  console.log(themeState);
   const [info, setInfo] = useState(localStorage.getItem("user"));
   useEffect(() => {
     if (info) {
@@ -37,8 +38,11 @@ const NavBarDetails = () => {
   }
   const handleChecked = (event) => {
     if (event.target.checked === true) {
+      setThemeState("dark")
       darkMode();
+      
     } else {
+      setThemeState("light")
       lightMode();
     }
   };
@@ -121,18 +125,17 @@ const NavBarDetails = () => {
                 </NavLink>
               </li>
               <li className={style.pages}>
-              <input
-                type="checkbox"
-                // checked={inputs.specialties.includes(spec) ? true : false}
-                name="darkMode"
-                checked={localStorage.getItem("theme")==="dark"?true:false}
-                value={localStorage.getItem("theme")}
-                id={`switch`}
-                className={style.switch}
-                onClick={(e) => handleChecked(e)}
-              />
-              <label htmlFor={`switch`} className={style.lbl}></label>
-            </li>
+                <input
+                  type="checkbox"
+                  checked={themeState === "dark" ? true : false}
+                  name="darkMode"
+                  value={localStorage.getItem("theme")}
+                  id={`switchdarkMode`}
+                  className={style.switch}
+                  onClick={(e) => handleChecked(e)}
+                />
+                <label htmlFor={`switchdarkMode`} className={style.lbl}></label>
+              </li>
               <li className="dropdown-center">
                 <a
                   className={`${style.linkLanding} dropdown-toggle`}
