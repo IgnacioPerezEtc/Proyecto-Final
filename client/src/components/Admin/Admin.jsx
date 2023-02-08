@@ -10,6 +10,23 @@ import HotelsAdmin from "./HotelsAdmin/HotelsAdmin";
 import RoomsAdmin from "./RoomsAdmin/RoomsAdmin";
 
 const Admin = () => {
+  function darkMode() {
+    localStorage.setItem("theme", "dark");
+    let element = document.body;
+    let content = document.getElementById("DarkModetext");
+    element.className = "dark-mode";
+  }
+  function lightMode() {
+    localStorage.setItem("theme", "light");
+    let element = document.body;
+    let content = document.getElementById("DarkModetext");
+    element.className = "light-mode";
+  }
+  if (localStorage.getItem("theme") == "light") {
+    lightMode();
+  } else {
+    darkMode();
+  }
   return (
     <div>
       <div>
@@ -92,6 +109,14 @@ const Admin = () => {
                 </ul>
               </div>
             </div>
+            <li>
+              <button className={style.btnMoon} onClick={darkMode}>
+                🌜
+              </button>
+              <button className={style.btnSun} onClick={lightMode}>
+                ☀️
+              </button>
+            </li>
             <NavLink className={`${style.navLink} navbar-brand`} to={"/home"}>
               Home
             </NavLink>
@@ -100,9 +125,8 @@ const Admin = () => {
       </div>
       <div className={style.containerInfo}>
         <HotelsAdmin />
-        <RoomsAdmin/>
+        <RoomsAdmin />
         <Users />
-
       </div>
     </div>
   );
