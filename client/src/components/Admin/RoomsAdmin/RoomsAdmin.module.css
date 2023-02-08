@@ -1,0 +1,33 @@
+.container {
+  overflow-y: scroll;
+  max-height: 80vh;
+}
+
+.containerRooms{
+  padding-top: 70px;
+}
+.h1 {
+  font-size: 3.8rem;
+  text-align: start;
+  color: var(--color-red);
+}
+
+.buttonEnab {
+  width: 24px;
+  height: 24px;
+  border: none;
+  background-color: transparent;
+}
+.imgEnaDis {
+  width: 20px;
+  height: 20px;
+}
+
+.id {
+  font-weight: 500 !important;
+}
+.formHotels {
+  padding-top: 20px;
+  text-align: center;
+}
+

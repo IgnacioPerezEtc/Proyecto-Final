@@ -4,7 +4,6 @@ import style from "./BookingCard.module.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { getUrlPayment } from "../../utils";
-import { redirect } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { dataReservation } from "../../redux/actions";
 
@@ -77,7 +76,7 @@ const BookingCard = (props) => {
                         <h3>Total</h3>
                         <h1>${props.price * props.days}</h1>
                     </div>
-
+                    
                     <button onClick={handlePayment} className={style.createHotel}>Confirm checkout</button>
                 </div>
             </div>

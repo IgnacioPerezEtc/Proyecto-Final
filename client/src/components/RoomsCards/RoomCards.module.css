@@ -1,0 +1,12 @@
+.red {
+    color: #d31b1b;
+    float: left;
+    font-size: 48px;
+    margin-right: 10px;
+    font-weight: 700;
+    margin-bottom: 35px;
+  }
+  .flexContainer{
+    display: flex;
+    justify-content: center;
+  }

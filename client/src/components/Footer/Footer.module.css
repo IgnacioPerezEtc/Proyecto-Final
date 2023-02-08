@@ -1,10 +1,10 @@
-h3 {
+.FirstTitle {
   font-size: 18.7px;
 }
-p {
+.param {
   font-size: 16px;
 }
-li {
+.list {
   font-size: 16px;
 }
 .firstflexContainer {
@@ -15,12 +15,8 @@ li {
 .bodyFooter {
   margin-top: 120px;
 }
-.footer {
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
-  position: absolute;
-}
+
+
 .FirstTitle {
   color: #fff;
   text-align: start;
@@ -32,12 +28,7 @@ li {
 .titles {
   color: #fff;
 }
-.footer {
-  background-color: #18445c;
 
-  padding: 80px;
-  padding-left: 10em;
-}
 .list {
   list-style: none;
   width: 12em;
@@ -51,14 +42,7 @@ li {
   margin-top: -2.5em;
   margin-left: -0.4em;
 }
-.input {
-  padding: 0.8em 2em;
-  border-radius: 0.3em;
-  background-color: #50758e;
-  color: #fff;
-  border: none;
-  margin-left: -20px;
-}
+
 ::placeholder {
   color: #fff;
   text-align: center;
@@ -71,27 +55,7 @@ li {
 .iconContainer {
   margin-left: -1em;
 }
-.icon {
-  text-align: start;
-  margin: 0.4em;
-  padding: 0.4em;
-  background-color: #50758e;
-  border-radius: 20px;
-  margin-bottom: 1.5em;
-  margin-top: 1.5em;
-  width: 3.5em;
-  height: 3.5m;
-}
-.iconFacebook {
-  margin: 0.4em;
-  padding: 0.5em;
-  background-color: #50758e;
-  border-radius: 20px;
-  margin-bottom: 1.5em;
-  margin-top: 1.5em;
-  width: 3.5em;
-  height: 3.5m;
-}
+
 .flex {
   display: flex;
 }

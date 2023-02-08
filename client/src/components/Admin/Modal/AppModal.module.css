@@ -1,0 +1,9 @@
+.buttonModal{
+    width: 60px;
+    height: 28px;
+    border: none;
+    background-color: var(--color-blue);
+    color: #fff;
+    border-radius: 8px;
+    margin-bottom: 16px;
+}

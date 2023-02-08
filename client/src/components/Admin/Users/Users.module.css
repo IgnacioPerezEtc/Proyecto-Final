@@ -1,0 +1,47 @@
+.containerPpalUsers {
+  padding-top: 70px;
+}
+
+.containerUsers {
+  background-color: #fff;
+  margin-top: 10px;
+}
+
+.h1 {
+  font-size: 3.8rem;
+  text-align: start;
+  color: var(--color-red);
+}
+
+.table {
+  width: 100%;
+  text-align: center;
+}
+
+.trHead th {
+  padding-top: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid black;
+  font-size: 1.8rem;
+  color: var(--color-blue);
+}
+
+.trBody th {
+  font-size: 1.6rem;
+  font-weight: lighter;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.205);
+}
+.buttonEnab {
+  width: 24px;
+  height: 24px;
+  border: none;
+  background-color: transparent;
+}
+.imgEnaDis {
+  width: 20px;
+  height: 20px;
+}
+
+

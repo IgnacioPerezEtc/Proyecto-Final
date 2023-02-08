@@ -1,3 +1,168 @@
+body {
+    /* padding: 25px; */
+    color: black;
+}
+.dark-mode {
+    background-color: #071923;
+}
+/* HotelsCards */
+.dark-mode .display-1  {
+    color: white; 
+}
+.dark-mode .w-50{
+    color:white;
+}
+.dark-mode .card{
+    background: #b2b2b2;
+}
+.dark-mode .text-dark{
+    color: #001D32;
+}
+
+.dark-mode .descRoomsCard{
+    color: white;
+}
+
+/* GALERY */
+.dark-mode .blueG{
+    color: white;
+}
+.dark-mode .desc-gallery{
+    color: white;
+}
+.dark-mode .buttonContainerE{
+    color: white;
+}
+.dark-mode .buttonInactive{
+    color: white;
+    background-color: #071923;
+}
+
+.dark-mode .buttonActive{
+    color: white;
+    background-color: #071923;
+}
+
+/* SERVICIOS */
+.dark-mode .blueOur{
+    color: white;
+}
+
+.dark-mode .descService 
+{
+    color: white;
+}
+
+.dark-mode .containerCardsServices{
+    background: #b2b2b2
+
+}
+/*comentarios*/
+
+.dark-mode .blueComentary{
+ color: white;
+}
+
+.dark-mode .descComment{
+    color:white
+}
+.dark-mode .containerComments{
+    background: #b2b2b2
+}
+
+.dark-mode .containerCards{
+    background: #b2b2b2;
+}
+
+.dark-mode .containerCards p{
+    color: black;
+   
+}
+.dark-mode .h2Commentary{
+    color: white;
+}
+
+/*footer*/
+.dark-mode .footer {
+    background-color: #0B0D17;
+}
+
+.dark-mode .iconFooter{
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.dark-mode .iconFooterFacebook{
+    background-color: rgba(255, 255, 255, 0.2);
+}
+.dark-mode .inputFooterEmail{
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/*DETALLE HOTEL*/
+.dark-mode .nameHotelDetail{
+    color: white;
+}
+
+.dark-mode .containerImgTitle{
+    background-color: #071923;
+}
+
+.dark-mode .locationHotelDetail{
+    color: white;
+}
+
+.dark-mode .textRecomm{
+    color: white;
+}
+
+.dark-mode .linkCommentarios{
+    color: white;
+}
+.dark-mode .containerDescription{
+    background-color:#b2b2b2;
+}
+.containerContact{
+    background-color:#b2b2b2;
+}
+.dark-mode .containerAloj{
+    background-color:#b2b2b2;
+}
+/* DETALLE */
+.dark-mode .offRoomsDetail{
+    color: black;
+    font-family: 'Roboto', sans-serif;  
+}
+.dark-mode .offParkinDetail{
+    color: black;
+    font-family: 'Roboto', sans-serif; 
+}
+.dark-mode .offPoolDetails {
+    color: black;
+    font-family: 'Roboto', sans-serif; 
+}
+.dark-mode .offBarDetail {
+    color: black;
+    font-family: 'Roboto', sans-serif; 
+}
+
+
+
+/* .light-mode {
+ background-color: white;
+ color: black;
+} */
+.dark-mode {
+  color: white;
+  background-color: #071923;
+}
+
+.dark-mode .color-blue {
+  color: var(--letter-blue)
+}
+.titleContainer {
+  color: #eee;
+}
+
 body{
-    background-color: #E5E5E5;
+    background-color: #e5e5e5;
 }

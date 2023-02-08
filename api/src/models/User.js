@@ -17,6 +17,32 @@ module.exports = (sequelize) => {
         admin: {
             type: DataTypes.BOOLEAN,
             defaultValue: false,
+        },
+
+        tokenAdmin: {
+            type: DataTypes.STRING,
+            defaultValue: "No",
+        },
+
+        blocked: {
+            type: DataTypes.BOOLEAN,
+            defaultValue: false,
+        },
+
+        favoriteHotels: {
+            type: DataTypes.ARRAY(DataTypes.INTEGER),
+        },
+
+        img: {
+            type: DataTypes.STRING,
+        },
+
+        address: {
+            type: DataTypes.STRING,
+        },
+
+        phone: {
+            type: DataTypes.STRING,
         }
 
     },

@@ -1,0 +1,23 @@
+.flexContainer{
+    display: flex;
+    justify-content: center;
+}
+.reload{
+
+    padding: 12px 20px;
+    background-color: var(--color-blue);
+    color: #fff;
+    font-size: 12px ;
+    border-radius: 15px;
+    border:none;
+margin-top: -12px;
+}
+.reload:hover{
+    background-color: var(--letter-blue);
+    transform: scale(0.95);
+    
+}
+.lost{
+    color: var(--color-blue);
+    font-size: 5em;
+}

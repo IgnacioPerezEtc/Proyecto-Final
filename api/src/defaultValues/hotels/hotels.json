@@ -1,27 +1,20 @@
 [
     {
-        "name": "la piña",
-        "rooms": 30,
-        "location": "under the sea, Pacific Ocean",
-        "description": "Come sleep in a pineapple under the sea. REQUIREMENT: Hold your breath. OPTIONAL: Being alive",
-        "parking": false,
-        "pictureHome": "https://cdn.upsocl.com/wp-content/uploads/2020/03/0000-131.jpg",
-        "rating": 5,
-        "languages": [
-            "spanish",
-            "english",
-            "french"
-        ],
-        "category": 5,
-        "phone": "+549862659631"
-    },
-    {
         "name": "carmona hotel",
         "rooms": 30,
-        "location": "Colombia, Cali",
-        "description": "The best meals and beds in town",
+        "location": "Cali, Colombia",
+        "description": "Near Gran Via, With a stay at Carmona Hotel, you'll be centrally located in Cali, within a 5-minute walk of Gran Via and Rialto Theater. This 5-star hotel is 0.4 mi (0.6 km) from Puerta del Sol and 0.4 mi (0.6 km) from Plaza de Colombia. You will feel at home in one of the 45 rooms with air conditioning and flat screen TV. Keep in touch with your loved ones thanks to the free Wi-Fi internet access. Private bathrooms with showers have free toiletries and hairdryers. Conveniences include a safe, plus housekeeping available daily. This hotel has a cafeteria for a quick bite to eat. However, you can also take advantage of calling room service available during limited hours. The breakfast buffet, with an additional charge, is served from Monday to Friday from 07:00 to 10:30, while on weekends the hours are from 07:00 to 11:00. This non-smoking hotel has a porter/bellboy. You will have a dry cleaning/laundry service, a 24-hour front desk, and an elevator at your disposal. There is a parking lot available.",
         "parking": true,
+        "restaurant": true,
+        "publicPool": true,
+        "bar": false,
+        "wifi": true,
         "pictureHome": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/329912073.jpg?k=f3bd32b917cdf897fd6013265a4fd8449964353d649e4aa99a7d2ec39ebf15d6&o=&hp=1",
+        "pictureDetail": [
+            "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/21/82/d6/b3/front-of-hotel.jpg?w=700&h=-1&s=1",
+            "https://upload.wikimedia.org/wikipedia/commons/6/64/Colony_Hotel_Miami_Beach_Izzy.JPG",
+            "https://c8.alamy.com/compes/d75h22/colony-hotel-south-beach-miami-beach-florida-ee-uu-d75h22.jpg"
+        ],
         "rating": 5,
         "languages": [
             "spanish",
@@ -29,15 +22,28 @@
             "french"
         ],
         "category": 5,
-        "phone": "+579862659631"
+        "phone": "+579862659631",
+        "position": [
+            "3.4368376956417364",
+            "-76.52370312288105"
+        ]
     },
     {
-        "name": "perez",
+        "name": "perez hotel",
         "rooms": 30,
-        "location": "Argentina, Villa gesell",
-        "description": "We dance until 10am",
+        "location": "Villa gesell, Argentina",
+        "description": "With a stay at Perez Hotel, you'll be centrally located in Villa Gesell, steps from Casino de Argentina and a few steps from Teatro Español. This 5-star hotel is close to Plaza Mayor and Prado Museum. You will feel at home in one of the 62 rooms with air conditioning, minibar and flat screen TV. Free Wi-Fi and wired Internet connection is provided. Bathrooms have designer toiletries and bidets. Conveniences include a safe and blackout drapes, plus housekeeping is available daily. Services Take advantage of the practical services offered to you, such as free Wi-Fi Internet connection or tour and ticket assistance. Dining A breakfast buffet is served for a fee. You will have free high-speed wired Internet access, express check-in, and free newspapers in the lobby at your disposal. Self parking (for a fee) is available.",
         "parking": true,
+        "restaurant": true,
+        "publicPool": false,
+        "bar": true,
+        "wifi": true,
         "pictureHome": "https://media-cdn.tripadvisor.com/media/photo-s/25/04/93/1e/blossom-hotel-houston.jpg",
+        "pictureDetail": [
+            "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/25/01/02/b0/blossom-hotel-houston.jpg?w=700&h=-1&s=1",
+            "https://image-tc.galaxy.tf/wijpeg-5d31a0ng3xso6t6d5dkyo0qfg/lobby-from-bar_standard.jpg?crop=197%2C0%2C1115%2C836",
+            "https://res.cloudinary.com/sagacity/image/upload/c_crop,h_735,w_980,x_0,y_0/c_limit,dpr_auto,f_auto,fl_lossy,q_80,w_1080/322793_original_jtmg7h.png"
+        ],
         "rating": 5,
         "languages": [
             "spanish",
@@ -45,30 +51,55 @@
             "french"
         ],
         "category": 5,
-        "phone": "+549862659631"
+        "phone": "+549862659631",
+        "position": [
+            "-37.2508493817602",
+            "-56.98543471411749"
+        ]
     },
     {
-        "name": "roman",
+        "name": "roman hotel",
         "rooms": 30,
         "location": "Buenos Aires, Argentina",
-        "description": "Place to schedule quietly.",
+        "description": "Located in the Puerto Madero neighborhood in Buenos Aires, Roman Hotel is 3 km from the Obelisk, a 20-minute drive from Plaza de Mayo and 32 km from Ezeiza Ministro Pistarini International Airport. The property offers free Wi-Fi internet and complimentary breakfast. Among the services available are an indoor pool, spa and gym, as well as meeting rooms and parking with additional charge. The Red Resto & Lounge offers a menu of regional and experimental cuisine, has a wine cellar and a sommelier who will advise guests. Buffet breakfast is served daily. Roman Hotel is located 100 m from the restaurants of Puerto Madero, the San Telmo neighborhood is 1 km away and the Jorge Newbery International Airport is 10 km away.",
         "parking": true,
+        "restaurant": false,
+        "publicPool": true,
+        "bar": true,
+        "wifi": true,
         "pictureHome": "https://media.staticontent.com/media/pictures/68e2e598-6dec-4fce-bc9e-9b5c79fb97b0/853x380",
+        "pictureDetail": [
+            "https://ba-central.buenosaireshotelsargentina.com/data/Photos/Big3/11625/1162500/1162500924.JPEG",
+            "https://media-cdn.tripadvisor.com/media/photo-s/09/4b/54/c1/the-hotel--v8949278.jpg",
+            "https://static11.com-hotel.com/uploads/hotel/10246/photo/lg_o2-hotel-buenos-aires_166884987811.jpg"
+        ],
         "rating": 1,
         "languages": [
             "spanish",
             "french"
         ],
         "category": 3,
-        "phone": "+549202659641"
+        "phone": "+549202659641",
+        "position": [
+            "-34.61856909546684", "-58.55415879823039"
+        ]
     },
     {
         "name": "arias hotel",
         "rooms": 70,
         "location": "Medellin, Colombia",
-        "description": "Modern, nice, family friendly, wifi, restaurant",
+        "description": "Arias Hotel is located in Medellin and has a reception with multilingual staff available at the reception 24 hours a day, 2 swimming pools and a spa with relaxation treatments. The hotel is located 700 m from the National Archaeological Museum, a 5-minute drive from the Prado Museum and 3 km from the Teatro Real. At Arias Hotel, the guest will have 7 dining options, including bars and restaurants. The hotel's Las Raíces offers dishes made with vegetables grown on the terrace, while Kabuki Arias explores Japanese cuisine. In addition to the indoor and outdoor pools, the establishment offers hydromassage, massages and a sauna at the Spa by Clarins. There is also a gym, business center and 900 m³ of space for meetings and events, as well as services for a fee such as parking and shuttle service to the airport and to the city.",
         "parking": true,
+        "restaurant": true,
+        "publicPool": true,
+        "bar": true,
+        "wifi": true,
         "pictureHome": "https://cloudfront-us-east-1.images.arcpublishing.com/infobae/MQN7YYRIQZBPBHHI6J6TRKFLR4.jpg",
+        "pictureDetail": [
+            "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/24/08/b2/3d/barlounge.jpg?w=700&h=-1&s=1",
+            "https://www.ahstatic.com/photos/1871_sw_00_p_1024x768.jpg",
+            "https://cf.bstatic.com/xdata/images/hotel/max1024x768/301874431.jpg?k=a562478d2c403972eed382ac7ec6bba7282242c83873ad39a45f526da313a149&o=&hp=1"
+        ],
         "rating": 5,
         "languages": [
             "spanish",
@@ -76,15 +107,28 @@
             "german"
         ],
         "category": 5,
-        "phone": "+573145691458"
+        "phone": "+573145691458",
+        "position": [
+            "6.2503414521512335",
+            "-75.58782388923332"
+        ]
     },
     {
         "name": "tejada hotel",
         "rooms": 33,
         "location": "Las vegas, United States",
-        "description": "Best place to bet your life",
+        "description": "Tejada Hotel is located in Las Vegas. It has a casino, a year-round outdoor pool and a hot tub / tub, as well as a spa service. The accommodation serves breakfast daily at an additional cost, which is offered in the restaurant. It also has a bar. Property staff will provide room service. Amenities include a sauna, massage service, valet parking, and golf course. Guests can also take advantage of a 24-hour reception and business center. For an additional fee, the property features wired internet in public areas, shuttle service in the surroundings and parking.",
         "parking": true,
+        "restaurant": true,
+        "publicPool": true,
+        "bar": true,
+        "wifi": false,
         "pictureHome": "https://cloudfront-us-east-1.images.arcpublishing.com/elespectador/POPEUU7WIJAW5NRWPQASXBBFSE.jpg",
+        "pictureDetail": [
+            "https://www.kayak.com/rimg/himg/d5/b8/2a/leonardo-116680976-1871_roska_00_p_3000x2250_O-622444.jpg?width=1366&height=768&crop=true",
+            "https://media-cdn.tripadvisor.com/media/photo-s/1c/c9/8f/c3/hotel-sofitel-legend.jpg",
+            "https://media.cntraveler.com/photos/59de61dbb921a46d64892012/16:9/w_2560%2Cc_limit/Courtyard-SofitelLegendSantaClaraCartagena-Colombia-CRHotel.jpg"
+        ],
         "rating": 5,
         "languages": [
             "english",
@@ -92,51 +136,122 @@
             "italian"
         ],
         "category": 5,
-        "phone": "+15542369875"
+        "phone": "+15542369875",
+        "position": [
+            "36.191696942882686",
+            "-115.24056215563334"
+        ]
     },
     {
         "name": "ruales hotel",
         "rooms": 54,
-        "location": "laureles, Colombia",
-        "description": "Best beds that you will know",
+        "location": "Laureles, Colombia",
+        "description": "Ruales Hotel is situated in Laureles. It offers free Wi-Fi in common areas, hot tub/tub and sauna, as well as massage service. The accommodation serves a daily breakfast, which is offered in the restaurant. It also has a bar and cafeteria. Property staff will provide room service. Amenities include free limited parking, fitness center, 24-hour reception, and free luggage storage. Guests can also enjoy tourist information and a business center. For a fee, the property features airport transfer service, shuttle service in the surroundings and laundry service.",
         "parking": false,
+        "restaurant": true,
+        "publicPool": true,
+        "bar": true,
+        "wifi": true,
         "pictureHome": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/327964031.jpg?k=9b9ea8177b2e7ae35b9a35aa72c396232eeb70548023ca3f53b3a5003bdf2b79&o=&hp=1",
+        "pictureDetail": [
+            "https://cf.bstatic.com/xdata/images/hotel/max1024x768/67989037.jpg?k=c7dec28dd8db3e6e0afb150c5b627d2a9be6154a3204da32dcf1d0c75df582c9&o=&hp=1",
+            "https://foto.hrsstatic.com/fotos/0/3/1280/1280/80/FFFFFF/http%3A%2F%2Ffoto-origin.hrsstatic.com%2Ffoto%2F4%2F6%2F1%2F3%2F461322%2F461322_u_7897581.jpg/7gzwoMpv6d7x%2BbwR4Afr4A%3D%3D/425%2C254/6/Moderno-Pavia-Info-5-461322.jpg",
+            "https://hotel-moderno-pavia.booked.mx/data/Photos/OriginalPhoto/8323/832351/832351040/Hotel-Moderno-Pavia-Exterior.JPEG"
+        ],
         "rating": 4,
         "languages": [
             "spanish",
             "english"
         ],
         "category": 4,
-        "phone": "+573156985236"
+        "phone": "+573156985236",
+        "position": [
+            "6.247434929342837",
+            "-75.5861147499675"
+        ]
     },
     {
         "name": "valer hotel",
         "rooms": 67,
-        "location": "lima, Peru",
-        "description": "Near to the bests tourist sites",
+        "location": "Lima, Peru",
+        "description": "A stay at Valer Hotel places you in the heart of Lima, this 5-star hotel is very close to Caffé Greco and Villa Borghese. You will feel at home in one of the 68 rooms with air conditioning, minibar and LED TV. The free Wi-Fi Internet connection will keep you in touch with your loved ones; You can also watch your favorite program on the TV with satellite channels. Dining Head to one of the hotel's 2 restaurants for a bite to eat, or take advantage of room service during limited hours. Quench your thirst with your favorite drink at the bar or lounge. You will have a business center, limo/drive service, and free newspapers in the lobby at your disposal. Event facilities at this hotel consist of conference space and a meeting room. Airport shuttle service (round trip) is offered for a fee (available 24 hours).",
         "parking": false,
+        "restaurant": true,
+        "publicPool": true,
+        "bar": false,
+        "wifi": true,
         "pictureHome": "https://media-cdn.tripadvisor.com/media/photo-s/0f/b2/f1/34/hyatt-regency-cartagena.jpg",
+        "pictureDetail": [
+            "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/b2/f1/3b/hyatt-regency-cartagena.jpg?w=700&h=-1&s=1",
+            "https://assets.hyatt.com/content/dam/hyatt/hyattdam/images/2017/03/16/0736/Hyatt-Regency-Cartagena-P073-Amacagua-Restaurant.jpg/Hyatt-Regency-Cartagena-P073-Amacagua-Restaurant.16x9.jpg?imwidth=1280",
+            "https://media.hrs.com/media/image/1e/96/d3/Hyatt_Regency_Cartagena-Cartagena-Aussenansicht-2-908711_1280x1280.jpg"
+        ],
         "rating": 5,
         "languages": [
             "spanish",
             "french"
         ],
         "category": 4,
-        "phone": "+512154869324"
+        "phone": "+512154869324",
+        "position": [
+            "-12.043594945679821",
+            "-77.04379702451114"
+        ]
     },
     {
         "name": "bustos hotel",
         "rooms": 15,
-        "location": "pekin, China",
-        "description": "the best exotic foods",
+        "location": "Pekin, China",
+        "description": "This 5-star hotel is close to Bank of China Tower and Beijing Convention and Exhibition Centre. You'll appreciate the leisure facilities, which include an outdoor pool, a hot tub, and a sauna. Eating Discover the delicious dishes of the 8 restaurants and the cafeteria of this hotel. And if you don't feel like going out, you can call the 24-hour room service. Unwind with a cool drink from the poolside bar or one of the 3 bars/lounges. You will have free high-speed Internet access (wired), a business center, and limousine or chauffeured car service at your disposal. Are you organizing an event in Beijing? 1,115 square meters of space consisting of conference space and meeting rooms are available at this hotel. Self parking (for a fee) is available.",
         "parking": true,
+        "restaurant": true,
+        "publicPool": true,
+        "bar": true,
+        "wifi": false,
         "pictureHome": "https://revistahsm.com/wp-content/uploads/2019/10/fachada-hotel-ilunion-atrium.jpg",
+        "pictureDetail": [
+            "https://www.ilunionatrium.com/cache/03/27/03277a9078c62cd8256dbb2852c3b798.jpg",
+            "https://ik.imgkit.net/3vlqs5axxjf/external/http://www.cfmedia.vfmleonardo.com/imageRepo/7/0/149/351/63/002_Facade_O.jpg?tr=w-1200%2Cfo-auto",
+            "https://www.ilunionatrium.com/cache/46/de/46de9342cf31ba3d51a0129ea3abe1f0.jpg"
+        ],
         "rating": 5,
         "languages": [
             "english",
             "chinese"
         ],
         "category": 5,
-        "phone": "+861458963254"
+        "phone": "+861458963254",
+        "position": [
+            "39.990910766716716",
+            "116.29853826015653"
+        ]
+    },
+    {
+        "name": "camey hotel",
+        "rooms": 102,
+        "location": "Ciudad de Mexico, Mexico",
+        "description": "Camey hotel is located in Mexico City. It has a water park, outdoor pool all year round and free Wi-Fi in common areas, as well as a hot tub / tub. The accommodation serves a daily breakfast, which is offered in the restaurant. It also has a bar and cafeteria, as well as a snack bar and bar in the pool area. Property staff will provide room service. Amenities include spa service, sauna, massage service, and free parking. Guests will also enjoy valet parking and tennis court. For a fee, the property features wi-fi in common areas, airport shuttle service, and shuttle service in the surrounding area.",
+        "parking": true,
+        "restaurant": true,
+        "publicPool": true,
+        "bar": true,
+        "wifi": true,
+        "pictureHome": "https://www.lafincaresort.com/sites/default/files/inline-images/timthumb%20%282%29.jpeg",
+        "pictureDetail": [
+            "https://cf.bstatic.com/xdata/images/hotel/max1024x768/306012211.jpg?k=83693852d4882581d8a40676f553c90fb9711317911807177a8183735782aa79&o=&hp=1",
+            "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/05/b4/0b/17/hotel-la-finca-golf-spa.jpg?w=700&h=-1&s=1",
+            "https://media-cdn.tripadvisor.com/media/photo-s/1f/fd/11/ee/664156-exterior.jpg"
+        ],
+        "rating": 5,
+        "languages": [
+            "spanish",
+            "english"
+        ],
+        "category": 5,
+        "phone": "+524489656425",
+        "position": [
+            "19.44516692202632",
+            "-99.14805391905757"
+        ]
     }
 ]

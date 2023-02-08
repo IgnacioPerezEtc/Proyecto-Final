@@ -42,17 +42,30 @@ router.post("/", async (req, res) => {
     } catch (error) {
         return res.status(400).send({ error: error.message });
     }
+});
+
+router.post("/bulk", async (req, res) => {
+    const array = req.body;
+    try {
+        const createAll = await hotelControllers.bulkCreate(array);
+        return res.send(createAll);
+    } catch (error) {
+        return res.status(400).send({ error: error.message });
+    }
 })
 
-// router.put("/edit/:id", async (req, res) => {
-//     const { id } = req.params;
-//     try {
-//         // const putHotel = await editHotel(id, req.body); //crear función en controllers
-//         return res.status(200).send("Hotel actualizado");
-//     } catch (error) {
-//         return res.status(404).send({ error: error.message });
-//     }
-// })
+router.put("/edit/:id", async (req, res) => {
+    const { id } = req.params;
+    const data = req.body;
+
+    try {
+        const updatedHotel = await hotelControllers.putHotel(id, data);
+        return res.status(200).send(updatedHotel);
+
+    } catch (error) {
+        return res.status(404).send({ error: error.message });
+    }
+})
 
 // router.delete ("/delete/:id", async (req, res)=>{
 //     const {id} = req.params;

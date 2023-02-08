@@ -43,7 +43,7 @@ module.exports = {
 
     newRoom: async function (body){
 
-        const { numRoom, numPeople, maxAdult, maxChild, specialties, availableDate, value, hotelId} =body;
+        const { numRoom, numPeople, maxAdult, maxChild, specialties, value, hotelId} =body;
 
         body.numPeople = parseInt (numPeople);
         body.maxAdult = parseInt(maxAdult);
@@ -60,6 +60,26 @@ module.exports = {
             const newRoom = await Room.create(body);
 
             return ("New Room regristed successfully");
+        }
+    },
+
+    bulkCreate: async function (array) {
+        await Room.bulkCreate(array);
+    
+        return "All Rooms in DB";
+      },
+
+    putRoom: async function (id, data) {
+        try {
+            await Room.update(data, {
+                where: {
+                    id: id
+                }
+            })
+            return "Updated Room"
+            
+        } catch (error) {
+            return error.message;
         }
     }
 }

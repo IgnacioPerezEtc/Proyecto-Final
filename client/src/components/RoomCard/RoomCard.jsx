@@ -22,16 +22,17 @@ const RoomCard = ({
   nameHotel,
   numRoom,
   id,
+  description,
 }) => {
   const dispatch = useDispatch();
-
+  console.log(description)
   // const cleanRoomDetail = () => {
   //   dispatch(cleanRoom());
   // };
   const location = useLocation();
   return (
     <div>
-      {location.pathname === "/home" ? (
+      {/* {location.pathname === "/home" ? (
         <div className={style.containerRoomCards}>
           <Card className={`${style.Card} h-75`}>
             <Link
@@ -51,10 +52,7 @@ const RoomCard = ({
                   <p className={style.priceContainer}>${price}</p>
                 </div>
                 <div className={`${style.Data} d-flex justify-content-between`}>
-                  <p>
-                    Lorem ipsum dolor sit amet consecte Eos voluptas atque
-                    aspernatur! Dicta, soluta.
-                  </p>
+                
                 </div>
                 <Card.Text
                   className={`${style.childAdultsContainer} fs-5`}
@@ -65,13 +63,12 @@ const RoomCard = ({
                   <span className={style.iconAdults}></span>
                   <p className={style.paddingMax}>{maxAdult} adults</p>
                 </Card.Text>
-                <Card.Text className={`${style.Text} fs-5`}>
-                </Card.Text>
+                <Card.Text className={`${style.Text} fs-5`}></Card.Text>
               </Card.Body>
             </Link>
           </Card>
         </div>
-      ) : (
+      ) : ( */}
         <div className={style.containerRoomCards}>
           <Card className={`${style.Card} h-75`}>
             <Link
@@ -82,16 +79,12 @@ const RoomCard = ({
               <Card.Img className={`${style.img}`} variant="top" src={img} />
               <Card.Body className="d-flex flex-column gap-3">
                 <div className="d-flex justify-content-between">
-                  <h3 className={style.titleRoom}>{nameHotel.charAt(0).toUpperCase() +
-                      nameHotel.slice(1) +
-                      " - " +
-                      numRoom}</h3>
+                  <h3 className={style.titleRoom}>{numRoom}</h3>
                   <div className={style.priceContainer}>${price}</div>
                 </div>
                 <div className={`${style.Data} d-flex justify-content-between`}>
                   <p className={style.param}>
-                    Lorem ipsum dolor sit amet consecte Eos voluptas atque
-                    aspernatur! Dicta, soluta.
+                    {description}
                   </p>
                 </div>
                 <Card.Text
@@ -103,13 +96,12 @@ const RoomCard = ({
                   <span className={style.iconAdults}></span>
                   <p className={style.paddingMax}>{maxAdult} adults</p>
                 </Card.Text>
-                <Card.Text className={`${style.Text} fs-5`}>
-                </Card.Text>
+                <Card.Text className={`${style.Text} fs-5`}></Card.Text>
               </Card.Body>
             </Link>
           </Card>
         </div>
-      )}
+      {/* )} */}
     </div>
   );
 };

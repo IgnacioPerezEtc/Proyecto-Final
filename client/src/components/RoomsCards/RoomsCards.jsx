@@ -1,29 +1,23 @@
 import React from "react";
-import style from "./RoomCards.module.css";
+import "./RoomCards.css";
 import HotelCard from "../HotelCard/HotelCard";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Keyboard, Autoplay } from "swiper";
 import "swiper/css";
 import "swiper/css/free-mode";
 import { useLocation } from "react-router-dom";
-
+import style from "./RoomCards.module.css";
 const RoomsCards = (props) => {
   const location = useLocation();
   return (
     <div>
       {location.pathname === "/home" ? (
         <div className="m-5">
-          <p className="fw-bold text-center display-1">
-            Our <span className="text-danger">Hotels</span>
-          </p>
-
-          <p className="container-fluid text-center w-50">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas
-            quasi aut quo cumque veritatis obcaecati consectetur quas corporis
-            tenetur quisquam quos, voluptatem beatae a, ratione illo? Cumque
-            sint corrupti similique.
-          </p>
-
+          <div className={style.flexContainer}>
+              <h2 className="blueOur">Our</h2>
+          <h2 className={style.red}>Hotels</h2>
+          </div>
+        
           <Swiper
             freeMode={true}
             grabCursor={true}

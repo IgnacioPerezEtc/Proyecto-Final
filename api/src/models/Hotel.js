@@ -38,6 +38,26 @@ module.exports = (sequelize) => {
       defaultValue: false,
     },
 
+    restaurant: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false,
+    },
+
+    publicPool: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false,
+    },
+
+    bar: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false,
+    },
+
+    wifi: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false,
+    },
+
     pictureHome: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -75,6 +95,15 @@ module.exports = (sequelize) => {
       type: DataTypes.STRING,
       allowNull: false,
       validate: { len: [8, 16] }
+    },
+
+    hidden: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false,
+    },
+    position: {
+      type: DataTypes.ARRAY(DataTypes.STRING),
+      allowNull: false,
     },
   },
     { timestamps: false }

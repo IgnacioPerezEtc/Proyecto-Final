@@ -1,15 +1,667 @@
 [
     {
         "numRoom": "Family Room",
-        "pictureHome": "",
+        "description": "The room features air conditioning, a 32-inch LCD TV, a desk, a minibar, and a private bathroom with a shower.",
+        "pictureHome": "https://media.staticontent.com/media/pictures/07513bd3-f01d-461b-a590-554c4f4b7fd8/690x388",
+        "pictureDetail": [
+            "https://media.staticontent.com/media/pictures/7fec2f82-0a3f-49fd-af8a-658943b610d5/690x388",
+            "https://media.staticontent.com/media/pictures/6229693d-920f-4c11-945c-f8a500d74f93/690x388",
+            "https://media.staticontent.com/media/pictures/b250f237-d191-40ab-8fd8-c1390df73d02/690x388"
+        ],
         "numPeople": 8,
         "maxAdult": 8,
         "maxChild": 4,
         "specialties": [
-            "restaurant",
-            "pool"
+            "Flat screen TV",
+            "Air-conditioning",
+            "Coffee maker",
+            "Desk",
+            "Cupboard",
+            "Linens",
+            "Towels",
+            "Carpet Floor",
+            "Safe"
+        ],
+        "value": 10,
+        "hotelId": 1
+    },
+    {
+        "numRoom": "Family Room",
+        "description": "The unit has adjoining and connecting rooms of 30m² with bathtub and minibar. In addition, it has free Wi-Fi, satellite or cable TV and air conditioning. The private bathroom includes a shower, hairdryer and bathroom accessories.",
+        "pictureHome": "https://media.staticontent.com/media/pictures/e061d2c5-0de2-440f-98bd-899b62803626/690x388",
+        "pictureDetail": [
+            "https://media.staticontent.com/media/pictures/0e5b0ee7-926a-4609-9aaa-df93d9ddd103/690x388",
+            "https://media.staticontent.com/media/pictures/50423dea-aa64-4110-b51f-7d983f04e9ee/690x388",
+            "https://media.staticontent.com/media/pictures/b4fd995e-f3eb-4333-be19-c961c18108f7/690x388"
+        ],
+        "numPeople": 9,
+        "maxAdult": 8,
+        "maxChild": 5,
+        "specialties": [
+            "Satellite or cable television",
+            "Daily cleaning service",
+            "Electronic lock",
+            "Electrical outlet near the bed",
+            "Smart TV",
+            "Free WIFI",
+            "Air-conditioning",
+            "Heating",
+            "Minibar"
         ],
         "value": 5,
-        "hotelId": "1"
+        "hotelId": 2
+    },
+    {
+        "numRoom": "Family Room",
+        "description": "The spacious rooms have air conditioning, private bathroom with shower or bathtub, carpeted floor, flat-screen TV with cable signal, desk, minibar, safe, telephone, and seating area. You can admire the surroundings from the panoramic window.",
+        "pictureHome": "https://www.atrapalo.com.ar/hoteles/picture/l/1512/2/1/414697646.jpg",
+        "pictureDetail": [
+            "https://www.atrapalo.com.ar/hoteles/picture/l/1512/2/1/414697642.jpg",
+            "https://www.atrapalo.com.ar/hoteles/picture/l/1512/2/1/414697660.jpg",
+            "https://www.atrapalo.com.ar/hoteles/picture/l/1512/2/1/414697661.jpg"
+        ],
+        "numPeople": 7,
+        "maxAdult": 7,
+        "maxChild": 2,
+        "specialties": [
+            "Double beds",
+            "Desk",
+            "Non-smoking rooms",
+            "Whirlpool",
+            "Soundproofing",
+            "Internet by phone",
+            "Electronic/magnetic key",
+            "Reading lamp",
+            "Voice Messaging"
+        ],
+        "value": 8,
+        "hotelId": 3
+    },
+    {
+        "numRoom": "Family Room",
+        "description": " They are elegantly decorated with carpeted floors and long curtains. Some have a flat-screen cable TV and bathtub.",
+        "pictureHome": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/147634412.jpg?k=86517e305108f015839e4922548fc04db2dcc1bb642c53a5723e112a085e8b57&o=&hp=1",
+        "pictureDetail": [
+            "https://cf.bstatic.com/xdata/images/hotel/max1024x768/147635113.jpg?k=a4a898b703b8983d5a7a247ba7b00bdab71edcfa12712c4848102673d5654b69&o=&hp=1",
+            "https://cf.bstatic.com/xdata/images/hotel/max1024x768/147634748.jpg?k=0fd43d284bd07eca274c800b30e15145bf04a6b7204f6585964e509001a1f277&o=&hp=1",
+            "https://cf.bstatic.com/xdata/images/hotel/max1024x768/33577156.jpg?k=c786cebdce1a2895f7365109454244f9f65031918f456f535fa496f3801f7d4f&o=&hp=1"
+        ],
+        "numPeople": 8,
+        "maxAdult": 8,
+        "maxChild": 5,
+        "specialties": [
+            "Non-smoking room",
+            "Room service",
+            "Adapted for people with reduced mobility",
+            "Free WIFI",
+            "24 hours reception",
+            "Daily cleaning service"
+        ],
+        "value": 5,
+        "hotelId": 4
+    },
+    {
+        "numRoom": "Family Room",
+        "description": "This air-conditioned room offers a flat-screen TV, free Wi-Fi and a desk. In addition, it has a safe, a minibar and a soaking tub.",
+        "pictureHome": "https://media.staticontent.com/media/pictures/a199e061-b666-4cc7-9272-89a6d88f03c7/690x388",
+        "pictureDetail": [
+            "https://media.staticontent.com/media/pictures/8ad08fb6-2cc2-4a65-b4e3-6a2fc7c8e8c1/690x388",
+            "https://media.staticontent.com/media/pictures/aecd2b1a-14c5-46e1-9f91-0a8859ec1651/690x388",
+            "https://media.staticontent.com/media/pictures/f8666aec-fb4f-40d2-9b15-91258651e622/690x388"
+        ],
+        "numPeople": 9,
+        "maxAdult": 8,
+        "maxChild": 6,
+        "specialties": [
+            "Bathtub",
+            "Hairdryer",
+            "Desk",
+            "Couch",
+            "Cupboard",
+            "Bathroom accessories",
+            "Linens",
+            "Towels",
+            "Coat"
+        ],
+        "value": 6,
+        "hotelId": 5
+    },
+    {
+        "numRoom": "Family Room",
+        "description": "The room is equipped with free Wi-Fi, LCD cable TV and air conditioning.",
+        "pictureHome": "https://media.staticontent.com/media/pictures/85947f07-1540-4911-9817-4c3b68870992/690x388",
+        "pictureDetail": [
+            "https://media.staticontent.com/media/pictures/e3fc078e-7e72-4b5e-b1ee-4a9008b739a1/690x388",
+            "https://media.staticontent.com/media/pictures/3286868c-30f6-4923-ab9b-624d9ebb2720/690x388",
+            "https://media.staticontent.com/media/pictures/16c36977-d273-4544-bcbf-b457cb937eb3/690x388"
+        ],
+        "numPeople": 8,
+        "maxAdult": 8,
+        "maxChild": 7,
+        "specialties": [
+            "flat screen TV",
+            "Free WIFI",
+            "Air-conditioning",
+            "Heating",
+            "Desk",
+            "Cupboard"
+        ],
+        "value": 12,
+        "hotelId": 6
+    },
+    {
+        "numRoom": "Family Room",
+        "description": "The room is equipped with air conditioning, 42-inch LCD cable TV, minibar and free Wi-Fi, as well as a private bathroom with bathtub and hairdryer.",
+        "pictureHome": "https://media.staticontent.com/media/pictures/58081439-8187-4a1e-98a2-9c4b0e416cf0/690x388",
+        "pictureDetail": [
+            "https://media.staticontent.com/media/pictures/269a85d8-6542-4d4b-b811-d2733638ae85/690x388",
+            "https://media.staticontent.com/media/pictures/900a58e0-183e-408f-84f7-df90037dcb11/690x388",
+            "https://media.staticontent.com/media/pictures/3a3c2e26-b6db-4b8e-9353-314583b5e0d7/690x388"
+        ],
+        "numPeople": 9,
+        "maxAdult": 7,
+        "maxChild": 6,
+        "specialties": [
+            "flat screen TV",
+            "Free WIFI",
+            "Air-conditioning",
+            "Heating",
+            "Minibar",
+            "Bathtub",
+            "Hairdryer",
+            "Desk",
+            "bathroom accessories"
+        ],
+        "value": 11,
+        "hotelId": 7
+    },
+    {
+        "numRoom": "Family Room",
+        "description": "1 King size bed and 2 single beds Overlooking the city Layout: 2 bedrooms Internet: Free WiFi Entertainment: 49-inch Smart TV with cable channels Food and Drink: Minibar Sleep: Blackout drapes and bedding",
+        "pictureHome": "https://media.staticontent.com/media/pictures/5b2344d6-a7db-40ba-a8a2-3971c0c71fb3/690x388",
+        "pictureDetail": [
+            "https://media.staticontent.com/media/pictures/f5a5cdf0-2a5f-44b7-ae45-91afb7192775/690x388",
+            "https://media.staticontent.com/media/pictures/44999f54-1c80-4abf-bf44-6ca5ca3bf1eb/690x388",
+            "https://media.staticontent.com/media/pictures/ccfb3717-6400-439a-99bd-dc3595943933/690x388"
+        ],
+        "numPeople": 8,
+        "maxAdult": 8,
+        "maxChild": 5,
+        "specialties": [
+            "Satellite or cable television",
+            "Free WIFI",
+            "Air-conditioning",
+            "Minibar",
+            "Bathtub",
+            "Hairdryer"
+        ],
+        "value": 6,
+        "hotelId": 8
+    },
+    {
+        "numRoom": "Family Room",
+        "description": "In-room massage service available Internet - Free WiFi Entertainment - LCD TV with cable channels Food & Drink - Room service and minibar Sleep - Blackout drapes and turndown service Bathroom - Private bathroom, deep soaking bathtub Practical - Safe safe, desk and telephone; Free cots or toddler beds available on request",
+        "pictureHome": "https://media.staticontent.com/media/pictures/8e4f790b-4148-4d0f-8bd0-804b6e57348d/690x388",
+        "pictureDetail": [
+            "https://media.staticontent.com/media/pictures/36f3eede-17c2-4ec1-a8d8-8f6e4cedc0db/690x388",
+            "https://media.staticontent.com/media/pictures/9523bc23-262e-410e-9204-207bc23ff035/690x388",
+            "https://media.statichttps://media.staticontent.com/media/pictures/36f3eede-17c2-4ec1-a8d8-8f6e4cedc0db/690x388ent.com/media/pictures/582ff545-e51a-4851-a510-32198fd20391/690x388"
+        ],
+        "numPeople": 5,
+        "maxAdult": 3,
+        "maxChild": 4,
+        "specialties": [
+            "flat screen TV",
+            "Free WIFI",
+            "Air-conditioning",
+            "Minibar",
+            "Bathtub",
+            "Desk"
+        ],
+        "value": 7,
+        "hotelId": 9
+    },
+    {
+        "numRoom": "Couple Room",
+        "description": "The corner room has a balcony with a panoramic view, it has a king size bed, flat-screen cable TV and Wi-Fi internet connection as well as a private bathroom with a hairdryer and bathtub. ",
+        "pictureHome": "https://media.staticontent.com/media/pictures/a4ffc701-eb8a-4221-b89f-846a12e12a65/690x388",
+        "pictureDetail": [
+            "https://media.staticontent.com/media/pictures/af3d4ecd-bc8e-4609-8511-cbe3859c0157/690x388",
+            "https://media.staticontent.com/media/pictures/5e6ff29c-544c-4e8f-8f1f-896d3ac9a68e/690x388",
+            "https://media.staticontent.com/media/pictures/8bb6c25a-a980-4ecd-9035-ad2739c55f4f/690x388"
+        ],
+        "numPeople": 2,
+        "maxAdult": 2,
+        "maxChild": 1,
+        "specialties": [
+            "flat screen TV",
+            "Free WIFI",
+            "Air-conditioning",
+            "Minibar",
+            "King size bed",
+            "Bathtub",
+            "Balcony",
+            "Hairdryer",
+            "Desk"
+        ],
+        "value": 5,
+        "hotelId": 1
+    },
+    {
+        "numRoom": "Couple Room",
+        "description": "The room has a flat-screen cable TV, Wi-Fi internet connection and a table, as well as a private bathroom with a hairdryer and a bathtub. You can have a balcony.",
+        "pictureHome": "https://media.staticontent.com/media/pictures/ef456c50-a46c-420c-bf34-f41250aa93a8/690x388",
+        "pictureDetail": [
+            "https://media.staticontent.com/media/pictures/792cc9fd-fcac-48ad-ba74-e4c0b7758516/690x388",
+            "https://media.staticontent.com/media/pictures/ff61227f-a718-464b-8fc3-148c6852e54e/690x388",
+            "https://media.staticontent.com/media/pictures/1b663504-811f-4f65-8088-b4b5cea0c76b/690x388"
+        ],
+        "numPeople": 2,
+        "maxAdult": 2,
+        "maxChild": 1,
+        "specialties": [
+            "flat screen tv",
+            "bidet",
+            "Free WIFI",
+            "Air-conditioning",
+            "Heating",
+            "Minibar"
+        ],
+        "value": 5,
+        "hotelId": 2
+    },
+    {
+        "numRoom": "Couple Room",
+        "description": "1 King bed 38 square meters Internet - Free wired and WiFi Internet access Entertainment - 42-inch LCD TV with premium channels Food & Drink - 24-hour room service Sleep - Pillowtop mattress, Egyptian cotton linens , down duvet, and blackout drapes Bathroom - Private bathroom, deep soaking bathtub, and rainfall showerhead Practical - Free weekday newspaper, desk, and iron/ironing board (on request); Rollaway or rollaway beds and free cribs or toddler beds available upon request.",
+        "pictureHome": "https://media.staticontent.com/media/pictures/2a1437b6-826d-4494-ab7f-d5c8d8e3e40a/690x388",
+        "pictureDetail": [
+            "https://media.staticontent.com/media/pictures/5df08e0a-3284-4b31-ab4b-615dea0e0654/690x388",
+            "https://media.staticontent.com/media/pictures/be79351a-5070-42e4-87db-c3207c2629e3/690x388",
+            "https://media.staticontent.com/media/pictures/448e06f4-8b91-4e43-8300-801a9bf57860/690x388"
+        ],
+        "numPeople": 2,
+        "maxAdult": 2,
+        "maxChild": 1,
+        "specialties": [
+            "flat screen TV",
+            "Free WIFI",
+            "Air-conditioning",
+            "Bathtub",
+            "Desk",
+            "Shower"
+        ],
+        "value": 5,
+        "hotelId": 3
+    },
+    {
+        "numRoom": "Couple Room",
+        "description": "With 35 m2, balcony and minibar, the room has free Wi-Fi, flat screen TV and air conditioning. The private bathroom has a shower, hairdryer and bathroom accessories. ",
+        "pictureHome": " https://media.staticontent.com/media/pictures/243f5d52-e9e8-42d8-a648-b4dccd2214dc/690x388",
+        "pictureDetail": [
+            "https://media.staticontent.com/media/pictures/dc7f9153-8578-47ec-ac61-fa376c68d8d2/690x388",
+            "https://media.staticontent.com/media/pictures/ec7c2cb8-b56d-4b44-8718-c53a3c3b4ce7/690x388",
+            "https://media.staticontent.com/media/pictures/28a3ee87-131b-49e1-b472-4b8d442e42aa/690x388"
+        ],
+        "numPeople": 2,
+        "maxAdult": 2,
+        "maxChild": 1,
+        "specialties": [
+            "Heating",
+            "Minibar",
+            "Balcony",
+            "Coffee maker",
+            "Hairdryer",
+            "Desk"
+        ],
+        "value": 5,
+        "hotelId": 4
+    },
+    {
+        "numRoom": "Couple Room",
+        "description": "Complete rooms have a private balcony, minibar, ironing equipment, private bathroom with amenities, tea and coffee making facilities, or flat screen TV.",
+        "pictureHome": "https://imgcy.trivago.com/if_iw_lte_ih,c_scale,w_236/if_else,c_scale,h_160/e_improve,q_auto:low/d_dummy.jpeg,f_auto,q_auto//partnerimages/66/49/664956534.jpeg",
+        "pictureDetail": [
+            "https://imgcy.trivago.com/if_iw_lte_ih,c_scale,w_236/if_else,c_scale,h_160/e_improve,q_auto:low/d_dummy.jpeg,f_auto,q_auto//partnerimages/81/16/811690258.jpeg",
+            "https://imgcy.trivago.com/if_iw_lte_ih,c_scale,w_236/if_else,c_scale,h_160/e_improve,q_auto:low/d_dummy.jpeg,f_auto,q_auto//partnerimages/73/22/732234624.jpeg",
+            "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partnerimages/32/28/322885466.jpeg"
+        ],
+        "numPeople": 2,
+        "maxAdult": 2,
+        "maxChild": 1,
+        "specialties": [
+            "Air-conditioning",
+            "Balcony (on request)",
+            "Coffee maker",
+            "Safe",
+            "Electric kettle",
+            "Ironing table"
+        ],
+        "value": 5,
+        "hotelId": 5
+    },
+    {
+        "numRoom": "Couple Room",
+        "description": "1 King Bed Layout - Separate sitting area Internet - Free WiFi Entertainment - 42-inch LED TV with premium channels Food & Drink - Room service and minibar Sleep - Pillowtop mattress, premium bedding, and blackout drapes Bathroom - Private bathroom, shower/tub combination, free toiletries, and a bidet Practical - Safe",
+        "pictureHome": "https://media.staticontent.com/media/pictures/1518ab1a-f773-4267-a342-547eab463ae4/690x388",
+        "pictureDetail": [
+            "https://media.staticontent.com/media/pictures/55dbfad9-5e89-4c12-8c6e-08a2b1039c9b/690x388",
+            "https://media.staticontent.com/media/pictures/601971aa-aa15-4c91-8470-a7f346ea5a22/690x388",
+            "https://media.staticontent.com/media/pictures/fb62b046-d75f-4dfd-a12f-b2348b0a942f/690x388"
+        ],
+        "numPeople": 2,
+        "maxAdult": 2,
+        "maxChild": 1,
+        "specialties": [
+            "flat screen TV",
+            "Free WIFI",
+            "Air-conditioning",
+            "Minibar",
+            "Desk",
+            "Notebook Safe"
+        ],
+        "value": 5,
+        "hotelId": 6
+    },
+    {
+        "numRoom": "Couple Room",
+        "description": "The room is equipped with free Wi-Fi, LCD cable TV and air conditioning. The private bathroom has a bathtub and amenities.",
+        "pictureHome": "https://media.staticontent.com/media/pictures/3e6dc72e-1806-4a82-b3d2-0a677f8cd30c/690x388",
+        "pictureDetail": [
+            "https://media.staticontent.com/media/pictures/9327e23a-61bd-44f2-a945-824a477ce704/690x388",
+            "https://media.staticontent.com/media/pictures/e3011c7c-5e22-4080-b516-1ed51fb80e06/690x388",
+            "https://media.staticontent.com/media/pictures/f34542d4-f5da-4f6c-b7b1-6624038e2300/690x388"
+        ],
+        "numPeople": 2,
+        "maxAdult": 2,
+        "maxChild": 1,
+        "specialties": [
+            "Heating",
+            "Bathtub",
+            "Desk",
+            "Cupboard",
+            "Bathroom accessories",
+            "Towels",
+            "Notebook safe",
+            "Soundproof windows",
+            "Wooden floor"
+        ],
+        "value": 5,
+        "hotelId": 7
+    },
+    {
+        "numRoom": "Couple Room",
+        "description": "20-sq-meter room with city views Internet - Free wired and Wi-Fi Internet access Entertainment - 31-inch LCD TV with cable channels Food & Drink - Room service and minibar",
+        "pictureHome": "https://media.staticontent.com/media/pictures/75396f4c-9386-41ea-8257-2d9c17d6e8f5/690x388",
+        "pictureDetail": [
+            "https://media.staticontent.com/media/pictures/6cb7c7f2-5344-4c6b-bc5f-98f7357c5304/690x388",
+            "https://media.staticontent.com/media/pictures/9a225167-a5ef-44f3-8179-b8ca1ac4746f/690x388",
+            "https://media.staticontent.com/media/pictures/90534d6e-b019-4f34-85a0-36920427e706/690x388"
+        ],
+        "numPeople": 2,
+        "maxAdult": 2,
+        "maxChild": 1,
+        "specialties": [
+            "flat screen TV",
+            "Free WIFI",
+            "Air-conditioning",
+            "Heating",
+            "Desk",
+            "Cupboard"
+        ],
+        "value": 5,
+        "hotelId": 8
+    },
+    {
+        "numRoom": "Couple Room",
+        "description": "1 queen bed Relax - In-room massage service available Internet - Free WiFi Entertainment - LCD TV with cable channels Food & Drink - Room service and minibar Sleep - Blackout drapes and turndown service Bathroom - Private bathroom, shower, and toilet deep soaking bathtub Practical - Safe, desk, and phone; Free cots or children's beds available on request.",
+        "pictureHome": "https://media.staticontent.com/media/pictures/4f66a396-f6c7-4a0a-9578-bbf4067c6f2e/690x388",
+        "pictureDetail": [
+            "https://media.staticontent.com/media/pictures/2fe221f8-0f29-45fd-9f00-469d10a65194/690x388",
+            "https://media.staticontent.com/media/pictures/7260ccb6-8e23-4168-b44b-fabc51bc99cb/690x388",
+            "https://media.staticontent.com/media/pictures/1239099b-ff78-4d98-9721-05e32a47e5fd/690x388"
+        ],
+        "numPeople": 2,
+        "maxAdult": 2,
+        "maxChild": 1,
+        "specialties": [
+            "flat screen TV",
+            "Free WIFI",
+            "Air-conditioning",
+            "Minibar",
+            "Bathtub",
+            "Desk",
+            "Soundproof windows",
+            "Connected rooms available",
+            "Phone"
+        ],
+        "value": 5,
+        "hotelId": 9
+    },
+    {
+        "numRoom": "Suite Room",
+        "description": "1 queen bed or 2 single beds 60 square meters Relax - In-room massage services available Internet - Free wired Internet access Entertainment - LCD TV with premium channels Food & Drink - 24-hour room service and minibar Sleep - Menu pillows Bathroom - Private bathroom, deep soaking bathtub Practical - Safe, free newspaper, and desk Amenities - Air conditioning, heating, and daily housekeeping Need to Know - Cribs or rollaway/extra beds not available No smoking",
+        "pictureHome": "https://media.staticontent.com/media/pictures/d34f95e7-2005-4757-ba1f-65ed57603e8e/690x388",
+        "pictureDetail": [
+            "https://media.staticontent.com/media/pictures/6f11ecd3-ff62-4603-8ebd-156423b09dbc/690x388",
+            "https://media.staticontent.com/media/pictures/5b2ef699-22b7-4e11-bf0b-beb31e2355d1/690x388",
+            "https://media.staticontent.com/media/pictures/29a39bab-c410-4527-a66f-f888ca946798/690x388"
+        ],
+        "numPeople": 10,
+        "maxAdult": 10,
+        "maxChild": 8,
+        "specialties": [
+            " flat screen tv",
+            "Wi-Fi at additional cost",
+            "Air-conditioning",
+            "Minibar",
+            "Bathtub",
+            "Desk",
+            "Coat",
+            "Slippers",
+            "Shower"
+        ],
+        "value": 100,
+        "hotelId": 1
+    },
+    {
+        "numRoom": "Suite Room",
+        "description": "With 55 m2, hydromassage bath and seating area, the suite is equipped with free Wi-Fi, flat screen TV and air conditioning. The private bathroom has a shower, hairdryer and bathroom accessories.",
+        "pictureHome": "https://media.staticontent.com/media/pictures/77c9b43d-91d1-4290-bb0c-09a4e6ebbf59/690x388",
+        "pictureDetail": [
+            "https://media.staticontent.com/media/pictures/0d15f397-afa6-4fb9-b9ca-6da0ecd31c3f/690x388",
+            "https://media.staticontent.com/media/pictures/4343eefb-e057-433c-b1b8-d7917072768a/690x388",
+            "https://media.staticontent.com/media/pictures/a9da9811-26e9-486a-bec4-1e2d608a3949/690x388"
+        ],
+        "numPeople": 10,
+        "maxAdult": 10,
+        "maxChild": 7,
+        "specialties": [
+            "Hydromassage bathtub",
+            "Desk",
+            "flat screen tv",
+            "Minibar",
+            "safe deposit box",
+            "seating area",
+            "Heating",
+            "carpet floor",
+            "Tea or coffee making set"
+        ],
+        "value": 125,
+        "hotelId": 2
+    },
+    {
+        "numRoom": "Suite Room",
+        "description": "The rooms are equipped with LCD TV, free Wi-Fi and air conditioning, as well as a safe for laptop and private bathroom. Some units include desks, heating, whirlpool tubs, and dedicated meeting area",
+        "pictureHome": "https://imgcy.trivago.com/if_iw_lte_ih,c_scale,w_236/if_else,c_scale,h_160/e_improve,q_auto:low/d_dummy.jpeg,f_auto,q_auto//uploadimages/31/84/31845702.jpeg",
+        "pictureDetail": [
+            "https://imgcy.trivago.com/if_iw_lte_ih,c_scale,w_236/if_else,c_scale,h_160/e_improve,q_auto:low/d_dummy.jpeg,f_auto,q_auto//uploadimages/31/84/31845746.jpeg",
+            "https://imgcy.trivago.com/if_iw_lte_ih,c_scale,w_236/if_else,c_scale,h_160/e_improve,q_auto:low/d_dummy.jpeg,f_auto,q_auto//uploadimages/24/12/24123004.jpeg",
+            "https://imgcy.trivago.com/if_iw_lte_ih,c_scale,w_236/if_else,c_scale,h_160/e_improve,q_auto:low/d_dummy.jpeg,f_auto,q_auto//uploadimages/31/84/31845442.jpeg"
+        ],
+        "numPeople": 10,
+        "maxAdult": 10,
+        "maxChild": 6,
+        "specialties": [
+            "Direct access to the beach",
+            "Air-conditioning",
+            "Bath (on request)",
+            "Bathroom with shower",
+            "Ironing table",
+            "Minibar",
+            "Living room",
+            "Hair dryer",
+            "flat screen tv"
+        ],
+        "value": 59,
+        "hotelId": 3
+    },
+    {
+        "numRoom": "Suite Room",
+        "description": "More spacious and with an exclusive space for meetings with a desk, this suite has a hydromassage bathtub, air conditioning, heating, and LCD cable TV. Includes free Wi-Fi, minibar and soundproofing, as well as armchairs and telephones.",
+        "pictureHome": "https://media.staticontent.com/media/pictures/f7ecb9c6-59b9-4e2a-9c6b-73dcfd4deee8/690x388",
+        "pictureDetail": [
+            "https://media.staticontent.com/media/pictures/4051e153-433f-40e6-93c3-cf058fc792e6/690x388",
+            "https://media.staticontent.com/media/pictures/6b6b259c-4512-4a71-bad0-6cd60bdf7424/690x388",
+            "https://media.staticontent.com/media/pictures/edd58bb8-25cf-4ce3-924c-affe33c129f0/690x388"
+        ],
+        "numPeople": 10,
+        "maxAdult": 10,
+        "maxChild": 5,
+        "specialties": [
+            "Spa Bath",
+            "flat screen TV",
+            "Bidet",
+            "Electronic lock",
+            "Black out curtains",
+            "Electrical outlet near the bed",
+            "Free Wired Internet",
+            "Free WIFI",
+            "Free Wired Internet"
+        ],
+        "value": 175,
+        "hotelId": 4
+    },
+    {
+        "numRoom": "Suite Room",
+        "description": "1 King Bed or 2 Twin Beds 35-sq-meter room with city views Relax - In-room massage available Internet - Free wired and Wi-Fi Internet access Entertainment - LCD TV with premium channels and pay movies Food & Drinks - 24-hour room service and minibar Sleep - Pillowtop mattress, premium bedding, blackout drapes, and turndown service Bathroom - Private bathroom, deep soaking bathtub Practical - Phone, safe ( with capacity for a laptop) and free newspapers.",
+        "pictureHome": "https://media.staticontent.com/media/pictures/8633f085-0601-4fec-bf51-1a000011fac8/690x388",
+        "pictureDetail": [
+            "https://media.staticontent.com/media/pictures/4ea5c9ed-4da3-4e36-a057-8a8983f93f82/690x388",
+            "https://media.staticontent.com/media/pictures/81adc04a-ba88-40b2-990e-e1910587c33e/690x388",
+            "https://media.staticontent.com/media/pictures/053e025f-bcf3-4b96-a29f-fd997c55a4df/690x388"
+        ],
+        "numPeople": 10,
+        "maxAdult": 10,
+        "maxChild": 6,
+        "specialties": [
+            "flat screen TV",
+            "Free WIFI",
+            "Air-conditioning",
+            "Minibar",
+            "Desk",
+            "Notebook safe",
+            "Soundproof windows",
+            "Connected rooms available",
+            "Phone"
+        ],
+        "value": 112,
+        "hotelId": 5
+    },
+    {
+        "numRoom": "Suite Room",
+        "description": "They have a private bathroom with separate shower and bathtub, 37'' LCD TV, minibar, safe, free WiFi Internet access and work desk. In addition, the rooms offer great panoramic views of the city, which will allow you to enjoy postcard images.",
+        "pictureHome": "https://media.staticontent.com/media/pictures/ca4cbd68-6eb6-4405-9791-ddf735464800/690x388",
+        "pictureDetail": [
+            "https://media.staticontent.com/media/pictures/6ab5edfb-1615-43f3-ae2a-e71e6d9a55b4/690x388",
+            "https://media.staticontent.com/media/pictures/669fa5d8-a633-440b-aaf3-0cb4f251b9c0/690x388",
+            "https://media.staticontent.com/media/pictures/453d6cad-4113-4265-a985-2ffa6f20bf0d/690x388"
+        ],
+        "numPeople": 10,
+        "maxAdult": 10,
+        "maxChild": 7,
+        "specialties": [
+            "Linens",
+            "Towels",
+            "Notebook safe",
+            "Soundproof windows",
+            "Safe",
+            "Shower",
+            "Key with Hot Water",
+            "Alarm clock",
+            "Marble or ceramic floor"
+        ],
+        "value": 120,
+        "hotelId": 6
+    },
+    {
+        "numRoom": "Suite Room",
+        "description": "They are equipped for a stay that will make you feel very comfortable and are equipped with the necessary elements for your communications such as WiFi Internet connection for an extra payment; to have warm moments, like the placid seating area; for your relaxation, a marble bathroom with separate shower and bathtub; and much more.",
+        "pictureHome": "https://media.staticontent.com/media/pictures/425bd76b-cdb6-4325-9ed4-58d766eea217/690x388",
+        "pictureDetail": [
+            "https://media.staticontent.com/media/pictures/162ead39-e7a9-40a0-86e0-dde22dfe2ab1/690x388",
+            "https://media.staticontent.com/media/pictures/3b69ec6a-515b-4c2f-bad1-248f2bfc15bf/690x388",
+            "https://media.staticontent.com/media/pictures/8e4db10b-923b-4a12-9c7b-51cd9d3c61e9/690x388"
+        ],
+        "numPeople": 10,
+        "maxAdult": 10,
+        "maxChild": 8,
+        "specialties": [
+            "Adapted people with reduced mobility",
+            "Air-conditioning",
+            "Toiletries",
+            "Bathroom Safe",
+            "Central heating",
+            "King size bed",
+            "Connection between rooms",
+            "Desk"
+        ],
+        "value": 146,
+        "hotelId": 7
+    },
+    {
+        "numRoom": "Suite Room",
+        "description": "50-sq-meter room with city views Layout - Separate bedroom Internet - Free WiFi Entertainment - 32-inch LCD TV with premium channels, first-run movies Food & Drink - Espresso maker, minibar, and room service Sleep - Pillow-top mattress Pillow-top, premium bedding, and blackout drapes Bathroom - Private bathroom, jetted bathtub, and rainfall showerhead",
+        "pictureHome": "https://media.staticontent.com/media/pictures/0965c685-54e0-4488-ad56-1259ed971b78/690x388",
+        "pictureDetail": [
+            "https://media.staticontent.com/media/pictures/fb31042e-020e-40e3-855c-ae787c86e05b/690x388",
+            "https://media.staticontent.com/media/pictures/bd384d59-6e73-4b3e-b01a-5ba34aa52bea/690x388",
+            "https://media.staticontent.com/media/pictures/e55d13b4-5f1c-4c35-b105-d25de922b119/690x388"
+        ],
+        "numPeople": 10,
+        "maxAdult": 10,
+        "maxChild": 4,
+        "specialties": [
+            "flat screen TV",
+            "Free WIFI",
+            "Air-conditioning",
+            "Minibar",
+            "Desk",
+            "Notebook Safe"
+        ],
+        "value": 95,
+        "hotelId": 8
+    },
+    {
+        "numRoom": "Suite Room",
+        "description": "Free wired and WiFi Internet access Entertainment - 42-inch LCD TV with premium channels Food & Drink - 24-hour room service Sleep - Pillowtop mattress, Egyptian cotton sheets, down duvet, and blackout drapes Bathroom - Private bathroom, deep soaking bathtub, and rainfall showerhead Practical - Free weekday newspaper and desk; Rollaway or additional beds available upon request.",
+        "pictureHome": "https://media.staticontent.com/media/pictures/f1646293-a73e-4588-9a41-5ceab6eabf61/690x388",
+        "pictureDetail": [
+            "https://media.staticontent.com/media/pictures/dfb3faf3-8122-4f53-98a2-2dcbffb62c81/690x388",
+            "https://media.staticontent.com/media/pictures/8c721df6-f1f7-4aee-80c6-3d43feb7c5dd/690x388",
+            "https://media.staticontent.com/media/pictures/448e06f4-8b91-4e43-8300-801a9bf57860/690x388"
+        ],
+        "numPeople": 10,
+        "maxAdult": 10,
+        "maxChild": 2,
+        "specialties": [
+            "flat screen TV",
+            "Free WIFI",
+            "Air-conditioning",
+            "Bathtub",
+            "Desk",
+            "Connected rooms available"
+        ],
+        "value": 144,
+        "hotelId": 9
     }
 ]

@@ -1,0 +1,100 @@
+.container {
+  overflow-y: scroll;
+  max-height: 80vh;
+}
+
+.containerHotels{
+  padding-top: 64px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  background-color: #d4d4d49c !important;
+}
+th,
+td {
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: var(--color-blue);
+  font-size: 1.6rem;
+}
+th {
+  text-align: left;
+  color: #fff;
+}
+thead th {
+  background-color: var(--color-blue);
+}
+tbody tr:hover {
+  background-color: #86858542;
+}
+tbody td {
+  position: relative;
+}
+tbody td:hover:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -9999px;
+  bottom: -9999px;
+  background-color: #86858542;
+  z-index: -1;
+}
+
+.buttonEnab {
+  width: 24px;
+  height: 24px;
+  border: none;
+  background-color: transparent;
+}
+.imgEnaDis {
+  width: 20px;
+  height: 20px;
+}
+.id {
+  font-weight: 500 !important;
+}
+.thSearch {
+  text-align: center;
+}
+.formHotels {
+  padding-top: 20px;
+  text-align: center;
+}
+
+.formHotels input {
+  width: 240px;
+  height: 36px;
+  border-radius: 8px;
+  border: 1px solid var(--color-blue);
+  padding-left: 8px;
+  font-size: 1.6rem;
+  color: var(--color-blue);
+}
+
+.formHotels button {
+  margin-left: 8px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align: center;
+  font-size: 1.8rem;
+  border: none;
+  background-color: var(--color-red);
+  color: #fff;
+  border-radius: 8px;
+}
+
+.formHotels button:hover {
+  background-color: #8a0606;
+  color: #fff;
+}
+.h1 {
+  font-size: 3.8rem;
+  text-align: start;
+  color: var(--color-red);
+}
