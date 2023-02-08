@@ -35,6 +35,13 @@ const NavBarDetails = () => {
   } else {
     darkMode();
   }
+  const handleChecked = (event) => {
+    if (event.target.checked === true) {
+      darkMode();
+    } else {
+      lightMode();
+    }
+  };
   return (
     <div>
       <nav className={` ${style.navBar} navbar navbar-expand-lg`}>
@@ -113,9 +120,20 @@ const NavBarDetails = () => {
                   About Us
                 </NavLink>
               </li>
-              <li>
-                <button onClick={lightMode}>☀️</button>
-                <button onClick={darkMode}>🌜</button>
+              <li className={style.pages}>
+                <input
+                  type="checkbox"
+                  // checked={inputs.specialties.includes(spec) ? true : false}
+                  name="darkMode"
+                  checked={
+                    localStorage.getItem("theme") === "dark" ? true : false
+                  }
+                  value={localStorage.getItem("theme")}
+                  id={`switch`}
+                  className={style.switch}
+                  onClick={(e) => handleChecked(e)}
+                />
+                <label htmlFor={`switch`} className={style.lbl}></label>
               </li>
               <li className="dropdown-center">
                 <a

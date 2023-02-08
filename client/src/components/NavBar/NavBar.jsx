@@ -22,14 +22,13 @@ const NavBar = (props) => {
     }
   });
   function darkMode() {
-    localStorage.setItem("theme","dark")
+    localStorage.setItem("theme", "dark");
     let element = document.body;
     let content = document.getElementById("DarkModetext");
     element.className = "dark-mode";
-    
   }
   function lightMode() {
-    localStorage.setItem("theme","light")
+    localStorage.setItem("theme", "light");
     let element = document.body;
     let content = document.getElementById("DarkModetext");
     element.className = "light-mode";
@@ -39,6 +38,21 @@ const NavBar = (props) => {
   } else {
     darkMode();
   }
+
+  const handleClick = () => {
+    if (localStorage.getItem("theme") == "light") {
+      lightMode();
+    } else {
+      darkMode();
+    }
+  };
+  const handleChecked = (event) => {
+    if (event.target.checked === true) {
+      darkMode();
+    } else {
+      lightMode();
+    }
+  };
   // const preferedColorScheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
   // const slider = document.getElementById('slider');
   //  console.log(preferedColorScheme)
@@ -115,26 +129,18 @@ const NavBar = (props) => {
                 About Us
               </NavLink>
             </li>
-
-            {/*MODO OSCURO */}
-            {/* <li>
-              <label class="switch">
-                <input type="checkbox" />
-                <span className={style.slider}></span>
-              </label>
-            </li> */}
-            <li>
-              <button className={style.btnMoon} onClick={darkMode}>
-                🌜
-              </button>
-              <button className={style.btnSun} onClick={lightMode}>
-                ☀️
-              </button>
+            <li className={style.pages}>
+              <input
+                type="checkbox"
+                checked={localStorage.getItem("theme") === "dark" ? true : false}
+                name="darkMode"
+                value={localStorage.getItem("theme")}
+                id={`switch`}
+                className={style.switch}
+                onClick={(e) => handleChecked(e)}
+              />
+              <label htmlFor={`switch`} className={style.lbl}></label>
             </li>
-            {/* <li>
-              <button onClick={darkMode}>DarkMode</button>
-              <button onClick={lightMode}>LightMode</button>
-            </li>      */}
 
             <li className="dropdown">
               <a
