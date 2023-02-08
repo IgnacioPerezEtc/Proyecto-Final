@@ -1,7 +1,5 @@
 import React from "react";
 import style from "./Users.module.css";
-import enable from "../../../assets/icons/enable.png";
-import disable from "../../../assets/icons/disable.png";
 import statusDisabled from "../../../assets/icons/statusDisabled.png";
 import statusEnable from "../../../assets/icons/statusEnabled.png";
 import { useDispatch, useSelector } from "react-redux";
@@ -27,8 +25,6 @@ const Users = (props) => {
               <th>Email</th>
               <th>Rol</th>
               <th>Status</th>
-              <th>Enable</th>
-              <th>Disable</th>
             </tr>
           </thead>
           {users.hasOwnProperty("name") ? (
@@ -53,17 +49,6 @@ const Users = (props) => {
                           className={style.imgEnaDis}
                         />
                       )}
-                    </th>
-                    <th>
-                      <button className={style.buttonEnab}>
-                        <img src={enable} alt="" className={style.imgEnaDis} />
-                      </button>
-                    </th>
-                    <th>
-                      {" "}
-                      <button className={style.buttonEnab}>
-                        <img src={disable} alt="" className={style.imgEnaDis} />
-                      </button>{" "}
                     </th>
                   </tr>
                 );

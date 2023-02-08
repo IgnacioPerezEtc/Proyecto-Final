@@ -125,7 +125,15 @@ export const GET_ROOM_BY_ID = "GET_ROOM_BY_ID";
 export const DATA_RESERVATION = "DATA_RESERVATION";
 export const CLEAN_RESERVATION = "CLEAN_RESERVATION";
 export const CLEAN_ROOM_DETAIL = "CLEAN_ROOM_DETAIL";
+export const PUT_ROOM = "PUT_ROOM"
 
+
+export const putRoom = (id, data) => {
+  return async () => {
+    const json = await axios.put(`/rooms/edit/${id}`, data);
+    return json;
+  };
+};
 export const dataReservation = (data) => {
   return (dispatch) => {
     return dispatch({

@@ -14,7 +14,7 @@ const RoomsAdmin = () => {
     dispatch(getRooms());
   });
   return (
-    <div id="roomsAdmin">
+    <div id="roomsAdmin" className={style.containerRooms}>
       <h1 className={style.h1}>Rooms</h1>
       <div className={style.container}>
         <table className={style.table}>

@@ -8,8 +8,10 @@ import home from "../../assets/icons/home.png";
 import Users from "./Users/Users";
 import HotelsAdmin from "./HotelsAdmin/HotelsAdmin";
 import RoomsAdmin from "./RoomsAdmin/RoomsAdmin";
+import { useLocation } from "react-router-dom";
 
 const Admin = () => {
+  const location = useLocation();
   function darkMode() {
     localStorage.setItem("theme", "dark");
     let element = document.body;
@@ -67,33 +69,83 @@ const Admin = () => {
                 <ul className="navbar-nav justify-content-end flex-grow-1 ">
                   <li className={`${style.navItem} nav-item`}>
                     <img src={dash} alt="" className={style.img} />
-                    <a
-                      className={`${style.navLink} nav-link active`}
-                      aria-current="page"
-                      href="#dashboard"
-                    >
-                      Dashboard
-                    </a>
+                    {location.pathname.includes("admin") ? (
+                      <a
+                        className={`${style.navLink} nav-link active`}
+                        aria-current="page"
+                        href="#dashboard"
+                      >
+                        Dashboard
+                      </a>
+                    ) : (
+                      <a
+                        className={`${style.navLink} nav-link active`}
+                        aria-current="page"
+                        href={"/admin"}
+                      >
+                        Dashboard
+                      </a>
+                    )}
                   </li>
                   <li className={`${style.navItem} nav-item`}>
                     <img src={hotel} alt="" className={style.img} />
-                    <a
-                      className={`${style.navLink} nav-link active`}
-                      aria-current="page"
-                      href="#hotelsAdmin"
-                    >
-                      Hotels
-                    </a>
+                    {location.pathname.includes("admin") ? (
+                      <a
+                        className={`${style.navLink} nav-link active`}
+                        aria-current="page"
+                        href="#hotelsAdmin"
+                      >
+                        Hotels
+                      </a>
+                    ) : (
+                      <a
+                        className={`${style.navLink} nav-link active`}
+                        aria-current="page"
+                        href={"/admin"}
+                      >
+                        Hotels
+                      </a>
+                    )}
+                  </li>
+                  <li className={`${style.navItem} nav-item`}>
+                    <img src={hotel} alt="" className={style.img} />
+                    {location.pathname.includes("admin") ? (
+                      <a
+                        className={`${style.navLink} nav-link active`}
+                        aria-current="page"
+                        href="#roomsAdmin"
+                      >
+                        Rooms
+                      </a>
+                    ) : (
+                      <a
+                        className={`${style.navLink} nav-link active`}
+                        aria-current="page"
+                        href="/admin"
+                      >
+                        Rooms
+                      </a>
+                    )}
                   </li>
                   <li className={`${style.navItem} nav-item`}>
                     <img src={user} alt="" className={style.img} />
-                    <a
-                      className={`${style.navLink} nav-link active`}
-                      aria-current="page"
-                      href="#users"
-                    >
-                      Users
-                    </a>
+                    {location.pathname.includes("admin") ? (
+                      <a
+                        className={`${style.navLink} nav-link active`}
+                        aria-current="page"
+                        href="#users"
+                      >
+                        Users
+                      </a>
+                    ) : (
+                      <a
+                        className={`${style.navLink} nav-link active`}
+                        aria-current="page"
+                        href="/admin"
+                      >
+                        Users
+                      </a>
+                    )}
                   </li>
 
                   <li className={`${style.navItem} nav-item`}>
@@ -123,11 +175,13 @@ const Admin = () => {
           </div>
         </nav>
       </div>
-      <div className={style.containerInfo}>
-        <HotelsAdmin />
-        <RoomsAdmin />
-        <Users />
-      </div>
+      {location.pathname.includes("admin") && (
+        <div className={style.containerInfo}>
+          <HotelsAdmin />
+          <RoomsAdmin />
+          <Users />
+        </div>
+      )}
     </div>
   );
 };
