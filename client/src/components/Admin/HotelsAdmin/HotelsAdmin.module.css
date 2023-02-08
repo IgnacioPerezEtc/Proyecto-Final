@@ -2,6 +2,10 @@
   overflow-y: scroll;
   max-height: 80vh;
 }
+
+.containerHotels{
+  padding-top: 64px;
+}
 table {
   width: 100%;
   border-collapse: collapse;
@@ -49,6 +53,9 @@ tbody td:hover:before {
 .imgEnaDis {
   width: 20px;
   height: 20px;
+}
+.id {
+  font-weight: 500 !important;
 }
 .thSearch {
   text-align: center;
