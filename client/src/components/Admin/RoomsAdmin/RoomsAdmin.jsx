@@ -1,13 +1,15 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getRooms } from "../../../redux/actions";
-import style from "./RoomsAdmin.module.css"
+import style from "./RoomsAdmin.module.css";
 import statusDisabled from "../../../assets/icons/statusDisabled.png";
 import statusEnable from "../../../assets/icons/statusEnabled.png";
+import edit from "../../../assets/icons/edit.png";
+import { NavLink } from "react-router-dom";
 
 const RoomsAdmin = () => {
   const dispatch = useDispatch();
-  const rooms = useSelector(state => state.rooms)
+  const rooms = useSelector((state) => state.rooms);
   useEffect(() => {
     dispatch(getRooms());
   });
@@ -19,10 +21,13 @@ const RoomsAdmin = () => {
           <thead>
             <tr className={style.trHead}>
               <th>Id</th>
+              <th>Hotel</th>
               <th>Type</th>
+
               <th>NumPeople</th>
               <th>Value</th>
               <th>Hidden</th>
+              <th>Edit</th>
             </tr>
           </thead>
           <tbody>
@@ -30,8 +35,11 @@ const RoomsAdmin = () => {
               return (
                 <tr className={style.trBody}>
                   <th className={style.id}>{room.id}</th>
+                  <th>{room.hotel.name}</th>
                   <th>{room.numRoom}</th>
+
                   <th>{room.numPeople}</th>
+
                   <th>{room.value}</th>
                   <th>
                     {room.hidden === true ? (
@@ -47,6 +55,13 @@ const RoomsAdmin = () => {
                         className={style.imgEnaDis}
                       />
                     )}
+                  </th>
+                  <th>
+                    <NavLink to={`/editRoom/${room.id}`}>
+                      <button className={style.buttonEnab}>
+                        <img src={edit} alt="" className={style.imgEnaDis} />
+                      </button>
+                    </NavLink>
                   </th>
                 </tr>
               );
