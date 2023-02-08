@@ -22,14 +22,13 @@ const NavBar = (props) => {
     }
   });
   function darkMode() {
-    localStorage.setItem("theme","dark")
+    localStorage.setItem("theme", "dark");
     let element = document.body;
     let content = document.getElementById("DarkModetext");
     element.className = "dark-mode";
-    
   }
   function lightMode() {
-    localStorage.setItem("theme","light")
+    localStorage.setItem("theme", "light");
     let element = document.body;
     let content = document.getElementById("DarkModetext");
     element.className = "light-mode";
@@ -39,19 +38,6 @@ const NavBar = (props) => {
   } else {
     darkMode();
   }
-  // const preferedColorScheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-  // const slider = document.getElementById('slider');
-  //  console.log(preferedColorScheme)
-  // const setTheme = (theme)=>{
-  //   document.documentElement.setAttribute('data-theme',theme);
-  //   localStorage.setItem('theme',theme);
-  // }
-  // slider.addEventListener('click', ()  => {
-  //   let switchToTheme = localStorage.getItem('theme') === 'dark' ? 'light' : 'dark';
-  //   setTheme(switchToTheme);
-  // });
-  // console.log(setTheme)
-  // setTheme(localStorage.getItem('theme') || preferedColorScheme);
 
   return (
     <div className={style.containerNavbar}>
