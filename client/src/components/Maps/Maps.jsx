@@ -8,14 +8,14 @@ import { getAllHotels } from "../../redux/actions";
 import { useDispatch } from "react-redux";
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
-import icon from 'leaflet/dist/images/marker-icon.png';
-import iconShadow from 'leaflet/dist/images/marker-shadow.png';
-import L from 'leaflet';
+import icon from "leaflet/dist/images/marker-icon.png";
+import iconShadow from "leaflet/dist/images/marker-shadow.png";
+import L from "leaflet";
 
 const Maps = ({ positionDetail }) => {
-const MarkerIcon = L.icon({
+  const MarkerIcon = L.icon({
     iconUrl: icon,
-    shadowUrl: iconShadow
+    shadowUrl: iconShadow,
   });
   const dispatch = useDispatch();
   useEffect(() => {
@@ -25,7 +25,7 @@ const MarkerIcon = L.icon({
     positionDetail ? positionDetail : [6.2503414521512335, -75.58782388923332]
   );
   const hotels = useSelector((state) => state.hotels);
-  if (hotels.length) {
+  if (hotels?.length) {
     return (
       <MapContainer className={style.map} center={mapCenter} zoom={13}>
         <TileLayer
@@ -44,9 +44,12 @@ const MarkerIcon = L.icon({
                   <h3 className={style.title}>
                     {hotel.name[0].toUpperCase() + hotel.name.slice(1)}
                   </h3>
+                  {
+                    console.log(hotel.pictureHome)
+                  }
                   <img
                     className={style.pictureHome}
-                    src={hotel.pictureHome}
+                    src={hotel?.pictureHome}
                     alt=""
                   />
                 </NavLink>
