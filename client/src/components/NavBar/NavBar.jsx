@@ -21,19 +21,24 @@ const NavBar = (props) => {
       setLogin(true);
     }
   });
- function darkMode() {
-    var element = document.body;
-    var content = document.getElementById("DarkModetext");
+  function darkMode() {
+    localStorage.setItem("theme","dark")
+    let element = document.body;
+    let content = document.getElementById("DarkModetext");
     element.className = "dark-mode";
-    content.innerText = "Dark Mode is ON";
+    
   }
   function lightMode() {
+    localStorage.setItem("theme","light")
     let element = document.body;
     let content = document.getElementById("DarkModetext");
     element.className = "light-mode";
-    content.innerText = "Dark Mode is OFF";
   }
-  
+  if (localStorage.getItem("theme") == "light") {
+    lightMode();
+  } else {
+    darkMode();
+  }
   // const preferedColorScheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
   // const slider = document.getElementById('slider');
   //  console.log(preferedColorScheme)
@@ -115,9 +120,13 @@ const NavBar = (props) => {
               </label>
             </li> */}
             <li>
-              <button className={style.btnMoon} onClick={darkMode}>🌜</button>
-              <button className={style.btnSun} onClick={lightMode}>☀️</button>
-            </li>     
+              <button className={style.btnMoon} onClick={darkMode}>
+                🌜
+              </button>
+              <button className={style.btnSun} onClick={lightMode}>
+                ☀️
+              </button>
+            </li>
             {/* <li>
               <button onClick={darkMode}>DarkMode</button>
               <button onClick={lightMode}>LightMode</button>
@@ -133,17 +142,24 @@ const NavBar = (props) => {
                 {login === false ? (
                   <img src={user} alt="" width={"24px"} height="24px" />
                 ) : (
-                  <img id={style.img} src={(JSON.parse(localStorage.getItem("user")))[0].img || user} alt="" width={"24px"} height="24px" />
+                  <img
+                    id={style.img}
+                    src={
+                      JSON.parse(localStorage.getItem("user"))[0].img || user
+                    }
+                    alt=""
+                    width={"24px"}
+                    height="24px"
+                  />
                 )}
-                
               </a>
 
               <ul className="dropdown-menu dropdown-menu-lg-end">
                 <li>
                   {login === false ? (
-                  ""
-                ) : (
-                    <a className="dropdown-item"  href="/userProfile">
+                    ""
+                  ) : (
+                    <a className="dropdown-item" href="/userProfile">
                       User Profile
                     </a>
                   )}
@@ -165,7 +181,9 @@ const NavBar = (props) => {
                     <a
                       className={`${style.itemDrop} dropdown-item`}
                       href="/admin"
-                    >Dashboard</a>
+                    >
+                      Dashboard
+                    </a>
                   </li>
                 ) : (
                   ""

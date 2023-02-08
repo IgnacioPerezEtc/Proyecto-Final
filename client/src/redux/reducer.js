@@ -16,7 +16,7 @@ import {
   GET_ALL_USERS,
   PUT_HOTEL,
   CLEAR_HOTEL_DETAIL,
-  GET_USER_BY_ID
+  GET_USER_BY_ID,
 } from "./actions";
 
 const initialState = {
@@ -49,7 +49,7 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         favoriteHotels: action.payload,
-      }
+      };
     case ERROR: {
       return {
         ...state,
@@ -111,11 +111,17 @@ const rootReducer = (state = initialState, action) => {
           : actualHotels.filter((h) =>
               h.languages.find((languages) => languages === action.payload)
             );
-
-      return {
-        ...state,
-        hotels: languageFiltered,
-      };
+      if (languageFiltered.length)
+        return {
+          ...state,
+          hotels: languageFiltered,
+        };
+      else {
+        return {
+          ...state,
+          error: "No hotels find with that language",
+        };
+      }
     }
 
     case FILTER_BY_STARS: {
@@ -123,11 +129,17 @@ const rootReducer = (state = initialState, action) => {
         action.payload === "All"
           ? allHotels
           : actualHotels.filter((h) => h.category == action.payload);
-
-      return {
-        ...state,
-        hotels: starsFiltered,
-      };
+      if (starsFiltered.length) {
+        return {
+          ...state,
+          hotels: starsFiltered,
+        };
+      } else {
+        return {
+          ...state,
+          error: "No hotels find with that number stars",
+        };
+      }
     }
 
     case CREATE_HOTEL:

@@ -241,3 +241,21 @@ input:focus {
   transform: scale(0.98);
   background-color: var(--letter-blue);
 }
+.reload{
+  width: 120px;
+  height: 45px;
+  margin: 10px;
+  background-color: var(--color-blue);
+  color: #fff;
+  font-weight: 500;
+  border-radius: 5px;
+  margin-bottom: 80px;
+  font-size: 1.6rem;
+  box-shadow: 0px 4px 4px #00000040;
+  outline: none;
+  cursor: pointer;
+}
+.reload:hover {
+  transform: scale(0.98);
+  background-color: var(--letter-blue);
+}
