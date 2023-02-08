@@ -92,11 +92,6 @@ const NavBar = (props) => {
               </NavLink>
             </li>
             <li className={style.pages}>
-              <NavLink to={"/favorites"} className={style.linkLanding}>
-                Favorites
-              </NavLink>
-            </li>
-            <li className={style.pages}>
               <NavLink to={"/aboutUs"} className={style.linkLanding}>
                 About Us
               </NavLink>
@@ -154,6 +149,34 @@ const NavBar = (props) => {
                     </a>
                   )}
                 </li>
+                <hr />
+                <li>
+                  <NavLink to={"/favorites"} className="dropdown-item">
+                    Favorites
+                  </NavLink>
+                </li>
+                <hr />
+                {info && info[0].admin === true ? (
+                  <div>
+                    <li>
+                      <a
+                        className={`${style.itemDrop} dropdown-item`}
+                        href="/admin"
+                      >
+                        Dashboard
+                      </a>
+                    </li>
+                    <hr />
+                  </div>
+                ) : (
+                  ""
+                )}
+                <li>
+                  <a className="dropdown-item" href="/Booking">
+                    My reservations
+                  </a>
+                </li>
+                <hr />
 
                 <li>
                   {login === false ? (
@@ -165,24 +188,6 @@ const NavBar = (props) => {
                       Log-Out
                     </a>
                   )}
-                </li>
-                {info && info[0].admin === true ? (
-                  <li>
-                    <a
-                      className={`${style.itemDrop} dropdown-item`}
-                      href="/admin"
-                    >
-                      Dashboard
-                    </a>
-                  </li>
-                ) : (
-                  ""
-                )}
-                <hr />
-                <li>
-                  <a className="dropdown-item" href="/Booking">
-                    My reservations
-                  </a>
                 </li>
               </ul>
             </li>

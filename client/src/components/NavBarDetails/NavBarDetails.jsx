@@ -12,7 +12,7 @@ import { useEffect } from "react";
 const NavBarDetails = () => {
   const [login, setLogin] = useState(false);
 
-  const [info, setInfo] = useState(localStorage.getItem("user"));
+  const [info, setInfo] = useState(JSON.parse(localStorage.getItem("user")));
   useEffect(() => {
     if (info) {
       setLogin(true);
@@ -145,7 +145,9 @@ const NavBarDetails = () => {
                       </a>
                     )}
                   </li>
+                  <hr />
                   {info && info[0].admin === true ? (
+                  <div>
                     <li>
                       <a
                         className={`${style.itemDrop} dropdown-item`}
@@ -154,10 +156,11 @@ const NavBarDetails = () => {
                         Dashboard
                       </a>
                     </li>
-                  ) : (
-                    ""
-                  )}
-                  <hr />
+                    <hr />
+                  </div>
+                ) : (
+                  ""
+                )}
                   <li>
                     <a
                       className={`${style.itemDrop} dropdown-item`}
