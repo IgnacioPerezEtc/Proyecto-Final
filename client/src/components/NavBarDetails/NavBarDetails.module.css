@@ -37,9 +37,9 @@
   align-items: center;
 }
 .dropDownUl {
-  background-color:var(--color-blue);
+  background-color: var(--color-blue);
 }
-.dropDownUl li a{
+.dropDownUl li a {
   color: #c2c7ce;
 }
 
@@ -47,9 +47,9 @@
   margin: 0px 40px;
 }
 
-.itemDrop:hover{
-    background-color: transparent;
-    color: #fff;
+.itemDrop:hover {
+  background-color: transparent;
+  color: #fff;
 }
 
 .linkLanding {
@@ -110,4 +110,39 @@
   height: 2rem;
   border-radius: 2rem;
   width: 4rem;
-  }
+}
+.lbl {
+  display: inline-block;
+  width: 65px;
+  height: 33px;
+  background: #979797;
+  border-radius: 100px;
+  cursor: pointer;
+  position: relative;
+  transition: 0.2s;
+}
+
+.lbl::after {
+  content: "";
+  display: block;
+  width: 25px;
+  height: 25px;
+  background: #eee;
+  border-radius: 100px;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  transition: 0.2s;
+}
+
+.switch {
+  display: none;
+}
+
+.switch:checked + .lbl::after {
+  left: 35px;
+}
+
+.switch:checked + .lbl {
+  background: var(--color-blue);
+}

@@ -11,7 +11,7 @@ import { logOut } from "../../redux/actions";
 import { useEffect } from "react";
 const NavBarDetails = () => {
   const [login, setLogin] = useState(false);
-
+  const [themeState, setThemeState] = useState(localStorage.getItem("theme"));
   const [info, setInfo] = useState(JSON.parse(localStorage.getItem("user")));
   useEffect(() => {
     if (info) {
@@ -35,6 +35,16 @@ const NavBarDetails = () => {
   } else {
     darkMode();
   }
+
+  const handleChecked = (event) => {
+    if (event.target.checked === true) {
+      setThemeState("dark")
+      darkMode();
+    } else {
+      setThemeState("light")
+      lightMode();
+    }
+  };
   return (
     <div>
       <nav className={` ${style.navBar} navbar navbar-expand-lg`}>
@@ -113,9 +123,19 @@ const NavBarDetails = () => {
                   About Us
                 </NavLink>
               </li>
-              <li>
-                <button onClick={lightMode}>☀️</button>
-                <button onClick={darkMode}>🌜</button>
+              <li className={style.pages}>
+                <input
+                  type="checkbox"
+                  checked={
+                    themeState === "dark" ? true : false
+                  }
+                  name="darkMode"
+                  value={themeState}
+                  id={`switchDarkMode`}
+                  className={style.switch}
+                  onClick={(e) => handleChecked(e)}
+                />
+                <label htmlFor={`switchDarkMode`} className={style.lbl}></label>
               </li>
               <li className="dropdown-center">
                 <a
@@ -147,20 +167,20 @@ const NavBarDetails = () => {
                   </li>
                   <hr />
                   {info && info[0].admin === true ? (
-                  <div>
-                    <li>
-                      <a
-                        className={`${style.itemDrop} dropdown-item`}
-                        href="/admin"
-                      >
-                        Dashboard
-                      </a>
-                    </li>
-                    <hr />
-                  </div>
-                ) : (
-                  ""
-                )}
+                    <div>
+                      <li>
+                        <a
+                          className={`${style.itemDrop} dropdown-item`}
+                          href="/admin"
+                        >
+                          Dashboard
+                        </a>
+                      </li>
+                      <hr />
+                    </div>
+                  ) : (
+                    ""
+                  )}
                   <li>
                     <a
                       className={`${style.itemDrop} dropdown-item`}

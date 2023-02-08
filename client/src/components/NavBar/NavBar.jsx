@@ -14,7 +14,7 @@ import style from "./NavBar.module.css";
 const NavBar = (props) => {
   const location = useLocation();
   const [login, setLogin] = useState(false);
-
+  const [themeState, setThemeState] = useState(localStorage.getItem("theme"));
   const [info, setInfo] = useState(JSON.parse(localStorage.getItem("user")));
   useEffect(() => {
     if (info) {
@@ -38,6 +38,16 @@ const NavBar = (props) => {
   } else {
     darkMode();
   }
+
+  const handleChecked = (event) => {
+    if (event.target.checked === true) {
+      setThemeState("dark");
+      darkMode();
+    } else {
+      setThemeState("light");
+      lightMode();
+    }
+  };
 
   return (
     <div className={style.containerNavbar}>
@@ -97,25 +107,18 @@ const NavBar = (props) => {
               </NavLink>
             </li>
 
-            {/*MODO OSCURO */}
-            {/* <li>
-              <label class="switch">
-                <input type="checkbox" />
-                <span className={style.slider}></span>
-              </label>
-            </li> */}
-            <li>
-              <button className={style.btnMoon} onClick={darkMode}>
-                🌜
-              </button>
-              <button className={style.btnSun} onClick={lightMode}>
-                ☀️
-              </button>
+            <li className={style.pages}>
+              <input
+                type="checkbox"
+                checked={themeState === "dark" ? true : false}
+                name="darkMode"
+                value={localStorage.getItem("theme")}
+                id={`switch`}
+                className={style.switch}
+                onClick={(e) => handleChecked(e)}
+              />
+              <label htmlFor={`switch`} className={style.lbl}></label>
             </li>
-            {/* <li>
-              <button onClick={darkMode}>DarkMode</button>
-              <button onClick={lightMode}>LightMode</button>
-            </li>      */}
 
             <li className="dropdown">
               <a
