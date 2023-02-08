@@ -241,6 +241,13 @@ export function getUserById(id) {
   };
 }
 
+export const putUser = (id, data) => {
+  return async () => {
+    const json = await axios.put(`/user/edit/${id}`, data);
+    return json;
+  };
+};
+
 // *********************** SEND EMAIL ************************
 
 export const sendEmail = async (data, form) => {
