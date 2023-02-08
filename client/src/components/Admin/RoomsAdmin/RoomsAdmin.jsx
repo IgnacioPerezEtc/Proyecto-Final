@@ -16,7 +16,7 @@ const RoomsAdmin = () => {
   return (
     <div id="roomsAdmin">
       <h1 className={style.h1}>Rooms</h1>
-      <div className={style.containerHotels}>
+      <div className={style.container}>
         <table className={style.table}>
           <thead>
             <tr className={style.trHead}>

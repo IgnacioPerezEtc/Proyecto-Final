@@ -27,68 +27,71 @@ const HotelsAdmin = (props) => {
     dispatch(getHotelByName(name));
   };
   return (
-    <div className={style.container}>
-      <table>
-        <thead>
-          <tr>
-            <th colSpan={7} className={style.thSearch}>
-              <form
-                action=""
-                className={style.formHotels}
-                onSubmit={handleSubmit}
-              >
-                <input type="text" onChange={onChangeName} />
-                <button type="submit">Search</button>
-              </form>
-            </th>
-          </tr>
-          <tr>
-            <th>Id</th>
-            <th>Name</th>
-            <th>Location</th>
-            <th>Phone</th>
-            <th>Category</th>
-            <th>Status</th>
-            <th>Edit</th>
-          </tr>
-        </thead>
+    <div>
+      <h1 className={style.h1}>Hotels</h1>
+      <div className={style.container}>
+        <table>
+          <thead>
+            <tr>
+              <th colSpan={7} className={style.thSearch}>
+                <form
+                  action=""
+                  className={style.formHotels}
+                  onSubmit={handleSubmit}
+                >
+                  <input type="text" onChange={onChangeName} />
+                  <button type="submit">Search</button>
+                </form>
+              </th>
+            </tr>
+            <tr>
+              <th>Id</th>
+              <th>Name</th>
+              <th>Location</th>
+              <th>Phone</th>
+              <th>Category</th>
+              <th>Status</th>
+              <th>Edit</th>
+            </tr>
+          </thead>
 
-        <tbody>
-          {hotels?.map((hotel) => {
-            return (
-              <tr className={style.trBody}>
-                <td className={style.id}>{hotel.id}</td>
-                <td>{hotel.name}</td>
-                <td>{hotel.location}</td>
-                <td>{hotel.phone}</td>
-                <td>{hotel.category}</td>
-                <td>
-                  {hotel.hidden === true ? (
-                    <img
-                      src={statusDisabled}
-                      alt=""
-                      className={style.imgEnaDis}
-                    />
-                  ) : (
-                    <img
-                      src={statusEnable}
-                      alt=""
-                      className={style.imgEnaDis}
-                    />
-                  )}
-                </td>
-                <td>
-                  <NavLink to={`/editHotel/${hotel.id}`}>
-                    <button className={style.buttonEnab}>
-                      <img src={edit} alt="" className={style.imgEnaDis} />
-                    </button>
-                  </NavLink>
-                </td>
-              </tr>
-            );
-          })}
-        </tbody>
-      </table>
+          <tbody>
+            {hotels?.map((hotel) => {
+              return (
+                <tr className={style.trBody}>
+                  <td className={style.id}>{hotel.id}</td>
+                  <td>{hotel.name}</td>
+                  <td>{hotel.location}</td>
+                  <td>{hotel.phone}</td>
+                  <td>{hotel.category}</td>
+                  <td>
+                    {hotel.hidden === true ? (
+                      <img
+                        src={statusDisabled}
+                        alt=""
+                        className={style.imgEnaDis}
+                      />
+                    ) : (
+                      <img
+                        src={statusEnable}
+                        alt=""
+                        className={style.imgEnaDis}
+                      />
+                    )}
+                  </td>
+                  <td>
+                    <NavLink to={`/editHotel/${hotel.id}`}>
+                      <button className={style.buttonEnab}>
+                        <img src={edit} alt="" className={style.imgEnaDis} />
+                      </button>
+                    </NavLink>
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };
