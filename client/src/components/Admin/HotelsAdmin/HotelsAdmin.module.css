@@ -1,36 +1,43 @@
-.containerHotels {
-  background-color: #fff;
-  margin-top: 10px;
-  max-height: 80vh;
+.container{
   overflow-y: scroll;
-  padding-right: 20px;
+  max-height: 80vh;
 }
-
-.h1 {
-  font-size: 3.8rem;
-  text-align: start;
-  color: var(--color-red);
-}
-
-.table {
+table {
   width: 100%;
-  text-align: center;
+  border-collapse: collapse;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  background-color: #d4d4d49c !important;
 }
-
-.trHead th {
-  padding-top: 16px;
-  padding-bottom: 16px;
-  border-bottom: 1px solid black;
-  font-size: 1.8rem;
+th, td {
+  padding: 15px;
+  background-color: rgba(255,255,255,0.2);
   color: var(--color-blue);
-}
-
-.trBody th {
   font-size: 1.6rem;
-  font-weight: lighter;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.205);
+}
+th {
+  text-align: left;
+  color: #fff;
+
+}
+thead th {
+  background-color: var(--color-blue);
+}
+tbody tr:hover {
+  background-color: #86858542;
+}
+tbody td {
+  position: relative;
+}
+tbody td:hover:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -9999px;
+  bottom: -9999px;
+  background-color: #86858542;
+  z-index: -1;
 }
 
 .buttonEnab {
@@ -43,13 +50,13 @@
   width: 20px;
   height: 20px;
 }
-
-.id {
-  font-weight: 500 !important;
+.thSearch{
+  text-align: center;
 }
 .formHotels {
   padding-top: 20px;
   text-align: center;
+
 }
 
 .formHotels input{
@@ -72,7 +79,12 @@
     text-align: center;
     font-size: 1.8rem;
     border: none;
-    background-color: var(--color-blue);
+    background-color: var(--color-red);
     color: #fff;
     border-radius: 8px;
+}
+
+.formHotels button:hover{
+  background-color: #8a0606;
+  color: #fff;
 }

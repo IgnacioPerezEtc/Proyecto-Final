@@ -18,7 +18,7 @@ const EditHotel = () => {
   const hotel = useSelector((state) => state.hotelDetail);
   const [category, setCategory] = useState(null);
   const [hover, setHover] = useState(null);
-
+  let imgs = [];
   const servicies = ["parking", "restaurant", "publicPool", "bar", "wifi"];
   const [inputs, setInputs] = useState({
     name: "",
@@ -87,19 +87,10 @@ const EditHotel = () => {
   for (let i = 0; i < star; i++) {
     stars.push(<FontAwesomeIcon className={`${style.stars}`} icon={faStar} />);
   }
-  const imgs = [
-    "https://swiperjs.com/demos/images/nature-1.jpg",
-    "https://swiperjs.com/demos/images/nature-2.jpg",
-    "https://swiperjs.com/demos/images/nature-3.jpg",
-    "https://swiperjs.com/demos/images/nature-4.jpg",
-    "https://swiperjs.com/demos/images/nature-5.jpg",
-    "https://swiperjs.com/demos/images/nature-6.jpg",
-    "https://swiperjs.com/demos/images/nature-7.jpg",
-    "https://swiperjs.com/demos/images/nature-8.jpg",
-    "https://swiperjs.com/demos/images/nature-9.jpg",
-    "https://swiperjs.com/demos/images/nature-10.jpg",
-    hotel.pictureHome,
-  ];
+  if (hotel.pictureHome && hotel.pictureDetail) {
+    imgs = hotel.pictureDetail;
+    imgs.push(hotel.pictureHome);
+  }
   let ratingLet = (rating) => {
     let text = "";
     if (rating < 5) {
@@ -133,7 +124,7 @@ const EditHotel = () => {
           <div className={style.containerCard}>
             <div className={style.containerImgTitle}>
               <div className={style.containerHidden}>
-                <label className={style.hidden}>Hidden</label>
+                <label className={style.hidden}>Logical deletion (Hidden)</label>
                 <input
                   type="checkbox"
                   checked={inputs.hidden === true ? true : false}
@@ -325,7 +316,10 @@ const EditHotel = () => {
                     })}
                   </ul>
                 </div>
-                <button onClick={() => saveChanges(hotel.id)}>
+                <button
+                  className={style.buttonSave}
+                  onClick={() => saveChanges(hotel.id)}
+                >
                   Save Changes
                 </button>
               </div>
@@ -342,52 +336,3 @@ const EditHotel = () => {
 };
 
 export default EditHotel;
-
-{
-  /* {hotel.id === parseInt(id) ? (
-        <div>
-          <p className={style.p}>{hotel.id}</p>
-          <form action="">
-            <div>
-              <label>Name:</label>
-              <input
-                type="text"
-                onChange={handleChange}
-                defaultValue={hotel.name}
-              />
-            </div>
-            <div>
-              <label>Location:</label>
-              <input
-                type="text"
-                onChange={handleChange}
-                defaultValue={hotel.location}
-              />
-            </div>
-            <div>
-              <label>Phone:</label>
-              <input
-                type="text"
-                onChange={handleChange}
-                defaultValue={hotel.phone}
-              />
-            </div>
-            <div>
-              <label>Description:</label>
-              <textarea
-                type="text"
-                name="description"
-                defaultValue={hotel.description}
-                onChange={handleChange}
-              />
-            </div>
-            <div>
-                <label htmlFor="">Picture Home</label>
-                <img src={hotel.pictureHome} alt="" />
-            </div>
-            <div>
-              <button>Save Changes</button>
-            </div>
-          </form>
-        </div> */
-}

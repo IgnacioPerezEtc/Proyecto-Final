@@ -6,7 +6,7 @@ import { useParams } from "react-router-dom";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import style from "./HotelDetail.module.css";
-import "./HotelDetail.css"
+import "./HotelDetail.css";
 import RoomCard from "../RoomCard/RoomCard";
 import { getHotelById } from "../../redux/actions";
 import NavBarDetails from "../NavBarDetails/NavBarDetails";
@@ -27,6 +27,7 @@ const HotelDetail = (props) => {
   const { id } = useParams();
   const hotelDetail = useSelector((state) => state.hotelDetail);
   const star = hotelDetail.category;
+  let imgs = [];
   let stars = [];
   for (let i = 0; i < star; i++) {
     stars.push(<FontAwesomeIcon className={`${style.stars}`} icon={faStar} />);
@@ -40,19 +41,11 @@ const HotelDetail = (props) => {
       dispatch(getHotelById(props.id));
     }, []);
   }
-  const imgs = [
-    "https://swiperjs.com/demos/images/nature-1.jpg",
-    "https://swiperjs.com/demos/images/nature-2.jpg",
-    "https://swiperjs.com/demos/images/nature-3.jpg",
-    "https://swiperjs.com/demos/images/nature-4.jpg",
-    "https://swiperjs.com/demos/images/nature-5.jpg",
-    "https://swiperjs.com/demos/images/nature-6.jpg",
-    "https://swiperjs.com/demos/images/nature-7.jpg",
-    "https://swiperjs.com/demos/images/nature-8.jpg",
-    "https://swiperjs.com/demos/images/nature-9.jpg",
-    "https://swiperjs.com/demos/images/nature-10.jpg",
-    hotelDetail.pictureHome,
-  ];
+  if (hotelDetail.pictureHome && hotelDetail.pictureDetail) {
+    imgs = hotelDetail.pictureDetail;
+    imgs.push(hotelDetail.pictureHome);
+  }
+
   let ratingLet = (rating) => {
     let text = "";
     if (rating < 5) {
@@ -111,10 +104,10 @@ const HotelDetail = (props) => {
                   />
                 </div>
                 <div className={style.containerImg}>
-                  <img src={imgs[1]} alt="" className={style.imgGallery} />
+                  <img src={imgs[0]} alt="" className={style.imgGallery} />
                 </div>
                 <div className={style.containerImg}>
-                  <img src={imgs[2]} alt="" className={style.imgGallery} />
+                  <img src={imgs[1]} alt="" className={style.imgGallery} />
                   <button className={style.buttonVer}>View Gallery</button>
                 </div>
               </div>
@@ -159,7 +152,9 @@ const HotelDetail = (props) => {
                 <div className="containerAloj">
                   <h2 className="titleOffHotel">This hotel offers</h2>
                   <ul className="ulOff">
-                    <li className="offRoomsDetail">{hotelDetail.rooms} Rooms</li>
+                    <li className="offRoomsDetail">
+                      {hotelDetail.rooms} Rooms
+                    </li>
                     {ofrecimientosHotel.map((ofre) => {
                       return (
                         <li className="offParkinDetail" key={ofre}>
@@ -171,7 +166,9 @@ const HotelDetail = (props) => {
                   <hr className={style.hr} />
                   <h2 className="titleOffHotel">Security & Advantages</h2>
                   <ul className={style.ulOff}>
-                    <li className="offCheckInDetail">Check-in & check-out web</li>
+                    <li className="offCheckInDetail">
+                      Check-in & check-out web
+                    </li>
                     <li className="offMethods">Secure payment methods</li>
                     <li className="offEmail">Email confirming reservation</li>
                   </ul>
@@ -196,9 +193,7 @@ const HotelDetail = (props) => {
               </div>
               <div className={style.containerDescription}>
                 <h2 className={style.titleDescription}>Description</h2>
-                <p className={style.description}>
-                  {hotelDetail.description}
-                </p>
+                <p className={style.description}>{hotelDetail.description}</p>
               </div>
               <div className={style.containerDescription}>
                 <h2 className={style.titleDescription}>
@@ -276,7 +271,7 @@ const HotelDetail = (props) => {
                           img={showRoom.pictureHome}
                           numRoom={showRoom.numRoom}
                           price={showRoom.value}
-                          description= {showRoom.description}
+                          description={showRoom.description}
                           guest={showRoom.numPeople}
                           specialties={showRoom.specialties}
                           maxAdult={showRoom.maxAdult}

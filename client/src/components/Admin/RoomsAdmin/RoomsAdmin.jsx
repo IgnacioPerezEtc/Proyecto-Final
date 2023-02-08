@@ -34,14 +34,14 @@ const RoomsAdmin = () => {
             {rooms?.map((room) => {
               return (
                 <tr className={style.trBody}>
-                  <th className={style.id}>{room.id}</th>
-                  <th>{room.hotel.name}</th>
-                  <th>{room.numRoom}</th>
+                  <td className={style.id}>{room.id}</td>
+                  <td>{room.hotel.name}</td>
+                  <td>{room.numRoom}</td>
 
-                  <th>{room.numPeople}</th>
+                  <td>{room.numPeople}</td>
 
-                  <th>{room.value}</th>
-                  <th>
+                  <td>{room.value}</td>
+                  <td>
                     {room.hidden === true ? (
                       <img
                         src={statusDisabled}
@@ -55,14 +55,14 @@ const RoomsAdmin = () => {
                         className={style.imgEnaDis}
                       />
                     )}
-                  </th>
-                  <th>
+                  </td>
+                  <td>
                     <NavLink to={`/editRoom/${room.id}`}>
                       <button className={style.buttonEnab}>
                         <img src={edit} alt="" className={style.imgEnaDis} />
                       </button>
                     </NavLink>
-                  </th>
+                  </td>
                 </tr>
               );
             })}
