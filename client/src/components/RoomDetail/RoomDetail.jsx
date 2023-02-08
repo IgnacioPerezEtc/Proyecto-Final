@@ -67,7 +67,7 @@ const RoomDetail = () => {
                 className={` ${style.containerTitle} d-flex justify-content-between`}
               >
                 <p className={` ${style.title}`}>
-                  {roomDetail.numRoom} by {" "}
+                  {roomDetail.numRoom} by{" "}
                   {roomDetail.hotel.name.charAt(0).toUpperCase() +
                     roomDetail.hotel.name.slice(1)}{" "}
                 </p>
@@ -108,7 +108,7 @@ const RoomDetail = () => {
             </div>
 
             <div className={style.containerInfo}>
-              <div className={style.containerCondSpec}>
+              <div className={`${style.containerCondSpec} containerCondSpec`}>
                 <h2>Room conditions</h2>
                 <ul className={style.ulCondiciones}>
                   {/* <li>{roomDetail.maxChild} Max Childs</li>
@@ -116,31 +116,31 @@ const RoomDetail = () => {
                   <li>{roomDetail.numPeople} Max People</li> */}
                   <li>
                     <span className={style.iconChildren}></span>
-                    <p className={style.paddingMax}>
+                    <p className={`${style.paddingMax} paddingMax` }>
                       {roomDetail.maxChild} Max Children
                     </p>
                   </li>
                   <li>
                     <span className={style.iconAdults}></span>
-                    <p className={style.paddingMax}>
+                    <p className={`${style.paddingMax} paddingMax` }>
                       {roomDetail.maxAdult} Max Adults
                     </p>
                   </li>
                   <li>
                     <span className={style.iconPeople}></span>
-                    <p className={style.paddingMax}>
+                    <p className={`${style.paddingMax} paddingMax` }>
                       {roomDetail.numPeople} Max People
                     </p>
                   </li>
                 </ul>
               </div>
 
-              <div className={style.containerSpecialties}>
-                <h2 className={style.titleSpec}>Specialities</h2>
+              <div className={`${style.containerSpecialties} containerSpecialties`}>
+                <h2 className={`${style.titleSpec} titleSpec`}>Specialities</h2>
                 <ul className={style.ulSpec}>
                   {roomDetail.specialties.map((spec) => {
                     return (
-                      <li className={style.spanSpec} key={spec}>
+                      <li className={`${style.spanSpec} spanSpec`} key={spec}>
                         {spec.charAt(0).toUpperCase() + spec.slice(1)}
                       </li>
                     );
@@ -148,11 +148,11 @@ const RoomDetail = () => {
                 </ul>
               </div>
             </div>
-            <div className={style.containerDescription}>
-              <h2 className={style.titleDescription}>Description</h2>
-              <p className={style.description}>
-               {roomDetail.description}
-              </p>
+            <div
+              className={`${style.containerDescription} containerDescription`}
+            >
+              <h2 className={`${style.titleDescription} titleDescription`}>Description</h2>
+              <p className={`${style.description} description`}>{roomDetail.description}</p>
             </div>
           </div>
 

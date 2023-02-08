@@ -43,7 +43,6 @@ const Booking = () => {
         <h2 className={style.blue}>Booking</h2>
         <h2 className={style.red}>Detail</h2>
       </div>
-      {error ? <Error /> : false}
 
       {roomDetail.hasOwnProperty("hotel") &&
       roomDetail.id === parseInt(info[0].id) ? (
