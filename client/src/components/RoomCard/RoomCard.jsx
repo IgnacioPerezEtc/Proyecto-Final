@@ -25,14 +25,14 @@ const RoomCard = ({
   description,
 }) => {
   const dispatch = useDispatch();
-
+  console.log(description)
   // const cleanRoomDetail = () => {
   //   dispatch(cleanRoom());
   // };
   const location = useLocation();
   return (
     <div>
-      {location.pathname === "/home" ? (
+      {/* {location.pathname === "/home" ? (
         <div className={style.containerRoomCards}>
           <Card className={`${style.Card} h-75`}>
             <Link
@@ -68,7 +68,7 @@ const RoomCard = ({
             </Link>
           </Card>
         </div>
-      ) : (
+      ) : ( */}
         <div className={style.containerRoomCards}>
           <Card className={`${style.Card} h-75`}>
             <Link
@@ -101,7 +101,7 @@ const RoomCard = ({
             </Link>
           </Card>
         </div>
-      )}
+      {/* )} */}
     </div>
   );
 };

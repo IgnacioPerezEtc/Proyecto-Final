@@ -276,6 +276,7 @@ const HotelDetail = (props) => {
                           img={showRoom.pictureHome}
                           numRoom={showRoom.numRoom}
                           price={showRoom.value}
+                          description= {showRoom.description}
                           guest={showRoom.numPeople}
                           specialties={showRoom.specialties}
                           maxAdult={showRoom.maxAdult}
