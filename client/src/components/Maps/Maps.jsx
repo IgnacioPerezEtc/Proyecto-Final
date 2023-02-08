@@ -45,7 +45,7 @@ const Maps = ({ positionDetail }) => {
                     {hotel.name[0].toUpperCase() + hotel.name.slice(1)}
                   </h3>
                   {
-                    console.log(hotel.pictureHome)
+                   
                   }
                   <img
                     className={style.pictureHome}
