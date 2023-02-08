@@ -9,6 +9,7 @@ import Header from "../Header/Header.jsx";
 import Footer from "../Footer/Footer.jsx";
 import Error from "../Error/Error.jsx";
 import Swal from "sweetalert2/dist/sweetalert2.all.js";
+import NavBarDetails from "../NavBarDetails/NavBarDetails";
 const Booking = () => {
   const dispatch = useDispatch();
   const roomDetail = useSelector((state) => state.roomDetail);
@@ -37,7 +38,7 @@ const Booking = () => {
 
   return (
     <div>
-      <Header />
+      <NavBarDetails />
       <div className={style.titleContainer}>
         <h2 className={style.blue}>Booking</h2>
         <h2 className={style.red}>Detail</h2>

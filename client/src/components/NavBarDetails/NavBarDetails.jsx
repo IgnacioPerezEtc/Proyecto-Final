@@ -19,16 +19,21 @@ const NavBarDetails = () => {
     }
   });
   function darkMode() {
-    var element = document.body;
-    var content = document.getElementById("DarkModetext");
+    localStorage.setItem("theme", "dark");
+    let element = document.body;
+    let content = document.getElementById("DarkModetext");
     element.className = "dark-mode";
-    content.innerText = "Dark Mode is ON";
   }
   function lightMode() {
+    localStorage.setItem("theme", "light");
     let element = document.body;
     let content = document.getElementById("DarkModetext");
     element.className = "light-mode";
-    content.innerText = "Dark Mode is OFF";
+  }
+  if (localStorage.getItem("theme") == "light") {
+    lightMode();
+  } else {
+    darkMode();
   }
   return (
     <div>

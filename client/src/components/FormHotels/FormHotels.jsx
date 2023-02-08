@@ -192,7 +192,7 @@ const FormHotels = () => {
   }, [inputErrors]);
 
   return(
-    <div>
+    <div className="formHotelsBody">
       <NavBarDetails />
       <div className={style.container}>
         <div className={style.containerForm}>
