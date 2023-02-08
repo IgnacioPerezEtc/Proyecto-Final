@@ -1,6 +1,9 @@
 .containerHotels {
   background-color: #fff;
   margin-top: 10px;
+  max-height: 80vh;
+  overflow-y: scroll;
+  padding-right: 20px;
 }
 
 .h1 {

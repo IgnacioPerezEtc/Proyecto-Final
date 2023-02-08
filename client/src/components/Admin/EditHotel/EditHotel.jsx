@@ -196,17 +196,16 @@ const EditHotel = () => {
                 </div>
                 {/* ////////////////////////////////////////////////////////MAPA//////////////////////////////////// */}
                 <div className={style.containerMap}>
-                  <p>MAPA</p>
                   <div>
-                    {/* {hotel.position?.map((hotelPosition) => {
+                    {hotel.position?.map((hotelPosition) => {
                       array.push(parseFloat(hotelPosition));
-                    })} */}
+                    })}
                     {/* { console.log(array)} */}
-                    {/* {array.length === 2 ? (
+                    {array.length === 2 ? (
                       <Maps positionDetail={array} />
                     ) : (
                       false
-                    )} */}
+                    )}
 
                     {/* { setMapCenter(array)} */}
                     {/* //////////////////////////////////////////////////////////////////////////////////////////// */}
