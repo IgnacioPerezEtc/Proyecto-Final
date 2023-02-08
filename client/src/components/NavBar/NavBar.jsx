@@ -105,7 +105,11 @@ const NavBar = (props) => {
                 Hotels
               </NavLink>
             </li>
-
+            <li className={style.pages}>
+              <NavLink to={"/favorites"} className={style.linkLanding}>
+                Favorites
+              </NavLink>
+            </li>
             <li className={style.pages}>
               <NavLink to={"/aboutUs"} className={style.linkLanding}>
                 About Us

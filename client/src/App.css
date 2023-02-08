@@ -118,7 +118,12 @@ body {
 .dark-mode .linkCommentarios{
     color: white;
 }
-
+.dark-mode .containerDescription{
+    background-color:#b2b2b2;
+}
+.containerContact{
+    background-color:#b2b2b2;
+}
 .dark-mode .containerAloj{
     background-color:#b2b2b2;
 }

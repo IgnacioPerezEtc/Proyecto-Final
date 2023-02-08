@@ -103,7 +103,11 @@ const NavBarDetails = () => {
                   Hotels
                 </NavLink>
               </li>
-
+              <li className={style.pages}>
+                <a href="/favorites" className={style.linkLanding}>
+                  Favorites
+                </a>
+              </li>
               <li className={style.pages}>
                 <NavLink to={"/aboutUs"} className={style.linkLanding}>
                   About Us
@@ -160,6 +164,15 @@ const NavBarDetails = () => {
                       href="/Booking"
                     >
                       My reservations
+                    </a>
+                  </li>
+                  <hr />
+                  <li>
+                    <a
+                      className={`${style.itemDrop} dropdown-item`}
+                      href="/Reservationhistory"
+                    >
+                      Reservation History
                     </a>
                   </li>
                 </ul>

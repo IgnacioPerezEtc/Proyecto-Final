@@ -191,11 +191,15 @@ const HotelDetail = (props) => {
                   </div>
                 </div>
               </div>
-              <div className={style.containerDescription}>
+              <div
+                className={`${style.containerDescription} containerDescription`}
+              >
                 <h2 className={style.titleDescription}>Description</h2>
                 <p className={style.description}>{hotelDetail.description}</p>
               </div>
-              <div className={style.containerDescription}>
+              <div
+                className={`${style.containerDescription} containerDescription`}
+              >
                 <h2 className={style.titleDescription}>
                   More about{" "}
                   {hotelDetail.name
@@ -225,48 +229,13 @@ const HotelDetail = (props) => {
           {location.pathname.includes("hotels") ? (
             <div>
               <h2 className={style.roomsTitle}>Rooms</h2>
-              <div className={style.textRooms}>
-                <Swiper
-                  freeMode={true}
-                  grabCursor={true}
-                  modules={[Autoplay, Keyboard]}
-                  autoplay={{
-                    delay: 3000,
-                  }}
-                  keyboard={{
-                    enabled: true,
-                  }}
-                  className="mySwiper m-4 justify-content-center w-100"
-                  breakpoints={{
-                    0: {
-                      slidesPerView: 1,
-                      spaceBetween: 30,
-                      centeredSlides: true,
-                    },
-                    480: {
-                      slidesPerView: 1,
-                      spaceBetween: 15,
-                      centeredSlides: true,
-                    },
-                    768: {
-                      slidesPerView: 2,
-                      spaceBetween: 10,
-                    },
-                    1024: {
-                      slidesPerView: 3,
-                      spaceBetween: 30,
-                    },
-                    1440: {
-                      slidesPerView: 4,
-                      spaceBetween: 20,
-                    },
-                  }}
-                >
-                  {hotelDetail.showRooms?.map((showRoom) => {
-                    console.log(showRoom);
-                    return (
-                      <SwiperSlide key={showRoom.id}>
+              <div>
+                <div className={style.textRooms}>
+                  <div className={style.flexContainer}>
+                    {hotelDetail.showRooms?.map((showRoom) => {
+                      return (
                         <RoomCard
+                          className={style.RoomCard}
                           id={showRoom.id}
                           img={showRoom.pictureHome}
                           numRoom={showRoom.numRoom}
@@ -277,10 +246,15 @@ const HotelDetail = (props) => {
                           maxAdult={showRoom.maxAdult}
                           maxChild={showRoom.maxChild}
                         />
-                      </SwiperSlide>
-                    );
-                  })}
-                </Swiper>
+                      );
+                    })}
+                  </div>
+                </div>
+              </div>
+              <div className={style.flexContainer}>
+                <NavLink to={"/formHotels"}>
+                  <button className={style.createRoom}>Create Room</button>
+                </NavLink>{" "}
               </div>
             </div>
           ) : (

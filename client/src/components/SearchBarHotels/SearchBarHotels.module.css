@@ -213,6 +213,7 @@ input:focus {
   box-shadow: 0px 4px 4px #00000040;
   outline: none;
   cursor: pointer;
+  border: none;
 }
 .createHotel {
   width: 154px;
@@ -232,6 +233,7 @@ input:focus {
   text-align: start;
   padding-left: 8px;
   margin-left: 9px;
+  border: none;
 }
 .createHotel:hover {
   transform: scale(0.98);
@@ -254,6 +256,7 @@ input:focus {
   box-shadow: 0px 4px 4px #00000040;
   outline: none;
   cursor: pointer;
+  border: none;
 }
 .reload:hover {
   transform: scale(0.98);
