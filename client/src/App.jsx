@@ -19,6 +19,7 @@ import Reservation from "./components/Reservation/Reservation.jsx";
 import Favorites from "./components/Favorites/Favorites.jsx";
 import Admin from "./components/Admin/Admin.jsx";
 import EditHotel from "./components/Admin/EditHotel/EditHotel.jsx";
+import BookingData from "./components/Graphics/BookingData.jsx";
 //
 function App() {
   return (
@@ -43,6 +44,7 @@ function App() {
             <Route path="/favorites" element={<Favorites/>} />
             <Route path="/admin" element={<Admin/>} />
             <Route path="/editHotel/:id" element={<EditHotel/>} />
+            <Route path="/bookingdata" element={<BookingData/>} />
           </Routes>
         </div>
       </BrowserRouter>

@@ -13,6 +13,9 @@ import {
   CLEAN_RESERVATION,
   CLEAN_ROOM_DETAIL,
   GET_ALL_RESERVATIONS,
+  GET_ALL_DATA_RESERVATIONS,
+  GET_RESERVATION_PER_MONTH,
+  GET_RESERVATION_PER_COUNTRY,
   GET_ALL_USERS,
   PUT_HOTEL,
   CLEAR_HOTEL_DETAIL,
@@ -27,6 +30,9 @@ const initialState = {
   roomDetail: {},
   reservation: {},
   allReservation: [],
+  allDataReservation: [],
+  reservationPerMonth:[],
+  reservationPerCountry:[],
   users: [],
   error: false,
 };
@@ -142,6 +148,24 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         allReservation: action.payload,
       };
+
+    case GET_ALL_DATA_RESERVATIONS:
+      return {
+        ...state,
+        allDataReservation: action.payload
+      }
+    
+    case GET_RESERVATION_PER_MONTH:
+      return {
+        ...state,
+        reservationPerMonth: action.payload
+      };
+
+    case GET_RESERVATION_PER_COUNTRY:
+      return {
+        ...state,
+        reservationPerCountry: action.payload
+      }
 
     case GET_ALL_USERS:
       return {
