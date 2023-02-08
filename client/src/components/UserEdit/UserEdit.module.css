@@ -46,3 +46,20 @@
     cursor: pointer;
     background-color: #CCD1D1;
 }
+
+#messageRed{
+    color: red;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    font-size: 15px;
+}
+
+#messageGreen{
+    color: rgb(99, 165, 0);
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    font-size: 15px;
+}
+
