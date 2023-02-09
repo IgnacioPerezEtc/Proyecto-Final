@@ -115,12 +115,15 @@ const SearchBarHotels = (props) => {
             <option value="german">German</option>
           </select>
           <div>
+
             <img 
               onClick={reload} 
               src={reloadIcon}
               className={`${style.reload}`} 
               alt="" 
             />
+
+
           </div>
 
           {info

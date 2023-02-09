@@ -64,6 +64,7 @@ const RoomsCards = (props) => {
                       image={hotel.pictureHome}
                       category={hotel.category}
                       languages={hotel.languages}
+                      description= {hotel.description}
                     />
                   </SwiperSlide>
                 );
