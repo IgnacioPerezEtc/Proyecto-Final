@@ -41,12 +41,12 @@ const ReservationPerMonth = () => {
       className="bg-white border border-secondary-subtle shadow rounded-3"
       style={{ width: '97vw', height: '60vh' }}
     >
-      <h1 className='px-5'>Months with more Reservations in the year</h1>
+      <h1 className={localStorage.getItem("theme")=== "dark"? 'px-5 text-dark' : 'px-5'}>Months with more Reservations in the year</h1>
       {
         (!data.length) ?
         (
           <div className="mt-5 d-flex justify-content-center align-items-center">
-            <h3 className="pt-5">No data</h3>
+            <h3 className={localStorage.getItem("theme")=== "dark"? 'pt-5 text-dark' : 'pt-5'}>No data</h3>
           </div>
         )
         :
