@@ -1,16 +1,18 @@
 .containerPpalUsers {
-  padding-top: 70px;
+  padding-top: 80px;
 }
 
-.containerUsers {
-  background-color: #fff;
-  margin-top: 10px;
+.container {
+  overflow-y: scroll;
+  max-height: 80vh;
+  margin-bottom: 80px;
 }
 
 .h1 {
   font-size: 3.8rem;
   text-align: start;
   color: var(--color-red);
+  padding-bottom: 16px;
 }
 
 .table {
@@ -43,5 +45,3 @@
   width: 20px;
   height: 20px;
 }
-
-

@@ -97,4 +97,5 @@ tbody td:hover:before {
   font-size: 3.8rem;
   text-align: start;
   color: var(--color-red);
+  padding-bottom: 16px;
 }

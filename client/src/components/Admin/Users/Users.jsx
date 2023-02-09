@@ -9,6 +9,7 @@ import { useEffect } from "react";
 const Users = (props) => {
   const dispatch = useDispatch();
   const users = useSelector((state) => state.users);
+  console.log(users)
   useEffect(() => {
     dispatch(getAllUsers());
   }, [dispatch]);
@@ -17,48 +18,31 @@ const Users = (props) => {
     <div id="users" className={style.containerPpalUsers}>
       <h1 className={style.h1}>Users</h1>
 
-      <div className={style.containerUsers}>
-        <table className={style.table}>
+      <div className={style.container}>
+        <table>
           <thead>
-            <tr className={style.trHead}>
+            <tr>
               <th>Name</th>
               <th>Email</th>
               <th>Rol</th>
-              <th>Status</th>
+              <th>Address</th>
+              <th>Phone</th>
             </tr>
           </thead>
-          {users.hasOwnProperty("name") ? (
             <tbody>
-              {users?.map((user) => {
+              {users.map((user) => {
                 return (
                   <tr className={style.trBody} key={user.email}>
-                    <th>{user.name}</th>
-                    <th>{user.email}</th>
-                    <th>{user.admin === true ? "Admin" : "User"}</th>
-                    <th>
-                      {user.blocked === true ? (
-                        <img
-                          src={statusDisabled}
-                          alt=""
-                          className={style.imgEnaDis}
-                        />
-                      ) : (
-                        <img
-                          src={statusEnable}
-                          alt=""
-                          className={style.imgEnaDis}
-                        />
-                      )}
-                    </th>
+                    <td>{user.name}</td>
+                    <td>{user.email}</td>
+                    <td>{user.admin === true ? "Admin" : "User"}</td>
+                    <td>{user.address}</td>
+                    <td>{user.phone}</td>
                   </tr>
                 );
               })}
             </tbody>
-          ) : (
-            <div>
-              <h1>NO tiene usuarios</h1>
-            </div>
-          )}
+
         </table>
       </div>
     </div>
