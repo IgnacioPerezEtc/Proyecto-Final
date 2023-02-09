@@ -260,7 +260,7 @@ const HotelDetail = (props) => {
               </div>
               {info && info[0].admin === true && (
                 <div className={style.flexContainer}>
-                  <NavLink to={"/formHotels"}>
+                  <NavLink to={`/formRoom/${hotelDetail.id}`}>
                     <button className={style.createRoom}>Create Room</button>
                   </NavLink>{" "}
                 </div>

@@ -14,7 +14,7 @@ const Maps = ({ positionDetail }) => {
     dispatch(getAllHotels());
   }, [dispatch]);
   const [mapCenter, setMapCenter] = useState(
-    positionDetail ? positionDetail : [6.2503414521512335, -75.58782388923332]
+    positionDetail ? positionDetail : ["6.2503414521512335", "-75.58782388923332"]
   );
   const hotels = useSelector((state) => state.hotels);
   if (hotels.length) {
