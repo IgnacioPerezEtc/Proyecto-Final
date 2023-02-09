@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import { getUserById } from "../../redux/actions";
 import noUser from "../../assets/img/noUser.jpg";
 import style from "./UserProfile.module.css";
+import NavBarDetails from "../NavBarDetails/NavBarDetails";
+import Footer from "../Footer/Footer";
 
 const UserProfile = () => {
     const dispatch = useDispatch();
@@ -18,6 +20,7 @@ const UserProfile = () => {
 
     return (
         <div>
+            <NavBarDetails/>
             <div className={style.titleContainer}>
                 <h2 className={style.blue}>User</h2>
                 <h2 className={style.red}>Profile</h2>
@@ -43,6 +46,8 @@ const UserProfile = () => {
                 </div>
             </div>
             <Link to={'/reservationHistory'} id={style.link}>Reservation History</Link>
+
+            <Footer/>
         </div>
     )
 };
