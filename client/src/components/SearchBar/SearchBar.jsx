@@ -154,7 +154,7 @@ const SearchBar = (props) => {
                 : style.buttonOn
             }
           >
-            Search
+            Let's booking
           </button>
         </form>
       </div>
