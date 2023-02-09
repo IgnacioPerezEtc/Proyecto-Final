@@ -19,6 +19,7 @@ const RoomsCards = (props) => {
           </div>
 
           <Swiper
+            speed={2000}
             freeMode={true}
             grabCursor={true}
             modules={[Autoplay, Keyboard]}
