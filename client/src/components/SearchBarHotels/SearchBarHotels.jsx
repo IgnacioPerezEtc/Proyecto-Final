@@ -114,24 +114,21 @@ const SearchBarHotels = (props) => {
             <option value="french">French</option>
             <option value="german">German</option>
           </select>
-          <div>
-
-            <img 
-              onClick={reload} 
+          <div className={style.containerLoad}>
+            <img
+              onClick={reload}
               src={reloadIcon}
-              className={`${style.reload}`} 
-              alt="" 
+              className={`${style.reload}`}
+              alt=""
             />
-
-
           </div>
 
           {info
             ? info.at(0).admin === true && (
-              <NavLink to={"/formHotels"}>
-                <button className={style.createHotel}> Create Hotel</button>
-              </NavLink>
-            )
+                <NavLink to={"/formHotels"}>
+                  <button className={style.createHotel}> Create Hotel</button>
+                </NavLink>
+              )
             : ""}
         </div>
       ) : (

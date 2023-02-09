@@ -12,7 +12,6 @@ import GraphicsAdmin from "../Graphics/GraphicsAdmin";
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
 
-
 const Admin = () => {
   const location = useLocation();
   const [themeState, setThemeState] = useState(localStorage.getItem("theme"));
@@ -194,10 +193,12 @@ const Admin = () => {
         </nav>
       </div>
 
-      <div className={style.ContainerGraphics}>
-        <GraphicsAdmin />
-      </div>
-     
+      {location.pathname.includes("admin") && (
+        <div className={style.ContainerGraphics}>
+          <GraphicsAdmin />
+        </div>
+      )}
+
       {location.pathname.includes("admin") && (
         <div className={style.containerInfo}>
           <HotelsAdmin />
@@ -205,7 +206,6 @@ const Admin = () => {
           <Users />
         </div>
       )}
-
     </div>
   );
 };
