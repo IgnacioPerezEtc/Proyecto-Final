@@ -75,11 +75,15 @@
 .iconImage {
   width: 35px;
   margin-bottom: 20px;
+  background-color: #fff;
+  border-radius: 50%;
 }
 .iconGitHub {
   width: 35px;
   margin-left: 20px;
   margin-bottom: 20px;
+  background-color: #fff;
+  border-radius: 50%;
 }
 .name {
   margin: 20px;

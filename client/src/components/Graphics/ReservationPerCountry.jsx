@@ -43,7 +43,7 @@ const ReservationPerCountry = () => {
 
   return (
     <div
-      className={` ${style.Count} bg-white border border-secondary-subtle shadow rounded-3`}
+      className={` ${style.Count} Count`}
       style={{ width: '50vw', height: '60vh' }}>
 
       <h1 className={localStorage.getItem("theme")=== "dark"? 'px-5 text-dark' : 'px-5'}>Countries with more Reservations</h1>

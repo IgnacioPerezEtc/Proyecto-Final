@@ -170,7 +170,7 @@ const EditHotel = () => {
                   <div className={style.containerNameStar}>
                     <div>
                       <input
-                        className={style.nameHotel}
+                        className={`${style.nameHotel} nameHotel`}
                         value={inputs.name}
                         name="name"
                         onChange={handleChange}
@@ -218,9 +218,9 @@ const EditHotel = () => {
                       <p className={style.rating}>{hotel.rating}</p>
                     </div>
                     <div className={style.divTextRating}>
-                      <p className={style.textRecomm}>{textRating}</p>
+                      <p className={`${style.textRecomm} textRecomm`}>{textRating}</p>
                       {/* <p className={style.puntGral}>Puntuación general.</p> */}
-                      <a href="" className={style.linkCommentarios}>
+                      <a href="" className={`${style.linkCommentarios} linkCommentarios`}>
                         View comments.
                       </a>
                     </div>
@@ -230,7 +230,7 @@ const EditHotel = () => {
 
               <div className={style.contianerInfoHotel}>
                 <div className={style.containerSectionUno}>
-                  <div className={style.containerAloj}>
+                  <div className={`${style.containerAloj} containerAloj`}>
                     <h2 className={style.titleOff}>This hotel offers</h2>
                     <ul className={style.ulOff}>
                       <li className={style.off}>
@@ -295,16 +295,16 @@ const EditHotel = () => {
                     </div>
                   </div>
                 </div>
-                <div className={style.containerDescription}>
+                <div className={`${style.containerDescription} containerDescription`}>
                   <h2 className={style.titleDescription}>Description</h2>
                   <textarea
-                    className={style.description}
+                    className={`${style.description} description`}
                     value={inputs.description}
                     onChange={handleChange}
                     name="description"
                   ></textarea>
                 </div>
-                <div className={style.containerDescription}>
+                <div className={`${style.containerDescription} containerDescription`}>
                   <h2 className={style.titleDescription}>
                     More about{" "}
                     {hotel.name
