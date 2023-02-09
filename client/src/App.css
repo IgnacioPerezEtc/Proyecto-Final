@@ -2,19 +2,24 @@ body {
   /* padding: 25px; */
   color: black;
 }
+
 .dark-mode {
   background-color: #071923;
 }
+
 /* HotelsCards */
 .dark-mode .display-1 {
   color: white;
 }
+
 .dark-mode .w-50 {
   color: white;
 }
+
 .dark-mode .card {
   background: #b2b2b2;
 }
+
 .dark-mode .text-dark {
   color: #001d32;
 }
@@ -23,16 +28,44 @@ body {
   color: white;
 }
 
+.dark-mode .Count {
+  background: var(--color-blue);
+}
+
+.dark-mode .description {
+  background: #b2b2b2;
+}
+
+.dark-mode .nameHotel {
+  background: #b2b2b2;
+}
+
+.dark-mode .textRecomm {
+  color: #fff;
+}
+
+.dark-mode .linkCommentarios {
+  color: #fff;
+}
+
+.dark-mode .formContainer{
+  background: #e5e5e5;
+  color:#000
+}
+
 /* GALERY */
 .dark-mode .blueG {
   color: white;
 }
+
 .dark-mode .desc-gallery {
   color: white;
 }
+
 .dark-mode .buttonContainerE {
   color: white;
 }
+
 .dark-mode .buttonInactive {
   color: white;
   background-color: #071923;
@@ -55,6 +88,7 @@ body {
 .dark-mode .containerCardsServices {
   background: #b2b2b2;
 }
+
 /*comentarios*/
 
 .dark-mode .blueComentary {
@@ -64,6 +98,7 @@ body {
 .dark-mode .descComment {
   color: white;
 }
+
 .dark-mode .containerComments {
   background: #b2b2b2;
 }
@@ -75,6 +110,7 @@ body {
 .dark-mode .containerCards p {
   color: black;
 }
+
 .dark-mode .h2Commentary {
   color: white;
 }
@@ -91,6 +127,7 @@ body {
 .dark-mode .iconFooterFacebook {
   background-color: rgba(255, 255, 255, 0.2);
 }
+
 .dark-mode .inputFooterEmail {
   background-color: rgba(255, 255, 255, 0.2);
 }
@@ -115,28 +152,35 @@ body {
 .dark-mode .linkCommentarios {
   color: white;
 }
+
 .dark-mode .containerDescription {
   background-color: #b2b2b2;
 }
+
 .containerContact {
   background-color: #b2b2b2;
 }
+
 .dark-mode .containerAloj {
   background-color: #b2b2b2;
 }
+
 /* DETALLE */
 .dark-mode .offRoomsDetail {
   color: black;
   font-family: "Roboto", sans-serif;
 }
+
 .dark-mode .offParkinDetail {
   color: black;
   font-family: "Roboto", sans-serif;
 }
+
 .dark-mode .offPoolDetails {
   color: black;
   font-family: "Roboto", sans-serif;
 }
+
 .dark-mode .offBarDetail {
   color: black;
   font-family: "Roboto", sans-serif;
@@ -154,6 +198,7 @@ body {
 .dark-mode .color-blue {
   color: var(--letter-blue);
 }
+
 .titleContainer {
   color: #eee;
 }
@@ -161,33 +206,43 @@ body {
 body {
   background-color: #e5e5e5;
 }
+
 .dark-mode .titleSpec {
   background-color: #b2b2b2;
 }
+
 .dark-mode .containerSpecialties {
   background-color: #b2b2b2;
 }
+
 .dark-mode .containerInfo {
   background-color: #b2b2b2;
 }
+
 .dark-mode .containerCondSpec {
   background-color: #b2b2b2;
 }
+
 .dark-mode .containerCondSpec h2 {
-    color: #000;
-  }
-  .dark-mode .ulCondiciones {
-    color: #000;
-  }
-  .dark-mode .iconChildren {
-    color: #000;
-  }
-.dark-mode .paddingMax{
-    color: #000;
+  color: #000;
 }
-.dark-mode .spanSpec{
-    color: #000;
+
+.dark-mode .ulCondiciones {
+  color: #000;
 }
-.dark-mode .description{
-    color: #000;
+
+.dark-mode .iconChildren {
+  color: #000;
+}
+
+.dark-mode .paddingMax {
+  color: #000;
+}
+
+.dark-mode .spanSpec {
+  color: #000;
+}
+
+.dark-mode .description {
+  color: #000;
 }

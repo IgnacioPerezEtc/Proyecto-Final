@@ -2,7 +2,8 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { getAllDataReservations } from "../../redux/actions";
-import style from "./Graphics.module.css"
+import style from "./Graphics.module.css";
+import "./Graphics.css"
 // HOTELS WITH MORE RESERVATIONS
 const HotelsReservation = () => {
 
@@ -16,7 +17,7 @@ const HotelsReservation = () => {
 
   return (
     <div
-      className= {`${style.containerHotel} bg-white border border-secondary-subtle shadow rounded-3`}
+      className= {`${style.containerHotel}`}
       style={{ width: '50vw', height: '60vh', paddingBottom: '40px', paddingRight: '30px' }}
     >
       <h1 className='px-5'>Hotel with more Reservations</h1>

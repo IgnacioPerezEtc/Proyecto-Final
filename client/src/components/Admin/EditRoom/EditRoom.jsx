@@ -107,7 +107,7 @@ const EditRoom = () => {
       <Admin />
       {(roomDetail?.hasOwnProperty("pictureDetail") &&
         roomDetail?.id === parseInt(id)) ||
-      hotelDetail.id === id ? (
+        hotelDetail.id === id ? (
         <div className={style.containerRoomDetail}>
           <div>
             <div className={style.containerDates}>
@@ -183,7 +183,7 @@ const EditRoom = () => {
             </div>
 
             <div className={style.containerInfo}>
-              <div className={style.containerSpecialties}>
+              <div className={`${style.containerSpecialties} containerSpecialties`}>
                 <h2 className={style.titleSpec}>Specialities</h2>
                 <ul className={style.ulSpec}>
                   {specialties.map((spec, index) => {
@@ -210,7 +210,7 @@ const EditRoom = () => {
                   })}
                 </ul>
               </div>
-              <div className={style.containerCondSpec}>
+              <div className={`${style.containerCondSpec} containerCondSpec`}>
                 <h2>Room conditions</h2>
                 <ul className={style.ulCondiciones}>
                   {/* <li>{roomDetail.maxChild} Max Childs</li>
@@ -258,10 +258,10 @@ const EditRoom = () => {
                 </ul>
               </div>
             </div>
-            <div className={style.containerDescription}>
+            <div className={`${style.containerDescription} containerDescription`}>
               <h2 className={style.titleDescription}>Description</h2>
               <textarea
-                className={style.description}
+                className={`${style.description} description`}
                 value={inputs.description}
                 onChange={handleChange}
                 name="description"
