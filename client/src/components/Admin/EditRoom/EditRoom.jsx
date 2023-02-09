@@ -22,7 +22,6 @@ const EditRoom = () => {
   // console.log(location.pathname);
   const { id } = useParams();
   const dispatch = useDispatch();
-  const reservation = useSelector((state) => state.reservation);
   const roomDetail = useSelector((state) => state.roomDetail);
   const hotelDetail = useSelector((state) => state.hotelDetail);
   const specialties = [
@@ -50,7 +49,6 @@ const EditRoom = () => {
     value: "",
     hidden: "",
   });
-
   useEffect(() => {
     axios.get(`/rooms/${id}`).then((response) => {
       setInputs({
@@ -107,7 +105,9 @@ const EditRoom = () => {
   return (
     <div>
       <Admin />
-      {roomDetail.hasOwnProperty("hotel") && roomDetail.id === parseInt(id) ? (
+      {(roomDetail?.hasOwnProperty("pictureDetail") &&
+        roomDetail?.id === parseInt(id)) ||
+      hotelDetail.id === id ? (
         <div className={style.containerRoomDetail}>
           <div>
             <div className={style.containerDates}>
@@ -117,7 +117,9 @@ const EditRoom = () => {
                 </NavLink>
               </div>
               <div className={style.containerHidden}>
-                <label className={style.hidden}>Logical deletion (Hidden)</label>
+                <label className={style.hidden}>
+                  Logical deletion (Hidden)
+                </label>
                 <input
                   type="checkbox"
                   checked={inputs.hidden === true ? true : false}

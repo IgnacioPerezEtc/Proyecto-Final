@@ -1,7 +1,7 @@
 import React from "react";
 import style from "./NavBarDetails.module.css";
 import user from "../../assets/icons/user.png";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { useState } from "react";
 import facebook from "../../assets/icons/facebook.svg";
 import instagram from "../../assets/icons/instagram.svg";
@@ -11,8 +11,8 @@ import { logOut } from "../../redux/actions";
 import { useEffect } from "react";
 const NavBarDetails = () => {
   const [login, setLogin] = useState(false);
-
-  const [info, setInfo] = useState(localStorage.getItem("user"));
+  const [themeState, setThemeState] = useState(localStorage.getItem("theme"));
+  const [info, setInfo] = useState(JSON.parse(localStorage.getItem("user")));
   useEffect(() => {
     if (info) {
       setLogin(true);
@@ -35,11 +35,13 @@ const NavBarDetails = () => {
   } else {
     darkMode();
   }
+
   const handleChecked = (event) => {
     if (event.target.checked === true) {
+      setThemeState("dark");
       darkMode();
     } else {
-      lightMode();
+      setThemeState("light");
     }
   };
   return (
@@ -96,43 +98,38 @@ const NavBarDetails = () => {
               className={` ${style.navBarNav} navbar-nav me-auto mb-2 mb-lg-0`}
             >
               <li className={style.pages}>
-                <a href="/home" className={style.linkLanding}>
+                <NavLink to="/home" className={style.linkLanding}>
                   Home
-                </a>
+                </NavLink>
               </li>
               <li className={style.pages}>
-                <a href="/rooms" className={style.linkLanding}>
+                <NavLink to="/rooms" className={style.linkLanding}>
                   Rooms
-                </a>
+                </NavLink>
               </li>
               <li className={style.pages}>
                 <NavLink to={"/hotels"} className={style.linkLanding}>
                   Hotels
                 </NavLink>
               </li>
-              <li className={style.pages}>
-                <a href="/favorites" className={style.linkLanding}>
-                  Favorites
-                </a>
-              </li>
+
               <li className={style.pages}>
                 <NavLink to={"/aboutUs"} className={style.linkLanding}>
                   About Us
                 </NavLink>
               </li>
               <li className={style.pages}>
-              <input
-                type="checkbox"
-                // checked={inputs.specialties.includes(spec) ? true : false}
-                name="darkMode"
-                checked={localStorage.getItem("theme")==="dark"?true:false}
-                value={localStorage.getItem("theme")}
-                id={`switch`}
-                className={style.switch}
-                onClick={(e) => handleChecked(e)}
-              />
-              <label htmlFor={`switch`} className={style.lbl}></label>
-            </li>
+                <input
+                  type="checkbox"
+                  checked={themeState === "dark" ? true : false}
+                  name="darkMode"
+                  value={themeState}
+                  id={`switchDarkMode`}
+                  className={style.switch}
+                  onClick={(e) => handleChecked(e)}
+                />
+                <label htmlFor={`switchDarkMode`} className={style.lbl}></label>
+              </li>
               <li className="dropdown-center">
                 <a
                   className={`${style.linkLanding} dropdown-toggle`}
@@ -140,7 +137,19 @@ const NavBarDetails = () => {
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
                 >
-                  <img src={user} alt="" width={"24px"} height="24px" />
+                  {login === false ? (
+                    <img src={user} alt="" width={"24px"} height="24px" />
+                  ) : (
+                    <img
+                      id={style.img}
+                      src={
+                        JSON.parse(localStorage.getItem("user"))[0].img || user
+                      }
+                      alt=""
+                      width={"34px"}
+                      height="34px"
+                    />
+                  )}
                 </a>
 
                 <ul
@@ -148,48 +157,75 @@ const NavBarDetails = () => {
                 >
                   <li>
                     {login === false ? (
-                      <a className={`${style.itemDrop} dropdown-item`} href="/">
-                        Log-in
-                      </a>
+                      ""
                     ) : (
-                      <a
-                        onClick={logOut}
-                        className={` ${style.itemDrop} dropdown-item`}
-                        href="/"
+                      <Link
+                        className={`${style.itemDrop} dropdown-item`}
+                        to="/userProfile"
                       >
-                        Log-Out
-                      </a>
+                        User Profile
+                      </Link>
                     )}
                   </li>
+                  <hr />
+                  <li>
+                    <Link
+                      to="/favorites"
+                      className={`${style.itemDrop} dropdown-item`}
+                    >
+                      Favorites
+                    </Link>
+                  </li>
+
+                  <hr />
                   {info && info[0].admin === true ? (
-                    <li>
-                      <a
-                        className={`${style.itemDrop} dropdown-item`}
-                        href="/admin"
-                      >
-                        Dashboard
-                      </a>
-                    </li>
+                    <div>
+                      <li>
+                        <Link
+                          className={`${style.itemDrop} dropdown-item`}
+                          to="/admin"
+                        >
+                          Dashboard
+                        </Link>
+                      </li>
+                      <hr />
+                    </div>
                   ) : (
                     ""
                   )}
-                  <hr />
+
                   <li>
-                    <a
+                    <Link
                       className={`${style.itemDrop} dropdown-item`}
-                      href="/Booking"
+                      to="/Booking"
                     >
                       My reservations
-                    </a>
+                    </Link>
                   </li>
                   <hr />
                   <li>
-                    <a
+                    <Link
                       className={`${style.itemDrop} dropdown-item`}
-                      href="/Reservationhistory"
+                      to="/Reservationhistory"
                     >
                       Reservation History
-                    </a>
+                    </Link>
+                  </li>
+                  <hr />
+                  <li>
+                    {login === false ? (
+                      <Link className={`${style.itemDrop} dropdown-item`} to="/">
+                        Log-in
+                      </Link>
+                    ) : (
+                      <Link
+                        onClick={logOut}
+                        className={` ${style.itemDrop} dropdown-item`}
+                        to="/"
+                      >
+                        Log-Out
+                      </Link>
+                    )}
                   </li>
                 </ul>
               </li>

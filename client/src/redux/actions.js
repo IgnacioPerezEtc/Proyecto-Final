@@ -241,6 +241,13 @@ export function getUserById(id) {
   };
 }
 
+export const putUser = (id, data) => {
+  return async () => {
+    const json = await axios.put(`/user/edit/${id}`, data);
+    return json;
+  };
+};
+
 // *********************** SEND EMAIL ************************
 
 export const sendEmail = async (data, form) => {
@@ -259,14 +266,17 @@ export const sendEmail = async (data, form) => {
   );
 
   window.setTimeout(() => {
-    window.location.href = "/";
+    window.location.href = "/home";
   }, 3000);
 };
 
 // *********************** RESERVATION ************************
 
 export const GET_ALL_RESERVATIONS = "GET_ALL_RESERVATIONS";
+export const GET_ALL_DATA_RESERVATIONS = "GET_ALL_DATA_RESERVATIONS";
 export const CREATE_RESERVATION = "CREATE_RESERVATION";
+export const GET_RESERVATION_PER_MONTH = "GET_RESERVATION_PER_MONTH";
+export const GET_RESERVATION_PER_COUNTRY = "GET_RESERVATION_PER_COUNTRY"; 
 
 export const getAllReservations = (email) => {
   return async (dispatch) => {
@@ -284,6 +294,36 @@ export const getAllReservations = (email) => {
     }
   };
 };
+
+export const getAllDataReservations = () => {
+  return async (dispatch) => {
+    const { data } = await axios.get('/reservation/all');
+    return dispatch({
+      type: GET_ALL_DATA_RESERVATIONS,
+      payload: data,
+    })
+  }
+}
+
+export const getReservationPerMonth = () => {
+  return async (dispatch) => {
+    const { data } = await axios.get('/reservation/permonth');
+    return dispatch({
+      type: GET_RESERVATION_PER_MONTH,
+      payload: data,
+    })
+  }
+}
+
+export const getReservationPerCountry = () => {
+  return async (dispatch) => {
+    const { data } = await axios.get('/reservation/percountry');
+    return dispatch({
+      type: GET_RESERVATION_PER_COUNTRY,
+      payload: data,
+    })
+  }
+}
 
 export async function createReservation(data) {
   const json = await axios.post("/reservation", data);

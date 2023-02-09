@@ -92,7 +92,9 @@ input[type="number"]::-webkit-outer-spin-button {
   opacity: 0;
   cursor: pointer;
 }
-
+.containerLoad{
+  margin-right: 18px;
+}
 input:focus {
   outline: none;
 }
@@ -218,7 +220,7 @@ input:focus {
 .createHotel {
   width: 154px;
   height: 44px;
-  background-color: var(--color-blue);
+  background-color: var(--color-red);
   border: 1px solid transparent;
   border-radius: 5px;
   color: #fff;
@@ -230,20 +232,19 @@ input:focus {
   box-shadow: 0px 4px 4px #00000040;
   margin: 3px;
   margin-top: 11px;
-  text-align: start;
-  padding-left: 8px;
+  text-align: center;
   margin-left: 9px;
   border: none;
 }
 .createHotel:hover {
   transform: scale(0.98);
-  background-color: var(--letter-blue);
+  background-color: var(--letter-red);
 }
 .optionStar:hover {
   transform: scale(0.98);
   background-color: var(--letter-blue);
 }
-.reload{
+/* .reload{
   width: 120px;
   height: 45px;
   margin: 10px;
@@ -261,6 +262,18 @@ input:focus {
 .reload:hover {
   transform: scale(0.98);
   background-color: var(--letter-blue);
+} */
+.reload{
+  margin-top: 14px;
+  margin-left: 3.2rem;
+  width: 40px;
+  transition: transform 0.6s ease-in-out;
+  cursor: pointer;
+
+}
+.reload:hover {
+    transform: rotate(360deg) scale(1.3);
+
 }
 .optionItem{
   border: none;

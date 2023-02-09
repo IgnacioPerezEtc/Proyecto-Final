@@ -49,6 +49,7 @@
 .containerAboutUs{
   display: flex;
   justify-content: space-evenly;
+  margin-top: 10px;
 }
 .containerUs {
   display: flex;
@@ -69,6 +70,7 @@
   margin-top: 20px;
   font-size:7.5rem;
   margin-bottom: 0.1em;
+  color: #d31b1b;
 }
 .iconImage {
   width: 35px;

@@ -1,6 +1,33 @@
-const { Reservation, Room, Hotel } = require("../../db");
-
+const { Reservation, Room, Hotel, conn } = require("../../db");
+const { QueryTypes } = require('sequelize');
 module.exports = {
+
+    allReservations: async function() {
+        
+        const responseFromDB = await conn.query(
+            `select  count(h.name) as reservations, h.name from reservations res inner join rooms r on  r.id=res."roomId" inner join hotels h on h.id=r."hotelId" group by h.name`,
+            { type: QueryTypes.SELECT });
+
+        return responseFromDB;
+    },
+
+    reservationsPerMonth: async function() {
+        
+        const responseFromDB = await conn.query(
+            `select  to_char("startDate", 'month') as "month", count(date_part('month',"startDate")) as reservations  from reservations group by to_char("startDate", 'month')`,
+            { type: QueryTypes.SELECT });
+
+        return responseFromDB;
+    },
+
+    reservationsPerCountry: async function() {
+        
+        const responseFromDB = await conn.query(
+            `select  count(h.location) as reservations, h.location from reservations res inner join rooms r on  r.id=res."roomId" inner join hotels h on h.id=r."hotelId" group by h.location`,
+            { type: QueryTypes.SELECT });
+
+        return responseFromDB;
+    },
 
     reservationByEmail: async function (email) {
         console.log(email)

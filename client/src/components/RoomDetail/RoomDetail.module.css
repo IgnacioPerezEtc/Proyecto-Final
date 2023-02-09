@@ -14,6 +14,7 @@
 
 .containerRoomDetail {
   text-align: center;
+  padding-top: 60px;
 }
 .containerButtonB {
   padding-top: 40px;
@@ -73,9 +74,6 @@
   color: var(--color-blue);
   font-weight: 500;
 }
-.containerDates {
-  background-color: #fff;
-}
 
 .containerInfo {
   width: 70vw;
@@ -86,7 +84,7 @@
 }
 
 .containerCondSpec {
-  width: 60%;
+  width: 38%;
   background-color: #fff;
   border-radius: 8px;
   text-align: center;
@@ -102,7 +100,7 @@
 }
 
 .containerSpecialties {
-  width: 38%;
+  width: 60%;
   background-color: #fff;
   border-radius: 8px;
 }
@@ -136,8 +134,9 @@
 
 .paddingMax {
   font-weight: 500;
-  color: #858585;
+  color: #5e5e5e;
   font-size: 1.6rem;
+  font-family: "Roboto", sans-serif;
 }
 
 .iconAdults {
@@ -180,21 +179,38 @@
 }
 
 .titleDescription {
-  font-size: 3.4rem;
+  font-size: 2.8rem;
   font-weight: 500;
   line-height: 3.2rem;
   margin-bottom: 28px;
   color: var(--color-blue);
 }
 .description {
+  font-weight: 500;
+  color: #5e5e5e;
   font-size: 1.6rem;
-  font-weight: normal;
-  line-height: 3.2rem;
-  color: #858585;
+  padding-bottom: 18px;
+  padding-top: 8px;
   text-align: start;
   padding-left: 20px;
-  font-weight: 500;
+  font-family: "Roboto", sans-serif;
+  width: 98%;
+  resize: none;
 }
+
+.off {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+  justify-content: center;
+  font-weight: 500;
+  color: #5e5e5e;
+  font-size: 1.6rem;
+  /* padding-bottom: 18px; */
+  /* padding-top: 8px; */
+  font-family: "Roboto", sans-serif;
+}
+
 @media screen and (max-width: 1600px) {
   .containerImgForm {
     width: 80vw;

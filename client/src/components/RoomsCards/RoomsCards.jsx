@@ -14,11 +14,12 @@ const RoomsCards = (props) => {
       {location.pathname === "/home" ? (
         <div className="m-5">
           <div className={style.flexContainer}>
-              <h2 className="blueOur">Our</h2>
-          <h2 className={style.red}>Hotels</h2>
+            <h2 className="blueOur">Our</h2>
+            <h2 className={style.red}>Hotels</h2>
           </div>
-        
+
           <Swiper
+            speed={2000}
             freeMode={true}
             grabCursor={true}
             modules={[Autoplay, Keyboard]}
@@ -55,17 +56,20 @@ const RoomsCards = (props) => {
             }}
           >
             {props.hotels.map((hotel) => {
-              return (
-                <SwiperSlide key={hotel.id}>
-                  <HotelCard
-                    id={hotel.id}
-                    name={hotel.name}
-                    image={hotel.pictureHome}
-                    category={hotel.category}
-                    languages={hotel.languages}
-                  />
-                </SwiperSlide>
-              );
+              if (hotel.hidden === false) {
+                return (
+                  <SwiperSlide key={hotel.id}>
+                    <HotelCard
+                      id={hotel.id}
+                      name={hotel.name}
+                      image={hotel.pictureHome}
+                      category={hotel.category}
+                      languages={hotel.languages}
+                      description= {hotel.description}
+                    />
+                  </SwiperSlide>
+                );
+              }
             })}
           </Swiper>
         </div>
