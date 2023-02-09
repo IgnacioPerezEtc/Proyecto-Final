@@ -266,7 +266,7 @@ export const sendEmail = async (data, form) => {
   );
 
   window.setTimeout(() => {
-    window.location.href = "/";
+    window.location.href = "/home";
   }, 3000);
 };
 
