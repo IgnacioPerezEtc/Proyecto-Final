@@ -3,16 +3,21 @@ import HotelsReservation from "./HotelsReservation";
 import ReservationPerMonth from "./ReservationPerMonth";
 import ReservationPerCountry from "./ReservationPerCountry";
 
-const BookingData = () => {
+const GraphicsAdmin = () => {
 
   return (
-    <div style={{width:'700px', height:'500px', border:"1px solid black"}}>
-      
-      {/* <HotelsReservation/> */}
-      {/* <ReservationPerMonth /> */}
+    <div>
+
+      <div className="d-flex mb-5 gap-5">
+      <HotelsReservation />
       <ReservationPerCountry />
+
+      </div>
+
+      <ReservationPerMonth />
+
     </div>
   )
 }
 
-export default BookingData;
+export default GraphicsAdmin;

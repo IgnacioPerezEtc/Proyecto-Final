@@ -67,3 +67,9 @@
     margin: 0 auto;
     margin-top: 80px;
 }
+
+.ContainerGraphics{
+    width:100vw;
+    height: 100%;
+    margin: 100px 20px;
+}

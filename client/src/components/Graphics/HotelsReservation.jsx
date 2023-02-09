@@ -17,33 +17,40 @@ const HotelsReservation = () => {
   if(!data.length) return (<h1>load</h1>);
 
   return (
-    <ResponsiveContainer width="100%" height="100%">
-        <BarChart
-          width={500}
-          height={300}
-          data={data}
-          margin={{
-            top: 5,
-            right: 30,
-            left: 20,
-            bottom: 5,
-          }}
-        >
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="name" />
-          <YAxis />
-          <Tooltip />
-          <Legend />
-          {
-            Object.keys(data[0]).map((key, i) => {
-              if(key === 'name') return '';
-              return (
-                <Bar key={i} dataKey={key} fill="orange" />
-              )
-            })
-          }
-        </BarChart>
-      </ResponsiveContainer>
+    <div 
+      className='bg-white border border-secondary-subtle shadow rounded-3'
+      style={{width: '50vw',height:'60vh', paddingBottom:'40px', paddingRight:'30px'}}
+    >
+      <h1 className='px-5'>Hotel with more Reservations</h1>
+      <ResponsiveContainer >
+          <BarChart
+            // width={50}
+            // height={30}
+            data={data}
+            margin={{
+              // top: 5,
+              right: 30,
+              // left: 20,
+              bottom: 20,
+            }}
+          >
+            {/* <CartesianGrid strokeDasharray="2 2" /> */}
+            <XAxis tick={{fontSize: 14, fontWeight:'bold'}} label={{value:'HOTELS', position: 'bottom',style: { fontSize: 18 }}} dataKey="name" />
+            <YAxis tick={{fontSize: 14, fontWeight:'bold'}} label={{value:'RESERVATIONS', angle: -90,style: { fontSize: 18 }}}/>
+            <Tooltip wrapperStyle={{fontSize:'14px', fontWeight:'bold'}}/>
+            {/* <Legend wrapperStyle={{fontSize: "14px"}} /> */}
+            {
+              Object.keys(data[0]).map((key, i) => {
+                if(key === 'name') return '';
+                return (
+                  <Bar key={i} dataKey={key} fill="#18445c" animationDuration={1500}/>
+                )
+              })
+            }
+          </BarChart>
+        </ResponsiveContainer>
+
+    </div>
   )
 }
 

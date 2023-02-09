@@ -8,6 +8,7 @@ import home from "../../assets/icons/home.png";
 import Users from "./Users/Users";
 import HotelsAdmin from "./HotelsAdmin/HotelsAdmin";
 import RoomsAdmin from "./RoomsAdmin/RoomsAdmin";
+import GraphicsAdmin from "../Graphics/GraphicsAdmin";
 
 const Admin = () => {
   return (
@@ -97,6 +98,9 @@ const Admin = () => {
             </NavLink>
           </div>
         </nav>
+      </div>
+      <div className={style.ContainerGraphics}>
+        <GraphicsAdmin />
       </div>
       <div className={style.containerInfo}>
         <HotelsAdmin />

@@ -42,11 +42,14 @@ const ReservationPerCountry = () => {
   if(!data.length) return(<h1>load</h1>)
   
   return (
-    <div style={{ width: '100%', height: '100%' }}>
+    <div 
+      className="bg-white border border-secondary-subtle shadow rounded-3"
+      style={{width:'45vw', height: '60vh' }}>
+      
+      <h1 className='px-5'>Countries with more Reservations</h1>
       <LineChart
-      //size
-        width={700}
-        height={500}
+        width={750}
+        height={400}
         data={countryArr}
         margin={{
           top: 10,
@@ -55,17 +58,18 @@ const ReservationPerCountry = () => {
           bottom: 0
         }}
       >
-        <CartesianGrid strokeDasharray="9 9" />
-        <XAxis dataKey="country" />
-        <YAxis />
-        <Tooltip />
+        {/* <CartesianGrid strokeDasharray="3 3" /> */}
+        <XAxis tick={{fontSize: 14, fontWeight:'bold'}} dataKey="country" />
+        <YAxis tick={{fontSize: 14, fontWeight:'bold'}} label={{value:'RESERVATIONS', angle: -90,style: { fontSize: 18 }}}/>
+        <Tooltip wrapperStyle={{fontSize:'14px', fontWeight:'bold'}}/>
         <Line
           connectNulls
           type="monotone"
           dataKey="reservations"
-          stroke="#8884d8"
-          fill="#8884d8"
+          stroke="orange"
+          fill="orange"
           activeDot={{ r: 8 }}
+          animationDuration={1500}
         />
       </LineChart>
     </div>
