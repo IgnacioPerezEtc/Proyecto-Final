@@ -42,7 +42,6 @@ const NavBarDetails = () => {
       darkMode();
     } else {
       setThemeState("light");
-      lightMode();
     }
   };
   return (

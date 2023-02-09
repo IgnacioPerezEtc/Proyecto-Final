@@ -109,7 +109,7 @@ const HotelDetail = (props) => {
                 </div>
                 <div className={style.containerImg}>
                   <img src={imgs[1]} alt="" className={style.imgGallery} />
-                  <button className={style.buttonVer}>View Gallery</button>
+                  {/* <button className={style.buttonVer}>View Gallery</button> */}
                 </div>
               </div>
               <div className={style.containerNameLocation}>
