@@ -156,5 +156,5 @@
 }
 
 .switch:checked + .lbl {
-  background: var(--letter-blue);
+  background: var(--color-blue);
 }

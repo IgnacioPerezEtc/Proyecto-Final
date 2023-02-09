@@ -40,8 +40,10 @@ const NavBarDetails = () => {
     if (event.target.checked === true) {
       setThemeState("dark");
       darkMode();
+      
     } else {
-      setThemeState("light");
+      setThemeState("light")
+      lightMode();
     }
   };
   return (
@@ -123,12 +125,12 @@ const NavBarDetails = () => {
                   type="checkbox"
                   checked={themeState === "dark" ? true : false}
                   name="darkMode"
-                  value={themeState}
-                  id={`switchDarkMode`}
+                  value={localStorage.getItem("theme")}
+                  id={`switchdarkMode`}
                   className={style.switch}
                   onClick={(e) => handleChecked(e)}
                 />
-                <label htmlFor={`switchDarkMode`} className={style.lbl}></label>
+                <label htmlFor={`switchdarkMode`} className={style.lbl}></label>
               </li>
               <li className="dropdown-center">
                 <a

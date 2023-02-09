@@ -38,14 +38,13 @@ const NavBar = (props) => {
   } else {
     darkMode();
   }
-
-
   const handleChecked = (event) => {
+
     if (event.target.checked === true) {
-      setThemeState("dark");
+      setThemeState("dark")
       darkMode();
     } else {
-      setThemeState("light");
+      setThemeState("light")
       lightMode();
     }
   };
@@ -113,7 +112,7 @@ const NavBar = (props) => {
                 type="checkbox"
                 checked={themeState === "dark" ? true : false}
                 name="darkMode"
-                value={localStorage.getItem("theme")}
+                value={themeState}
                 id={`switch`}
                 className={style.switch}
                 onClick={(e) => handleChecked(e)}
