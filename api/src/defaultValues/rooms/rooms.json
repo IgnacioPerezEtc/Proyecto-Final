@@ -13,14 +13,12 @@
         "maxChild": 4,
         "specialties": [
             "Flat screen TV",
-            "Air-conditioning",
-            "Coffee maker",
-            "Desk",
-            "Cupboard",
-            "Linens",
+            "Heiting",
+            "Toilette",
             "Towels",
-            "Carpet Floor",
-            "Safe"
+            "Mini-Bar",
+            "Spa",
+            "Free WIFI"
         ],
         "value": 10,
         "hotelId": 1
@@ -38,15 +36,12 @@
         "maxAdult": 8,
         "maxChild": 5,
         "specialties": [
-            "Satellite or cable television",
-            "Daily cleaning service",
-            "Electronic lock",
-            "Electrical outlet near the bed",
-            "Smart TV",
-            "Free WIFI",
-            "Air-conditioning",
-            "Heating",
-            "Minibar"
+            "Flat screen TV",
+            "Heiting",
+            "Toilette",
+            "Towels",
+            "Mini-Bar",
+            "Free WIFI"
         ],
         "value": 5,
         "hotelId": 2
@@ -64,15 +59,13 @@
         "maxAdult": 7,
         "maxChild": 2,
         "specialties": [
-            "Double beds",
-            "Desk",
-            "Non-smoking rooms",
-            "Whirlpool",
-            "Soundproofing",
-            "Internet by phone",
-            "Electronic/magnetic key",
-            "Reading lamp",
-            "Voice Messaging"
+            "Flat screen TV",
+            "Heiting",
+            "Toilette",
+            "Towels",
+            "Mini-Bar",
+            "Spa",
+            "Free WIFI"
         ],
         "value": 8,
         "hotelId": 3
@@ -90,12 +83,13 @@
         "maxAdult": 8,
         "maxChild": 5,
         "specialties": [
-            "Non-smoking room",
-            "Room service",
-            "Adapted for people with reduced mobility",
-            "Free WIFI",
-            "24 hours reception",
-            "Daily cleaning service"
+            "Flat screen TV",
+            "Heiting",
+            "Toilette",
+            "Towels",
+            "Mini-Bar",
+            "Spa",
+            "Free WIFI"
         ],
         "value": 5,
         "hotelId": 4
@@ -113,15 +107,13 @@
         "maxAdult": 8,
         "maxChild": 6,
         "specialties": [
-            "Bathtub",
-            "Hairdryer",
-            "Desk",
-            "Couch",
-            "Cupboard",
-            "Bathroom accessories",
-            "Linens",
+            "Flat screen TV",
+            "Heiting",
+            "Toilette",
             "Towels",
-            "Coat"
+            "Mini-Bar",
+            "Spa",
+            "Free WIFI"
         ],
         "value": 6,
         "hotelId": 5
@@ -139,12 +131,12 @@
         "maxAdult": 8,
         "maxChild": 7,
         "specialties": [
-            "flat screen TV",
-            "Free WIFI",
-            "Air-conditioning",
-            "Heating",
-            "Desk",
-            "Cupboard"
+            "Flat screen TV",
+            "Heiting",
+            "Toilette",
+            "Towels",
+            "Mini-Bar",
+            "Spa"
         ],
         "value": 12,
         "hotelId": 6
@@ -162,15 +154,11 @@
         "maxAdult": 7,
         "maxChild": 6,
         "specialties": [
-            "flat screen TV",
-            "Free WIFI",
-            "Air-conditioning",
-            "Heating",
-            "Minibar",
-            "Bathtub",
-            "Hairdryer",
-            "Desk",
-            "bathroom accessories"
+            "Toilette",
+            "Towels",
+            "Mini-Bar",
+            "Spa",
+            "Free WIFI"
         ],
         "value": 11,
         "hotelId": 7
@@ -188,12 +176,13 @@
         "maxAdult": 8,
         "maxChild": 5,
         "specialties": [
-            "Satellite or cable television",
-            "Free WIFI",
-            "Air-conditioning",
-            "Minibar",
-            "Bathtub",
-            "Hairdryer"
+            "Flat screen TV",
+            "Heiting",
+            "Toilette",
+            "Towels",
+            "Mini-Bar",
+            "Spa",
+            "Free WIFI"
         ],
         "value": 6,
         "hotelId": 8
@@ -211,12 +200,11 @@
         "maxAdult": 3,
         "maxChild": 4,
         "specialties": [
-            "flat screen TV",
-            "Free WIFI",
-            "Air-conditioning",
-            "Minibar",
-            "Bathtub",
-            "Desk"
+            "Flat screen TV",
+            "Towels",
+            "Mini-Bar",
+            "Spa",
+            "Free WIFI"
         ],
         "value": 7,
         "hotelId": 9
@@ -234,15 +222,13 @@
         "maxAdult": 2,
         "maxChild": 1,
         "specialties": [
-            "flat screen TV",
-            "Free WIFI",
-            "Air-conditioning",
-            "Minibar",
-            "King size bed",
-            "Bathtub",
-            "Balcony",
-            "Hairdryer",
-            "Desk"
+            "Flat screen TV",
+            "Heiting",
+            "Toilette",
+            "Towels",
+            "Mini-Bar",
+            "Spa",
+            "Free WIFI"
         ],
         "value": 5,
         "hotelId": 1
@@ -260,12 +246,11 @@
         "maxAdult": 2,
         "maxChild": 1,
         "specialties": [
-            "flat screen tv",
-            "bidet",
-            "Free WIFI",
-            "Air-conditioning",
-            "Heating",
-            "Minibar"
+            "Flat screen TV",
+            "Heiting",
+            "Toilette",
+            "Towels",
+            "Free WIFI"
         ],
         "value": 5,
         "hotelId": 2
@@ -283,12 +268,13 @@
         "maxAdult": 2,
         "maxChild": 1,
         "specialties": [
-            "flat screen TV",
-            "Free WIFI",
-            "Air-conditioning",
-            "Bathtub",
-            "Desk",
-            "Shower"
+            "Flat screen TV",
+            "Heiting",
+            "Toilette",
+            "Towels",
+            "Mini-Bar",
+            "Spa",
+            "Free WIFI"
         ],
         "value": 5,
         "hotelId": 3
@@ -306,12 +292,11 @@
         "maxAdult": 2,
         "maxChild": 1,
         "specialties": [
-            "Heating",
-            "Minibar",
-            "Balcony",
-            "Coffee maker",
-            "Hairdryer",
-            "Desk"
+            "Flat screen TV",
+            "Heiting",
+            "Toilette",
+            "Towels",
+            "Free WIFI"
         ],
         "value": 5,
         "hotelId": 4
@@ -329,12 +314,13 @@
         "maxAdult": 2,
         "maxChild": 1,
         "specialties": [
-            "Air-conditioning",
-            "Balcony (on request)",
-            "Coffee maker",
-            "Safe",
-            "Electric kettle",
-            "Ironing table"
+            "Flat screen TV",
+            "Heiting",
+            "Toilette",
+            "Towels",
+            "Mini-Bar",
+            "Spa",
+            "Free WIFI"
         ],
         "value": 5,
         "hotelId": 5
@@ -352,12 +338,13 @@
         "maxAdult": 2,
         "maxChild": 1,
         "specialties": [
-            "flat screen TV",
-            "Free WIFI",
-            "Air-conditioning",
-            "Minibar",
-            "Desk",
-            "Notebook Safe"
+            "Flat screen TV",
+            "Heiting",
+            "Toilette",
+            "Towels",
+            "Mini-Bar",
+            "Spa",
+            "Free WIFI"
         ],
         "value": 5,
         "hotelId": 6
@@ -375,15 +362,11 @@
         "maxAdult": 2,
         "maxChild": 1,
         "specialties": [
-            "Heating",
-            "Bathtub",
-            "Desk",
-            "Cupboard",
-            "Bathroom accessories",
+            "Toilette",
             "Towels",
-            "Notebook safe",
-            "Soundproof windows",
-            "Wooden floor"
+            "Mini-Bar",
+            "Spa",
+            "Free WIFI"
         ],
         "value": 5,
         "hotelId": 7
@@ -401,12 +384,13 @@
         "maxAdult": 2,
         "maxChild": 1,
         "specialties": [
-            "flat screen TV",
-            "Free WIFI",
-            "Air-conditioning",
-            "Heating",
-            "Desk",
-            "Cupboard"
+            "Flat screen TV",
+            "Heiting",
+            "Toilette",
+            "Towels",
+            "Mini-Bar",
+            "Spa",
+            "Free WIFI"
         ],
         "value": 5,
         "hotelId": 8
@@ -424,15 +408,11 @@
         "maxAdult": 2,
         "maxChild": 1,
         "specialties": [
-            "flat screen TV",
-            "Free WIFI",
-            "Air-conditioning",
-            "Minibar",
-            "Bathtub",
-            "Desk",
-            "Soundproof windows",
-            "Connected rooms available",
-            "Phone"
+            "Flat screen TV",
+            "Heiting",
+            "Mini-Bar",
+            "Spa",
+            "Free WIFI"
         ],
         "value": 5,
         "hotelId": 9
@@ -450,15 +430,13 @@
         "maxAdult": 10,
         "maxChild": 8,
         "specialties": [
-            " flat screen tv",
-            "Wi-Fi at additional cost",
-            "Air-conditioning",
-            "Minibar",
-            "Bathtub",
-            "Desk",
-            "Coat",
-            "Slippers",
-            "Shower"
+            "Flat screen TV",
+            "Heiting",
+            "Toilette",
+            "Towels",
+            "Mini-Bar",
+            "Spa",
+            "Free WIFI"
         ],
         "value": 100,
         "hotelId": 1
@@ -476,15 +454,11 @@
         "maxAdult": 10,
         "maxChild": 7,
         "specialties": [
-            "Hydromassage bathtub",
-            "Desk",
-            "flat screen tv",
-            "Minibar",
-            "safe deposit box",
-            "seating area",
-            "Heating",
-            "carpet floor",
-            "Tea or coffee making set"
+            "Toilette",
+            "Towels",
+            "Mini-Bar",
+            "Spa",
+            "Free WIFI"
         ],
         "value": 125,
         "hotelId": 2
@@ -502,15 +476,13 @@
         "maxAdult": 10,
         "maxChild": 6,
         "specialties": [
-            "Direct access to the beach",
-            "Air-conditioning",
-            "Bath (on request)",
-            "Bathroom with shower",
-            "Ironing table",
-            "Minibar",
-            "Living room",
-            "Hair dryer",
-            "flat screen tv"
+            "Flat screen TV",
+            "Heiting",
+            "Toilette",
+            "Towels",
+            "Mini-Bar",
+            "Spa",
+            "Free WIFI"
         ],
         "value": 59,
         "hotelId": 3
@@ -528,15 +500,11 @@
         "maxAdult": 10,
         "maxChild": 5,
         "specialties": [
-            "Spa Bath",
-            "flat screen TV",
-            "Bidet",
-            "Electronic lock",
-            "Black out curtains",
-            "Electrical outlet near the bed",
-            "Free Wired Internet",
-            "Free WIFI",
-            "Free Wired Internet"
+            "Flat screen TV",
+            "Heiting",
+            "Toilette",
+            "Spa",
+            "Free WIFI"
         ],
         "value": 175,
         "hotelId": 4
@@ -554,15 +522,11 @@
         "maxAdult": 10,
         "maxChild": 6,
         "specialties": [
-            "flat screen TV",
-            "Free WIFI",
-            "Air-conditioning",
-            "Minibar",
-            "Desk",
-            "Notebook safe",
-            "Soundproof windows",
-            "Connected rooms available",
-            "Phone"
+            "Flat screen TV",
+            "Heiting",
+            "Toilette",
+            "Towels",
+            "Mini-Bar"
         ],
         "value": 112,
         "hotelId": 5
@@ -580,15 +544,13 @@
         "maxAdult": 10,
         "maxChild": 7,
         "specialties": [
-            "Linens",
+            "Flat screen TV",
+            "Heiting",
+            "Toilette",
             "Towels",
-            "Notebook safe",
-            "Soundproof windows",
-            "Safe",
-            "Shower",
-            "Key with Hot Water",
-            "Alarm clock",
-            "Marble or ceramic floor"
+            "Mini-Bar",
+            "Spa",
+            "Free WIFI"
         ],
         "value": 120,
         "hotelId": 6
@@ -606,14 +568,13 @@
         "maxAdult": 10,
         "maxChild": 8,
         "specialties": [
-            "Adapted people with reduced mobility",
-            "Air-conditioning",
-            "Toiletries",
-            "Bathroom Safe",
-            "Central heating",
-            "King size bed",
-            "Connection between rooms",
-            "Desk"
+            "Flat screen TV",
+            "Heiting",
+            "Toilette",
+            "Towels",
+            "Mini-Bar",
+            "Spa",
+            "Free WIFI"
         ],
         "value": 146,
         "hotelId": 7
@@ -631,12 +592,11 @@
         "maxAdult": 10,
         "maxChild": 4,
         "specialties": [
-            "flat screen TV",
-            "Free WIFI",
-            "Air-conditioning",
-            "Minibar",
-            "Desk",
-            "Notebook Safe"
+            "Flat screen TV",
+            "Heiting",
+            "Toilette",
+            "Spa",
+            "Free WIFI"
         ],
         "value": 95,
         "hotelId": 8
@@ -654,12 +614,13 @@
         "maxAdult": 10,
         "maxChild": 2,
         "specialties": [
-            "flat screen TV",
-            "Free WIFI",
-            "Air-conditioning",
-            "Bathtub",
-            "Desk",
-            "Connected rooms available"
+            "Flat screen TV",
+            "Heiting",
+            "Toilette",
+            "Towels",
+            "Mini-Bar",
+            "Spa",
+            "Free WIFI"
         ],
         "value": 144,
         "hotelId": 9
