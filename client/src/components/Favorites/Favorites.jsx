@@ -54,9 +54,6 @@ const Favorites = () => {
       
       {hotels.length ? (
         <div>
-          <div>
-            <NavBarDetails />
-          </div>
           <div className={style.titleContainer}>
             <h2 className={style.blue}>Favorite</h2>
             <h2 className={style.red}>Hotels</h2>

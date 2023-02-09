@@ -52,7 +52,7 @@ const NavBarDetails = () => {
         <div className={`${style.containerFluid} container-fluid`}>
           <ul className={style.ulNavRedes}>
             <li>
-              <a href="https:/www.instagram.com" target={"_blank"}>
+              <a href="https://www.instagram.com/yourdestiny235/" target={"_blank"}>
                 <button>
                   <img src={instagram} alt="logo instagram" />
                 </button>
