@@ -265,6 +265,31 @@ color: var(--color-blue);
   padding-right: 16px;
 }
 
+.containerComments {
+  width: 68vw;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 8px;
+  text-align: center;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  margin-bottom: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.containerComments h2 {
+  font-size: 3rem;
+  padding-top: 12px;
+  font-weight: 600;
+  line-height: 3.2rem;
+  margin-bottom: 20px;
+  color: var(--color-blue);
+  font-family: 'Raleway', sans-serif;
+}
+
 .roomsTitle {
   font-size: 4rem;
   padding-top: 12px;

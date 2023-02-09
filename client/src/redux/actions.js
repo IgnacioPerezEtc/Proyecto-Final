@@ -310,3 +310,14 @@ export function getAllUsers() {
     }
   };
 }
+
+
+// ************** Seccion Reviews ***************
+export const CREATE_REVIEW = "CREATE_REVIEW";
+
+export function createReview(data) {
+  return async function () {
+    const json = await axios.post("/rooms", data);
+    return json;
+  };
+}

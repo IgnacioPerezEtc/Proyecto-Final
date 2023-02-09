@@ -21,6 +21,8 @@ import "swiper/css";
 import "swiper/css/free-mode";
 import Maps from "../Maps/Maps.jsx";
 import { MapContainer } from "react-leaflet";
+import FormReview from "../FormReview/FormReview";
+
 const HotelDetail = (props) => {
   const location = useLocation();
   const dispatch = useDispatch();
@@ -180,11 +182,11 @@ const HotelDetail = (props) => {
                       array.push(parseFloat(hotelPosition));
                     })}
                     {/* { console.log(array)} */}
-                    {array.length === 2 ? (
+                    {/* {array.length === 2 ? (
                       <Maps positionDetail={array} />
                     ) : (
                       false
-                    )}
+                    )} */}
 
                     {/* { setMapCenter(array)} */}
                     {/* //////////////////////////////////////////////////////////////////////////////////////////// */}
@@ -226,6 +228,12 @@ const HotelDetail = (props) => {
               </div>
             </div>
           </div>
+
+          <div className={style.containerComments}>
+            <h2>Comments</h2>
+            <FormReview hotelId={id} email={JSON.parse(localStorage.getItem("user"))[0].email} image={JSON.parse(localStorage.getItem("user"))[0].img}/>
+          </div>
+
           {location.pathname.includes("hotels") ? (
             <div>
               <h2 className={style.roomsTitle}>Rooms</h2>
