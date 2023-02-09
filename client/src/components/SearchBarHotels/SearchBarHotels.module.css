@@ -243,7 +243,7 @@ input:focus {
   transform: scale(0.98);
   background-color: var(--letter-blue);
 }
-.reload{
+/* .reload{
   width: 120px;
   height: 45px;
   margin: 10px;
@@ -261,4 +261,15 @@ input:focus {
 .reload:hover {
   transform: scale(0.98);
   background-color: var(--letter-blue);
+} */
+.reload{
+  margin-top: 1rem;
+  margin-left: 4rem;
+  width: 40px;
+  transition: transform 0.6s ease-in-out;
+  cursor: pointer;
+
+}
+.reload:hover {
+    transform: rotate(360deg) scale(1.3);
 }
