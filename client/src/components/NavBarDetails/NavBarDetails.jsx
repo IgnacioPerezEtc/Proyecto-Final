@@ -1,7 +1,7 @@
 import React from "react";
 import style from "./NavBarDetails.module.css";
 import user from "../../assets/icons/user.png";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { useState } from "react";
 import facebook from "../../assets/icons/facebook.svg";
 import instagram from "../../assets/icons/instagram.svg";
@@ -99,14 +99,14 @@ const NavBarDetails = () => {
               className={` ${style.navBarNav} navbar-nav me-auto mb-2 mb-lg-0`}
             >
               <li className={style.pages}>
-                <a href="/home" className={style.linkLanding}>
+                <NavLink to="/home" className={style.linkLanding}>
                   Home
-                </a>
+                </NavLink>
               </li>
               <li className={style.pages}>
-                <a href="/rooms" className={style.linkLanding}>
+                <NavLink to="/rooms" className={style.linkLanding}>
                   Rooms
-                </a>
+                </NavLink>
               </li>
               <li className={style.pages}>
                 <NavLink to={"/hotels"} className={style.linkLanding}>
@@ -160,34 +160,34 @@ const NavBarDetails = () => {
                     {login === false ? (
                       ""
                     ) : (
-                      <a
+                      <Link
                         className={`${style.itemDrop} dropdown-item`}
-                        href="/userProfile"
+                        to="/userProfile"
                       >
                         User Profile
-                      </a>
+                      </Link>
                     )}
                   </li>
                   <hr />
                   <li>
-                    <a
-                      href="/favorites"
+                    <Link
+                      to="/favorites"
                       className={`${style.itemDrop} dropdown-item`}
                     >
                       Favorites
-                    </a>
+                    </Link>
                   </li>
 
                   <hr />
                   {info && info[0].admin === true ? (
                     <div>
                       <li>
-                        <a
+                        <Link
                           className={`${style.itemDrop} dropdown-item`}
-                          href="/admin"
+                          to="/admin"
                         >
                           Dashboard
-                        </a>
+                        </Link>
                       </li>
                       <hr />
                     </div>
@@ -196,36 +196,36 @@ const NavBarDetails = () => {
                   )}
 
                   <li>
-                    <a
+                    <Link
                       className={`${style.itemDrop} dropdown-item`}
-                      href="/Booking"
+                      to="/Booking"
                     >
                       My reservations
-                    </a>
+                    </Link>
                   </li>
                   <hr />
                   <li>
-                    <a
+                    <Link
                       className={`${style.itemDrop} dropdown-item`}
-                      href="/Reservationhistory"
+                      to="/Reservationhistory"
                     >
                       Reservation History
-                    </a>
+                    </Link>
                   </li>
                   <hr />
                   <li>
                     {login === false ? (
-                      <a className={`${style.itemDrop} dropdown-item`} href="/">
+                      <Link className={`${style.itemDrop} dropdown-item`} to="/">
                         Log-in
-                      </a>
+                      </Link>
                     ) : (
-                      <a
+                      <Link
                         onClick={logOut}
                         className={` ${style.itemDrop} dropdown-item`}
-                        href="/"
+                        to="/"
                       >
                         Log-Out
-                      </a>
+                      </Link>
                     )}
                   </li>
                 </ul>

@@ -87,14 +87,14 @@ const NavBar = (props) => {
         <div>
           <ul className={style.ulNav}>
             <li className={style.pages}>
-              <a href="/home" className={style.linkLanding}>
+              <NavLink to="/home" className={style.linkLanding}>
                 Home
-              </a>
+              </NavLink>
             </li>
             <li className={style.pages}>
-              <a href="/rooms" className={style.linkLanding}>
+              <NavLink to="/rooms" className={style.linkLanding}>
                 Rooms
-              </a>
+              </NavLink>
             </li>
             <li className={style.pages}>
               <NavLink to={"/hotels"} className={style.linkLanding}>
