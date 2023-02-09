@@ -27,7 +27,7 @@ const ReservationPerMonth = () => {
     return found ? found : elem;
   })
   
-  console.log(finalData)
+  console.log('finalData: ',finalData)
 
 
 
@@ -35,21 +35,30 @@ const ReservationPerMonth = () => {
     if (!data.length) dispatch(getReservationPerMonth());
 
   }, [data.length])
-
+  
   return (
     <div 
       className="bg-white border border-secondary-subtle shadow rounded-3"
-      style={{ width: '93vw', height: '60vh' }}
+      style={{ width: '97vw', height: '60vh' }}
     >
       <h1 className='px-5'>Months with more Reservations in the year</h1>
-      <ResponsiveContainer>
+      {
+        (!data.length) ?
+        (
+          <div className="mt-5 d-flex justify-content-center align-items-center">
+            <h3 className="pt-5">No data</h3>
+          </div>
+        )
+        :
+        (
+          <ResponsiveContainer>
         <AreaChart
           width={700}
           height={300}
           data={finalData}
           margin={{
             top: 10,
-            right: 30,
+            right: 50,
             left: 0,
             bottom: 50,
           }}
@@ -61,6 +70,10 @@ const ReservationPerMonth = () => {
           <Area type="monotone" dataKey="reservations" fill="#840000" animationDuration={1500}/>
         </AreaChart>
       </ResponsiveContainer>
+        )
+      }
+      
+      
     </div>
   )
 }

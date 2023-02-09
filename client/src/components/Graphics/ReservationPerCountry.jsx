@@ -39,39 +39,51 @@ const ReservationPerCountry = () => {
       reservations: value
     })
   }
-  if(!data.length) return(<h1>load</h1>)
-  
+  // if (!data.length) return (<h1>load</h1>)
+
   return (
-    <div 
+    <div
       className="bg-white border border-secondary-subtle shadow rounded-3"
-      style={{width:'45vw', height: '60vh' }}>
-      
+      style={{ width: '45vw', height: '60vh' }}>
+
       <h1 className='px-5'>Countries with more Reservations</h1>
-      <LineChart
-        width={750}
-        height={400}
-        data={countryArr}
-        margin={{
-          top: 10,
-          right: 30,
-          left: 0,
-          bottom: 0
-        }}
-      >
-        {/* <CartesianGrid strokeDasharray="3 3" /> */}
-        <XAxis tick={{fontSize: 14, fontWeight:'bold'}} dataKey="country" />
-        <YAxis tick={{fontSize: 14, fontWeight:'bold'}} label={{value:'RESERVATIONS', angle: -90,style: { fontSize: 18 }}}/>
-        <Tooltip wrapperStyle={{fontSize:'14px', fontWeight:'bold'}}/>
-        <Line
-          connectNulls
-          type="monotone"
-          dataKey="reservations"
-          stroke="orange"
-          fill="orange"
-          activeDot={{ r: 8 }}
-          animationDuration={1500}
-        />
-      </LineChart>
+
+      {
+        (!data.length) ?
+          (
+            <div className="mt-5 d-flex justify-content-center align-items-center">
+              <h3 className="pt-5">No data</h3>
+            </div>
+          )
+          :
+          (
+            <LineChart
+              width={750}
+              height={400}
+              data={countryArr}
+              margin={{
+                top: 10,
+                right: 30,
+                left: 0,
+                bottom: 0
+              }}
+            >
+              {/* <CartesianGrid strokeDasharray="3 3" /> */}
+              <XAxis tick={{ fontSize: 14, fontWeight: 'bold' }} dataKey="country" />
+              <YAxis tick={{ fontSize: 14, fontWeight: 'bold' }} label={{ value: 'RESERVATIONS', angle: -90, style: { fontSize: 18 } }} />
+              <Tooltip wrapperStyle={{ fontSize: '14px', fontWeight: 'bold' }} />
+              <Line
+                connectNulls
+                type="monotone"
+                dataKey="reservations"
+                stroke="orange"
+                fill="orange"
+                activeDot={{ r: 8 }}
+                animationDuration={1500}
+              />
+            </LineChart>
+          )
+      }
     </div>
   )
 
