@@ -113,24 +113,25 @@ const RoomDetail = () => {
                 
                   <li>
                     <span className={style.iconChildren}></span>
-                    <p className={style.paddingMax}>
+                    <p className={`${style.paddingMax} paddingMax` }>
                       {roomDetail.maxChild} Max Children
                     </p>
                   </li>
                   <li>
                     <span className={style.iconAdults}></span>
-                    <p className={style.paddingMax}>
+                    <p className={`${style.paddingMax} paddingMax` }>
                       {roomDetail.maxAdult} Max Adults
                     </p>
                   </li>
                   <li>
                     <span className={style.iconPeople}></span>
-                    <p className={style.paddingMax}>
+                    <p className={`${style.paddingMax} paddingMax` }>
                       {roomDetail.numPeople} Max People
                     </p>
                   </li>
                 </ul>
               </div>
+
             </div>
             <div className={style.containerDescription}>
               <h2 className={style.titleDescription}>Description</h2>

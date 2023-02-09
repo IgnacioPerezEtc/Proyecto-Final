@@ -39,6 +39,7 @@ const NavBar = (props) => {
     darkMode();
   }
 
+
   const handleChecked = (event) => {
     if (event.target.checked === true) {
       setThemeState("dark");

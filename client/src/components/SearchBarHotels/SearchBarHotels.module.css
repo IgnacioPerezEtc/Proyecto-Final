@@ -273,4 +273,9 @@ input:focus {
 }
 .reload:hover {
     transform: rotate(360deg) scale(1.3);
+
+}
+.optionItem{
+  border: none;
+  outline: none;
 }
