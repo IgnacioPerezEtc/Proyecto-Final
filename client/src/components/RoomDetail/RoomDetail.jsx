@@ -50,16 +50,11 @@ const RoomDetail = () => {
         <div className={style.containerRoomDetail}>
           <div>
             <div className={style.containerDates}>
-              <div className={style.containerButtonB}>
-                <NavLink to={"/rooms"}>
-                  <button className={style.backHome}>Rooms</button>
-                </NavLink>
-              </div>
               <div
                 className={` ${style.containerTitle} d-flex justify-content-between`}
               >
                 <p className={` ${style.title}`}>
-                  {roomDetail.numRoom} by {" "}
+                  {roomDetail.numRoom} by{" "}
                   {roomDetail.hotel.name.charAt(0).toUpperCase() +
                     roomDetail.hotel.name.slice(1)}{" "}
                 </p>
@@ -100,12 +95,22 @@ const RoomDetail = () => {
             </div>
 
             <div className={style.containerInfo}>
+              <div className={style.containerSpecialties}>
+                <h2 className={style.titleSpec}>Specialities</h2>
+                <ul className={style.ulSpec}>
+                  {roomDetail.specialties.map((spec) => {
+                    return (
+                      <li className={style.off} key={spec}>
+                        {spec.charAt(0).toUpperCase() + spec.slice(1)}
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
               <div className={style.containerCondSpec}>
                 <h2>Room conditions</h2>
                 <ul className={style.ulCondiciones}>
-                  {/* <li>{roomDetail.maxChild} Max Childs</li>
-                  <li>{roomDetail.maxAdult} Max Adults</li>
-                  <li>{roomDetail.numPeople} Max People</li> */}
+                
                   <li>
                     <span className={style.iconChildren}></span>
                     <p className={style.paddingMax}>
@@ -126,28 +131,12 @@ const RoomDetail = () => {
                   </li>
                 </ul>
               </div>
-
-              <div className={style.containerSpecialties}>
-                <h2 className={style.titleSpec}>Specialities</h2>
-                <ul className={style.ulSpec}>
-                  {roomDetail.specialties.map((spec) => {
-                    return (
-                      <li className={style.spanSpec} key={spec}>
-                        {spec.charAt(0).toUpperCase() + spec.slice(1)}
-                      </li>
-                    );
-                  })}
-                </ul>
-              </div>
             </div>
             <div className={style.containerDescription}>
               <h2 className={style.titleDescription}>Description</h2>
-              <p className={style.description}>
-               {roomDetail.description}
-              </p>
+              <p className={style.description}>{roomDetail.description}</p>
             </div>
           </div>
-
           <div>
             <HotelDetail id={roomDetail.hotelId} />
           </div>

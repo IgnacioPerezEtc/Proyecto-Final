@@ -38,10 +38,10 @@ const NavBarDetails = () => {
 
   const handleChecked = (event) => {
     if (event.target.checked === true) {
-      setThemeState("dark")
+      setThemeState("dark");
       darkMode();
     } else {
-      setThemeState("light")
+      setThemeState("light");
       lightMode();
     }
   };
@@ -113,11 +113,7 @@ const NavBarDetails = () => {
                   Hotels
                 </NavLink>
               </li>
-              <li className={style.pages}>
-                <a href="/favorites" className={style.linkLanding}>
-                  Favorites
-                </a>
-              </li>
+
               <li className={style.pages}>
                 <NavLink to={"/aboutUs"} className={style.linkLanding}>
                   About Us
@@ -126,9 +122,7 @@ const NavBarDetails = () => {
               <li className={style.pages}>
                 <input
                   type="checkbox"
-                  checked={
-                    themeState === "dark" ? true : false
-                  }
+                  checked={themeState === "dark" ? true : false}
                   name="darkMode"
                   value={themeState}
                   id={`switchDarkMode`}
@@ -144,7 +138,19 @@ const NavBarDetails = () => {
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
                 >
-                  <img src={user} alt="" width={"24px"} height="24px" />
+                  {login === false ? (
+                    <img src={user} alt="" width={"24px"} height="24px" />
+                  ) : (
+                    <img
+                      id={style.img}
+                      src={
+                        JSON.parse(localStorage.getItem("user"))[0].img || user
+                      }
+                      alt=""
+                      width={"34px"}
+                      height="34px"
+                    />
+                  )}
                 </a>
 
                 <ul
@@ -152,19 +158,26 @@ const NavBarDetails = () => {
                 >
                   <li>
                     {login === false ? (
-                      <a className={`${style.itemDrop} dropdown-item`} href="/">
-                        Log-in
-                      </a>
+                      ""
                     ) : (
                       <a
-                        onClick={logOut}
-                        className={` ${style.itemDrop} dropdown-item`}
-                        href="/"
+                        className={`${style.itemDrop} dropdown-item`}
+                        href="/userProfile"
                       >
-                        Log-Out
+                        User Profile
                       </a>
                     )}
                   </li>
+                  <hr />
+                  <li>
+                    <a
+                      href="/favorites"
+                      className={`${style.itemDrop} dropdown-item`}
+                    >
+                      Favorites
+                    </a>
+                  </li>
+
                   <hr />
                   {info && info[0].admin === true ? (
                     <div>
@@ -181,6 +194,7 @@ const NavBarDetails = () => {
                   ) : (
                     ""
                   )}
+
                   <li>
                     <a
                       className={`${style.itemDrop} dropdown-item`}
@@ -197,6 +211,22 @@ const NavBarDetails = () => {
                     >
                       Reservation History
                     </a>
+                  </li>
+                  <hr />
+                  <li>
+                    {login === false ? (
+                      <a className={`${style.itemDrop} dropdown-item`} href="/">
+                        Log-in
+                      </a>
+                    ) : (
+                      <a
+                        onClick={logOut}
+                        className={` ${style.itemDrop} dropdown-item`}
+                        href="/"
+                      >
+                        Log-Out
+                      </a>
+                    )}
                   </li>
                 </ul>
               </li>

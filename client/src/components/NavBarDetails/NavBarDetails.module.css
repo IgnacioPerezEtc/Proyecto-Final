@@ -2,6 +2,9 @@
   padding: 0;
   /* margin-bottom: 60px; */
 }
+#img{
+  border-radius: 20px;
+}
 
 .containerFluid {
   padding-top: 12px;
@@ -39,6 +42,14 @@
 }
 .dropDownUl {
   background-color: var(--color-blue);
+}
+
+.dropDownUl li{
+  text-decoration: none;
+  color: #C2C7CE;
+  font-size: 1.4rem;
+  line-height: 1.9rem;
+  font-family: 'Roboto', sans-serif; 
 }
 .dropDownUl li a {
   color: #c2c7ce;

@@ -136,14 +136,14 @@ const NavBar = (props) => {
                       JSON.parse(localStorage.getItem("user"))[0].img || user
                     }
                     alt=""
-                    width={"24px"}
-                    height="24px"
+                    width={"34px"}
+                    height="34px"
                   />
                 )}
               </a>
 
-              <ul className="dropdown-menu dropdown-menu-lg-end">
-                <li>
+              <ul className={`${style.ulProfile} dropdown-menu dropdown-menu-lg-end`}>
+                <li className={style.liProfile}>
                   {login === false ? (
                     ""
                   ) : (
@@ -153,7 +153,7 @@ const NavBar = (props) => {
                   )}
                 </li>
                 <hr />
-                <li>
+                <li className={style.liProfile}>
                   <NavLink to={"/favorites"} className="dropdown-item">
                     Favorites
                   </NavLink>
@@ -161,7 +161,7 @@ const NavBar = (props) => {
                 <hr />
                 {info && info[0].admin === true ? (
                   <div>
-                    <li>
+                    <li className={style.liProfile}>
                       <a
                         className={`${style.itemDrop} dropdown-item`}
                         href="/admin"
@@ -174,14 +174,22 @@ const NavBar = (props) => {
                 ) : (
                   ""
                 )}
-                <li>
+                <li className={style.liProfile}>
                   <a className="dropdown-item" href="/Booking">
                     My reservations
                   </a>
                 </li>
                 <hr />
-
-                <li>
+                <li className={style.liProfile}>
+                  <a
+                    className={`${style.itemDrop} dropdown-item`}
+                    href="/Reservationhistory"
+                  >
+                    Reservation History
+                  </a>
+                </li>
+                <hr />
+                <li className={style.liProfile}>
                   {login === false ? (
                     <a className="dropdown-item" href="/">
                       Log-in
