@@ -48,19 +48,6 @@ const NavBar = (props) => {
       lightMode();
     }
   };
-  // const preferedColorScheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-  // const slider = document.getElementById('slider');
-  //  console.log(preferedColorScheme)
-  // const setTheme = (theme)=>{
-  //   document.documentElement.setAttribute('data-theme',theme);
-  //   localStorage.setItem('theme',theme);
-  // }
-  // slider.addEventListener('click', ()  => {
-  //   let switchToTheme = localStorage.getItem('theme') === 'dark' ? 'light' : 'dark';
-  //   setTheme(switchToTheme);
-  // });
-  // console.log(setTheme)
-  // setTheme(localStorage.getItem('theme') || preferedColorScheme);
 
   return (
     <div className={style.containerNavbar}>
@@ -100,14 +87,14 @@ const NavBar = (props) => {
         <div>
           <ul className={style.ulNav}>
             <li className={style.pages}>
-              <a href="/home" className={style.linkLanding}>
+              <NavLink to="/home" className={style.linkLanding}>
                 Home
-              </a>
+              </NavLink>
             </li>
             <li className={style.pages}>
-              <a href="/rooms" className={style.linkLanding}>
+              <NavLink to="/rooms" className={style.linkLanding}>
                 Rooms
-              </a>
+              </NavLink>
             </li>
             <li className={style.pages}>
               <NavLink to={"/hotels"} className={style.linkLanding}>
@@ -115,15 +102,11 @@ const NavBar = (props) => {
               </NavLink>
             </li>
             <li className={style.pages}>
-              <NavLink to={"/favorites"} className={style.linkLanding}>
-                Favorites
-              </NavLink>
-            </li>
-            <li className={style.pages}>
               <NavLink to={"/aboutUs"} className={style.linkLanding}>
                 About Us
               </NavLink>
             </li>
+
             <li className={style.pages}>
               <input
                 type="checkbox"
@@ -153,14 +136,14 @@ const NavBar = (props) => {
                       JSON.parse(localStorage.getItem("user"))[0].img || user
                     }
                     alt=""
-                    width={"24px"}
-                    height="24px"
+                    width={"34px"}
+                    height="34px"
                   />
                 )}
               </a>
 
-              <ul className="dropdown-menu dropdown-menu-lg-end">
-                <li>
+              <ul className={`${style.ulProfile} dropdown-menu dropdown-menu-lg-end`}>
+                <li className={style.liProfile}>
                   {login === false ? (
                     ""
                   ) : (
@@ -169,8 +152,44 @@ const NavBar = (props) => {
                     </a>
                   )}
                 </li>
-
-                <li>
+                <hr />
+                <li className={style.liProfile}>
+                  <NavLink to={"/favorites"} className="dropdown-item">
+                    Favorites
+                  </NavLink>
+                </li>
+                <hr />
+                {info && info[0].admin === true ? (
+                  <div>
+                    <li className={style.liProfile}>
+                      <a
+                        className={`${style.itemDrop} dropdown-item`}
+                        href="/admin"
+                      >
+                        Dashboard
+                      </a>
+                    </li>
+                    <hr />
+                  </div>
+                ) : (
+                  ""
+                )}
+                <li className={style.liProfile}>
+                  <a className="dropdown-item" href="/Booking">
+                    My reservations
+                  </a>
+                </li>
+                <hr />
+                <li className={style.liProfile}>
+                  <a
+                    className={`${style.itemDrop} dropdown-item`}
+                    href="/Reservationhistory"
+                  >
+                    Reservation History
+                  </a>
+                </li>
+                <hr />
+                <li className={style.liProfile}>
                   {login === false ? (
                     <a className="dropdown-item" href="/">
                       Log-in
@@ -180,24 +199,6 @@ const NavBar = (props) => {
                       Log-Out
                     </a>
                   )}
-                </li>
-                {info && info[0].admin === true ? (
-                  <li>
-                    <a
-                      className={`${style.itemDrop} dropdown-item`}
-                      href="/admin"
-                    >
-                      Dashboard
-                    </a>
-                  </li>
-                ) : (
-                  ""
-                )}
-                <hr />
-                <li>
-                  <a className="dropdown-item" href="/Booking">
-                    My reservations
-                  </a>
                 </li>
               </ul>
             </li>

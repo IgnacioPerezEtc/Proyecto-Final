@@ -10,6 +10,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import reloadIcon from "../../assets/img/reload.png";
 const SearchBarHotels = (props) => {
   const location = useLocation();
   const navigate = useNavigate();
@@ -113,9 +114,14 @@ const SearchBarHotels = (props) => {
             <option value="french">French</option>
             <option value="german">German</option>
           </select>
-      <div>
-        <button  className={style.reload} onClick={reload}>Reload</button>
-      </div>
+          <div className={style.containerLoad}>
+            <img
+              onClick={reload}
+              src={reloadIcon}
+              className={`${style.reload}`}
+              alt=""
+            />
+          </div>
 
           {info
             ? info.at(0).admin === true && (

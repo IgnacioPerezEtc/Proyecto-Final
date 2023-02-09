@@ -26,6 +26,7 @@ const HotelDetail = (props) => {
   const dispatch = useDispatch();
   const { id } = useParams();
   const hotelDetail = useSelector((state) => state.hotelDetail);
+  const [info, setInfo] = useState(JSON.parse(localStorage.getItem("user")));
   const star = hotelDetail.category;
   let imgs = [];
   let stars = [];
@@ -49,16 +50,16 @@ const HotelDetail = (props) => {
   let ratingLet = (rating) => {
     let text = "";
     if (rating < 5) {
-      text = "No recomendado";
+      text = "Not recommended";
     }
     if (rating === 5) {
-      text = "Recomendado";
+      text = "Recommended";
     }
     if (rating > 5) {
-      text = "Muy Bueno";
+      text = "Very good";
     }
     if (rating > 9) {
-      text = "Excelente";
+      text = "Excelent";
     }
 
     return text;
@@ -108,7 +109,7 @@ const HotelDetail = (props) => {
                 </div>
                 <div className={style.containerImg}>
                   <img src={imgs[1]} alt="" className={style.imgGallery} />
-                  <button className={style.buttonVer}>View Gallery</button>
+                  {/* <button className={style.buttonVer}>View Gallery</button> */}
                 </div>
               </div>
               <div className={style.containerNameLocation}>
@@ -120,7 +121,8 @@ const HotelDetail = (props) => {
                       : ""}
                     <span className={style.spacingStars}>{stars}</span>
                   </h2>
-                  {localStorage.getItem("user") ? (
+                  {location.pathname.includes("hotels") &&
+                  localStorage.getItem("user") ? (
                     <FavoriteIcon id={parseInt(id)} />
                   ) : (
                     ""
@@ -130,102 +132,107 @@ const HotelDetail = (props) => {
                   {/* <p className={style.nameDescription}>Location:</p> */}
                   <p className="locationHotelDetail">{hotelDetail.location}.</p>
                 </div>
-                <div className={style.containerRatingFlex}>
-                  <div
-                    className={` ${style.containerRating} ${style.flexRating}`}
-                  >
-                    <p className={style.rating}>{hotelDetail.rating}</p>
+                {location.pathname.includes("hotels") && (
+                  <div className={style.containerRatingFlex}>
+                    <div
+                      className={` ${style.containerRating} ${style.flexRating}`}
+                    >
+                      <p className={style.rating}>{hotelDetail.rating}</p>
+                    </div>
+
+                    <div className={style.divTextRating}>
+                      <p className="textRecomm">{textRating}</p>
+                      {/* <p className={style.puntGral}>Puntuación general.</p> */}
+                      <a href="" className="linkCommentarios">
+                        View comments.
+                      </a>
+                    </div>
                   </div>
-                  <div className={style.divTextRating}>
-                    <p className="textRecomm">{textRating}</p>
-                    {/* <p className={style.puntGral}>Puntuación general.</p> */}
-                    <a href="" className="linkCommentarios">
-                      Ver comentarios
-                    </a>
-                  </div>
-                </div>
+                )}
               </div>
             </div>
+            {location.pathname.includes("hotels") && (
+              <div className={style.contianerInfoHotel}>
+                <div className={style.containerSectionUno}>
+                  <div className="containerAloj">
+                    <h2 className="titleOffHotel">This hotel offers</h2>
+                    <ul className="ulOff">
+                      <li className="offRoomsDetail">
+                        {hotelDetail.rooms} Rooms
+                      </li>
+                      {ofrecimientosHotel.map((ofre) => {
+                        return (
+                          <li className="offParkinDetail" key={ofre}>
+                            {ofre}
+                          </li>
+                        );
+                      })}
+                    </ul>
+                    <hr className={style.hr} />
+                    <h2 className="titleOffHotel">Security & Advantages</h2>
+                    <ul className={style.ulOff}>
+                      <li className="offCheckInDetail">
+                        Check-in & check-out web
+                      </li>
+                      <li className="offMethods">Secure payment methods</li>
+                      <li className="offEmail">Email confirming reservation</li>
+                    </ul>
+                  </div>
+                  {/* ////////////////////////////////////////////////////////MAPA//////////////////////////////////// */}
+                  <div className={style.containerMap}>
+                    <div>
+                      {hotelDetail.position?.map((hotelPosition) => {
+                        array.push(parseFloat(hotelPosition));
+                      })}
+                      {/* { console.log(array)} */}
+                      {array.length === 2 ? (
+                        <Maps positionDetail={array} />
+                      ) : (
+                        false
+                      )}
 
-            <div className={style.contianerInfoHotel}>
-              <div className={style.containerSectionUno}>
-                <div className="containerAloj">
-                  <h2 className="titleOffHotel">This hotel offers</h2>
-                  <ul className="ulOff">
-                    <li className="offRoomsDetail">
-                      {hotelDetail.rooms} Rooms
-                    </li>
-                    {ofrecimientosHotel.map((ofre) => {
-                      return (
-                        <li className="offParkinDetail" key={ofre}>
-                          {ofre}
-                        </li>
-                      );
-                    })}
-                  </ul>
-                  <hr className={style.hr} />
-                  <h2 className="titleOffHotel">Security & Advantages</h2>
-                  <ul className={style.ulOff}>
-                    <li className="offCheckInDetail">
-                      Check-in & check-out web
-                    </li>
-                    <li className="offMethods">Secure payment methods</li>
-                    <li className="offEmail">Email confirming reservation</li>
-                  </ul>
+                      {/* { setMapCenter(array)} */}
+                      {/* //////////////////////////////////////////////////////////////////////////////////////////// */}
+                    </div>
+                  </div>
                 </div>
-                {/* ////////////////////////////////////////////////////////MAPA//////////////////////////////////// */}
-                <div className={style.containerMap}>
-                  <div>
-                    {hotelDetail.position?.map((hotelPosition) => {
-                      array.push(parseFloat(hotelPosition));
-                    })}
-                    {/* { console.log(array)} */}
-                    {array.length === 2 ? (
-                      <Maps positionDetail={array} />
-                    ) : (
-                      false
-                    )}
-
-                    {/* { setMapCenter(array)} */}
-                    {/* //////////////////////////////////////////////////////////////////////////////////////////// */}
+                <div
+                  className={`${style.containerDescription} containerDescription`}
+                >
+                  <h2 className={style.titleDescription}>Description</h2>
+                  <p className={style.description}>{hotelDetail.description}</p>
+                </div>
+                <div
+                  className={`${style.containerDescription} containerDescription`}
+                >
+                  <h2 className={style.titleDescription}>
+                    More about{" "}
+                    {hotelDetail.name
+                      ? hotelDetail.name.charAt(0).toUpperCase() +
+                        hotelDetail.name.slice(1)
+                      : ""}
+                  </h2>
+                  <div className={style.containerContact}>
+                    <h2>Contact:</h2>
+                    <p className={style.contact}>{hotelDetail.phone}</p>
+                  </div>
+                  <div className={style.containerContact}>
+                    <h2>Languages:</h2>
+                    <ul className={style.ulLanguages}>
+                      {hotelDetail.languages?.map((ofre) => {
+                        return (
+                          <li className={style.liLanguages} key={ofre}>
+                            ✔{ofre}
+                          </li>
+                        );
+                      })}
+                    </ul>
                   </div>
                 </div>
               </div>
-              <div
-                className={`${style.containerDescription} containerDescription`}
-              >
-                <h2 className={style.titleDescription}>Description</h2>
-                <p className={style.description}>{hotelDetail.description}</p>
-              </div>
-              <div
-                className={`${style.containerDescription} containerDescription`}
-              >
-                <h2 className={style.titleDescription}>
-                  More about{" "}
-                  {hotelDetail.name
-                    ? hotelDetail.name.charAt(0).toUpperCase() +
-                      hotelDetail.name.slice(1)
-                    : ""}
-                </h2>
-                <div className={style.containerContact}>
-                  <h2>Contact:</h2>
-                  <p className={style.contact}>{hotelDetail.phone}</p>
-                </div>
-                <div className={style.containerContact}>
-                  <h2>Languages:</h2>
-                  <ul className={style.ulLanguages}>
-                    {hotelDetail.languages?.map((ofre) => {
-                      return (
-                        <li className={style.liLanguages} key={ofre}>
-                          ✔{ofre}
-                        </li>
-                      );
-                    })}
-                  </ul>
-                </div>
-              </div>
-            </div>
+            )}
           </div>
+
           {location.pathname.includes("hotels") ? (
             <div>
               <h2 className={style.roomsTitle}>Rooms</h2>
@@ -251,15 +258,19 @@ const HotelDetail = (props) => {
                   </div>
                 </div>
               </div>
-              <div className={style.flexContainer}>
-                <NavLink to={"/formHotels"}>
-                  <button className={style.createRoom}>Create Room</button>
-                </NavLink>{" "}
-              </div>
+              {info && info[0].admin === true && (
+                <div className={style.flexContainer}>
+                  <NavLink to={`/formRoom/${hotelDetail.id}`}>
+                    <button className={style.createRoom}>Create Room</button>
+                  </NavLink>{" "}
+                </div>
+              )}
             </div>
           ) : (
-            <div>
-              <button>View Hotel</button>
+            <div className={style.flexContainer}>
+              <NavLink to={`/hotels/${hotelDetail.id}`}>
+                <button className={style.createRoom}>View Hotel</button>
+              </NavLink>
             </div>
           )}
         </div>

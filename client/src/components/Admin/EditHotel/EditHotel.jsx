@@ -96,16 +96,16 @@ const EditHotel = () => {
   let ratingLet = (rating) => {
     let text = "";
     if (rating < 5) {
-      text = "No recomendado";
+      text = "No recommended";
     }
     if (rating === 5) {
-      text = "Recomendado";
+      text = "Recommended";
     }
     if (rating > 5) {
-      text = "Muy Bueno";
+      text = "Very Good";
     }
     if (rating > 9) {
-      text = "Excelente";
+      text = "Excelent";
     }
 
     return text;
@@ -221,7 +221,7 @@ const EditHotel = () => {
                       <p className={style.textRecomm}>{textRating}</p>
                       {/* <p className={style.puntGral}>Puntuación general.</p> */}
                       <a href="" className={style.linkCommentarios}>
-                        Ver comentarios.
+                        View comments.
                       </a>
                     </div>
                   </div>

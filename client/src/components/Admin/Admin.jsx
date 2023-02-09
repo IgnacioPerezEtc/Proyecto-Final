@@ -8,10 +8,13 @@ import home from "../../assets/icons/home.png";
 import Users from "./Users/Users";
 import HotelsAdmin from "./HotelsAdmin/HotelsAdmin";
 import RoomsAdmin from "./RoomsAdmin/RoomsAdmin";
+import GraphicsAdmin from "../Graphics/GraphicsAdmin";
+import { useState } from "react";
 import { useLocation } from "react-router-dom";
 
 const Admin = () => {
   const location = useLocation();
+  const [themeState, setThemeState] = useState(localStorage.getItem("theme"));
   function darkMode() {
     localStorage.setItem("theme", "dark");
     let element = document.body;
@@ -29,6 +32,16 @@ const Admin = () => {
   } else {
     darkMode();
   }
+
+  const handleChecked = (event) => {
+    if (event.target.checked === true) {
+      setThemeState("dark");
+      darkMode();
+    } else {
+      setThemeState("light");
+      lightMode();
+    }
+  };
   return (
     <div>
       <div>
@@ -161,13 +174,17 @@ const Admin = () => {
                 </ul>
               </div>
             </div>
-            <li>
-              <button className={style.btnMoon} onClick={darkMode}>
-                🌜
-              </button>
-              <button className={style.btnSun} onClick={lightMode}>
-                ☀️
-              </button>
+            <li className={style.pages}>
+              <input
+                type="checkbox"
+                checked={themeState === "dark" ? true : false}
+                name="darkMode"
+                value={localStorage.getItem("theme")}
+                id={`switch`}
+                className={style.switch}
+                onClick={(e) => handleChecked(e)}
+              />
+              <label htmlFor={`switch`} className={style.lbl}></label>
             </li>
             <NavLink className={`${style.navLink} navbar-brand`} to={"/home"}>
               Home
@@ -175,6 +192,13 @@ const Admin = () => {
           </div>
         </nav>
       </div>
+
+      {location.pathname.includes("admin") && (
+        <div className={style.ContainerGraphics}>
+          <GraphicsAdmin />
+        </div>
+      )}
+
       {location.pathname.includes("admin") && (
         <div className={style.containerInfo}>
           <HotelsAdmin />

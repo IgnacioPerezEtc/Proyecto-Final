@@ -8,31 +8,83 @@
 .Card {
   width: 320px;
   border: none;
+  box-shadow: 2px 2px 2px 4px #8897b93d;
+  border-radius: 10px;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  transition: all 0.3s ease;
+  margin-top: 12px;
+  margin-bottom: 12px;
+
+}
+.stars {
+  color: var(--color-red);
+  font-size: 1.8rem;
+  vertical-align: middle;
+  margin-right: 4px;
+  padding-bottom: 6px;
 }
 
+.Card:hover {
+  transform: translateY(-10px);
+}
 
-.icon{
+.titleRoom {
+  color: var(--letter-blue);
+  font-size: 2rem;
+  padding-bottom: 4px;
+}
+
+.priceContainer {
+  padding: 4px 5px;
+  background-color: var(--letter-blue);
+  color: #fff;
+  border-radius: 3px;
+}
+
+.category {
+  text-align: start;
+}
+
+.icon {
   color: rgb(185, 179, 179);
   font-size: 14px;
   cursor: pointer;
   margin-left: 4px;
 }
 
-
-.active{
+.active {
   color: rgb(219, 1, 1);
   font-size: 16px;
   margin-left: 0;
   cursor: pointer;
-  margin-left:2px;
+  margin-left: 2px;
 }
 
-.favorite{
+.favorite {
   position: absolute;
   margin-left: 290px;
   margin-top: 220px;
 }
-.Card{
+.Card {
   background-color: #fff;
-
 }
+
+.param{
+  text-align: start;
+  margin: 0;
+  font-size: 1.2rem;
+}
+.Data{
+  min-height: 54px;
+  max-height: 54px;
+  margin: 0 0 1em 0;
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+.language{
+  font-size: 1.4rem;
+  color: var(--letter-blue);
+}
+

@@ -36,9 +36,21 @@
   font-family: "Roboto", sans-serif;
 }
 
-.ulNavRedes {
-  display: flex;
-  list-style-type: none;
+
+.ulProfile{
+    margin-top: 8px;
+}
+.liProfile{
+    text-decoration: none;
+    color: #C2C7CE;
+    font-size: 1.4rem;
+    line-height: 1.9rem;
+    font-family: 'Roboto', sans-serif; 
+}
+.ulNavRedes{
+    display: flex;
+    list-style-type: none;
+
 }
 
 .ulNavRedes li {
@@ -107,6 +119,42 @@
 
 .switch:checked + .lbl::after {
   left: 35px;
+}
+
+.switch:checked + .lbl {
+  background: var(--color-blue);
+}
+
+.lbl {
+  display: inline-block;
+  width: 45px;
+  height: 23px;
+  background: #979797;
+  border-radius: 100px;
+  cursor: pointer;
+  position: relative;
+  transition: 0.2s;
+}
+
+.lbl::after {
+  content: "";
+  display: block;
+  width: 15px;
+  height: 15px;
+  background: #eee;
+  border-radius: 100px;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  transition: 0.2s;
+}
+
+.switch {
+  display: none;
+}
+
+.switch:checked + .lbl::after {
+  left: 25px;
 }
 
 .switch:checked + .lbl {
