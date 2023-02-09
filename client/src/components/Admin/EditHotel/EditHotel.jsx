@@ -13,6 +13,7 @@ import AppModal from "../Modal/AppModal";
 import Admin from "../Admin";
 import axios from "axios";
 import { NavLink } from "react-router-dom";
+import Swal from "sweetalert2/dist/sweetalert2.all.js";
 const EditHotel = () => {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -116,7 +117,7 @@ const EditHotel = () => {
 
   const saveChanges = (id) => {
     dispatch(putHotel(id, inputs));
-    alert("Modified");
+    Swal.fire("Modified");
   };
 
   return (

@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useTransition } from "react";
 import finalPropsSelectorFactory from "react-redux/es/connect/selectorFactory";
-import Swal from "sweetalert2/dist/sweetalert2.all.js";
 import Footer from "../Footer/Footer";
 import NavBarDetails from "../NavBarDetails/NavBarDetails";
 import style from "./FormHotels.module.css";
@@ -8,23 +7,8 @@ import { FaStar } from "react-icons/fa";
 import { validate, capitalizarPrimeraLetra } from "./validator";
 import { useDispatch } from "react-redux";
 import { createHotel } from "../../redux/actions";
-
+import Swal from "sweetalert2/dist/sweetalert2.all.js";
 const FormHotels = () => {
-  // const info = JSON.parse(localStorage.getItem("user"));
-  // const alert = () => {
-  //   Swal.fire({
-  //     title: "Sorry",
-  //     text: "you dont have the permission to enter",
-  //   });
-  //   window.setTimeout(() => {
-  //     window.location.href = "/";
-  //   }, 2500);
-  // };
-  // if (!info) {
-  //   alert()
-  // } else if (info[0].admin === false) {
-  //   alert()
-  // };
 
   const dispatch = useDispatch();
 
@@ -187,7 +171,7 @@ const FormHotels = () => {
     if(Object.keys(inputErrors).length === 0 && isSubmit) {
       console.log(input);
       dispatch(createHotel(input));
-      alert("Hotel was Created succesfully");
+      Swal.fire("Hotel was Created succesfully");
     }
   }, [inputErrors]);
 

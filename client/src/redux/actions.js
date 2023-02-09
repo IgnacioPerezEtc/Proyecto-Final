@@ -1,7 +1,7 @@
 import { async } from "@firebase/util";
 import emailjs from "@emailjs/browser";
 import axios from "axios";
-
+import Swal from "sweetalert2/dist/sweetalert2.all.js";
 export const GET_ALL_HOTELS = "GET_ALL_HOTELS";
 export const GET_FAVORITE_HOTELS = "GET_FAVORITE_HOTELS";
 export const GET_HOTEL_BY_ID = "GET_HOTEL_BY_ID";
@@ -258,10 +258,10 @@ export const sendEmail = async (data, form) => {
 
   emailjs.sendForm(serviceID, templateID, form).then(
     () => {
-      alert("Sent!");
+      Swal.fire("Sent!");
     },
     (err) => {
-      alert(JSON.stringify(err));
+      Swal.fire(JSON.stringify(err));
     }
   );
 

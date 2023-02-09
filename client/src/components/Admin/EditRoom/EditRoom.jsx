@@ -16,7 +16,7 @@ import FormRoom from "../../RoomDetail/Form/FormRoom";
 import Footer from "../../Footer/Footer";
 import axios from "axios";
 import Admin from "../Admin";
-
+import Swal from "sweetalert2/dist/sweetalert2.all.js";
 const EditRoom = () => {
   // const location = useLocation();
   // console.log(location.pathname);
@@ -99,7 +99,7 @@ const EditRoom = () => {
 
   const saveChanges = (id) => {
     dispatch(putRoom(id, inputs));
-    alert("Modified");
+    Swal.fire("Modified");
   };
 
   return (
