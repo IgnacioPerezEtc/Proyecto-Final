@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { getAllDataReservations } from "../../redux/actions";
-
+import style from "./Graphics.module.css"
 // HOTELS WITH MORE RESERVATIONS
 const HotelsReservation = () => {
 
@@ -16,7 +16,7 @@ const HotelsReservation = () => {
 
   return (
     <div
-      className='bg-white border border-secondary-subtle shadow rounded-3'
+      className= {`${style.containerHotel} bg-white border border-secondary-subtle shadow rounded-3`}
       style={{ width: '50vw', height: '60vh', paddingBottom: '40px', paddingRight: '30px' }}
     >
       <h1 className='px-5'>Hotel with more Reservations</h1>
@@ -33,7 +33,7 @@ const HotelsReservation = () => {
               <BarChart
                 // width={50}
                 // height={30}
-                data={info}
+                data={data}
                 margin={{
                   // top: 5,
                   right: 30,
@@ -43,7 +43,7 @@ const HotelsReservation = () => {
               >
                 {/* <CartesianGrid strokeDasharray="2 2" /> */}
                 <XAxis tick={{ fontSize: 14, fontWeight: 'bold' }} label={{ value: 'HOTELS', position: 'bottom', style: { fontSize: 18 } }} dataKey="name" />
-                <YAxis tick={{ fontSize: 14, fontWeight: 'bold' }} label={{ value: 'RESERVATIONS', angle: -90, style: { fontSize: 18 } }} />
+                <YAxis tick={{ fontSize: 14, fontWeight: 'bold' }} label={{ value: 'RESERVATIONS', angle: -90, style: { fontSize: 20} }} />
                 <Tooltip wrapperStyle={{ fontSize: '14px', fontWeight: 'bold' }} />
                 {/* <Legend wrapperStyle={{fontSize: "14px"}} /> */}
                 {

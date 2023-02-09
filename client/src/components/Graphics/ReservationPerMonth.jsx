@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getReservationPerMonth } from "../../redux/actions";
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
-
+import style from "./Graphics.module.css"
 
 const ReservationPerMonth = () => {
 
@@ -38,8 +38,8 @@ const ReservationPerMonth = () => {
   
   return (
     <div 
-      className="bg-white border border-secondary-subtle shadow rounded-3"
-      style={{ width: '97vw', height: '60vh' }}
+    className={` ${style.Count} bg-white border border-secondary-subtle shadow rounded-3`}
+      style={{ width: '50vw', height: '60vh' }}
     >
       <h1 className='px-5'>Months with more Reservations in the year</h1>
       {

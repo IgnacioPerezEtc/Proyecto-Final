@@ -9,7 +9,7 @@ import {
   CartesianGrid,
   Tooltip
 } from "recharts";
-
+import style from "./Graphics.module.css"
 const ReservationPerCountry = () => {
 
   const dispatch = useDispatch();
@@ -43,8 +43,8 @@ const ReservationPerCountry = () => {
 
   return (
     <div
-      className="bg-white border border-secondary-subtle shadow rounded-3"
-      style={{ width: '45vw', height: '60vh' }}>
+      className={` ${style.Count} bg-white border border-secondary-subtle shadow rounded-3`}
+      style={{ width: '50vw', height: '60vh' }}>
 
       <h1 className='px-5'>Countries with more Reservations</h1>
 

@@ -2,13 +2,14 @@ import React from "react";
 import HotelsReservation from "./HotelsReservation";
 import ReservationPerMonth from "./ReservationPerMonth";
 import ReservationPerCountry from "./ReservationPerCountry";
+import style from "./Graphics.module.css"
 
 const GraphicsAdmin = () => {
 
   return (
-    <div>
+    <div id="dashboard">
 
-      <div className="d-flex mb-5 gap-5">
+      <div className={style.containerG}>
       <HotelsReservation />
       <ReservationPerCountry />
 
