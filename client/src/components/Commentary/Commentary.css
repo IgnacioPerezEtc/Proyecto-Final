@@ -1,0 +1,50 @@
+.blueComentary {
+    color: var(--color-blue);
+    float: left;
+    font-size: 48px;
+    margin-right: 10px;
+    font-weight: 400;
+}
+
+.descComment {
+    font-family: "Roboto", sans-serif;
+    font-weight: 200;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    color: black;
+    line-height: 2rem;
+}
+
+.containerComments {
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    justify-content: space-evenly;
+}
+
+.containerCards {
+    width: 360px;
+    /* height: 140px; */
+    /* padding: 20px; */
+    background-color: #fff;
+    box-shadow: 2px 2px 0px 0px #00000026;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.containerCards span {
+    padding-top: 20px;
+    letter-spacing: 8px;
+    font-size: 2rem;
+    color: var(--color-red);
+}
+
+.containerCards p{
+    color: black;
+}
+.containerCards h2{
+    color: black;
+}

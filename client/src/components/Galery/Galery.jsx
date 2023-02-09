@@ -20,18 +20,13 @@ const Galery = () => {
     <div className="container">
       <div className="subcontainer">
         <div className="titleContainer">
-          <h2 className="blue">Our</h2>
+          <h2 className="blueG">Our</h2>
           <h2 className="red">Gallery</h2>
         </div>
-        <p className="desc-gallery">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tempor
-          viverra
-        </p>
-        <p className="desc-gallery">parturient diam sagittis nec cras.</p>
       </div>
 
       <div className="galleryContainer">
-        <div className="buttonContainer">
+        <div className="buttonContainerE">
           <button
             value="All"
             onClick={(e) => handleImage(e)}

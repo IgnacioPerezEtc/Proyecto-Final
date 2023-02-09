@@ -16,7 +16,7 @@ const SearchBarHotels = (props) => {
   const dispatch = useDispatch();
   const [name, setName] = useState("");
   const error = useSelector((state) => state.error);
-  const info = (JSON.parse(localStorage.getItem("user")));
+  const info = JSON.parse(localStorage.getItem("user"));
   const handleFilterByLanguage = (e) => {
     e.preventDefault();
     dispatch(filterByLanguage(e.target.value));
@@ -36,6 +36,9 @@ const SearchBarHotels = (props) => {
     e.preventDefault();
     dispatch(getHotelByName(name));
     // navigate("/hotels")
+  };
+  const reload = () => {
+    window.location.reload();
   };
   return (
     <div>
@@ -75,6 +78,7 @@ const SearchBarHotels = (props) => {
             onChange={(e) => {
               handleFilterByStars(e);
             }}
+            disabled={error}
           >
             <option value="All">Number of stars</option>
             <option className={style.starRed} value="1">
@@ -100,6 +104,7 @@ const SearchBarHotels = (props) => {
             onChange={(e) => {
               handleFilterByLanguage(e);
             }}
+            disabled={error}
           >
             <option value="All">Select a language</option>
             <option value="spanish">Spanish</option>
@@ -108,6 +113,10 @@ const SearchBarHotels = (props) => {
             <option value="french">French</option>
             <option value="german">German</option>
           </select>
+      <div>
+        <button  className={style.reload} onClick={reload}>Reload</button>
+      </div>
+
           {info
             ? info.at(0).admin === true && (
                 <NavLink to={"/formHotels"}>

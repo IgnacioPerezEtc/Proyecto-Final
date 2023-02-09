@@ -21,7 +21,7 @@ export const HotelCard = ({ name, image, category, languages, id }) => {
   return (
     <div className="d-flex justify-content-center">
 
-      <Card className={`${style.Card} h-75`}>
+      <Card className={style.Card}>
         <div className={style.favorite}>
           {
             localStorage.getItem("user") ?

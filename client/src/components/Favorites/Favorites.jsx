@@ -6,24 +6,46 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Keyboard, Autoplay } from "swiper";
 import "swiper/css";
 import "swiper/css/free-mode";
-import style from './Favorites.module.css';
-
+import style from "./Favorites.module.css";
+import NavBarDetails from "../NavBarDetails/NavBarDetails";
+import Footer from "../Footer/Footer";
 
 const Favorites = () => {
-
+  const error = useSelector((state) => state.error);
   const dispatch = useDispatch();
-  const user = (JSON.parse(localStorage.getItem("user")));
-  const allHotels = useSelector(state => state.allHotels);
-  let favs = useSelector(state => state.favoriteHotels);
-  const hotels = allHotels.filter(hotel => favs.includes(hotel.id))
+  const user = JSON.parse(localStorage.getItem("user"));
+  const allHotels = useSelector((state) => state.allHotels);
+  let favs = useSelector((state) => state.favoriteHotels);
+  const hotels = allHotels.filter((hotel) => favs.includes(hotel.id));
 
   useEffect(() => {
-    dispatch(getAllHotels())
-    dispatch(getFavoriteHotels(user[0].email))
-    console.log(favs.length)
-  }, [dispatch, favs.length])
+    dispatch(getAllHotels());
+    dispatch(getFavoriteHotels(user[0].email));
+    console.log(favs.length);
+  }, [dispatch, favs.length]);
 
+  if (hotels.length === 0) {
+    return (
+      <div>
+        <div>
+          <NavBarDetails />
+        </div>
+        <div className={style.flexContainer}>
+          <h2 className={style.blue}>Favorite</h2>
+          <h2 className={style.red}>Hotels</h2>
+        </div>
 
+        <div className={style.flexContainer}>
+          <img
+            className={style.img}
+            src="https://img.freepik.com/vector-gratis/turistas-felices-eligiendo-hotel-habitacion-reserva-linea-ilustracion-plana_74855-10811.jpg?w=1380&t=st=1675036223~exp=1675036823~hmac=90aac36387831821c356e5386307f0099f52e90d983c23e48db5ab13ac855a78"
+            alt=""
+          />
+        </div>
+        <Footer />
+      </div>
+    );
+  }
   return (
     <div>
       {hotels.length ? (
@@ -70,29 +92,28 @@ const Favorites = () => {
                 },
               }}
             >
-              {
-                hotels.map((hotel) => {
-                  return (
-                    <SwiperSlide key={hotel.id}>
-                      <HotelCard
-                        id={hotel.id}
-                        name={hotel.name}
-                        image={hotel.pictureHome}
-                        category={hotel.category}
-                        languages={hotel.languages}
-                      />
-                    </SwiperSlide>
-                  );
-                })
-              }
+              {hotels.map((hotel) => {
+                return (
+                  <SwiperSlide key={hotel.id}>
+                    <HotelCard
+                      id={hotel.id}
+                      name={hotel.name}
+                      image={hotel.pictureHome}
+                      category={hotel.category}
+                      languages={hotel.languages}
+                    />
+                  </SwiperSlide>
+                );
+              })}
             </Swiper>
           </div>
+          <Footer />
         </div>
-      ) : (<h1 className={style.loading}>Loading...</h1>)}
-
+      ) : (
+        <h1 className={style.loading}>Loading...</h1>
+      )}
     </div>
-
-  )
-}
+  );
+};
 
 export default Favorites;

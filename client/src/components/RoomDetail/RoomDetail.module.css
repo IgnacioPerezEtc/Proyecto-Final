@@ -73,9 +73,6 @@
   color: var(--color-blue);
   font-weight: 500;
 }
-.containerDates {
-  background-color: #fff;
-}
 
 .containerInfo {
   width: 70vw;

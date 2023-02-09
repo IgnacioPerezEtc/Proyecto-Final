@@ -73,3 +73,44 @@
     height: 100%;
     margin: 100px 20px;
 }
+
+.pages{
+    list-style: none;
+}
+
+.lbl {
+    display: inline-block;
+    width: 65px;
+    height: 33px;
+    background: #979797;
+    border-radius: 100px;
+    cursor: pointer;
+    position: relative;
+    transition: 0.2s;
+  }
+  
+  .lbl::after {
+    content: "";
+    display: block;
+    width: 25px;
+    height: 25px;
+    background: #eee;
+    border-radius: 100px;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    transition: 0.2s;
+  }
+  
+  .switch {
+    display: none;
+  }
+  
+  .switch:checked + .lbl::after {
+    left: 35px;
+  }
+  
+  .switch:checked + .lbl {
+    background: var(--letter-blue);
+  }
+  

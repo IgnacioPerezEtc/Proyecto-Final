@@ -1,0 +1,114 @@
+.nameHotelDetail {
+    text-align: start;
+    font-size: 3.2rem;
+    font-family: "Raleway", sans-serif;
+    font-weight: bold;
+    color: var(--color-blue);
+}
+
+
+.locationHotelDetail {
+    font-weight: 500;
+    font-size: 1.6rem;
+    padding-bottom: 20px;
+}
+
+@media screen and (max-width: 1220px) {
+    .containerImgTitle {
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .containerImgTitle {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+
+.containerImg:nth-child(1) {
+    grid-column-start: span 2;
+    grid-row-start: span 3;
+}
+
+.containerImg:nth-child(2) {
+    grid-row-start: span 2;
+}
+
+.containerImgTitle {
+    padding-left: 300px;
+    padding-right: 300px;
+    padding-top: 40px;
+    padding-bottom: 28px;
+}
+
+.titleOffHotel {
+    font-size: 2.8rem;
+    padding-top: 12px;
+    font-weight: 600;
+    line-height: 3.2rem;
+    margin-bottom: 20px;
+    color: var(--color-blue);
+}
+
+.textRecomm {
+    font-size: 2rem;
+    font-weight: 500;
+    color: #444;
+    margin: 0;
+    padding-bottom: 2px;
+}
+.linkCommentarios {
+  text-decoration: none;
+  font-size: 1.4rem;
+  color: blue;
+}
+
+.containerAloj {
+    width: 70%;
+    background-color: #fff;
+    border-radius: 8px;
+  }
+
+  .offRoomsDetail{
+    font-weight: 500;
+    color: #5e5e5e;
+    font-size: 1.6rem;
+    padding-bottom: 18px;
+    padding-top: 8px;
+    font-family: 'Roboto', sans-serif;
+  }
+  /* .offParkinDetail,
+  .offPoolDetail{
+    font-weight: 500;
+    color: #5e5e5e;
+    font-size: 1.6rem;
+    padding-bottom: 18px;
+    padding-top: 8px;
+    font-family: 'Roboto', sans-serif;
+  } */
+
+.offBarDetail, 
+.offResturantDetail,
+.offParkinDetail,
+.offPoolDetail,
+.offWifiDetail,
+.offCheckInDetail,
+.offMethods,
+.offEmail{
+    font-weight: 500;
+    color: #5e5e5e;
+    font-size: 1.6rem;
+    padding-bottom: 18px;
+    padding-top: 8px;
+    font-family: 'Roboto', sans-serif;
+}
+
+  .ulOff{
+    font-family: 'Roboto', sans-serif;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: space-around;
+    list-style-type: none;
+  }

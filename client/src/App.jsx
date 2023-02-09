@@ -19,6 +19,10 @@ import Reservation from "./components/Reservation/Reservation.jsx";
 import Favorites from "./components/Favorites/Favorites.jsx";
 import Admin from "./components/Admin/Admin.jsx";
 import EditHotel from "./components/Admin/EditHotel/EditHotel.jsx";
+import UserProfile from "./components/UserProfile/UserProfile.jsx";
+import UserEdit from "./components/UserEdit/UserEdit.jsx";
+import ErrorRoutes from "./components/ErrorRoutes/ErrorRoutes.jsx";
+import EditRoom from "./components/Admin/EditRoom/EditRoom.jsx";
 //
 function App() {
   return (
@@ -26,23 +30,27 @@ function App() {
       <BrowserRouter>
         <div className="App">
           <Routes>
-            <Route path={"/"} element={<Login />} />
-            <Route path={"/signUp"} element={<Login />} />
-            <Route path="/home" element={<LandingPage />} />
-            <Route path="/hotels" element={<Hotels />} />
-            <Route path="/hotels/:id" element={<HotelDetail />} />
-            <Route path="/aboutUs" element={<AboutUs />} />
-            <Route path="/maps" element={<Maps />} />
-            <Route path="/formRoom/:id" element={<FormRooms />} />
-            <Route path="/rooms/:id" element={<RoomDetail />} />
-            <Route path="/formHotels" element={<FormHotels />} />
-            <Route path="/Booking" element={<Booking />} />
-            <Route path="/rooms" element={<Rooms />} />
-            <Route path="/payApproved" element={<PayApproved/>}/>
-            <Route path="/reservationHistory" element={<Reservation/>} />
-            <Route path="/favorites" element={<Favorites/>} />
-            <Route path="/admin" element={<Admin/>} />
-            <Route path="/editHotel/:id" element={<EditHotel/>} />
+            <Route exact path={"/"} element={<Login />} />
+            <Route exact path={"/signUp"} element={<Login />} />
+            <Route exact path="/home" element={<LandingPage />} />
+            <Route exact path="/hotels" element={<Hotels />} />
+            <Route exact path="/hotels/:id" element={<HotelDetail />} />
+            <Route exact path="/aboutUs" element={<AboutUs />} />
+            <Route exact path="/maps" element={<Maps />} />
+            <Route exact path="/formRoom" element={<FormRooms />} />
+            <Route exact path="/rooms/:id" element={<RoomDetail />} />
+            <Route exact path="/formHotels" element={<FormHotels />} />
+            <Route exact path="/Booking" element={<Booking />} />
+            <Route exact path="/rooms" element={<Rooms />} />
+            <Route exact path="/payApproved" element={<PayApproved />} />
+            <Route exact path="/reservationHistory" element={<Reservation />} />
+            <Route exact path="/favorites" element={<Favorites />} />
+            <Route exact path="/admin" element={<Admin />} />
+            <Route exact path="/editHotel/:id" element={<EditHotel />} />
+            <Route exact path="/editRoom/:id" element={<EditRoom />} />
+            <Route exact path="/userProfile" element={<UserProfile />} />
+            <Route exact path="/userEdit" element={<UserEdit />} />
+            <Route path="*" element={<ErrorRoutes />} />
           </Routes>
         </div>
       </BrowserRouter>

@@ -6,6 +6,7 @@ import { useParams } from "react-router-dom";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import style from "./HotelDetail.module.css";
+import "./HotelDetail.css";
 import RoomCard from "../RoomCard/RoomCard";
 import { getHotelById } from "../../redux/actions";
 import NavBarDetails from "../NavBarDetails/NavBarDetails";
@@ -25,7 +26,9 @@ const HotelDetail = (props) => {
   const dispatch = useDispatch();
   const { id } = useParams();
   const hotelDetail = useSelector((state) => state.hotelDetail);
+  const [info, setInfo] = useState(JSON.parse(localStorage.getItem("user")));
   const star = hotelDetail.category;
+  let imgs = [];
   let stars = [];
   for (let i = 0; i < star; i++) {
     stars.push(<FontAwesomeIcon className={`${style.stars}`} icon={faStar} />);
@@ -39,19 +42,11 @@ const HotelDetail = (props) => {
       dispatch(getHotelById(props.id));
     }, []);
   }
-  const imgs = [
-    "https://swiperjs.com/demos/images/nature-1.jpg",
-    "https://swiperjs.com/demos/images/nature-2.jpg",
-    "https://swiperjs.com/demos/images/nature-3.jpg",
-    "https://swiperjs.com/demos/images/nature-4.jpg",
-    "https://swiperjs.com/demos/images/nature-5.jpg",
-    "https://swiperjs.com/demos/images/nature-6.jpg",
-    "https://swiperjs.com/demos/images/nature-7.jpg",
-    "https://swiperjs.com/demos/images/nature-8.jpg",
-    "https://swiperjs.com/demos/images/nature-9.jpg",
-    "https://swiperjs.com/demos/images/nature-10.jpg",
-    hotelDetail.pictureHome,
-  ];
+  if (hotelDetail.pictureHome && hotelDetail.pictureDetail) {
+    imgs = hotelDetail.pictureDetail;
+    imgs.push(hotelDetail.pictureHome);
+  }
+
   let ratingLet = (rating) => {
     let text = "";
     if (rating < 5) {
@@ -100,7 +95,7 @@ const HotelDetail = (props) => {
         hotelDetail.id === props.id) && (
         <div className={style.containerDetail}>
           <div className={style.containerCard}>
-            <div className={style.containerImgTitle}>
+            <div className="containerImgTitle">
               <div className={style.galleryContainer}>
                 <div className={style.containerImg}>
                   <img
@@ -110,16 +105,16 @@ const HotelDetail = (props) => {
                   />
                 </div>
                 <div className={style.containerImg}>
-                  <img src={imgs[1]} alt="" className={style.imgGallery} />
+                  <img src={imgs[0]} alt="" className={style.imgGallery} />
                 </div>
                 <div className={style.containerImg}>
-                  <img src={imgs[2]} alt="" className={style.imgGallery} />
+                  <img src={imgs[1]} alt="" className={style.imgGallery} />
                   <button className={style.buttonVer}>View Gallery</button>
                 </div>
               </div>
               <div className={style.containerNameLocation}>
                 <div>
-                  <h2 className={style.nameHotel}>
+                  <h2 className="nameHotelDetail">
                     {hotelDetail.name
                       ? hotelDetail.name.charAt(0).toUpperCase() +
                         hotelDetail.name.slice(1)
@@ -134,7 +129,7 @@ const HotelDetail = (props) => {
                 </div>
                 <div className={style.nameHotel}>
                   {/* <p className={style.nameDescription}>Location:</p> */}
-                  <p className={style.location}>{hotelDetail.location}.</p>
+                  <p className="locationHotelDetail">{hotelDetail.location}.</p>
                 </div>
                 <div className={style.containerRatingFlex}>
                   <div
@@ -143,10 +138,10 @@ const HotelDetail = (props) => {
                     <p className={style.rating}>{hotelDetail.rating}</p>
                   </div>
                   <div className={style.divTextRating}>
-                    <p className={style.textRecomm}>{textRating}</p>
+                    <p className="textRecomm">{textRating}</p>
                     {/* <p className={style.puntGral}>Puntuación general.</p> */}
-                    <a href="" className={style.linkCommentarios}>
-                      Ver comentarios.
+                    <a href="" className="linkCommentarios">
+                      Ver comentarios
                     </a>
                   </div>
                 </div>
@@ -155,28 +150,28 @@ const HotelDetail = (props) => {
 
             <div className={style.contianerInfoHotel}>
               <div className={style.containerSectionUno}>
-                <div className={style.containerAloj}>
-                  <h2 className={style.titleOff}>This hotel offers</h2>
-                  <ul className={style.ulOff}>
-                    <li className={style.off}>{hotelDetail.rooms} Rooms</li>
+                <div className="containerAloj">
+                  <h2 className="titleOffHotel">This hotel offers</h2>
+                  <ul className="ulOff">
+                    <li className="offRoomsDetail">
+                      {hotelDetail.rooms} Rooms
+                    </li>
                     {ofrecimientosHotel.map((ofre) => {
                       return (
-                        <li className={style.off} key={ofre}>
+                        <li className="offParkinDetail" key={ofre}>
                           {ofre}
                         </li>
                       );
                     })}
-                    <li className={style.off}>Public Pool</li>
-                    <li className={style.off}>Bar</li>
-                    <li className={style.off}>Restaurant</li>
-                    <li className={style.off}>Wi-Fi</li>
                   </ul>
                   <hr className={style.hr} />
-                  <h2 className={style.titleOff}>Security & Advantages</h2>
+                  <h2 className="titleOffHotel">Security & Advantages</h2>
                   <ul className={style.ulOff}>
-                    <li className={style.off}>Check-in & check-out web</li>
-                    <li className={style.off}>Secure payment methods</li>
-                    <li className={style.off}>Email confirming reservation</li>
+                    <li className="offCheckInDetail">
+                      Check-in & check-out web
+                    </li>
+                    <li className="offMethods">Secure payment methods</li>
+                    <li className="offEmail">Email confirming reservation</li>
                   </ul>
                 </div>
                 {/* ////////////////////////////////////////////////////////MAPA//////////////////////////////////// */}
@@ -197,32 +192,15 @@ const HotelDetail = (props) => {
                   </div>
                 </div>
               </div>
-              <div className={style.containerDescription}>
+              <div
+                className={`${style.containerDescription} containerDescription`}
+              >
                 <h2 className={style.titleDescription}>Description</h2>
-                <p className={style.description}>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad
-                  rerum repellendus esse recusandae voluptatem facilis libero
-                  modi eius labore error dolore quia porro ipsam deserunt
-                  accusamus, est possimus nostrum! Sed.
-                </p>
-                <p className={style.description}>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad
-                  rerum repellendus esse recusandae voluptatem facilis libero
-                  modi eius labore error dolore quia porro ipsam deserunt
-                  accusamus, est possimus nostrum! Sed. Lorem ipsum dolor sit
-                  amet consectetur adipisicing elit. Aspernatur omnis soluta
-                  quaerat iste facilis ab dignissimos unde. Tenetur illum autem
-                  ea temporibus quis, culpa, qui eum velit doloremque, facere
-                  molestias.
-                </p>
-                <p className={style.description}>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad
-                  rerum repellendus esse recusandae voluptatem facilis libero
-                  modi eius labore error dolore quia porro ipsam deserunt
-                  accusamus,
-                </p>
+                <p className={style.description}>{hotelDetail.description}</p>
               </div>
-              <div className={style.containerDescription}>
+              <div
+                className={`${style.containerDescription} containerDescription`}
+              >
                 <h2 className={style.titleDescription}>
                   More about{" "}
                   {hotelDetail.name
@@ -252,62 +230,35 @@ const HotelDetail = (props) => {
           {location.pathname.includes("hotels") ? (
             <div>
               <h2 className={style.roomsTitle}>Rooms</h2>
-              <div className={style.textRooms}>
-                <Swiper
-                  freeMode={true}
-                  grabCursor={true}
-                  modules={[Autoplay, Keyboard]}
-                  autoplay={{
-                    delay: 3000,
-                  }}
-                  keyboard={{
-                    enabled: true,
-                  }}
-                  className="mySwiper m-4 justify-content-center w-100"
-                  breakpoints={{
-                    0: {
-                      slidesPerView: 1,
-                      spaceBetween: 30,
-                      centeredSlides: true,
-                    },
-                    480: {
-                      slidesPerView: 1,
-                      spaceBetween: 15,
-                      centeredSlides: true,
-                    },
-                    768: {
-                      slidesPerView: 2,
-                      spaceBetween: 10,
-                    },
-                    1024: {
-                      slidesPerView: 3,
-                      spaceBetween: 30,
-                    },
-                    1440: {
-                      slidesPerView: 4,
-                      spaceBetween: 20,
-                    },
-                  }}
-                >
-                  {hotelDetail.showRooms?.map((showRoom) => {
-                    console.log(showRoom);
-                    return (
-                      <SwiperSlide key={showRoom.id}>
+              <div>
+                <div className={style.textRooms}>
+                  <div className={style.flexContainer}>
+                    {hotelDetail.showRooms?.map((showRoom) => {
+                      return (
                         <RoomCard
+                          className={style.RoomCard}
                           id={showRoom.id}
                           img={showRoom.pictureHome}
                           numRoom={showRoom.numRoom}
                           price={showRoom.value}
+                          description={showRoom.description}
                           guest={showRoom.numPeople}
                           specialties={showRoom.specialties}
                           maxAdult={showRoom.maxAdult}
                           maxChild={showRoom.maxChild}
                         />
-                      </SwiperSlide>
-                    );
-                  })}
-                </Swiper>
+                      );
+                    })}
+                  </div>
+                </div>
               </div>
+              {info && info[0].admin === true && (
+                <div className={style.flexContainer}>
+                  <NavLink to={"/formHotels"}>
+                    <button className={style.createRoom}>Create Room</button>
+                  </NavLink>{" "}
+                </div>
+              )}
             </div>
           ) : (
             <div>

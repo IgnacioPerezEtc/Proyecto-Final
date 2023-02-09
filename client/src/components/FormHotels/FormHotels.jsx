@@ -192,11 +192,13 @@ const FormHotels = () => {
   }, [inputErrors]);
 
   return(
-    <div>
+    <div className="formHotelsBody">
       <NavBarDetails />
       <div className={style.container}>
         <div className={style.containerForm}>
-          <h1>Create Hotel</h1>
+          <p className="fw-bold text-center display-1">
+            Create <span className="text-danger">Hotel</span>
+          </p>
 
           <div className={style.form}>
             <div className={style.containerInputs}>
@@ -361,32 +363,17 @@ const FormHotels = () => {
             <div className={style.containerLanguages}>
               <label>Languages: </label>
               <div>
-                <select name="languages" value={input.languages} onChange={(e) => handleSelected(e)}>
+                {
+                  input.languages.length < 5 ? <select name="languages" value={input.languages} onChange={(e) => handleSelected(e)}>
                   <option value="title" disabled name=""></option>
                   {
                     languages.map((language, index) => {
                       return <option name={language} key={index}>{language}</option>;
                     })
                   }
-                </select>
-
-                <div>
-                  {
-                    input.languages?.map((languages) => {
-                      return (
-                        <div key={languages}>
-                          <p key={languages}>{languages}</p>
-                          <button
-                            value={languages}
-                            onClick={(event) => handleDeleteLanguages(event)}
-                          >
-                            x
-                          </button>
-                        </div>
-                      );
-                    })
-                  }
-                </div>
+                </select> : <p></p>
+                }
+                
               </div>
 
               <div className={style.containerPosition}>
@@ -428,7 +415,47 @@ const FormHotels = () => {
         </div>
 
         <div className={style.containerImages}>
+          <p className="fw-bold text-center display-1">
+            Picture <span className="text-danger">Home</span>
+          </p>
+          <img src={input.pictureHome ? input.pictureHome : "https://www.salonlfc.com/wp-content/uploads/2018/01/image-not-found-1-scaled-1150x647.png"}/>
 
+          <div>
+            {
+              input.pictureDetail?.map((img, index)=> {
+                  return(
+                    <div key={index}>
+                      <img src={img} key={index}/>
+                      {
+                        <button onClick={(event) => handleDeleteImg(event)} name={img}>X</button>
+                      }
+                      
+                    </div>
+                  )
+              })
+            }
+          </div>
+
+          <div className={style.languages}>
+            <p className="fw-bold text-center display-1">
+              Languages <span className="text-danger">Selected</span>
+            </p>
+            <div>
+              {input.languages?.map((languages) => {
+                return (
+                  <div key={languages}>
+                    <p key={languages}>{languages}</p>
+                    <button
+                      value={languages}
+                      onClick={(event) => handleDeleteLanguages(event)}
+                    >
+                      x
+                    </button>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
         </div>
       </div>
       <Footer />

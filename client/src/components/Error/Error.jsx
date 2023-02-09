@@ -12,6 +12,10 @@ const Error = () => {
         <h1>Something went wrong</h1>
       </div>
       <div  className={style.flexContainer}>
+        <h2 className={style.paramError}>Please try to reload</h2>
+      </div>
+      
+      <div  className={style.flexContainer}>
         <img
           className={style.img}
           src="https://img.lovepik.com/free-png/20220126/lovepik-404-error-code-png-image_401803274_wh300.png"

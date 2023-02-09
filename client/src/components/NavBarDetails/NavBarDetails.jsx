@@ -11,13 +11,40 @@ import { logOut } from "../../redux/actions";
 import { useEffect } from "react";
 const NavBarDetails = () => {
   const [login, setLogin] = useState(false);
-
-  const [info, setInfo] = useState(localStorage.getItem("user"));
+  const [themeState, setThemeState] = useState(localStorage.getItem("theme"));
+  const [info, setInfo] = useState(JSON.parse(localStorage.getItem("user")));
   useEffect(() => {
     if (info) {
       setLogin(true);
     }
   });
+  function darkMode() {
+    localStorage.setItem("theme", "dark");
+    let element = document.body;
+    let content = document.getElementById("DarkModetext");
+    element.className = "dark-mode";
+  }
+  function lightMode() {
+    localStorage.setItem("theme", "light");
+    let element = document.body;
+    let content = document.getElementById("DarkModetext");
+    element.className = "light-mode";
+  }
+  if (localStorage.getItem("theme") == "light") {
+    lightMode();
+  } else {
+    darkMode();
+  }
+
+  const handleChecked = (event) => {
+    if (event.target.checked === true) {
+      setThemeState("dark")
+      darkMode();
+    } else {
+      setThemeState("light")
+      lightMode();
+    }
+  };
   return (
     <div>
       <nav className={` ${style.navBar} navbar navbar-expand-lg`}>
@@ -86,11 +113,29 @@ const NavBarDetails = () => {
                   Hotels
                 </NavLink>
               </li>
-
+              <li className={style.pages}>
+                <a href="/favorites" className={style.linkLanding}>
+                  Favorites
+                </a>
+              </li>
               <li className={style.pages}>
                 <NavLink to={"/aboutUs"} className={style.linkLanding}>
                   About Us
                 </NavLink>
+              </li>
+              <li className={style.pages}>
+                <input
+                  type="checkbox"
+                  checked={
+                    themeState === "dark" ? true : false
+                  }
+                  name="darkMode"
+                  value={themeState}
+                  id={`switchDarkMode`}
+                  className={style.switch}
+                  onClick={(e) => handleChecked(e)}
+                />
+                <label htmlFor={`switchDarkMode`} className={style.lbl}></label>
               </li>
               <li className="dropdown-center">
                 <a
@@ -120,25 +165,37 @@ const NavBarDetails = () => {
                       </a>
                     )}
                   </li>
+                  <hr />
                   {info && info[0].admin === true ? (
-                    <li>
-                      <a
-                        className={`${style.itemDrop} dropdown-item`}
-                        href="/admin"
-                      >
-                        Dashboard
-                      </a>
-                    </li>
+                    <div>
+                      <li>
+                        <a
+                          className={`${style.itemDrop} dropdown-item`}
+                          href="/admin"
+                        >
+                          Dashboard
+                        </a>
+                      </li>
+                      <hr />
+                    </div>
                   ) : (
                     ""
                   )}
-                  <hr />
                   <li>
                     <a
                       className={`${style.itemDrop} dropdown-item`}
                       href="/Booking"
                     >
                       My reservations
+                    </a>
+                  </li>
+                  <hr />
+                  <li>
+                    <a
+                      className={`${style.itemDrop} dropdown-item`}
+                      href="/Reservationhistory"
+                    >
+                      Reservation History
                     </a>
                   </li>
                 </ul>

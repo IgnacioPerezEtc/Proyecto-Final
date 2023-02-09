@@ -14,7 +14,7 @@
   display: flex;
 }
 
-.blue {
+.blueOur {
   color: var(--color-blue);
   float: left;
   font-size: 48px;
@@ -76,4 +76,42 @@
 .bodyService {
   display: flex;
   justify-content: center;
+}
+.iconService{
+  font-size: 19px;
+  margin: 5px;
+  color: #fff;
+}
+.iconHeart{
+  font-size: 18px;
+  margin: 7px;
+  color: #fff;
+}
+.iconCreditCard{
+  font-size: 17px;
+  margin: 7px;
+  color: #fff;
+}
+.iconMoon{
+  font-size: 22px;
+  margin: 8px 8px;
+  margin-top: 4px;
+  color: #fff;
+}
+.iconMail{
+  font-size: 18px;
+  margin: 7px;
+  margin-left: 7.3px;
+  color: #fff;
+}
+.iconBed{
+  font-size: 18px;
+  margin: 5px;
+  color: #fff;
+}
+.iconMessage{
+  font-size: 20px;
+  margin: 4px;
+  margin: 3.7px;
+  color: #fff;
 }

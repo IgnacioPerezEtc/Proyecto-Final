@@ -48,3 +48,18 @@
   display: flex;
   margin-top: 20%;
 }
+.flexContainer{
+  display: flex;
+  justify-content: center;
+}
+.img{
+  width: 80em;
+  border-radius: 40px;
+  margin-top: 20px;
+}
+.blue{
+  margin-top: 50px;
+}
+.red{
+  margin-top: 50px;
+}

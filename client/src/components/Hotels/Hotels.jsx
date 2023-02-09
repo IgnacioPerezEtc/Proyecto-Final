@@ -24,26 +24,22 @@ const Hotels = () => {
         <Error />
       ) : (
         <div className={style.containerHotels}>
-
-          
-
-
           {allHotels.length ? (
             <div className="container-fluid d-flex justify-content-around flex-wrap gap-5">
               {allHotels.map((hotel) => {
-                return (
-                  <HotelCard
-                    key={hotel.id}
-                    id={hotel.id}
-                    name={hotel.name}
-                    image={hotel.pictureHome}
-                    category={hotel.category}
-                    // languages={hotel.languages.map((language) => {
-                    //   return <p>{language}</p>;
-                    // })}
-                    languages={hotel.languages}
-                  />
-                );
+                if (hotel.hidden === false) {
+                  return (
+                    <HotelCard
+                      key={hotel.id}
+                      id={hotel.id}
+                      name={hotel.name}
+                      image={hotel.pictureHome}
+                      category={hotel.category}
+                      languages={hotel.languages}
+                      description={hotel.description}
+                    />
+                  );
+                }
               })}
             </div>
           ) : (

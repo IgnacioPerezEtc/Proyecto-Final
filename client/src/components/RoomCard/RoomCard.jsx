@@ -22,16 +22,17 @@ const RoomCard = ({
   nameHotel,
   numRoom,
   id,
+  description,
 }) => {
   const dispatch = useDispatch();
-
+  console.log(description)
   // const cleanRoomDetail = () => {
   //   dispatch(cleanRoom());
   // };
   const location = useLocation();
   return (
     <div>
-      {location.pathname === "/home" ? (
+      {/* {location.pathname === "/home" ? (
         <div className={style.containerRoomCards}>
           <Card className={`${style.Card} h-75`}>
             <Link
@@ -51,10 +52,7 @@ const RoomCard = ({
                   <p className={style.priceContainer}>${price}</p>
                 </div>
                 <div className={`${style.Data} d-flex justify-content-between`}>
-                  <p>
-                    Lorem ipsum dolor sit amet consecte Eos voluptas atque
-                    aspernatur! Dicta, soluta.
-                  </p>
+                
                 </div>
                 <Card.Text
                   className={`${style.childAdultsContainer} fs-5`}
@@ -70,7 +68,7 @@ const RoomCard = ({
             </Link>
           </Card>
         </div>
-      ) : (
+      ) : ( */}
         <div className={style.containerRoomCards}>
           <Card className={`${style.Card} h-75`}>
             <Link
@@ -86,8 +84,7 @@ const RoomCard = ({
                 </div>
                 <div className={`${style.Data} d-flex justify-content-between`}>
                   <p className={style.param}>
-                    Lorem ipsum dolor sit amet consecte Eos voluptas atque
-                    aspernatur! Dicta, soluta.
+                    {description}
                   </p>
                 </div>
                 <Card.Text
@@ -104,7 +101,7 @@ const RoomCard = ({
             </Link>
           </Card>
         </div>
-      )}
+      {/* )} */}
     </div>
   );
 };
