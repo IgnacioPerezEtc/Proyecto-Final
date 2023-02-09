@@ -312,14 +312,14 @@ color: var(--color-blue);
 .createRoom{
   font-size: 20px;
   padding: 15px;
-  background-color: var(--color-blue);
+  background-color: var(--color-red);
   color: #fff;
   border-radius: 10px;
   outline: none;
   border: none;
 }
 .createRoom:hover{
-background-color: var(--letter-blue);
+background-color: var(--letter-red);
 }
 
 
