@@ -12,7 +12,8 @@ const RoomsAdmin = () => {
   const rooms = useSelector((state) => state.rooms);
   useEffect(() => {
     dispatch(getRooms());
-  },[]);
+  }, []);
+
   return (
     <div id="roomsAdmin" className={style.containerRooms}>
       <h1 className={style.h1}>Rooms</h1>

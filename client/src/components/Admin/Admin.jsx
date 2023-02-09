@@ -8,8 +8,10 @@ import home from "../../assets/icons/home.png";
 import Users from "./Users/Users";
 import HotelsAdmin from "./HotelsAdmin/HotelsAdmin";
 import RoomsAdmin from "./RoomsAdmin/RoomsAdmin";
+import GraphicsAdmin from "../Graphics/GraphicsAdmin";
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
+
 
 const Admin = () => {
   const location = useLocation();
@@ -191,6 +193,11 @@ const Admin = () => {
           </div>
         </nav>
       </div>
+
+      <div className={style.ContainerGraphics}>
+        <GraphicsAdmin />
+      </div>
+     
       {location.pathname.includes("admin") && (
         <div className={style.containerInfo}>
           <HotelsAdmin />
@@ -198,6 +205,7 @@ const Admin = () => {
           <Users />
         </div>
       )}
+
     </div>
   );
 };

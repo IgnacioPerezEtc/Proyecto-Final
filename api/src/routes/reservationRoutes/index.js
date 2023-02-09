@@ -17,6 +17,33 @@ router.get('/', async (req, res) => {
     }
 });
 
+router.get('/all', async(req, res) => {
+    try {
+        const result = await reservationController.allReservations();
+        return res.json(result);
+    } catch (error) {
+        return res.status(404).send({ error: error.message });
+    }
+})
+
+router.get('/permonth', async(req, res) => {
+    try {
+        const result = await reservationController.reservationsPerMonth();
+        return res.json(result);
+    } catch (error) {
+        return res.status(404).send({ error: error.message });
+    }
+})
+
+router.get('/percountry', async(req, res) => {
+    try {
+        const result = await reservationController.reservationsPerCountry();
+        return res.json(result);
+    } catch (error) {
+        return res.status(404).send({ error: error.message });
+    }
+})
+
 router.post("/", async (req, res) => {
     const newReservation = req.body;
     try {
