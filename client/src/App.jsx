@@ -23,6 +23,7 @@ import UserProfile from "./components/UserProfile/UserProfile.jsx";
 import UserEdit from "./components/UserEdit/UserEdit.jsx";
 import ErrorRoutes from "./components/ErrorRoutes/ErrorRoutes.jsx";
 import EditRoom from "./components/Admin/EditRoom/EditRoom.jsx";
+import FormReview from "./components/FormReview/FormReview.jsx";
 //
 function App() {
   return (
@@ -37,7 +38,7 @@ function App() {
             <Route exact path="/hotels/:id" element={<HotelDetail />} />
             <Route exact path="/aboutUs" element={<AboutUs />} />
             <Route exact path="/maps" element={<Maps />} />
-            <Route exact path="/formRoom" element={<FormRooms />} />
+            <Route exact path="/formRoom/:id" element={<FormRooms />} />
             <Route exact path="/rooms/:id" element={<RoomDetail />} />
             <Route exact path="/formHotels" element={<FormHotels />} />
             <Route exact path="/Booking" element={<Booking />} />
@@ -50,6 +51,7 @@ function App() {
             <Route exact path="/editRoom/:id" element={<EditRoom />} />
             <Route exact path="/userProfile" element={<UserProfile />} />
             <Route exact path="/userEdit" element={<UserEdit />} />
+            <Route exact path="/formReview" element={<FormReview />} />
             <Route path="*" element={<ErrorRoutes />} />
           </Routes>
         </div>

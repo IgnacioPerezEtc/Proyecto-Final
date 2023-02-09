@@ -310,3 +310,15 @@ export function getAllUsers() {
     }
   };
 }
+
+
+// ****************** SECCION COMMENTS ************************
+
+export const POST_REVIEW = "POST_REVIEW";
+
+export function postReview(data){
+  return async function (dispatchx) {
+    const json = await axios.post("/reviews", data);
+    return json;
+  };
+}

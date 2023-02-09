@@ -8,7 +8,7 @@ import Footer from "../Footer/Footer";
 import style from "./HotelDetail.module.css";
 import "./HotelDetail.css";
 import RoomCard from "../RoomCard/RoomCard";
-import { getHotelById } from "../../redux/actions";
+import { getHotelById, getAllUsers } from "../../redux/actions";
 import NavBarDetails from "../NavBarDetails/NavBarDetails";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Keyboard, Autoplay } from "swiper";
@@ -21,7 +21,12 @@ import "swiper/css";
 import "swiper/css/free-mode";
 import Maps from "../Maps/Maps.jsx";
 import { MapContainer } from "react-leaflet";
+import FormReview from "../FormReview/FormReview";
+
 const HotelDetail = (props) => {
+  const userInfo = JSON.parse(localStorage.getItem("user"))[0];
+  console.log(userInfo);
+  
   const location = useLocation();
   const dispatch = useDispatch();
   const { id } = useParams();
@@ -226,6 +231,12 @@ const HotelDetail = (props) => {
               </div>
             </div>
           </div>
+
+          <div className={style.containerComments}>
+            <h2>Comments</h2>
+            <FormReview hotelId={id} email={userInfo.email} image={userInfo.img}/>
+          </div>
+          
           {location.pathname.includes("hotels") ? (
             <div>
               <h2 className={style.roomsTitle}>Rooms</h2>
@@ -252,7 +263,7 @@ const HotelDetail = (props) => {
                 </div>
               </div>
               <div className={style.flexContainer}>
-                <NavLink to={"/formHotels"}>
+                <NavLink to={"/formRoom/" + id}>
                   <button className={style.createRoom}>Create Room</button>
                 </NavLink>{" "}
               </div>

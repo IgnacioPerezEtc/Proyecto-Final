@@ -18,6 +18,7 @@ import {
   CLEAR_HOTEL_DETAIL,
   GET_USER_BY_ID,
   PUT_ROOM,
+  POST_REVIEW,
 } from "./actions";
 
 const initialState = {
@@ -174,6 +175,12 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         userDetail: action.payload,
       };
+    }
+
+    case POST_REVIEW: {
+      return{
+        ...state
+      }
     }
 
     default:

@@ -10,7 +10,8 @@ import { useDispatch } from "react-redux";
 import { createHotel } from "../../redux/actions";
 
 const FormHotels = () => {
-  // const info = JSON.parse(localStorage.getItem("user"));
+  const info = JSON.parse(localStorage.getItem("user"));
+  console.log(info)
   // const alert = () => {
   //   Swal.fire({
   //     title: "Sorry",
