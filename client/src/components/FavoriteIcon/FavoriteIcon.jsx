@@ -10,23 +10,23 @@ const FavoriteIcon = ({id}) => {
   );
 
   const handleFavorite = () => {
-    setActive(active => !active);
-
-    if(location.pathname === "/favorites"){
-      window.location.href = "/favorites";
-    }
 
     const favorites = JSON.parse( localStorage.getItem('favorites') )
     const user = (JSON.parse(localStorage.getItem("user")));
+   
     if( active ) {  
       const favs = favorites.filter(fav => fav !== id);
       localStorage.setItem('favorites', JSON.stringify( favs ) )
       setFavoriteHotels({email: user[0].email, favoriteHotels: favs })
-    
     }
     else {
-      localStorage.setItem('favorites', JSON.stringify([...favorites, id]) )
       setFavoriteHotels({email: user[0].email, favoriteHotels: [...favorites, id] })
+      localStorage.setItem('favorites', JSON.stringify([...favorites, id]) )
+    }
+    setActive(active => !active);
+    
+    if(location.pathname === '/favorites'){
+      window.location.href = "/favorites";
     }
   }
   return (

@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getReservationPerMonth } from "../../redux/actions";
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
-import style from "./Graphics.module.css"
+
 
 const ReservationPerMonth = () => {
 
@@ -38,10 +38,11 @@ const ReservationPerMonth = () => {
   
   return (
     <div 
-    className={` ${style.Count} Count`}
-      style={{ width: '50vw', height: '60vh' }}
+      className= {localStorage.getItem("theme")==='dark'?' border border-dark shadow rounded-3 w-75' :"Count w-75" }
+      style={{height: '60vh', paddingBottom: '40px', backgroundColor:'#18445C' }}
     >
-      <h1 className={localStorage.getItem("theme")=== "dark"? 'px-5 text-dark' : 'px-5'}>Months with more Reservations in the year</h1>
+      <h1 className={localStorage.getItem("theme")==='dark'?'text-white px-5 text-center' :'px-5 text-center' }>Months with more Reservations in the year</h1>
+
       {
         (!data.length) ?
         (
@@ -57,17 +58,16 @@ const ReservationPerMonth = () => {
           height={300}
           data={finalData}
           margin={{
-            top: 10,
+            top: 15,
             right: 50,
-            left: 0,
-            bottom: 50,
+            bottom: 20,
           }}
         >
           {/* <CartesianGrid strokeDasharray="3 3" /> */}
-          <XAxis tick={{fontSize: 14, fontWeight:'bold'}} dataKey="month" />
-          <YAxis tick={{fontSize: 14, fontWeight:'bold'}}/>
+          <XAxis stroke={localStorage.getItem("theme")==='dark'? 'white':'black'} tick={{fontSize: 14, fontWeight:'bold'}} label={{value:'MONTHS', position: 'bottom', style: { fontSize: 18, fill:localStorage.getItem("theme")==='dark'?'white':'black' }}} dataKey="month" />
+          <YAxis stroke={localStorage.getItem("theme")==='dark'? 'white':'black'} tick={{fontSize: 14, fontWeight:'bold'}} label={{value:'RESERVATIONS', dx:-15, angle: -90, style: { fontSize: 18, fill:localStorage.getItem("theme")==='dark'?'white':'black' }}}/>
           <Tooltip wrapperStyle={{fontSize:'14px', fontWeight:'bold'}}/>
-          <Area type="monotone" dataKey="reservations" fill="#840000" animationDuration={1500}/>
+          <Area fillOpacity={20} type="monotone" dataKey="reservations" stroke="#ffc85b" fill="#ffc85b" animationDuration={1500}/>
         </AreaChart>
       </ResponsiveContainer>
         )

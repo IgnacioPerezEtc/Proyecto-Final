@@ -6,10 +6,10 @@ import {
   Line,
   XAxis,
   YAxis,
-  CartesianGrid,
+  ResponsiveContainer,
   Tooltip
 } from "recharts";
-import style from "./Graphics.module.css"
+
 const ReservationPerCountry = () => {
 
   const dispatch = useDispatch();
@@ -43,10 +43,11 @@ const ReservationPerCountry = () => {
 
   return (
     <div
-      className={` ${style.Count} Count`}
-      style={{ width: '50vw', height: '60vh' }}>
+      className= {localStorage.getItem("theme")==='dark'?' border border-dark shadow rounded-3 w-75' :"Count w-75" }
+      style={{height: '60vh', paddingBottom: '40px' , backgroundColor:'#18445C' }}
+    >
 
-      <h1 className={localStorage.getItem("theme")=== "dark"? 'px-5 text-dark' : 'px-5'}>Countries with more Reservations</h1>
+      <h1 className={localStorage.getItem("theme")==='dark'?'text-white px-5 text-center' :'px-5 text-center' }>Countries with more Reservations</h1>
 
       {
         (!data.length) ?
@@ -57,31 +58,32 @@ const ReservationPerCountry = () => {
           )
           :
           (
-            <LineChart
-              width={750}
-              height={400}
-              data={countryArr}
-              margin={{
-                top: 10,
-                right: 30,
-                left: 0,
-                bottom: 0
-              }}
-            >
-              {/* <CartesianGrid strokeDasharray="3 3" /> */}
-              <XAxis tick={{ fontSize: 14, fontWeight: 'bold' }} dataKey="country" />
-              <YAxis tick={{ fontSize: 14, fontWeight: 'bold' }} label={{ value: 'RESERVATIONS', angle: -90, style: { fontSize: 18 } }} />
-              <Tooltip wrapperStyle={{ fontSize: '14px', fontWeight: 'bold' }} />
-              <Line
-                connectNulls
-                type="monotone"
-                dataKey="reservations"
-                stroke="orange"
-                fill="orange"
-                activeDot={{ r: 8 }}
-                animationDuration={1500}
-              />
-            </LineChart>
+            <ResponsiveContainer>
+              <LineChart
+                width={750}
+                height={400}
+                data={countryArr}
+                margin={{
+                  top: 15,
+                  right: 30,
+                  bottom: 20
+                }}
+              >
+                <XAxis stroke={localStorage.getItem("theme")==='dark'? 'white':'black'} tick={{ fontSize: 14, fontWeight: 'bold' }} label={{value:'COUNTRIES', position: 'bottom', style: { fontSize: 18, fill:localStorage.getItem("theme")==='dark'?'white':'black' }}} dataKey="country" />
+                <YAxis stroke={localStorage.getItem("theme")==='dark'? 'white':'black'} tick={{ fontSize: 14, fontWeight: 'bold' }} label={{ value: 'RESERVATIONS', dx:-15, angle: -90, style: { fontSize: 18, fill:localStorage.getItem("theme")==='dark'?'white':'black' } }} />
+                <Tooltip wrapperStyle={{ fontSize: '14px', fontWeight: 'bold' }} />
+                <Line
+                  connectNulls
+                  type="monotone"
+                  dataKey="reservations"
+                  stroke="orange"
+                  strokeWidth={3}
+                  fill="orange"
+                  activeDot={{ r: 8 }}
+                  animationDuration={1500}
+                />
+              </LineChart>
+            </ResponsiveContainer>
           )
       }
     </div>
