@@ -2,7 +2,6 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
 import { getAllDataReservations } from "../../redux/actions";
-
 // HOTELS WITH MORE RESERVATIONS
 const HotelsReservation = () => {
 
@@ -24,7 +23,7 @@ const HotelsReservation = () => {
         (!data.length) ?
           (
             <div className="mt-5 d-flex justify-content-center align-items-center">
-              <h3 className="pt-5">No data</h3>
+              <h3 className={localStorage.getItem("theme")=== "dark"? 'pt-5 text-dark' : 'pt-5'}>No data</h3>
             </div>
           )
           :

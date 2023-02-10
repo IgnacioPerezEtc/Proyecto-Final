@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { putUser } from "../../redux/actions";
 import style from "./UserEdit.module.css";
 import NavBarDetails from "../NavBarDetails/NavBarDetails";
@@ -7,12 +7,13 @@ import Footer from "../Footer/Footer";
 
 const UserEdit = () => {
   const id = JSON.parse(localStorage.getItem("user"))[0].email;
+  const userDetail = useSelector((state) => state.userDetail);
   const dispatch = useDispatch();
   const [message, setMessage] = useState("");
   const [newItem, setNewItem] = useState({
-    name: "",
-    address: "",
-    phone: "",
+    name: userDetail.name?userDetail.name: "",
+    address: userDetail.address ? userDetail.address : "",
+    phone: userDetail.phone ? userDetail.phone : "",
   });
 
   function handleChange(e) {
@@ -24,7 +25,7 @@ const UserEdit = () => {
 
   function handleSubmit(e) {
     e.preventDefault();
-    if (newItem.name && newItem.address && newItem.phone) {
+    if (newItem.name) {
       let newData = {
         name: newItem.name,
         address: newItem.address,
@@ -32,11 +33,6 @@ const UserEdit = () => {
       };
       dispatch(putUser(id, newData));
       setMessage("Data added successfully");
-      setNewItem({
-        name: "",
-        address: "",
-        phone: "",
-      });
     } else setMessage("Failed to fill data");
   }
 
@@ -44,7 +40,7 @@ const UserEdit = () => {
     <div>
       <NavBarDetails />
       <div className={style.mainContainer}>
-        <form id={style.formContainer} onSubmit={(e) => handleSubmit(e)}>
+        <form className={`${style.formContainer} formContainer`} onSubmit={(e) => handleSubmit(e)}>
           <h1>Edit your information</h1>
           <label className={style.form}>
             <h4>User Name:</h4>

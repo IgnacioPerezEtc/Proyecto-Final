@@ -95,7 +95,7 @@ const RoomDetail = () => {
             </div>
 
             <div className={style.containerInfo}>
-              <div className={style.containerSpecialties}>
+              <div className={`${style.containerSpecialties} containerSpecialties`}>
                 <h2 className={style.titleSpec}>Specialities</h2>
                 <ul className={style.ulSpec}>
                   {roomDetail.specialties.map((spec) => {
@@ -107,7 +107,7 @@ const RoomDetail = () => {
                   })}
                 </ul>
               </div>
-              <div className={style.containerCondSpec}>
+              <div className={`${style.containerCondSpec} containerCondSpec` }>
                 <h2>Room conditions</h2>
                 <ul className={style.ulCondiciones}>
                 
@@ -133,7 +133,7 @@ const RoomDetail = () => {
               </div>
 
             </div>
-            <div className={style.containerDescription}>
+            <div className={`${style.containerDescription} containerDescription`}>
               <h2 className={style.titleDescription}>Description</h2>
               <p className={style.description}>{roomDetail.description}</p>
             </div>

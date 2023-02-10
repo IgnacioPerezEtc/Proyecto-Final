@@ -30,20 +30,19 @@ const NavBarDetails = () => {
     let content = document.getElementById("DarkModetext");
     element.className = "light-mode";
   }
-  if (localStorage.getItem("theme") == "light") {
-    lightMode();
-  } else {
-    darkMode();
-  }
+  // if (localStorage.getItem("theme") == "light") {
+  //   lightMode();
+  // } else {
+  //   darkMode();
+  // }
 
   const handleChecked = (event) => {
     if (event.target.checked === true) {
+      setThemeState("light");
+      lightMode();
+    } else {
       setThemeState("dark");
       darkMode();
-      
-    } else {
-      setThemeState("light")
-      lightMode();
     }
   };
   return (
@@ -52,7 +51,10 @@ const NavBarDetails = () => {
         <div className={`${style.containerFluid} container-fluid`}>
           <ul className={style.ulNavRedes}>
             <li>
-              <a href="https://www.instagram.com/yourdestiny235/" target={"_blank"}>
+              <a
+                href="https://www.instagram.com/yourdestiny235/"
+                target={"_blank"}
+              >
                 <button>
                   <img src={instagram} alt="logo instagram" />
                 </button>
@@ -120,17 +122,19 @@ const NavBarDetails = () => {
                   About Us
                 </NavLink>
               </li>
-              <li className={style.pages}>
-                <input
-                  type="checkbox"
-                  checked={themeState === "dark" ? true : false}
-                  name="darkMode"
-                  value={localStorage.getItem("theme")}
-                  id={`switchdarkMode`}
-                  className={style.switch}
-                  onClick={(e) => handleChecked(e)}
-                />
-                <label htmlFor={`switchdarkMode`} className={style.lbl}></label>
+              <li className={style.pages2}>
+                <label className={style.switch}>
+                  <input
+                    type="checkbox"
+                    checked={themeState === "dark" ? false : true}
+                    name="darkMode"
+                    value={themeState}
+                    id={`switch`}
+                    // className={style.switch}
+                    onClick={(e) => handleChecked(e)}
+                  />
+                  <span className={style.slider}></span>
+                </label>
               </li>
               <li className="dropdown-center">
                 <a
@@ -216,7 +220,10 @@ const NavBarDetails = () => {
                   <hr />
                   <li>
                     {login === false ? (
-                      <Link className={`${style.itemDrop} dropdown-item`} to="/">
+                      <Link
+                        className={`${style.itemDrop} dropdown-item`}
+                        to="/"
+                      >
                         Log-in
                       </Link>
                     ) : (
