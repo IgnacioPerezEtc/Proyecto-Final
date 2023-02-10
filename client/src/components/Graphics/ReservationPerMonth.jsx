@@ -38,8 +38,8 @@ const ReservationPerMonth = () => {
   
   return (
     <div 
-      className= {localStorage.getItem("theme")==='dark'?' border border-dark shadow rounded-3 w-75' :"Count w-75" }
-      style={{height: '60vh', paddingBottom: '40px', backgroundColor:'#18445C' }}
+    className= {localStorage.getItem("theme")==='dark'?'border border-dark shadow rounded-3 w-75' :"bg-white border border-secondary-subtle shadow rounded-3 w-75" }
+    style={{height: '60vh', paddingBottom: '40px' , backgroundColor:'#18445C'}}
     >
       <h1 className={localStorage.getItem("theme")==='dark'?'text-white px-5 text-center' :'px-5 text-center' }>Months with more Reservations in the year</h1>
 
