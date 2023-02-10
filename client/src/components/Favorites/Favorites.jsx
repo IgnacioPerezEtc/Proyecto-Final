@@ -26,6 +26,11 @@ const Favorites = () => {
   return (
     <>
       <NavBarDetails />
+      <div className={style.titleContainer}>
+        <h2 className={style.blue}>Favorite</h2>
+        <h2 className={style.red}>Hotels</h2>
+      </div>
+
       {
         !allHotels.length || !favs.length? 
           (
@@ -40,10 +45,7 @@ const Favorites = () => {
           :
           (
             <div>
-              <div className={style.titleContainer}>
-                <h2 className={style.blue}>Favorite</h2>
-                <h2 className={style.red}>Hotels</h2>
-              </div>
+              
 
               <div>
                 <Swiper
