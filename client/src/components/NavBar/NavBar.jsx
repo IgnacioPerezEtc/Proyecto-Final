@@ -33,19 +33,18 @@ const NavBar = (props) => {
     let content = document.getElementById("DarkModetext");
     element.className = "light-mode";
   }
-  if (localStorage.getItem("theme") == "light") {
-    lightMode();
-  } else {
-    darkMode();
-  }
+  // if (localStorage.getItem("theme") == "light") {
+  //   lightMode();
+  // } else {
+  //   darkMode();
+  // }
   const handleChecked = (event) => {
-
     if (event.target.checked === true) {
-      setThemeState("dark")
-      darkMode();
-    } else {
-      setThemeState("light")
+      setThemeState("light");
       lightMode();
+    } else {
+      setThemeState("dark");
+      darkMode();
     }
   };
 
@@ -55,7 +54,10 @@ const NavBar = (props) => {
         <div>
           <ul className={style.ulNavRedes}>
             <li>
-              <a href="https://www.instagram.com/yourdestiny235/" target={"_blank"}>
+              <a
+                href="https://www.instagram.com/yourdestiny235/"
+                target={"_blank"}
+              >
                 <button>
                   <img src={instagram} alt="logo instagram" />
                 </button>
@@ -107,17 +109,19 @@ const NavBar = (props) => {
               </NavLink>
             </li>
 
-            <li className={style.pages}>
-              <input
-                type="checkbox"
-                checked={themeState === "dark" ? true : false}
-                name="darkMode"
-                value={themeState}
-                id={`switch`}
-                className={style.switch}
-                onClick={(e) => handleChecked(e)}
-              />
-              <label htmlFor={`switch`} className={style.lbl}></label>
+            <li className={style.pages2}>
+              <label className={style.switch}>
+                <input
+                  type="checkbox"
+                  checked={themeState === "dark" ? false : true}
+                  name="darkMode"
+                  value={themeState}
+                  id={`switch`}
+                  // className={style.switch}
+                  onClick={(e) => handleChecked(e)}
+                />
+                <span className={style.slider}></span>
+              </label>
             </li>
 
             <li className="dropdown">
@@ -142,7 +146,9 @@ const NavBar = (props) => {
                 )}
               </a>
 
-              <ul className={`${style.ulProfile} dropdown-menu dropdown-menu-lg-end`}>
+              <ul
+                className={`${style.ulProfile} dropdown-menu dropdown-menu-lg-end`}
+              >
                 <li className={style.liProfile}>
                   {login === false ? (
                     ""
