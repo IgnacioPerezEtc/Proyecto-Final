@@ -13,7 +13,7 @@ const payment = async (req, res) => {
             items: products,
     
             back_urls: {
-                success: 'https://proyecto-final-client.vercel.app/payApproved'
+                success: 'http://127.0.0.1:5173/payApproved'
             }
         }
     

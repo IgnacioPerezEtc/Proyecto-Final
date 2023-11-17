@@ -4,7 +4,6 @@ import "./App.css";
 import Hotels from "./components/Hotels/Hotels.jsx";
 import { Provider } from "react-redux";
 import store from "./redux/store.js";
-import AboutUs from "./components/AboutUs/AboutUs.jsx";
 import HotelDetail from "./components/HotelDetail/HotelDetail.jsx";
 import RoomDetail from "./components/RoomDetail/RoomDetail.jsx";
 // import 'bootstrap/dist/css/bootstrap.min.css';
@@ -35,7 +34,6 @@ function App() {
             <Route exact path="/home" element={<LandingPage />} />
             <Route exact path="/hotels" element={<Hotels />} />
             <Route exact path="/hotels/:id" element={<HotelDetail />} />
-            <Route exact path="/aboutUs" element={<AboutUs />} />
             <Route exact path="/maps" element={<Maps />} />
             <Route exact path="/formRoom/:id" element={<FormRooms />} />
             <Route exact path="/rooms/:id" element={<RoomDetail />} />

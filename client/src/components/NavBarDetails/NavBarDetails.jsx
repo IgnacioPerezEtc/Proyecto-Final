@@ -116,11 +116,6 @@ const NavBarDetails = () => {
               </li>
 
               <li className={style.pages}>
-                <NavLink to={"/aboutUs"} className={style.linkLanding}>
-                  About Us
-                </NavLink>
-              </li>
-              <li className={style.pages}>
                 <input
                   type="checkbox"
                   checked={themeState === "dark" ? true : false}

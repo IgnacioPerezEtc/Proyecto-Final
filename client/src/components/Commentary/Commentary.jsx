@@ -2,8 +2,8 @@ import React from "react";
 import style from "./Commentary.module.css";
 import "./Commentary.css"
 import user from "../../../src/assets/img/user.png";
-import imgIgna from "../AboutUs/img/fotoIgna.jpg";
-import imgRodri from "../AboutUs/img/fotoRodri.jpg";
+// import imgIgna from "../AboutUs/img/fotoIgna.jpg";
+// import imgRodri from "../AboutUs/img/fotoRodri.jpg";
 
 const Commentary = () => {
   return (
@@ -40,8 +40,8 @@ const Commentary = () => {
             <span>★★★★★</span>
             <span className={style.arrow}></span>
           </div>
-          <img src={imgIgna} className={style.img} alt="" />
-          <h2 className="h2Commentary">Igna Perez</h2>
+          {/* <img src={imgIgna} className={style.img} alt="" />
+          <h2 className="h2Commentary">Igna Perez</h2> */}
         </div>
         <div className={style.flexUserComment}>
           <div className="containerCards">
@@ -51,8 +51,8 @@ const Commentary = () => {
             <span>★★★★★</span>
             <span className={style.arrow}></span>
           </div>
-          <img src={imgRodri} className={style.img} alt="" />
-          <h2 className="h2Commentary">Rodri Roman</h2>
+          {/* <img src={imgRodri} className={style.img} alt="" />
+          <h2 className="h2Commentary">Rodri Roman</h2> */}
         </div>
       </div>
     </div>

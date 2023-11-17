@@ -49,7 +49,6 @@ const LandingPage = (props) => {
       {error ? <Error /> : <RoomsCards hotels={hotels}/>}
       <Services />
       <Galery />
-      <Commentary />
       <Footer />
     </div>
   );
